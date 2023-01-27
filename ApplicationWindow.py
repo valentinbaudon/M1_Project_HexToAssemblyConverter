@@ -509,6 +509,7 @@ class MainWindow(object):
             hexa_code = f.read()
         self.HexaCode.setText(hexa_code)
 
+        print("test")
         # initialisation des noms des objets de la fenêtre
         self.NameInit()
         _translate = QtCore.QCoreApplication.translate
