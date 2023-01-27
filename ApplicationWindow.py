@@ -3,7 +3,7 @@ import os
 from conversionHexToAssembly import *
 from SecondaryWindows import *
 
-test test
+
 class MainWindow(object):
     # Constructeur de la classe
     def __init__(self):
