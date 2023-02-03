@@ -18,8 +18,6 @@ class MainWindow(object):
         self.menuFonctionnement = None
         self.actionClearFiles = None
         self.actionNouvellefenetre = None
-        self.selected_button = QtWidgets.QRadioButton()
-        self.selected_button.setText("Compact")
         self.radioValue = None
         self.checked_button = None
         self.button_group = None
@@ -32,38 +30,42 @@ class MainWindow(object):
         self.DownloadAssemblyButtonLayout = None
         self.actionAbout = None
         self.actionFonctionnement = None
-        self.label_5 = None
-        self.line_2 = None
+        self.HowToDownloadAssembly_Text = None
+        self.line_HautFooter = None
         self.line_5 = None
-        self.line_6 = None
+        self.line_RightCenter = None
         self.convertButton = None
         self.FooterLayout = None
         self.ConvertButtonLayout = None
-        self.label_6 = None
+        self.Exemple_OptionConversion = None
         self.radioButton_3 = None
         self.radioButton_2 = None
         self.radioButton_1 = None
         self.OptionsLayout = None
         self.OptionsGlobalLayout = None
-        self.label = None
+        self.optionConversion_Title = None
         self.DownloadHexButton = None
         self.DownloadHexButtonLayout = None
-        self.label_4 = None
+        self.HowToDownloadHex_Text = None
         self.DownloadHexLayout = None
-        self.verticalLayout = None
-        self.line = None
+        self.OptionsConversionLayout = None
+        self.line_TextOptions = None
         self.AssemblyCode = None
-        self.label_3 = None
+        self.Assembly_Code_Title = None
         self.HexaCode = None
-        self.label_2 = None
+        self.Hex_Code_Title = None
         self.TextCodesLayout = None
         self.TextCodesGlobalLayout = None
-        self.line_3 = None
-        self.horizontalLayout = None
-        self.line_4 = None
+        self.line_LeftText = None
+        self.CentralLayout = None
+        self.line_TitleCentral = None
         self.Title = None
-        self.verticalLayout_2 = None
+        self.GlobalLayout = None
         self.centralwidget = None
+
+        # initialisation de l'option d'affichage sélectionnée par défaut
+        self.selected_button = QtWidgets.QRadioButton()
+        self.selected_button.setText("Compact")
 
         # reset des fichiers hexa et assembleur
         with open("./ConversionFiles/Hexa.txt", "w") as f:
@@ -71,6 +73,7 @@ class MainWindow(object):
         with open("./ConversionFiles/Assembly.txt", "w") as f:
             f.write("")
 
+        # Gestion de la langue d'affichage par défaut comme étant la même que celle du système de l'utilisateur
         if locale.getlocale()[0] in ["fr_FR", "en_EN"]:
             self.JSON_lang = json.load(open("./OtherFiles/text_" + locale.getlocale()[0] + ".json"))
         else:
@@ -139,13 +142,16 @@ class MainWindow(object):
             with open(file_name, "w") as f:
                 f.write(assembly_code)
 
+    # fonction permettant de mettre à jour le boutton d'option d'affichage sélectionnée
     def store_selection(self, button):
         self.selected_button = button
 
+    # fonction permettant de changer la langue d'affichage en français
     def select_language_fr(self):
         self.JSON_lang = json.load(open("./OtherFiles/text_fr_FR.json"))
         self.NameInit()
 
+    # fonction permettant de changer la langue d'affichage en anglais
     def select_language_en(self):
         self.JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
         self.NameInit()
@@ -154,17 +160,17 @@ class MainWindow(object):
     def NameInit(self):
         _translate = QtCore.QCoreApplication.translate
         self.Title.setText(_translate("Converter", self.JSON_lang["Title"]))
-        self.label_2.setText(_translate("Converter", self.JSON_lang["label_2"]))
-        self.label_3.setText(_translate("Converter", self.JSON_lang["label_3"]))
-        self.label_4.setText(_translate("Converter", self.JSON_lang["label_4"]))
+        self.Hex_Code_Title.setText(_translate("Converter", self.JSON_lang["Hex_Code_Title"]))
+        self.Assembly_Code_Title.setText(_translate("Converter", self.JSON_lang["Assembly_Code_Title"]))
+        self.HowToDownloadHex_Text.setText(_translate("Converter", self.JSON_lang["HowToDownloadHex_Text"]))
         self.DownloadHexButton.setText(_translate("Converter", self.JSON_lang["DownloadHexButton"]))
-        self.label.setText(_translate("Converter", self.JSON_lang["label"]))
+        self.optionConversion_Title.setText(_translate("Converter", self.JSON_lang["optionConversion_Title"]))
         self.radioButton_1.setText(_translate("Converter", self.JSON_lang["radioButton_1"]))
         self.radioButton_2.setText(_translate("Converter", self.JSON_lang["radioButton_2"]))
         self.radioButton_3.setText(_translate("Converter", self.JSON_lang["radioButton_3"]))
-        self.label_6.setText(_translate("Converter", self.JSON_lang["label_6"]))
+        self.Exemple_OptionConversion.setText(_translate("Converter", self.JSON_lang["Exemple_OptionConversion"]))
         self.convertButton.setText(_translate("Converter", self.JSON_lang["convertButton"]))
-        self.label_5.setText(_translate("Converter", self.JSON_lang["label_5"]))
+        self.HowToDownloadAssembly_Text.setText(_translate("Converter", self.JSON_lang["HowToDownloadAssembly_Text"]))
         self.DownloadAssemblyButton.setText(_translate("Converter", self.JSON_lang["DownloadAssemblyButton"]))
         self.menu_Help.setTitle(_translate("Converter", self.JSON_lang["menu_Help"]))
         self.menuFonctionnement.setTitle(_translate("Converter", self.JSON_lang["menuFonctionnement"]))
@@ -186,65 +192,74 @@ class MainWindow(object):
         icon = QIcon("./OtherFiles/TemporaryIcon.ico")
         ConverterWindow.setWindowIcon(icon)
 
+        # paramètres de polices utilisées
         font = QtGui.QFont()
         font.setPointSize(15)
+        font2 = QtGui.QFont()
+        font2.setPointSize(9)
         font3 = QtGui.QFont()
         font3.setPointSize(9)
         font3.setBold(False)
         font3.setWeight(50)
-        font2 = QtGui.QFont()
-        font2.setPointSize(9)
         font4 = QtGui.QFont()
         font4.setPointSize(12)
+        font5 = QtGui.QFont()
+        font5.setPointSize(25)
 
         # objet central
         self.centralwidget = QtWidgets.QWidget(ConverterWindow)
         self.centralwidget.setObjectName("centralwidget")
         ConverterWindow.setCentralWidget(self.centralwidget)
 
-        # layout vertical 1
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.Title = QtWidgets.QLabel(self.centralwidget)
+        # layout global
+        self.GlobalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.GlobalLayout.setObjectName("GlobalLayout")
 
         # titre de la page
+        self.Title = QtWidgets.QLabel(self.centralwidget)
         self.Title.setFont(font)
         self.Title.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignTop)
         self.Title.setObjectName("Title")
-        self.verticalLayout_2.addWidget(self.Title)
+        self.GlobalLayout.addWidget(self.Title)
 
-        # spacer 1 : entre le titre et la partie centrale
+        # spacer entre le titre et la partie centrale
         spacerItem = QtWidgets.QSpacerItem(17, 17, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.verticalLayout_2.addItem(spacerItem)
+        self.GlobalLayout.addItem(spacerItem)
 
-        # ligne 1
-        self.line_4 = QtWidgets.QFrame(self.centralwidget)
-        self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_4.setObjectName("line_4")
-        self.verticalLayout_2.addWidget(self.line_4)
+        # ligne entre le titre et la partie centrale
+        self.line_TitleCentral = QtWidgets.QFrame(self.centralwidget)
+        self.line_TitleCentral.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_TitleCentral.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_TitleCentral.setObjectName("line_TitleCentral")
+        self.GlobalLayout.addWidget(self.line_TitleCentral)
 
-        self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
+        # layout de la partie centrale
+        self.CentralLayout = QtWidgets.QHBoxLayout()
+        self.CentralLayout.setObjectName("CentralLayout")
 
-        self.line_3 = QtWidgets.QFrame(self.centralwidget)
-        self.line_3.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_3.setObjectName("line_3")
-        self.horizontalLayout.addWidget(self.line_3)
+        # ligne à gauche de la partie texte
+        self.line_LeftText = QtWidgets.QFrame(self.centralwidget)
+        self.line_LeftText.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_LeftText.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_LeftText.setObjectName("line_LeftText")
+        self.CentralLayout.addWidget(self.line_LeftText)
 
+        # layout global de la partie d'affichage des codes
         self.TextCodesGlobalLayout = QtWidgets.QWidget(self.centralwidget)
         self.TextCodesGlobalLayout.setObjectName("TextCodesGlobalLayout")
 
+        # layout de la partie d'affichage des codes
         self.TextCodesLayout = QtWidgets.QVBoxLayout(self.TextCodesGlobalLayout)
         self.TextCodesLayout.setObjectName("TextCodesLayout")
 
-        self.label_2 = QtWidgets.QLabel(self.TextCodesGlobalLayout)
-        self.label_2.setFont(font)
-        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_2.setObjectName("label_2")
-        self.TextCodesLayout.addWidget(self.label_2)
+        # objet titre du texte en hexadecimal
+        self.Hex_Code_Title = QtWidgets.QLabel(self.TextCodesGlobalLayout)
+        self.Hex_Code_Title.setFont(font)
+        self.Hex_Code_Title.setAlignment(QtCore.Qt.AlignCenter)
+        self.Hex_Code_Title.setObjectName("Hex_Code_Title")
+        self.TextCodesLayout.addWidget(self.Hex_Code_Title)
 
+        # objet texte en hexadecimal
         self.HexaCode = QtWidgets.QTextEdit(self.TextCodesGlobalLayout)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
@@ -255,12 +270,14 @@ class MainWindow(object):
         self.HexaCode.setObjectName("HexaCode")
         self.TextCodesLayout.addWidget(self.HexaCode)
 
-        self.label_3 = QtWidgets.QLabel(self.TextCodesGlobalLayout)
-        self.label_3.setFont(font)
-        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_3.setObjectName("label_3")
-        self.TextCodesLayout.addWidget(self.label_3)
+        # objet titre du texte en assembleur
+        self.Assembly_Code_Title = QtWidgets.QLabel(self.TextCodesGlobalLayout)
+        self.Assembly_Code_Title.setFont(font)
+        self.Assembly_Code_Title.setAlignment(QtCore.Qt.AlignCenter)
+        self.Assembly_Code_Title.setObjectName("Assembly_Code_Title")
+        self.TextCodesLayout.addWidget(self.Assembly_Code_Title)
 
+        # objet texte en assembleur
         self.AssemblyCode = QtWidgets.QTextEdit(self.TextCodesGlobalLayout)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
@@ -272,36 +289,45 @@ class MainWindow(object):
         self.AssemblyCode.setFont(font4)
         self.AssemblyCode.setReadOnly(True)
         self.TextCodesLayout.addWidget(self.AssemblyCode)
+        self.CentralLayout.addWidget(self.TextCodesGlobalLayout)
 
-        self.horizontalLayout.addWidget(self.TextCodesGlobalLayout)
+        # ligne entre la partie texte et la partie options et conversion
+        self.line_TextOptions = QtWidgets.QFrame(self.centralwidget)
+        self.line_TextOptions.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_TextOptions.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_TextOptions.setObjectName("line_TextOptions")
+        self.CentralLayout.addWidget(self.line_TextOptions)
 
-        self.line = QtWidgets.QFrame(self.centralwidget)
-        self.line.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line.setObjectName("line")
-        self.horizontalLayout.addWidget(self.line)
+        # layout partie options et conversion
+        self.OptionsConversionLayout = QtWidgets.QVBoxLayout()
+        self.OptionsConversionLayout.setObjectName("OptionsConversionLayout")
 
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-
+        # layout partie téléchargement fichier hexa
         self.DownloadHexLayout = QtWidgets.QVBoxLayout()
         self.DownloadHexLayout.setObjectName("DownloadHexLayout")
 
-        spacerItem2 = QtWidgets.QSpacerItem(17, 17, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.DownloadHexLayout.addItem(spacerItem2)
+        # spacer entre haut de partie centrale et layout partie téléchargement fichier hexa
+        spacer_HighCentral_DownloadHexLayout = QtWidgets.QSpacerItem(17, 17, QtWidgets.QSizePolicy.Minimum,
+                                                                     QtWidgets.QSizePolicy.Fixed)
+        self.DownloadHexLayout.addItem(spacer_HighCentral_DownloadHexLayout)
 
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setFont(font)
-        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_4.setObjectName("label_4")
-        self.DownloadHexLayout.addWidget(self.label_4)
+        # objet texte indication téléchargement hexa
+        self.HowToDownloadHex_Text = QtWidgets.QLabel(self.centralwidget)
+        self.HowToDownloadHex_Text.setFont(font)
+        self.HowToDownloadHex_Text.setAlignment(QtCore.Qt.AlignCenter)
+        self.HowToDownloadHex_Text.setObjectName("HowToDownloadHex_Text")
+        self.DownloadHexLayout.addWidget(self.HowToDownloadHex_Text)
 
+        # layout autour du bouton de téléchargement du fichier hexa
         self.DownloadHexButtonLayout = QtWidgets.QHBoxLayout()
         self.DownloadHexButtonLayout.setObjectName("DownloadHexButtonLayout")
 
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.DownloadHexButtonLayout.addItem(spacerItem3)
+        # spacer entre gauche partie conversion et bouton conversion
+        spacer_LeftConversion_DownloadHexButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+                                                                        QtWidgets.QSizePolicy.Minimum)
+        self.DownloadHexButtonLayout.addItem(spacer_LeftConversion_DownloadHexButton)
 
+        # bouton de téléchargement du fichier hexa
         self.DownloadHexButton = QtWidgets.QPushButton(self.centralwidget)
         self.DownloadHexButton.setMaximumSize(QtCore.QSize(200, 16777215))
         self.DownloadHexButton.setFont(font2)
@@ -309,31 +335,38 @@ class MainWindow(object):
         self.DownloadHexButton.setObjectName("DownloadHexButton")
         self.DownloadHexButtonLayout.addWidget(self.DownloadHexButton)
 
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.DownloadHexButtonLayout.addItem(spacerItem4)
-
+        # spacer entre droite partie conversion et bouton conversion
+        spacer_RightConversion_DownloadHexButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+                                                                         QtWidgets.QSizePolicy.Minimum)
+        self.DownloadHexButtonLayout.addItem(spacer_RightConversion_DownloadHexButton)
         self.DownloadHexLayout.addLayout(self.DownloadHexButtonLayout)
-        self.verticalLayout.addLayout(self.DownloadHexLayout)
+        self.OptionsConversionLayout.addLayout(self.DownloadHexLayout)
 
-        spacerItem5 = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout.addItem(spacerItem5)
+        # spacer entre téléchargement hexa et options d'affichage
+        spacer_OptionAffichage_DownloadHexButton = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum,
+                                                                         QtWidgets.QSizePolicy.Expanding)
+        self.OptionsConversionLayout.addItem(spacer_OptionAffichage_DownloadHexButton)
 
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setFont(font)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
+        # titre de la partie sélection d'options d'affichage
+        self.optionConversion_Title = QtWidgets.QLabel(self.centralwidget)
+        self.optionConversion_Title.setFont(font)
+        self.optionConversion_Title.setAlignment(QtCore.Qt.AlignCenter)
+        self.optionConversion_Title.setObjectName("optionConversion_Title")
+        self.OptionsConversionLayout.addWidget(self.optionConversion_Title)
 
+        # layout global partie options d'affichage
         self.OptionsGlobalLayout = QtWidgets.QHBoxLayout()
         self.OptionsGlobalLayout.setObjectName("OptionsGlobalLayout")
 
         spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.OptionsGlobalLayout.addItem(spacerItem6)
 
+        # layout contenant les boutons d'options d'affichage
         self.OptionsLayout = QtWidgets.QVBoxLayout()
         self.OptionsLayout.setObjectName("OptionsLayout")
         self.button_group = QButtonGroup()
 
+        # bouton option d'affichage compact
         self.radioButton_1 = QtWidgets.QRadioButton(self.centralwidget)
         self.radioButton_1.setFont(font)
         self.radioButton_1.setObjectName("radioButton_1")
@@ -341,111 +374,137 @@ class MainWindow(object):
         self.button_group.addButton(self.radioButton_1)
         self.radioButton_1.setChecked(True)
 
+        # bouton option d'affichage classique
         self.radioButton_2 = QtWidgets.QRadioButton(self.centralwidget)
         self.radioButton_2.setFont(font)
         self.radioButton_2.setObjectName("radioButton_2")
         self.OptionsLayout.addWidget(self.radioButton_2)
         self.button_group.addButton(self.radioButton_2)
 
+        # bouton option d'affichage intégral
         self.radioButton_3 = QtWidgets.QRadioButton(self.centralwidget)
         self.radioButton_3.setFont(font)
         self.radioButton_3.setObjectName("radioButton_3")
         self.OptionsLayout.addWidget(self.radioButton_3)
         self.button_group.addButton(self.radioButton_3)
         self.checked_button = self.button_group.checkedButton()
-
         self.OptionsGlobalLayout.addLayout(self.OptionsLayout)
 
-        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.OptionsGlobalLayout.addItem(spacerItem7)
+        # spacer entre droite partie conversion et options d'affichage
+        spacer_RightConversion_OptionAffichage = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+                                                                       QtWidgets.QSizePolicy.Minimum)
+        self.OptionsGlobalLayout.addItem(spacer_RightConversion_OptionAffichage)
+        self.OptionsConversionLayout.addLayout(self.OptionsGlobalLayout)
 
-        self.verticalLayout.addLayout(self.OptionsGlobalLayout)
+        # spacer entre gauche partie conversion et options d'affichage
+        spacer_LeftConversion_OptionAffichage = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum,
+                                                                      QtWidgets.QSizePolicy.Expanding)
+        self.OptionsConversionLayout.addItem(spacer_LeftConversion_OptionAffichage)
 
-        spacerItem8 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout.addItem(spacerItem8)
+        # texte exemple options d'affichage
+        self.Exemple_OptionConversion = QtWidgets.QLabel(self.centralwidget)
+        self.Exemple_OptionConversion.setFont(font4)
+        self.Exemple_OptionConversion.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+        self.Exemple_OptionConversion.setWordWrap(False)
+        self.Exemple_OptionConversion.setObjectName("Exemple_OptionConversion")
+        self.OptionsConversionLayout.addWidget(self.Exemple_OptionConversion)
 
-        self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setFont(font4)
-        self.label_6.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
-        self.label_6.setWordWrap(False)
-        self.label_6.setObjectName("label_6")
-        self.verticalLayout.addWidget(self.label_6)
+        # spacer entre haut bouton conversion et options d'affichage
+        spacer_ConvertButton_OptionAffichage = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum,
+                                                                     QtWidgets.QSizePolicy.Expanding)
+        self.OptionsConversionLayout.addItem(spacer_ConvertButton_OptionAffichage)
 
-        spacerItem9 = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout.addItem(spacerItem9)
-
+        # layout autour du bouton de conversion
         self.ConvertButtonLayout = QtWidgets.QHBoxLayout()
         self.ConvertButtonLayout.setObjectName("ConvertButtonLayout")
 
-        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        # spacer bas bouton conversion
+        spacer_lowConvertButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+                                                        QtWidgets.QSizePolicy.Minimum)
+        self.ConvertButtonLayout.addItem(spacer_lowConvertButton)
 
-        self.ConvertButtonLayout.addItem(spacerItem10)
+        # bouton de conversion
         self.convertButton = QtWidgets.QPushButton(self.centralwidget)
         self.convertButton.setMaximumSize(QtCore.QSize(200, 16777215))
-        font4 = QtGui.QFont()
-        font4.setPointSize(25)
-        self.convertButton.setFont(font4)
+        self.convertButton.setFont(font5)
         self.convertButton.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
         self.convertButton.setObjectName("convertButton")
         self.ConvertButtonLayout.addWidget(self.convertButton)
 
-        spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.ConvertButtonLayout.addItem(spacerItem11)
+        # spacer droite bouton conversion
+        spacer_RightConvertButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+                                                          QtWidgets.QSizePolicy.Minimum)
+        self.ConvertButtonLayout.addItem(spacer_RightConvertButton)
+        self.OptionsConversionLayout.addLayout(self.ConvertButtonLayout)
 
-        self.verticalLayout.addLayout(self.ConvertButtonLayout)
+        # spacer gauche bouton conversion
+        spacer_LeftConvertButton = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum,
+                                                         QtWidgets.QSizePolicy.Expanding)
+        self.OptionsConversionLayout.addItem(spacer_LeftConvertButton)
+        self.CentralLayout.addLayout(self.OptionsConversionLayout)
 
-        spacerItem12 = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout.addItem(spacerItem12)
-        self.horizontalLayout.addLayout(self.verticalLayout)
+        # ligne à droite de l'application
+        self.line_RightCenter = QtWidgets.QFrame(self.centralwidget)
+        self.line_RightCenter.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_RightCenter.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_RightCenter.setObjectName("line_RightCenter")
+        self.CentralLayout.addWidget(self.line_RightCenter)
+        self.GlobalLayout.addLayout(self.CentralLayout)
 
-        self.line_6 = QtWidgets.QFrame(self.centralwidget)
-        self.line_6.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_6.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_6.setObjectName("line_6")
-        self.horizontalLayout.addWidget(self.line_6)
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout)
-
+        # layout de la partie basse de l'application
         self.FooterLayout = QtWidgets.QVBoxLayout()
         self.FooterLayout.setObjectName("FooterLayout")
 
-        self.line_2 = QtWidgets.QFrame(self.centralwidget)
-        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_2.setObjectName("line_2")
-        self.FooterLayout.addWidget(self.line_2)
+        # ligne entre le footer et le reste de l'application
+        self.line_HautFooter = QtWidgets.QFrame(self.centralwidget)
+        self.line_HautFooter.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_HautFooter.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_HautFooter.setObjectName("line_HautFooter")
+        self.FooterLayout.addWidget(self.line_HautFooter)
 
-        spacerItem13 = QtWidgets.QSpacerItem(17, 17, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.FooterLayout.addItem(spacerItem13)
+        # spacer entre line_HautFooter et le footer
+        spacer_HautFooter = QtWidgets.QSpacerItem(17, 17, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.FooterLayout.addItem(spacer_HautFooter)
 
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setFont(font)
-        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_5.setObjectName("label_5")
-        self.FooterLayout.addWidget(self.label_5)
+        # objet texte indication téléchargement assembleur
+        self.HowToDownloadAssembly_Text = QtWidgets.QLabel(self.centralwidget)
+        self.HowToDownloadAssembly_Text.setFont(font)
+        self.HowToDownloadAssembly_Text.setAlignment(QtCore.Qt.AlignCenter)
+        self.HowToDownloadAssembly_Text.setObjectName("HowToDownloadAssembly_Text")
+        self.FooterLayout.addWidget(self.HowToDownloadAssembly_Text)
 
+        # layout autour du bouton de téléchargement de l'assembleur
         self.DownloadAssemblyButtonLayout = QtWidgets.QHBoxLayout()
         self.DownloadAssemblyButtonLayout.setObjectName("DownloadAssemblyButtonLayout")
 
-        spacerItem14 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.DownloadAssemblyButtonLayout.addItem(spacerItem14)
+        # spacer gauche bouton DownloadAssembly
+        spacer_leftDownloadAssembly = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
+                                                            QtWidgets.QSizePolicy.Minimum)
+        self.DownloadAssemblyButtonLayout.addItem(spacer_leftDownloadAssembly)
 
+        # bouton de téléchargement de l'assembleur
         self.DownloadAssemblyButton = QtWidgets.QPushButton(self.centralwidget)
         self.DownloadAssemblyButton.setMaximumSize(QtCore.QSize(400, 16777215))
         self.DownloadAssemblyButton.setFont(font2)
         self.DownloadAssemblyButton.setObjectName("DownloadAssemblyButton")
         self.DownloadAssemblyButtonLayout.addWidget(self.DownloadAssemblyButton)
 
-        spacerItem15 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.DownloadAssemblyButtonLayout.addItem(spacerItem15)
-
+        # spacer droite bouton DownloadAssembly
+        spacer_RightDownloadAssembly = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
+                                                             QtWidgets.QSizePolicy.Minimum)
+        self.DownloadAssemblyButtonLayout.addItem(spacer_RightDownloadAssembly)
         self.FooterLayout.addLayout(self.DownloadAssemblyButtonLayout)
-        self.verticalLayout_2.addLayout(self.FooterLayout)
+        self.GlobalLayout.addLayout(self.FooterLayout)
 
+        # PARTIE BARRE DE MENU
+
+        # initialisation de la barre de menu
         self.menubar = QtWidgets.QMenuBar(ConverterWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1216, 26))
         self.menubar.setObjectName("menubar")
 
+        # initialisation des parties de la barre de menu
         self.menu_Help = QtWidgets.QMenu(self.menubar)
         self.menu_Help.setObjectName("menu_Help")
         self.menuFonctionnement = QtWidgets.QMenu(self.menubar)
@@ -455,39 +514,42 @@ class MainWindow(object):
         self.menuLangues = QtWidgets.QMenu(self.menuFichier)
         self.menuLangues.setObjectName("menuLangues")
         ConverterWindow.setMenuBar(self.menubar)
-
         self.statusbar = QtWidgets.QStatusBar(ConverterWindow)
         self.statusbar.setObjectName("statusbar")
         ConverterWindow.setStatusBar(self.statusbar)
 
+        # création de l'action liée au menu "à propos"
         self.actionAbout = QtWidgets.QAction(ConverterWindow)
         self.actionAbout.setObjectName("actionAbout")
 
+        # création de l'action liée au menu "fonctionnement"
         self.actionFonctionnement = QtWidgets.QAction(ConverterWindow)
         self.actionFonctionnement.setObjectName("actionFonctionnement")
 
+        # création de l'action liée au sous menu "nettoyer les fichiers"
         self.actionClearFiles = QtWidgets.QAction(ConverterWindow)
         self.actionClearFiles.setObjectName("actionClearFiles")
 
+        # création de l'action liée au sous menu "quitter"
         self.actionQuitter = QtWidgets.QAction(ConverterWindow)
         self.actionQuitter.setObjectName("actionQuitter")
 
+        # création de l'action liée au sous sous-menu "changer la langue en français"
         self.actionFrancais = QtWidgets.QAction(ConverterWindow)
         self.actionFrancais.setObjectName("actionFrancais")
 
+        # création de l'action liée au sous sous-menu "changer la langue en anglais"
         self.actionEnglish = QtWidgets.QAction(ConverterWindow)
         self.actionEnglish.setObjectName("actionEnglish")
 
+        # liaison entre les actions crées et les menus et sous menus
         self.menu_Help.addAction(self.actionAbout)
-
         self.menuFonctionnement.addAction(self.actionFonctionnement)
-
         self.menuFichier.addAction(self.actionClearFiles)
         self.menuLangues.addAction(self.actionFrancais)
         self.menuLangues.addAction(self.actionEnglish)
         self.menuFichier.addAction(self.menuLangues.menuAction())
         self.menuFichier.addAction(self.actionQuitter)
-
         self.menubar.addAction(self.menuFichier.menuAction())
         self.menubar.addAction(self.menuFonctionnement.menuAction())
         self.menubar.addAction(self.menu_Help.menuAction())
@@ -514,4 +576,5 @@ class MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         ConverterWindow.setWindowTitle(_translate("Converter", "Hexadecimal to Assembly Instructions Converter"))
 
+        # connexion de l'objet créé et de la fenêtre
         QtCore.QMetaObject.connectSlotsByName(ConverterWindow)
