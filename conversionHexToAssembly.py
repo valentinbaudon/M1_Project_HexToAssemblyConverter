@@ -92,9 +92,11 @@ def write_described_instruction_16(descr_file, json_file, line, index, code, add
         case "Compact":
             descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])]['instruction'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Classique":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])]['instruction'] + ' : ' + GetDictField_16(json_file, line, index) + ' : ' + json_file[str(line[:index])]['meaning'] + "\n")
-        case "Intégral":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(line[:index])]['instruction'] + " : " + GetDictField_16(json_file, line, index) + ' : ' + json_file[str(line[:index])]['meaning'] + "\n")
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])]['meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
+        case "Classic":
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])]['meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
+        case "Integral":
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(line[:index])]['meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
 
 
 def GetDictField_32(json_file, line, instruction):
@@ -195,7 +197,9 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
             descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)]['instruction'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Classique":
             descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)]['meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
-        case "Intégral":
+        case "Classic":
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)]['meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
+        case "Integral":
             descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(instruction)]['meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
 
 
