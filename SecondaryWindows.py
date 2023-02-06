@@ -1,5 +1,6 @@
 import json
 import locale
+import sys
 
 from PyQt5 import QtWidgets, QtCore, QtGui, Qt
 from PyQt5.QtGui import QIcon, QPixmap, QTextCursor
@@ -128,4 +129,3 @@ class About(QDialog):
 
         # Connexion de la section "About" au slot qui affiche la nouvelle fenêtre
         self.actionAboutFunctioning.triggered.connect(showAboutWindow)
-
