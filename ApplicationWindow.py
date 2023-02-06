@@ -142,7 +142,7 @@ class MainWindow(object):
             with open(file_name, "w") as f:
                 f.write(assembly_code)
 
-    # fonction permettant de mettre à jour le boutton d'option d'affichage sélectionnée
+    # fonction permettant de mettre à jour le bouton d'option d'affichage sélectionnée
     def store_selection(self, button):
         self.selected_button = button
 
