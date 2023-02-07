@@ -1,6 +1,6 @@
 from ApplicationWindow import *
 
-# Initialisation des composantes fenêtres de l'applications
+# Initialisation des composantes fenêtres de l'application
 app = QtWidgets.QApplication(sys.argv)
 HexaToAssemblyConverter = QtWidgets.QMainWindow()
 window = MainWindow()
