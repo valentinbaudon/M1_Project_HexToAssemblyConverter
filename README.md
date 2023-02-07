@@ -11,7 +11,7 @@ Le fonctionnement de l'application est simple:
     Plusieurs options d'affichage sont disponibles:
         - Compact : instruction et valeurs
         - Classique : instruction détaillée et valeurs
-        - Intégral : valeur binaire correspondante a l'instruction, instruction détaillée et valeurs
+        - Intégral : valeur binaire correspondante à l'instruction, instruction détaillée et valeurs
 
     3) Cliquez sur le bouton 'Convertir'. Le contenu de votre fichier original traduit en assembleur devrait s'afficher dans le carré de texte comportant l'en-tete 'Assembleur'
 
@@ -23,6 +23,5 @@ Le fonctionnement de l'application est simple:
         - Compact : LSR (immediate) : R7, R3, #28
         - Classique : Logical Shift Right (Immediate) : R7, R3, #28
         - Intégral : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28
-
 
 Projet réalisé par Valentin BAUDON et Hugo MERLE, sous la direction de M. Jean-Jacques MENEU
