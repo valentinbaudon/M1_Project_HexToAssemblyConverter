@@ -23,3 +23,6 @@ Le fonctionnement de l'application est simple:
         - Compact : LSR (immediate) : R7, R3, #28
         - Classique : Logical Shift Right (Immediate) : R7, R3, #28
         - Intégral : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28
+
+
+Proojet réalisé par Valentin BAUDON et Hugo MERLE, sous la direction de M. Jean-Jacques MENEU

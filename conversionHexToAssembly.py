@@ -1,6 +1,7 @@
 import json
 
 
+# Function which read the input file, and write each instruction using the bits
 def writeBinaryInstructions(filepath):
     STMfile = open(filepath)
     STMfileLines = STMfile.readlines()
@@ -8,20 +9,24 @@ def writeBinaryInstructions(filepath):
     for STMfileLine in STMfileLines:
         data_STMfile += STMfileLine[12:-2]
     data_binary = ""
+    # Loop to convert Hex to Binary, and adjust the length to 4 digits
     for c in data_STMfile:
         data_binary += str(bin(int(c, 16))[2:].zfill(4))
     data_big_endian = ""
+    # Loop to convert the data from Little Endian to Big Endian
     for i in range(0, len(data_binary) - 15):
         data_big_endian = data_binary[i:i + 8] + data_big_endian
         i += 8
     i = 0
     data_reformatted = ""
+    # Loop to write every group of 32 bits
     while i < len(data_big_endian) - 15:
         tmp = data_big_endian[i:i + 32]
         data_reformatted += tmp[24:] + tmp[16:24] + tmp[8:16] + tmp[:8]
         i += 32
     instructions_file = open("./ConversionFiles/instructions_file.txt", "w")
     i = 0
+    # Loop to write the output file with each instruction
     while i < len(data_reformatted) - 15:
         tmp = data_reformatted[i:i + 32]
         if tmp[0:3] == "111" and tmp[3:5] != "00":
@@ -32,13 +37,14 @@ def writeBinaryInstructions(filepath):
             i += 16
 
 
-def is32bits(line):
+def is32bits(line): # Function that determine if a line of bits is a 16-bits or a 32-bits instruction
     if line[0:3] == '111' and line[3:5] != "00":
         return True
     else:
         return False
 
 
+ # Function that read the JSON and return each argument with its value
 def GetDictField_16(json_file, line, index):
     finalString = ""
     fields = json_file[str(line[:index])]['fields']
@@ -87,6 +93,7 @@ def GetDictField_16(json_file, line, index):
     return finalString
 
 
+# Function that write the detailed instruction in an output file
 def write_described_instruction_16(descr_file, json_file, line, index, code, address):
     match code:
         case "Compact":
@@ -99,6 +106,7 @@ def write_described_instruction_16(descr_file, json_file, line, index, code, add
             descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(line[:index])]['meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
 
 
+# Function that read the JSON and return each argument with its value
 def GetDictField_32(json_file, line, instruction):
     finalString = ""
     fields = json_file[str(instruction)]['fields']
@@ -191,6 +199,7 @@ def GetDictField_32(json_file, line, instruction):
     return finalString
 
 
+# Function that write the detailed instruction in an output file
 def write_described_instruction_32(descr_file, json_file, line, instruction, code, address):
     match code:
         case "Compact":
@@ -203,6 +212,8 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
             descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(instruction)]['meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
 
 
+# Function that read the bits and write the instructions
+# It also contains the decision tree
 def describe_instructions(code):
     file = open("./ConversionFiles/instructions_file.txt", "r")
     json_16 = json.load(open("./ConversionFiles/Json_Decoding_ARM_16bit.json", "r"))
