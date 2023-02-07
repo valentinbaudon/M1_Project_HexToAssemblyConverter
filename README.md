@@ -2,7 +2,7 @@
 # Projet M1
 ### Traducteur de fichier hexadécimaux bruts provenant de microcontrôleurs basés sur une architecture ARM vers leur code assembleur
 
-Cette application est un moyen de convertir des fichiers héxadecimaux en leur code assembleur.
+Cette application est un moyen de convertir des fichiers hexadécimaux en leur code assembleur.
 
 Le fonctionnement de l'application est simple:
 
@@ -10,7 +10,7 @@ Le fonctionnement de l'application est simple:
     2) Selectionnez l'option d'affichage qui vous convient
     Plusieurs options d'affichage sont disponibles:
         - Compact : instruction et valeurs
-        - Classique : instruction detaillee et valeurs
+        - Classique : instruction détaillée et valeurs
         - Intégral : valeur binaire correspondante a l'instruction, instruction détaillée et valeurs
 
     3) Cliquez sur le bouton 'Convertir'. Le contenu de votre fichier original traduit en assembleur devrait s'afficher dans le carré de texte comportant l'en-tete 'Assembleur'
@@ -25,4 +25,4 @@ Le fonctionnement de l'application est simple:
         - Intégral : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28
 
 
-Proojet réalisé par Valentin BAUDON et Hugo MERLE, sous la direction de M. Jean-Jacques MENEU
+Projet réalisé par Valentin BAUDON et Hugo MERLE, sous la direction de M. Jean-Jacques MENEU
