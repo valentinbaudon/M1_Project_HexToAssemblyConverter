@@ -3,8 +3,6 @@ import json
 
 # Function which read the input file, and write each instruction using the bits
 def writeBinaryInstructions(filepath):
-    if filepath[-4:] != ".srec":
-        return "File Error"
     STMfile = open(filepath)
     STMfileLines = STMfile.readlines()
     data_STMfile = ""
@@ -230,9 +228,6 @@ def describe_instructions(code):
     file = open("./ConversionFiles/instructions_file.txt", "r")
     assembly_description = open("./ConversionFiles/Assembly.txt", "w")
     lines = file.readlines()
-    if lines == "File Error":
-        assembly_description.write("File Error")
-        return
     json_16 = json.load(open("./ConversionFiles/Json_Decoding_ARM_16bit.json", "r"))
     json_32 = json.load(open("./ConversionFiles/Json_Decoding_ARM_32bit.json", "r"))
     address = 0x08000000
