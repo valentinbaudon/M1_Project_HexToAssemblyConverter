@@ -39,14 +39,14 @@ def writeBinaryInstructions(filepath):
             i += 16
 
 
-def is32bits(line): # Function that determine if a line of bits is a 16-bits or a 32-bits instruction
+def is32bits(line):  # Function that determine if a line of bits is a 16-bits or a 32-bits instruction
     if line[0:3] == '111' and line[3:5] != "00":
         return True
     else:
         return False
 
 
- # Function that read the JSON and return each argument with its value
+# Function that read the JSON and return each argument with its value
 def GetDictField_16(json_file, line, index):
     finalString = ""
     fields = json_file[str(line[:index])]['fields']
@@ -99,13 +99,18 @@ def GetDictField_16(json_file, line, index):
 def write_described_instruction_16(descr_file, json_file, line, index, code, address):
     match code:
         case "Compact":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])]['instruction'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])][
+                'instruction'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Classique":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])]['meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])][
+                'meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Classic":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])]['meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])][
+                'meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Integral":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(line[:index])]['meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
+            descr_file.write(
+                "0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(line[:index])][
+                    'meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
 
 
 # Function that read the JSON and return each argument with its value
@@ -205,13 +210,18 @@ def GetDictField_32(json_file, line, instruction):
 def write_described_instruction_32(descr_file, json_file, line, instruction, code, address):
     match code:
         case "Compact":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)]['instruction'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)][
+                'instruction'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Classique":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)]['meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)][
+                'meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Classic":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)]['meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
+            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)][
+                'meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Integral":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(instruction)]['meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
+            descr_file.write(
+                "0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(instruction)][
+                    'meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
 
 
 # Function that read the bits and write the instructions
@@ -219,12 +229,12 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
 def describe_instructions(code):
     file = open("./ConversionFiles/instructions_file.txt", "r")
     assembly_description = open("./ConversionFiles/Assembly.txt", "w")
-    if file.readlines() == "File Error":
+    lines = file.readlines()
+    if lines == "File Error":
         assembly_description.write("File Error")
         return
     json_16 = json.load(open("./ConversionFiles/Json_Decoding_ARM_16bit.json", "r"))
     json_32 = json.load(open("./ConversionFiles/Json_Decoding_ARM_32bit.json", "r"))
-    lines = file.readlines()
     address = 0x08000000
     count = 0
     for line in lines:
@@ -234,150 +244,208 @@ def describe_instructions(code):
                 match line[7:11]:
                     case "0000":
                         if line[20:24] != "1111":
-                            write_described_instruction_32(assembly_description, json_32, line, "11101010000", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11101010000", code,
+                                                           address)
                         elif line[20:24] == "1111" and line[11] == "1":
-                            write_described_instruction_32(assembly_description, json_32, line, "111010100001xxxxxxxx1111", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "111010100001xxxxxxxx1111", code, address)
                     case "0001":
-                        write_described_instruction_32(assembly_description, json_32, line, "11101010001", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11101010001", code,
+                                                       address)
                     case "0010":
                         if line[12:16] != "1111":
-                            write_described_instruction_32(assembly_description, json_32, line, "11101010010", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11101010010", code,
+                                                           address)
                         else:
                             if line[26:28] == "00" and line[17:20] == "000" and line[24:26] == "00":
-                                write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111x000xxxx0000", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "11101010010x1111x000xxxx0000", code, address)
                             elif line[26:28] == "00" and line[17:20] != "000" and line[24:26] != "00":
-                                write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111",
+                                                               code, address)
                             if line[26:28] == "01":
-                                write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111xxxxxxxxxx01", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "11101010010x1111xxxxxxxxxx01", code, address)
                             elif line[26:28] == "10":
-                                write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111xxxxxxxxxx10", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "11101010010x1111xxxxxxxxxx10", code, address)
                             elif line[26:28] == "11":
                                 if line[17:20] == "000" and line[24:26] == "00":
-                                    write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111x000xxxx0011", code, address)
+                                    write_described_instruction_32(assembly_description, json_32, line,
+                                                                   "11101010010x1111x000xxxx0011", code, address)
                                 else:
-                                    write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111xxxxxxxxxx11", code, address)
+                                    write_described_instruction_32(assembly_description, json_32, line,
+                                                                   "11101010010x1111xxxxxxxxxx11", code, address)
                     case "0011":
                         if line[12:16] != "1111":
-                            write_described_instruction_32(assembly_description, json_32, line, "11101010011", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11101010011", code,
+                                                           address)
                         else:
-                            write_described_instruction_32(assembly_description, json_32, line, "11101010011x1111", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11101010011x1111",
+                                                           code, address)
                     case "0100":
                         if line[20:24] != "1111":
-                            write_described_instruction_32(assembly_description, json_32, line, "11101010100", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11101010100", code,
+                                                           address)
                         elif line[20:24] == "1111" and line[11] == "1":
-                            write_described_instruction_32(assembly_description, json_32, line, "111010101001xxxxxxxx1111", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "111010101001xxxxxxxx1111", code, address)
                     case "0110":
-                        write_described_instruction_32(assembly_description, json_32, line, "11101010110", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11101010110", code,
+                                                       address)
                     case "1000":
                         if line[20:24] != "1111":
-                            write_described_instruction_32(assembly_description, json_32, line, "11101011000", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11101011000", code,
+                                                           address)
                         elif line[20:24] == "1111" and line[11] == "1":
-                            write_described_instruction_32(assembly_description, json_32, line, "111010110001xxxxxxxx1111", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "111010110001xxxxxxxx1111", code, address)
                     case "1010":
-                        write_described_instruction_32(assembly_description, json_32, line, "11101011010", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11101011010", code,
+                                                       address)
                     case "1011":
-                        write_described_instruction_32(assembly_description, json_32, line, "11101011011", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11101011011", code,
+                                                       address)
                     case "1101":
                         if line[20:24] != "1111":
-                            write_described_instruction_32(assembly_description, json_32, line, "11101011101", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11101011101", code,
+                                                           address)
                         elif line[20:24] == "1111" and line[11] == "1":
-                            write_described_instruction_32(assembly_description, json_32, line, "111010111011xxxxxxxx1111", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "111010111011xxxxxxxx1111", code, address)
                     case "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "11101011110", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11101011110", code,
+                                                       address)
             # Data processing (modified immediate)
             elif line[:5] == "11110" and line[16] == "0":
                 if line[6] == "0":
                     match line[7:11]:
                         case "0000":
                             if line[20:24] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00000", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00000", code,
+                                                               address)
                             else:
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00000xxxxxxxxx1111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "11110x00000xxxxxxxxx1111", code, address)
                         case "0001":
-                            write_described_instruction_32(assembly_description, json_32, line, "11110x00001", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11110x00001", code,
+                                                           address)
                         case "0010":
                             if line[12:16] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00010", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00010", code,
+                                                               address)
                             else:
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00010x1111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00010x1111",
+                                                               code, address)
                         case "0011":
                             if line[12:16] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00011", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00011", code,
+                                                               address)
                             else:
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00011x1111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00011x1111",
+                                                               code, address)
                         case "0100":
                             if line[20:24] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00100", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00100", code,
+                                                               address)
                             else:
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00100xxxxxxxxx1111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "11110x00100xxxxxxxxx1111", code, address)
                         case "1000":
                             if line[20:24] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x01000", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x01000", code,
+                                                               address)
                             else:
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x01000xxxxxxxxx1111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "11110x01000xxxxxxxxx1111", code, address)
                         case "1010":
-                            write_described_instruction_32(assembly_description, json_32, line, "11110x01010", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11110x01010", code,
+                                                           address)
                         case "1011":
-                            write_described_instruction_32(assembly_description, json_32, line, "11110x01011", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11110x01011", code,
+                                                           address)
                         case "1101":
                             if line[20:24] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x01101", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x01101", code,
+                                                               address)
                             else:
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x01101xxxxxxxxx1111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "11110x01101xxxxxxxxx1111", code, address)
                         case "1110":
-                            write_described_instruction_32(assembly_description, json_32, line, "11110x01110", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11110x01110", code,
+                                                           address)
                 # Data processing (plain binary immediate)
                 else:
                     match line[7:12]:
                         case "00000":
                             if line[12:16] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x1000001111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x1000001111",
+                                                               code, address)
                             else:
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x100000", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x100000",
+                                                               code, address)
                         case "00100":
-                            write_described_instruction_32(assembly_description, json_32, line, "11110x100100", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11110x100100", code,
+                                                           address)
                         case "01010":
                             if line[12:16] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x101010", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x101010",
+                                                               code, address)
                             else:
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x1010101111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x1010101111",
+                                                               code, address)
             elif line[:5] == "11110" and line[16] == "1":
                 if line[17:20] in ["000", "010"]:
                     if line[6:10] != "111":
-                        write_described_instruction_32(assembly_description, json_32, line, "11110xxxxxxxxxxx10x0", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11110xxxxxxxxxxx10x0",
+                                                       code, address)
                     elif line[5:12] == "011100":
-                        write_described_instruction_32(assembly_description, json_32, line, "11110011100", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11110011100", code,
+                                                       address)
                     elif line[5:12] == "011111":
-                        write_described_instruction_32(assembly_description, json_32, line, "11110011111", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11110011111", code,
+                                                       address)
                     elif line[5:12] == "0111010":
                         if line[21:24] == "000":
                             if line[24:28] == "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "111100111010xxxx10x1x0001111", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "111100111010xxxx10x1x0001111", code, address)
                             match line[24:]:
                                 case "00000000":
-                                    write_described_instruction_32(assembly_description, json_32, line, "111100111010xxxx10x0x00000000000", code, address)
+                                    write_described_instruction_32(assembly_description, json_32, line,
+                                                                   "111100111010xxxx10x0x00000000000", code, address)
                                 case "00000001":
-                                    write_described_instruction_32(assembly_description, json_32, line, "111100111010xxxx10x0x00000000001", code, address)
+                                    write_described_instruction_32(assembly_description, json_32, line,
+                                                                   "111100111010xxxx10x0x00000000001", code, address)
                                 case "00000010":
-                                    write_described_instruction_32(assembly_description, json_32, line, "111100111010xxxx10x0x00000000010", code, address)
+                                    write_described_instruction_32(assembly_description, json_32, line,
+                                                                   "111100111010xxxx10x0x00000000010", code, address)
                                 case "00000011":
-                                    write_described_instruction_32(assembly_description, json_32, line, "111100111010xxxx10x0x00000000011", code, address)
+                                    write_described_instruction_32(assembly_description, json_32, line,
+                                                                   "111100111010xxxx10x0x00000000011", code, address)
                                 case "00000100":
-                                    write_described_instruction_32(assembly_description, json_32, line, "111100111010xxxx10x0x00000000100", code, address)
+                                    write_described_instruction_32(assembly_description, json_32, line,
+                                                                   "111100111010xxxx10x0x00000000100", code, address)
                     elif line[5:13] == "0111011":
                         match line[24:28]:
                             case "0010":
-                                write_described_instruction_32(assembly_description, json_32, line, "111100111011xxxx10x0xxxx0010", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "111100111011xxxx10x0xxxx0010", code, address)
                             case "0100":
-                                write_described_instruction_32(assembly_description, json_32, line, "111100111011xxxx10x0xxxx0100", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "111100111011xxxx10x0xxxx0100", code, address)
                             case "0101":
-                                write_described_instruction_32(assembly_description, json_32, line, "111100111011xxxx10x0xxxx0101", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "111100111011xxxx10x0xxxx0101", code, address)
                             case "0110":
-                                write_described_instruction_32(assembly_description, json_32, line, "111100111011xxxx10x0xxxx0110", code, address)
+                                write_described_instruction_32(assembly_description, json_32, line,
+                                                               "111100111011xxxx10x0xxxx0110", code, address)
                 elif line[17:20] in ["001", "011"]:
-                    write_described_instruction_32(assembly_description, json_32, line, "11110xxxxxxxxxxx10x1", code, address)
+                    write_described_instruction_32(assembly_description, json_32, line, "11110xxxxxxxxxxx10x1", code,
+                                                   address)
                 elif line[17:20] in ["101", "111"]:
-                    write_described_instruction_32(assembly_description, json_32, line, "11110xxxxxxxxxxx11x1", code, address)
+                    write_described_instruction_32(assembly_description, json_32, line, "11110xxxxxxxxxxx11x1", code,
+                                                   address)
             elif line[:8] == "11111000" and line[11] == "0":
                 if line[8:12] == "100" or (line[8:12] == "000" and line[20] == "1"):
                     write_described_instruction_32(assembly_description, json_32, line, "11111000100", code, address)
@@ -393,73 +461,122 @@ def describe_instructions(code):
             elif line[:7] == "1111100":
                 if line[9:12] == "001":
                     if line[7] == "0" and line[12:16] == "1111" and line[16:20] != "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "11111000x0011111", code, address)
-                    elif (line[7:9] == "01" and line[12:16] != "1111" and line[16:20] != "1111") or (line[7:9] == "00" and line[20] == "1" and line[23] == "1" and line[12:16] != "1111") or (line[7:9] == "00" and line[20:24] == "1100" and line[12:16] != "1111" and line[16:20] != "1111"):
-                        write_described_instruction_32(assembly_description, json_32, line, "111110000001", code, address)
-                    elif line[7:9] == "00" and line[20:26] == "000000" and line[12:16] != "1111" and line[16:20] != "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "111110000001xxxxxxxx000000", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11111000x0011111", code,
+                                                       address)
+                    elif (line[7:9] == "01" and line[12:16] != "1111" and line[16:20] != "1111") or (
+                            line[7:9] == "00" and line[20] == "1" and line[23] == "1" and line[12:16] != "1111") or (
+                            line[7:9] == "00" and line[20:24] == "1100" and line[12:16] != "1111" and line[
+                                                                                                      16:20] != "1111"):
+                        write_described_instruction_32(assembly_description, json_32, line, "111110000001", code,
+                                                       address)
+                    elif line[7:9] == "00" and line[20:26] == "000000" and line[12:16] != "1111" and line[
+                                                                                                     16:20] != "1111":
+                        write_described_instruction_32(assembly_description, json_32, line,
+                                                       "111110000001xxxxxxxx000000", code, address)
                     elif line[7] == "1" and line[12:16] == "1111" and line[16:20] != "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "11111001x0011111", code, address)
-                    elif (line[7:9] == "11" and line[12:16] != "1111" and line[16:20] != "1111") or (line[7:9] == "10" and line[20] == "1" and line[23] == "1" and line[12:16] != "1111") or (line[7:9] == "10" and line[20:24] == "1100" and line[12:16] != "1111" and line[16:20] != "1111"):
-                        write_described_instruction_32(assembly_description, json_32, line, "111110011001", code, address)
-                    elif line[7:9] == "10" and line[20:26] == "000000" and line[12:16] != "1111" and line[16:20] != "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "111110010001", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11111001x0011111", code,
+                                                       address)
+                    elif (line[7:9] == "11" and line[12:16] != "1111" and line[16:20] != "1111") or (
+                            line[7:9] == "10" and line[20] == "1" and line[23] == "1" and line[12:16] != "1111") or (
+                            line[7:9] == "10" and line[20:24] == "1100" and line[12:16] != "1111" and line[
+                                                                                                      16:20] != "1111"):
+                        write_described_instruction_32(assembly_description, json_32, line, "111110011001", code,
+                                                       address)
+                    elif line[7:9] == "10" and line[20:26] == "000000" and line[12:16] != "1111" and line[
+                                                                                                     16:20] != "1111":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110010001", code,
+                                                       address)
                 elif line[9:12] == "011":
                     if line[7] == "0" and line[12:16] == "1111" and line[16:20] != "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "11111000x0111111", code, address)
-                    elif (line[7:9] == "01" and line[12:16] != "1111" and line[16:20] != "1111") or (line[7:9] == "00" and line[20] == "1" and line[23] == "1" and line[12:16] != "1111" and line[16:20] != "1111") or (line[7:9] == "00" and line[20:24] == "1100" and line[12:16] != "1111" and line[16:20] != "1111"):
-                        write_described_instruction_32(assembly_description, json_32, line, "111110001011xxxxxxxx000000", code, address)
-                    elif line[7:9] == "00" and line[20:26] == "000000" and line[12:16] != "1111" and line[16:20] != "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "111110000011", code, address)
-                    elif (line[7:9] == "11" and line[12:16] != "1111" and line[16:20] != "1111") or (line[7:9] == "10" and line[20] == "1" and line[23] == "1" and line[12:16] != "1111" and line[16:20] != "1111") or (line[7:9] == "10" and line[20:24] == "1100" and line[12:16] != "1111" and line[16:20] != "1111"):
-                        write_described_instruction_32(assembly_description, json_32, line, "111110011011", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11111000x0111111", code,
+                                                       address)
+                    elif (line[7:9] == "01" and line[12:16] != "1111" and line[16:20] != "1111") or (
+                            line[7:9] == "00" and line[20] == "1" and line[23] == "1" and line[
+                                                                                          12:16] != "1111" and line[
+                                                                                                               16:20] != "1111") or (
+                            line[7:9] == "00" and line[20:24] == "1100" and line[12:16] != "1111" and line[
+                                                                                                      16:20] != "1111"):
+                        write_described_instruction_32(assembly_description, json_32, line,
+                                                       "111110001011xxxxxxxx000000", code, address)
+                    elif line[7:9] == "00" and line[20:26] == "000000" and line[12:16] != "1111" and line[
+                                                                                                     16:20] != "1111":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110000011", code,
+                                                       address)
+                    elif (line[7:9] == "11" and line[12:16] != "1111" and line[16:20] != "1111") or (
+                            line[7:9] == "10" and line[20] == "1" and line[23] == "1" and line[
+                                                                                          12:16] != "1111" and line[
+                                                                                                               16:20] != "1111") or (
+                            line[7:9] == "10" and line[20:24] == "1100" and line[12:16] != "1111" and line[
+                                                                                                      16:20] != "1111"):
+                        write_described_instruction_32(assembly_description, json_32, line, "111110011011", code,
+                                                       address)
                     elif line[7] == "0" and line[12:16] == "1111" and line[16:20] != "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "11111000x011", code, address)
-                    elif line[7:9] == "10" and line[20:26] == "000000" and line[12:16] != "1111" and line[16:20] != "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "111110010011", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11111000x011", code,
+                                                       address)
+                    elif line[7:9] == "10" and line[20:26] == "000000" and line[12:16] != "1111" and line[
+                                                                                                     16:20] != "1111":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110010011", code,
+                                                       address)
                 elif line[9:12] == "101":
                     if line[12:16] == "1111":
-                        write_described_instruction_32(assembly_description, json_32, line, "11111000x1011111", code, address)
-                    elif (line[7:9] == "01") or (line[7:9] == "00" and line[20] == "1" and line[23] == "1") or (line[7:9] == "11" and line[20:24] == "1100"):
-                        write_described_instruction_32(assembly_description, json_32, line, "111110001101", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11111000x1011111", code,
+                                                       address)
+                    elif (line[7:9] == "01") or (line[7:9] == "00" and line[20] == "1" and line[23] == "1") or (
+                            line[7:9] == "11" and line[20:24] == "1100"):
+                        write_described_instruction_32(assembly_description, json_32, line, "111110001101", code,
+                                                       address)
                     elif line[7:9] == "01" and line[20:26] == "000000":
-                        write_described_instruction_32(assembly_description, json_32, line, "111110001101xxxxxxxx000000", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line,
+                                                       "111110001101xxxxxxxx000000", code, address)
             elif line[:8] == "11111010" and line[16:20] == "1111":
                 if line[24:28] == "0000":
                     match line[8:11]:
                         case "000":
-                            write_described_instruction_32(assembly_description, json_32, line, "11111010000", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11111010000", code,
+                                                           address)
                         case "001":
-                            write_described_instruction_32(assembly_description, json_32, line, "11111010001", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11111010001", code,
+                                                           address)
                         case "010":
-                            write_described_instruction_32(assembly_description, json_32, line, "11111010010", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11111010010", code,
+                                                           address)
                         case "011":
-                            write_described_instruction_32(assembly_description, json_32, line, "11111010011", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line, "11111010011", code,
+                                                           address)
                 elif line[12:16] == "1111" and line[24] == "1":
                     match line[8:12]:
                         case "0000":
-                            write_described_instruction_32(assembly_description, json_32, line, "11111010000011111111xxxx1", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "11111010000011111111xxxx1", code, address)
                         case "0001":
-                            write_described_instruction_32(assembly_description, json_32, line, "11111010000111111111xxxx1", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "11111010000111111111xxxx1", code, address)
                         case "0100":
-                            write_described_instruction_32(assembly_description, json_32, line, "11111010010011111111xxxx1", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "11111010010011111111xxxx1", code, address)
                         case "0101":
-                            write_described_instruction_32(assembly_description, json_32, line, "11111010010111111111xxxx1", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "11111010010111111111xxxx1", code, address)
             elif line[:10] == "1111101010":
                 if line[10:12] == "01":
                     match line[26:28]:
                         case "00":
-                            write_described_instruction_32(assembly_description, json_32, line, "111110101001xxxx1111xxxx1000", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "111110101001xxxx1111xxxx1000", code, address)
                         case "01":
-                            write_described_instruction_32(assembly_description, json_32, line, "111110101001xxxx1111xxxx1001", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "111110101001xxxx1111xxxx1001", code, address)
                         case "10":
-                            write_described_instruction_32(assembly_description, json_32, line, "111110101001xxxx1111xxxx1010", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "111110101001xxxx1111xxxx1010", code, address)
                         case "11":
-                            write_described_instruction_32(assembly_description, json_32, line, "111110101001xxxx1111xxxx1011", code, address)
+                            write_described_instruction_32(assembly_description, json_32, line,
+                                                           "111110101001xxxx1111xxxx1011", code, address)
             # Multiply, multiply accumulate, and absolute difference
             elif line[:9] == "111110110":
                 if line[9:12] == "000" and line[26:28] == "00" and line[16:20] == "1111":
-                    write_described_instruction_32(assembly_description, json_32, line, "111110110000xxxx1111xxxx0000", code, address)
+                    write_described_instruction_32(assembly_description, json_32, line, "111110110000xxxx1111xxxx0000",
+                                                   code, address)
         else:  # 16-bits
             # Shift (immediate), add, subtract, move, and compare
             if line[:2] == "00":

@@ -135,7 +135,7 @@ class MainWindow(object):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
         file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.txt", self.selected_hex_file,
-                                                   "Fichiers texte (.txt);;Tous les fichiers ()", options=options)
+                                                   "Tous les fichiers ()", options=options)
         if file_name:
             with open("./ConversionFiles/Assembly.txt", "r") as f:
                 assembly_code = f.read()
