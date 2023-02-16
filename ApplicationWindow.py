@@ -8,6 +8,10 @@ class MainWindow(object):
     # Constructeur de la classe
     def __init__(self):
         # Initialisation des attributs de la classe
+        self.nbInstructionsValue = None
+        self.nbInstructions = None
+        self.InstructionsLayout = None
+        self.verticalLayout = None
         self.actionFrancais = None
         self.actionEnglish = None
         self.menuLangues = None
@@ -170,6 +174,8 @@ class MainWindow(object):
         self.radioButton_3.setText(_translate("Converter", self.JSON_lang["radioButton_3"]))
         self.Exemple_OptionConversion.setText(_translate("Converter", self.JSON_lang["Exemple_OptionConversion"]))
         self.convertButton.setText(_translate("Converter", self.JSON_lang["convertButton"]))
+        self.nbInstructions.setText(_translate("Converter", self.JSON_lang["nbInstructions"]))
+        self.nbInstructionsValue.setText(_translate("Converter", self.JSON_lang["nbInstructionsValue"]))
         self.HowToDownloadAssembly_Text.setText(_translate("Converter", self.JSON_lang["HowToDownloadAssembly_Text"]))
         self.DownloadAssemblyButton.setText(_translate("Converter", self.JSON_lang["DownloadAssemblyButton"]))
         self.menu_Help.setTitle(_translate("Converter", self.JSON_lang["menu_Help"]))
@@ -443,6 +449,29 @@ class MainWindow(object):
                                                          QtWidgets.QSizePolicy.Expanding)
         self.OptionsConversionLayout.addItem(spacer_LeftConvertButton)
         self.CentralLayout.addLayout(self.OptionsConversionLayout)
+
+        # layout affichage du nombre d'instructions
+        self.InstructionsLayout = QtWidgets.QHBoxLayout()
+        self.InstructionsLayout.setObjectName("InstructionsLayout")
+
+        # texte nombre d'instructions
+        self.nbInstructions = QtWidgets.QLabel(self.centralwidget)
+        self.nbInstructions.setFont(font2)
+        self.nbInstructions.setWordWrap(False)
+        self.nbInstructions.setObjectName("nbInstructions")
+        self.InstructionsLayout.addWidget(self.nbInstructions)
+
+        # valeur nombre d'instructions
+        self.nbInstructionsValue = QtWidgets.QLabel(self.centralwidget)
+        self.nbInstructionsValue.setFont(font2)
+        self.nbInstructionsValue.setWordWrap(False)
+        self.nbInstructionsValue.setObjectName("nbInstructions")
+        self.InstructionsLayout.addWidget(self.nbInstructionsValue)
+
+        # Spacer à droite du nombre d'instructions
+        spacerRightNbInstruction = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.InstructionsLayout.addItem(spacerRightNbInstruction)
+        self.OptionsConversionLayout.addItem(self.InstructionsLayout)
 
         # Ligne à droite de l'application
         self.line_RightCenter = QtWidgets.QFrame(self.centralwidget)

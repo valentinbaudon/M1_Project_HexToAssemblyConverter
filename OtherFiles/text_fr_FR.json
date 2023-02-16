@@ -10,6 +10,8 @@
   "radioButton_3" : "Integral",
   "Exemple_OptionConversion": "Exemple d'affichage selon les options selectionnees :\n- Compact : 0x08000003 : LSR (immediate) : R7, R3, #28\n- Classique : 0x08000003 : Logical Shift Right (Immediate) : R7, R3, #28 : \n- Integral : 0x08000003 : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28",
   "convertButton" : "Convertir",
+  "nbInstructions" : "Nombre d'instructions : ",
+  "nbInstructionsValue" : "0",
   "HowToDownloadAssembly_Text": "Telecharger le fichier assembleur traduit vers votre machine :",
   "DownloadAssemblyButton" : "Telecharger",
   "menu_Help" : "&Aide",
