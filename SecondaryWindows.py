@@ -15,8 +15,8 @@ class Functionning(QDialog):
 
         # paramètres généraux de la fenêtre
         self.setWindowTitle("Fonctionnement de l'application de traduction")
-        self.resize(700, 500)
-        self.setFixedSize(700, 500)
+        self.resize(700, 520)
+        self.setFixedSize(700, 520)
         icon = QIcon("graphicResources/TemporaryIcon.ico")
         self.setWindowIcon(icon)
 
@@ -50,8 +50,8 @@ class About(QDialog):
 
         # paramètres généraux de la fenêtre
         self.setWindowTitle("À propos")
-        self.resize(600, 400)
-        self.setFixedSize(600, 400)
+        self.resize(650, 520)
+        self.setFixedSize(650, 520)
         icon = QIcon("graphicResources/TemporaryIcon.ico")
         self.setWindowIcon(icon)
 
