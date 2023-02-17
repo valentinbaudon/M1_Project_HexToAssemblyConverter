@@ -1,4 +1,3 @@
-from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QFileDialog, QButtonGroup
 import os
 from conversionHexToAssembly import *
@@ -19,13 +18,11 @@ class MainWindow(object):
         self.actionEnglish = None
         self.menuLangues = None
         self.selected_hex_file = None
-        self.NewWindow = None
         self.actionQuitter = None
         self.menuFichier = None
         self.menuFonctionnement = None
         self.actionClearFiles = None
         self.actionNouvellefenetre = None
-        self.radioValue = None
         self.checked_button = None
         self.button_group = None
         self.explanation = None
@@ -39,7 +36,6 @@ class MainWindow(object):
         self.actionFonctionnement = None
         self.HowToDownloadAssembly_Text = None
         self.line_HautFooter = None
-        self.line_5 = None
         self.line_RightCenter = None
         self.convertButton = None
         self.FooterLayout = None
@@ -83,20 +79,20 @@ class MainWindow(object):
         # Gestion de la langue d'affichage par défaut comme étant la même que celle du système de l'utilisateur
         if locale.getlocale()[0] in ["fr_FR", "en_EN"]:
             self.JSON_lang = json.load(open("./OtherFiles/text_" + locale.getlocale()[0] + ".json"))
-            language = locale.getlocale()[0]
+            self.language = locale.getlocale()[0]
         else:
             self.JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
-            language = "en_EN"
+            self.language = "en_EN"
 
     # Fonction permettant d'ouvrir la fenêtre "Fonctionnement"
     def ExplanationWindow(self):
-        self.explanation = Functionning()
-        showFunctioningWindow()
+        self.explanation = Functionning(self.language)
+        self.explanation.exec_()
 
     # Fonction permettant d'ouvrir la fenêtre "À propos"
     def AboutWindow(self):
-        self.about = About()
-        showAboutWindow()
+        self.about = About(self.language)
+        self.about.exec_()
 
     # Fonction qui nettoie les fichiers
     def clearAllFiles(self):
@@ -166,7 +162,7 @@ class MainWindow(object):
     def select_language_fr(self):
         self.JSON_lang = json.load(open("./OtherFiles/text_fr_FR.json"))
         self.NameInit()
-        language = "fr_FR"
+        self.language = "fr_FR"
         self.actionEnglish.setChecked(False)
         self.actionFrancais.setChecked(True)
 
@@ -174,7 +170,7 @@ class MainWindow(object):
     def select_language_en(self):
         self.JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
         self.NameInit()
-        language = "en_EN"
+        self.language = "en_EN"
         self.actionFrancais.setChecked(False)
         self.actionEnglish.setChecked(True)
 
@@ -610,10 +606,10 @@ class MainWindow(object):
         self.menubar.addAction(self.menuFonctionnement.menuAction())
         self.menubar.addAction(self.menu_Help.menuAction())
 
-        # sélection de la langue à cocher en fontion de la langue par défaut de l'ordinateur
-        if locale.getlocale()[0] in ["fr_FR", "en_EN"]:
+        # sélection de la langue à cocher
+        if self.language == "fr_FR":
             self.actionFrancais.setChecked(True)
-        else:
+        elif self.language == "en_EN":
             self.actionEnglish.setChecked(True)
 
         # Partie connection aux actions quand clic
