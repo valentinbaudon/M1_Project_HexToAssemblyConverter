@@ -4,7 +4,7 @@ import sys
 
 from PyQt5 import QtWidgets, QtCore, QtGui, Qt
 from PyQt5.QtGui import QIcon, QPixmap, QTextCursor
-from PyQt5.QtWidgets import QDialog, QTextEdit, QVBoxLayout, QMainWindow, QLabel
+from PyQt5.QtWidgets import QDialog, QTextEdit, QVBoxLayout, QMainWindow, QLabel, QMenu, QAction
 
 
 # Lancement de la fenêtre "Functionning"
@@ -30,7 +30,7 @@ class Functionning(QDialog):
         self.setWindowTitle("Fonctionnement de l'application de traduction")
         self.resize(700, 500)
         self.setFixedSize(700, 500)
-        icon = QIcon("./OtherFiles/TemporaryIcon.ico")
+        icon = QIcon("graphicResources/TemporaryIcon.ico")
         self.setWindowIcon(icon)
 
         # initialisation des attributs de la classe
@@ -42,11 +42,11 @@ class Functionning(QDialog):
         self.text_edit = QTextEdit(self)
         self.text_edit.setReadOnly(True)
         self.text_edit.setFontPointSize(11)
-        if locale.getlocale()[0] in ["fr_FR", "en_EN"]:
-            JSON_lang = json.load(open("./OtherFiles/text_" + locale.getlocale()[0] + ".json"))
-        else:
-            JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
-        self.text_edit.setPlainText(JSON_lang["HowItWorks"])
+        # if MainWindow.language == "fr_FR": # marche pas
+        #     JSON_lang = json.load(open("./OtherFiles/text_fr_FR.json"))
+        # else:
+        #     JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
+        # self.text_edit.setPlainText(JSON_lang["HowItWorks"])
         self.text_edit.setStyleSheet("background: transparent;")
 
         # initialisation du layout
@@ -83,7 +83,7 @@ class About(QDialog):
         self.setWindowTitle("À propos")
         self.resize(600, 400)
         self.setFixedSize(600, 400)
-        icon = QIcon("./OtherFiles/TemporaryIcon.ico")
+        icon = QIcon("graphicResources/TemporaryIcon.ico")
         self.setWindowIcon(icon)
 
         # initialisation des attributs de la classe

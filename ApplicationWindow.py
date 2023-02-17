@@ -1,3 +1,4 @@
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QFileDialog, QButtonGroup
 import os
 from conversionHexToAssembly import *
@@ -6,6 +7,8 @@ from SecondaryWindows import *
 
 class MainWindow(object):
     # Constructeur de la classe
+    language = str(locale.getlocale()[0])
+
     def __init__(self):
         # Initialisation des attributs de la classe
         self.nbInstructionsValue = None
@@ -80,8 +83,10 @@ class MainWindow(object):
         # Gestion de la langue d'affichage par défaut comme étant la même que celle du système de l'utilisateur
         if locale.getlocale()[0] in ["fr_FR", "en_EN"]:
             self.JSON_lang = json.load(open("./OtherFiles/text_" + locale.getlocale()[0] + ".json"))
+            language = locale.getlocale()[0]
         else:
             self.JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
+            language = "en_EN"
 
     # Fonction permettant d'ouvrir la fenêtre "Fonctionnement"
     def ExplanationWindow(self):
@@ -93,6 +98,7 @@ class MainWindow(object):
         self.about = About()
         showAboutWindow()
 
+    # Fonction qui nettoie les fichiers
     def clearAllFiles(self):
         with open("./ConversionFiles/Hexa.txt", "w") as f:
             f.write("")
@@ -160,11 +166,17 @@ class MainWindow(object):
     def select_language_fr(self):
         self.JSON_lang = json.load(open("./OtherFiles/text_fr_FR.json"))
         self.NameInit()
+        language = "fr_FR"
+        self.actionEnglish.setChecked(False)
+        self.actionFrancais.setChecked(True)
 
     # Fonction permettant de changer la langue d'affichage en anglais
     def select_language_en(self):
         self.JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
         self.NameInit()
+        language = "en_EN"
+        self.actionFrancais.setChecked(False)
+        self.actionEnglish.setChecked(True)
 
     # Partie initialisation des textes et noms des éléments de la fenêtre
     def NameInit(self):
@@ -201,7 +213,7 @@ class MainWindow(object):
         ConverterWindow.setObjectName("HexaToAssemblyConverter")
         ConverterWindow.resize(1216, 842)
         ConverterWindow.setWindowState(QtCore.Qt.WindowMaximized)
-        icon = QIcon("./OtherFiles/TemporaryIcon.ico")
+        icon = QIcon("graphicResources/TemporaryIcon.ico")
         ConverterWindow.setWindowIcon(icon)
 
         # Paramètres de polices utilisées
@@ -279,6 +291,7 @@ class MainWindow(object):
         sizePolicy.setHeightForWidth(self.HexaCode.sizePolicy().hasHeightForWidth())
         self.HexaCode.setSizePolicy(sizePolicy)
         self.HexaCode.setMaximumSize(QtCore.QSize(16777215, 400))
+        self.HexaCode.setReadOnly(True)
         self.HexaCode.setObjectName("HexaCode")
         self.TextCodesLayout.addWidget(self.HexaCode)
 
@@ -475,7 +488,8 @@ class MainWindow(object):
         self.InstructionsLayout.addWidget(self.nbInstructionsValue)
 
         # Spacer à droite du nombre d'instructions
-        spacerRightNbInstruction = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerRightNbInstruction = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+                                                         QtWidgets.QSizePolicy.Minimum)
         self.InstructionsLayout.addItem(spacerRightNbInstruction)
         self.OptionsConversionLayout.addItem(self.InstructionsLayout)
 
@@ -547,6 +561,7 @@ class MainWindow(object):
         self.menuFichier = QtWidgets.QMenu(self.menubar)
         self.menuFichier.setObjectName("menuFichier")
         self.menuLangues = QtWidgets.QMenu(self.menuFichier)
+        self.menuLangues.setIcon(QIcon("graphicResources/LanguagesLogo.png"))
         self.menuLangues.setObjectName("menuLangues")
         ConverterWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(ConverterWindow)
@@ -555,27 +570,33 @@ class MainWindow(object):
 
         # Création de l'action liée au menu "à propos"
         self.actionAbout = QtWidgets.QAction(ConverterWindow)
+        self.actionAbout.setIcon(QIcon("graphicResources/AboutLogo.png"))
         self.actionAbout.setObjectName("actionAbout")
 
         # Création de l'action liée au menu "fonctionnement"
         self.actionFonctionnement = QtWidgets.QAction(ConverterWindow)
+        self.actionFonctionnement.setIcon(QIcon("graphicResources/ExplanationLogo.png"))
         self.actionFonctionnement.setObjectName("actionFonctionnement")
 
         # Création de l'action liée au sous menu "nettoyer les fichiers"
         self.actionClearFiles = QtWidgets.QAction(ConverterWindow)
+        self.actionClearFiles.setIcon(QIcon("graphicResources/cleanFilesLogo.png"))
         self.actionClearFiles.setObjectName("actionClearFiles")
 
         # Création de l'action liée au sous menu "quitter"
         self.actionQuitter = QtWidgets.QAction(ConverterWindow)
+        self.actionQuitter.setIcon(QIcon("graphicResources/QuitLogo.png"))
         self.actionQuitter.setObjectName("actionQuitter")
 
         # Création de l'action liée au sous sous-menu "changer la langue en français"
         self.actionFrancais = QtWidgets.QAction(ConverterWindow)
         self.actionFrancais.setObjectName("actionFrancais")
+        self.actionFrancais.setCheckable(True)
 
         # Création de l'action liée au sous sous-menu "changer la langue en anglais"
         self.actionEnglish = QtWidgets.QAction(ConverterWindow)
         self.actionEnglish.setObjectName("actionEnglish")
+        self.actionEnglish.setCheckable(True)
 
         # Liaison entre les actions crées et les menus et sous menus
         self.menu_Help.addAction(self.actionAbout)
@@ -588,6 +609,12 @@ class MainWindow(object):
         self.menubar.addAction(self.menuFichier.menuAction())
         self.menubar.addAction(self.menuFonctionnement.menuAction())
         self.menubar.addAction(self.menu_Help.menuAction())
+
+        # sélection de la langue à cocher en fontion de la langue par défaut de l'ordinateur
+        if locale.getlocale()[0] in ["fr_FR", "en_EN"]:
+            self.actionFrancais.setChecked(True)
+        else:
+            self.actionEnglish.setChecked(True)
 
         # Partie connection aux actions quand clic
         self.button_group.buttonClicked.connect(self.store_selection)
