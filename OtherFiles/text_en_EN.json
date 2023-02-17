@@ -8,7 +8,7 @@
   "radioButton_1" : "Compact",
   "radioButton_2" : "Classic",
   "radioButton_3" : "Integral",
-  "Exemple_OptionConversion": "Display example according to selected options:\n- Compact: 0x08000003 : LSR (immediate) : R7, R3, #28\n- Classic: 0x08000003 : Logical Shift Right (Immediate) : R7, R3, #28 :\n- Integral: 0x08000003 : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28",
+  "Exemple_OptionConversion": "Display example according to selected options:\n- Compact: 0x08000003 : LSR (immediate) : R7, R3, #28\n- Classic: 0x08000003 : Logical Shift Right (Immediate) : R7, R3, #28\n- Integral: 0x08000003 : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28",
   "convertButton" : "Convert",
   "nbInstructions" : "Number of instructions : ",
   "nbInstructionsValue" : "0",

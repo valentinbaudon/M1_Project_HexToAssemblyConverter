@@ -20,8 +20,8 @@ Le fonctionnement de l'application est simple:
     4) Pour télécharger ce visuel ou vous voulez sur votre ordinateur, cliquez sur le bouton 'Download Assembly File'
     
     Exemple d'affichage selon les options selectionnées
-        - Compact : LSR (immediate) : R7, R3, #28
-        - Classique : Logical Shift Right (Immediate) : R7, R3, #28
-        - Intégral : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28
+        - Compact: 0x08000003 : LSR (immediate) : R7, R3, #28
+        - Classic: 0x08000003 : Logical Shift Right (Immediate) : R7, R3, #28
+        - Integral: 0x08000003 : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28
 
 Projet réalisé par Valentin BAUDON et Hugo MERLE, sous la direction de M. Jean-Jacques MENEU
