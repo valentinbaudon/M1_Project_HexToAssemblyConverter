@@ -119,15 +119,16 @@ class MainWindow(object):
         describe_instructions(self.selected_button.text())
         stop = time.time()
 
+        # update du nombre d'instructions
+        with open("./ConversionFiles/instructions_file.txt", "r") as f:
+            flines = f.readlines()
+            nblignes = len(flines)
+        self.nbInstructionsValue.setText(str(nblignes) + ". Execution: " + str("{:.3f}".format(stop-start)) + "s")
+
         with open("./ConversionFiles/Assembly.txt", "r") as f:
             assembly_code = f.read()
         self.AssemblyCode.setText(assembly_code)
 
-        # update du nombre d'instructions
-        with open("./ConversionFiles/Assembly.txt", "r") as f:
-            flines = f.readlines()
-            nblignes = len(flines)
-        self.nbInstructionsValue.setText(str(nblignes) + ". Execution: " + str("{:.3f}".format(stop-start)) + "s")
 
     # Fonction permettant de télécharger le contenu d"un fichier hexa présent sur notre ordi qui sera mis dans le fichier "Hexa.txt" pour être traîté
     def download_hex_file(self):
