@@ -232,9 +232,11 @@ def describe_instructions(code):
     json_16 = json.load(open("./ConversionFiles/Json_Decoding_ARM_16bit.json", "r"))
     json_32 = json.load(open("./ConversionFiles/Json_Decoding_ARM_32bit.json", "r"))
     address = 0x08000000
+    nb32lines = 0
     count = 0
     for line in lines:
         if is32bits(line):
+            nb32lines += 1
             # Data processing (shifted register)
             if line[:7] == "1110101":
                 match line[7:11]:
@@ -629,3 +631,4 @@ def describe_instructions(code):
         if count == 4:
             address += 1
             count = 0
+    print(nb32lines)

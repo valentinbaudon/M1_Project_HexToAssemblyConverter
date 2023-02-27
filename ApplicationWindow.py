@@ -118,12 +118,16 @@ class MainWindow(object):
         writeBinaryInstructions("./ConversionFiles/Hexa.txt")
         describe_instructions(self.selected_button.text())
         stop = time.time()
+        print(stop-start)
 
-        # update du nombre d'instructions
+        # update du nombre d'instructions et du temps estimé
+        with open("./ConversionFiles/Hexa.txt", "r") as f:
+            flines = f.readlines()
+            nblignesHexa = len(flines)
         with open("./ConversionFiles/instructions_file.txt", "r") as f:
             flines = f.readlines()
             nblignes = len(flines)
-        self.nbInstructionsValue.setText(str(nblignes) + ". Execution: " + str("{:.3f}".format(stop-start)) + "s")
+        self.nbInstructionsValue.setText(str(nblignes) + ". Execution: " + str("{:.3f}".format(nblignesHexa * 0.00186574944)) + "s")
 
         with open("./ConversionFiles/Assembly.txt", "r") as f:
             assembly_code = f.read()
