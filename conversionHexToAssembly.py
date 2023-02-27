@@ -631,4 +631,3 @@ def describe_instructions(code):
         if count == 4:
             address += 1
             count = 0
-    print(nb32lines)
