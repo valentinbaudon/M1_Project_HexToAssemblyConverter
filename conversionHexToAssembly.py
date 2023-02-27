@@ -29,6 +29,7 @@ def writeBinaryInstructions(filepath):
     # Loop to write the output file with each instruction
     while i < len(data_reformatted) - 15:
         tmp = data_reformatted[i:i + 32]
+        # print(tmp)
         if tmp[0:3] == "111" and tmp[3:5] != "00":
             instructions_file.write(tmp + '\n')
             i += 32
@@ -628,3 +629,6 @@ def describe_instructions(code):
         if count == 4:
             address += 1
             count = 0
+
+
+writeBinaryInstructions("TestFile.srec")

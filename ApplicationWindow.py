@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QFileDialog, QButtonGroup
 import os
 from conversionHexToAssembly import *
 from SecondaryWindows import *
+import time
 
 
 class MainWindow(object):
@@ -113,8 +114,10 @@ class MainWindow(object):
 
     # Fonction permettant de faire la traduction du fichier hexa et de mettre le résultat dans le fichier "Assembly.txt"
     def translate(self):
+        start = time.time()
         writeBinaryInstructions("./ConversionFiles/Hexa.txt")
         describe_instructions(self.selected_button.text())
+        stop = time.time()
 
         with open("./ConversionFiles/Assembly.txt", "r") as f:
             assembly_code = f.read()
@@ -124,7 +127,7 @@ class MainWindow(object):
         with open("./ConversionFiles/Assembly.txt", "r") as f:
             flines = f.readlines()
             nblignes = len(flines)
-        self.nbInstructionsValue.setText(str(nblignes))
+        self.nbInstructionsValue.setText(str(nblignes) + ". Execution: " + str("{:.3f}".format(stop-start)) + "s")
 
     # Fonction permettant de télécharger le contenu d"un fichier hexa présent sur notre ordi qui sera mis dans le fichier "Hexa.txt" pour être traîté
     def download_hex_file(self):
