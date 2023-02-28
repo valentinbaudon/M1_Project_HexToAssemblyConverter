@@ -1,0 +1,3174 @@
+0x08000000 : CMP (register) : Rn1, Rm3
+0x08000000 : ASR (immediate) : Rd7, Rm5, #28
+0x08000000 : B : #1224
+0x08000000 : STR (immediate) : #34, Rt1
+0x08000001 : LSR (immediate) : Rd7, Rm3, #28
+0x08000001 : SUB (immediate) : Rd7, #127
+0x08000002 : LSL (register) : Rm0, Rd1
+0x08000002 : LSL (immediate) : Rd7, Rm0, #12
+0x08000002 : BL : #232, #232
+0x08000002 : SUB (immediate) : Rd7, #126
+0x08000003 : LSR (immediate) : Rd7, Rm3, #28
+0x08000003 : MOV (immediate) : Rd0, #64
+0x08000003 : STRH (immediate) : Rt1, Rn0, #0
+0x08000004 : LSL (immediate) : Rd4, Rm0, #8
+0x08000004 : LSR (immediate) : Rd0, Rm2, #0
+0x08000004 : STM, STMIA, STMEA : Rn0
+0x08000004 : LSL (immediate) : Rd1, Rm0, #0
+0x08000005 : ADD (immediate) : Rd0, Rn7, Rm0
+0x08000005 : STRB (immediate) : Rt0, Rn4, #3
+0x08000005 : STR (immediate) : Rt3, Rn0, #7
+0x08000005 : STRH (immediate) : Rt6, Rn1, #28
+0x08000006 : LDR (register) : Rt0, Rn6, Rm2
+0x08000006 : SUB (immediate) : Rd5, #122
+0x08000007 : LSR (immediate) : Rd6, Rm3, #28
+0x08000007 : LDR (literal) : #152, Rt4
+0x08000007 : ADD (immediate) : Rd0, #97
+0x08000007 : LSL (immediate) : Rd1, Rm1, #16
+0x08000008 : ASR (immediate) : Rd6, Rm4, #12
+0x08000008 : LSL (immediate) : Rd2, Rm0, #4
+0x08000008 : ASR (immediate) : Rd0, Rm4, #0
+0x08000009 : LSL (register) : Rm0, Rd0
+0x08000009 : STR (immediate) : Rt2, Rn0, #7
+0x08000009 : STRH (immediate) : Rt0, Rn1, #16
+0x0800000a : LDR (register) : Rt0, Rn6, Rm2
+0x0800000a : LDRB (immediate) : Rt2, Rn7, #23
+0x0800000a : LDR (immediate) : #62, Rt7
+0x0800000b : ADD (immediate) : Rd6, #108
+0x0800000b : STR (immediate) : Rt6, Rn0, #15
+0x0800000b : LDRH (immediate) : Rt3, Rn3, #20
+0x0800000d : CMP (immediate) : Rn6, #93
+0x0800000d : ADR : #65, Rd0
+0x0800000d : STRH (immediate) : Rt5, Rn0, #8
+0x0800000d : LDRB (immediate) : Rt4, Rn6, #11
+0x0800000e : LDR (immediate) : #61, Rt6
+0x0800000e : LDR (immediate) : Rt4, Rn2, #11
+0x0800000e : ADD (SP plus immediate) : #83, Rd1
+0x0800000f : ADR : #77, Rd6
+0x0800000f : LDR (immediate) : #53, Rt2
+0x0800000f : LDR (immediate) : Rt3, Rn2, #7
+0x08000010 : ADD (SP plus immediate) : #91, Rd5
+0x08000010 : LDM, LDMIA, LDMFD : Rn2
+0x08000010 : CMP (immediate) : Rn3, #86
+0x08000011 : LDRH (immediate) : Rt1, Rn3, #16
+0x08000011 : ADD (immediate) : Rd2, #101
+0x08000011 : LDM, LDMIA, LDMFD : Rn0
+0x08000011 : MOV (immediate) : Rd3, #70
+0x08000012 : LDR (literal) : #153, Rt4
+0x08000012 : ADD (immediate) : Rd2, #100
+0x08000012 : STRH (register) : Rt6, Rn4, Rm6
+0x08000013 : LDRH (immediate) : Rt2, Rn3, #20
+0x08000013 : ADD (immediate) : Rd5, #106
+0x08000013 : LSR (immediate) : Rd1, Rm2, #0
+0x08000013 : MOV (immediate) : Rd3, #70
+0x08000014 : STR (immediate) : #33, Rt0
+0x08000014 : CMP (register) : Rm0, Rn4
+0x08000014 : LDR (register) : Rt2, Rn6, Rm6
+0x08000014 : STR (immediate) : Rt0, Rn1, #19
+0x08000015 : STRH (immediate) : Rt3, Rn1, #20
+0x08000015 : ASR (immediate) : Rd4, Rm5, #24
+0x08000015 : CMP (immediate) : Rn0, #80
+0x08000015 : ADR : #66, Rd1
+0x08000016 : CMP (register) : Rm0, Rn5
+0x08000016 : LSR (immediate) : Rd4, Rm2, #8
+0x08000016 : ADD (immediate) : Rd4, #104
+0x08000017 : LSL (immediate) : Rd6, Rm0, #12
+0x08000017 : LSR (immediate) : Rd2, Rm3, #20
+0x08000017 : STM, STMIA, STMEA : Rn0
+0x08000017 : LSL (immediate) : Rd1, Rm0, #0
+0x08000018 : ADD (immediate) : Rd0, Rn7, Rm0
+0x08000018 : STRB (immediate) : Rt0, Rn4, #3
+0x08000018 : STR (immediate) : Rt3, Rn0, #7
+0x08000018 : STRH (immediate) : Rt6, Rn1, #28
+0x08000019 : LDR (register) : Rt0, Rn6, Rm2
+0x08000019 : SUB (immediate) : Rd5, #122
+0x0800001a : LSR (immediate) : Rd6, Rm3, #28
+0x0800001a : STR (immediate) : #40, Rt4
+0x0800001a : STR (register) : Rt1, Rn4, Rm2
+0x0800001a : CMP (immediate) : Rn1, #82
+0x0800001b : ADR : #74, Rd5
+0x0800001b : STRH (register) : Rt5, Rn4, Rm2
+0x0800001b : LDR (literal) : #148, Rt2
+0x0800001b : LSL (immediate) : Rd2, Rm1, #20
+0x0800001c : ASR (immediate) : Rd1, Rm5, #16
+0x0800001c : STM, STMIA, STMEA : Rn0
+0x0800001c : LSL (immediate) : Rd2, Rm0, #4
+0x0800001c : LDRB (immediate) : Rt0, Rn7, #19
+0x0800001d : BL : #224, #224
+0x0800001d : SUB (immediate) : Rd6, Rn7, Rm4
+0x0800001d : LDRB (immediate) : Rt3, Rn7, #23
+0x0800001e : SBC (register) : Rm0, Rd3
+0x0800001e : LSL (immediate) : Rd7, Rm1, #28
+0x0800001e : ASR (immediate) : Rd0, Rm5, #16
+0x0800001e : STR (register) : Rt0, Rn4, Rm2
+0x0800001f : STRH (immediate) : Rt2, Rn0, #4
+0x0800001f : LSL (immediate) : Rd2, Rm1, #20
+0x0800001f : LSR (immediate) : Rd0, Rm2, #0
+0x0800001f : MOV (immediate) : Rd0, #64
+0x08000020 : ASR (immediate) : Rd1, Rm4, #0
+0x08000020 : CMP (register) : Rm0, Rn4
+0x08000020 : SBC (register) : Rm0, Rd2
+0x08000020 : LSL (immediate) : Rd0, Rm1, #16
+0x08000021 : STR (register) : Rt0, Rn4, Rm2
+0x08000021 : ADD (immediate) : Rd2, Rn7, Rm4
+0x08000021 : STRB (immediate) : Rt2, Rn5, #23
+0x08000022 : STRH (immediate) : Rt3, Rn0, #4
+0x08000022 : LSL (immediate) : Rd6, Rm1, #28
+0x08000022 : LDRH (immediate) : Rt0, Rn2, #0
+0x08000022 : MOV (immediate) : Rd0, #64
+0x08000023 : LDRH (immediate) : Rt1, Rn2, #0
+0x08000023 : MOV (immediate) : Rd2, #68
+0x08000023 : CMP (immediate) : Rn0, #81
+0x08000023 : ADR : #68, Rd2
+0x08000024 : STM, STMIA, STMEA : Rn2
+0x08000024 : LSR (immediate) : Rd4, Rm2, #8
+0x08000024 : LSR (immediate) : Rd0, Rm3, #16
+0x08000024 : ADD (immediate) : Rd0, #97
+0x08000025 : STRB (immediate) : Rt1, Rn4, #3
+0x08000025 : STM, STMIA, STMEA : Rn3
+0x08000025 : BLX : Rm1
+0x08000025 : ADD (immediate) : Rd0, Rn7, Rm0
+0x08000026 : LSL (immediate) : Rd0, Rm1, #16
+0x08000026 : ASR (immediate) : Rd3, Rm4, #4
+0x08000026 : MOV (immediate) : Rd0, #64
+0x08000026 : STRH (immediate) : Rt2, Rn0, #4
+0x08000027 : LDM, LDMIA, LDMFD : Rn0
+0x08000027 : LDRH (register) : Rt6, Rn6, Rm6
+0x08000027 : LDR (immediate) : Rt1, Rn3, #19
+0x08000028 : LDRSB (register) : Rt5, Rn5, Rm2
+0x08000028 : ADD (SP plus immediate) : #90, Rd5
+0x08000029 : LDRH (immediate) : Rt5, Rn2, #8
+0x08000029 : CMP (immediate) : Rn3, #86
+0x08000029 : LDM, LDMIA, LDMFD : Rn0
+0x08000029 : MOV (immediate) : Rd2, #69
+0x0800002a : ADD (immediate) : Rd1, Rn7, Rm0
+0x0800002a : STRB (immediate) : Rt4, Rn4, #11
+0x0800002a : STR (register) : Rt3, Rn4, Rm6
+0x0800002a : BLX : Rm1
+0x0800002b : ADR : #74, Rd5
+0x0800002b : STR (immediate) : #40, Rt4
+0x0800002b : LDR (immediate) : #52, Rt2
+0x0800002b : LDR (immediate) : Rt2, Rn2, #7
+0x0800002c : STR (immediate) : Rt5, Rn1, #27
+0x0800002c : LDRH (immediate) : Rt3, Rn3, #20
+0x0800002c : ADD (immediate) : Rd6, #108
+0x0800002d : LDR (immediate) : Rt1, Rn2, #3
+0x0800002d : ADR : #70, Rd3
+0x0800002d : B : #1741
+0x0800002d : LDR (immediate) : #52, Rt2
+0x0800002e : SUB (immediate) : Rd7, #127
+0x0800002e : LDRH (immediate) : Rt7, Rn3, #28
+0x0800002f : SUB (immediate) : Rd4, Rn7, Rm0
+0x0800002f : LDRB (immediate) : Rt1, Rn6, #3
+0x0800002f : LSL (immediate) : Rd3, Rm0, #4
+0x0800002f : LSL (immediate) : Rd7, Rm1, #28
+0x08000030 : MOV (immediate) : Rd0, #64
+0x08000030 : STRH (immediate) : Rt0, Rn0, #0
+0x08000030 : LSL (immediate) : Rd4, Rm0, #8
+0x08000030 : LSR (immediate) : Rd0, Rm2, #0
+0x08000031 : MOV (immediate) : Rd0, #64
+0x08000031 : STRH (immediate) : Rt1, Rn0, #0
+0x08000031 : LSL (immediate) : Rd4, Rm0, #8
+0x08000031 : LSR (immediate) : Rd0, Rm2, #0
+0x08000032 : STR (immediate) : Rt0, Rn0, #3
+0x08000032 : STRH (immediate) : Rt1, Rn0, #0
+0x08000032 : LDR (register) : Rt0, Rn6, Rm2
+0x08000033 : LDR (immediate) : #58, Rt5
+0x08000033 : STRB (immediate) : Rt3, Rn5, #23
+0x08000033 : SUB (immediate) : Rd1, #115
+0x08000033 : B : #1998
+0x08000034 : MOV (immediate) : Rd3, #71
+0x08000034 : LDRH (immediate) : Rt4, Rn3, #24
+0x08000034 : LDM, LDMIA, LDMFD : Rn0
+0x08000035 : SUB (register) : Rd6, Rn6, Rm4
+0x08000035 : LDR (immediate) : Rt1, Rn3, #19
+0x08000035 : ASR (immediate) : Rd3, Rm4, #4
+0x08000035 : MOV (register) : Rd5, Rm1
+0x08000036 : ADR : #66, Rd1
+0x08000036 : STRH (immediate) : Rt0, Rn1, #16
+0x08000036 : LDRH (immediate) : Rt4, Rn2, #8
+0x08000036 : CMP (immediate) : Rn0, #80
+0x08000037 : LDM, LDMIA, LDMFD : Rn0
+0x08000037 : MOV (immediate) : Rd2, #69
+0x08000037 : ADD (immediate) : Rd1, Rn7, Rm0
+0x08000037 : STRB (immediate) : Rt4, Rn4, #11
+0x08000038 : BLX : Rm1
+0x08000039 : LDRB (immediate) : Rt6, Rn7, #31
+0x08000039 : ADD (immediate) : Rd3, Rn7, Rm4
+0x08000039 : STRB (immediate) : Rt7, Rn5, #31
+0x08000039 : STR (immediate) : Rt3, Rn0, #7
+0x0800003a : STRH (immediate) : Rt6, Rn1, #28
+0x0800003a : BL : #748, #748
+0x0800003a : SUB (immediate) : Rd6, Rn7, Rm4
+0x0800003a : LDRB (immediate) : Rt3, Rn7, #23
+0x0800003b : LSL (immediate) : Rd3, Rm0, #4
+0x0800003b : LSL (immediate) : Rd7, Rm1, #28
+0x0800003b : STRH (immediate) : Rt0, Rn0, #0
+0x0800003c : SUB (immediate) : Rd0, #112
+0x0800003c : B : #192
+0x0800003c : STRH (immediate) : Rt7, Rn0, #12
+0x0800003c : LSR (immediate) : Rd4, Rm3, #24
+0x0800003d : CMP (immediate) : Rn0, #80
+0x0800003d : ADR : #65, Rd0
+0x0800003d : LSL (immediate) : Rd5, Rm0, #8
+0x0800003d : LSR (immediate) : Rd4, Rm2, #8
+0x0800003e : LSL (register) : Rm0, Rd0
+0x0800003e : LSL (immediate) : Rd1, Rm0, #0
+0x0800003e : STR (register) : Rt0, Rn4, Rm2
+0x0800003f : LDR (immediate) : #58, Rt5
+0x0800003f : STRB (immediate) : Rt2, Rn5, #23
+0x0800003f : LDRH (immediate) : Rt3, Rn2, #4
+0x0800003f : MOV (immediate) : Rd7, #78
+0x08000040 : CMP (immediate) : Rn0, #81
+0x08000040 : ADR : #68, Rd2
+0x08000040 : MOV (immediate) : Rd2, #69
+0x08000040 : LDRH (immediate) : Rt4, Rn2, #8
+0x08000041 : LSL (immediate) : Rd4, Rm0, #8
+0x08000041 : LSR (immediate) : Rd1, Rm2, #0
+0x08000041 : MOV (immediate) : Rd0, #64
+0x08000041 : STRH (immediate) : Rt1, Rn0, #0
+0x08000042 : STR (immediate) : Rt4, Rn0, #11
+0x08000042 : LDRH (immediate) : Rt0, Rn2, #0
+0x08000042 : BL : #748, #748
+0x08000042 : SUB (immediate) : Rd7, #126
+0x08000043 : LDR (literal) : #159, Rt7
+0x08000043 : LSL (immediate) : Rd2, Rm0, #4
+0x08000043 : LSL (immediate) : Rd1, Rm1, #16
+0x08000044 : B : #192
+0x08000044 : STRH (immediate) : Rt0, Rn0, #0
+0x08000044 : SUB (immediate) : Rd6, #124
+0x08000045 : LDM, LDMIA, LDMFD : Rn7
+0x08000045 : LDRB (immediate) : Rt6, Rn7, #31
+0x08000046 : SUB (immediate) : Rd7, #126
+0x08000046 : LDRH (immediate) : Rt7, Rn3, #28
+0x08000046 : LDRSB (register) : Rt4, Rn5, Rm2
+0x08000047 : LDR (register) : Rt1, Rn6, Rm2
+0x08000047 : STR (immediate) : Rt2, Rn1, #23
+0x08000047 : STR (immediate) : #43, Rt5
+0x08000047 : STR (immediate) : #44, Rt6
+0x08000048 : LDR (register) : Rt2, Rn6, Rm6
+0x08000048 : LDR (literal) : #146, Rt1
+0x08000048 : MOV (immediate) : Rd5, #75
+0x08000048 : STRB(register) : Rt1, Rn5, Rm2
+0x08000049 : STRH (register) : Rt4, Rn4, Rm2
+0x08000049 : ADD (immediate) : Rd5, #106
+0x08000049 : MOV (immediate) : Rd3, #70
+0x0800004a : LDRH (immediate) : Rt2, Rn3, #20
+0x0800004a : ASR (immediate) : Rd4, Rm4, #8
+0x0800004a : LDR (literal) : #145, Rt0
+0x0800004a : STRH (immediate) : Rt2, Rn0, #4
+0x0800004b : LSL (immediate) : Rd1, Rm1, #16
+0x0800004b : LDRH (immediate) : Rt0, Rn2, #0
+0x0800004b : MOV (immediate) : Rd0, #64
+0x0800004b : CMP (immediate) : Rn0, #81
+0x0800004c : ADR : #68, Rd2
+0x0800004c : STM, STMIA, STMEA : Rn2
+0x0800004c : LSR (immediate) : Rd4, Rm2, #8
+0x0800004c : LSR (immediate) : Rd0, Rm3, #16
+0x0800004d : ADD (immediate) : Rd0, #97
+0x0800004d : ASR (immediate) : Rd1, Rm4, #0
+0x0800004d : BIC (register) : Rm0, Rd6
+0x0800004d : SBC (register) : Rm0, Rd2
+0x0800004e : LSL (immediate) : Rd0, Rm1, #16
+0x0800004e : LSL (immediate) : Rd0, Rm1, #16
+0x0800004e : ASR (immediate) : Rd0, Rm4, #0
+0x0800004e : MOV (immediate) : Rd0, #64
+0x0800004f : STRH (immediate) : Rt2, Rn0, #4
+0x0800004f : B : #708
+0x0800004f : LDRH (immediate) : Rt0, Rn2, #0
+0x0800004f : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000050 : LDRB (immediate) : Rt1, Rn6, #3
+0x08000050 : STR (register) : Rt3, Rn4, Rm6
+0x08000050 : BLX : Rm1
+0x08000050 : ASR (immediate) : Rd2, Rm5, #20
+0x08000051 : STRB(register) : Rt0, Rn5, Rm2
+0x08000051 : LSL (immediate) : Rd2, Rm0, #4
+0x08000051 : LSL (immediate) : Rd2, Rm1, #20
+0x08000052 : STM, STMIA, STMEA : Rn0
+0x08000052 : LSR (immediate) : Rd6, Rm2, #12
+0x08000052 : CMP (immediate) : Rn4, #88
+0x08000052 : STR (register) : Rt1, Rn4, Rm2
+0x08000053 : CMP (register) : Rm0, Rn5
+0x08000053 : B : #1482
+0x08000053 : STR (immediate) : #40, Rt4
+0x08000053 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000054 : LDRB (immediate) : Rt2, Rn6, #7
+0x08000054 : STRH (immediate) : Rt3, Rn0, #4
+0x08000054 : LSL (immediate) : Rd7, Rm1, #28
+0x08000054 : LDR (literal) : #144, Rt0
+0x08000055 : MOV (immediate) : Rd0, #64
+0x08000055 : STRH (immediate) : Rt1, Rn1, #16
+0x08000055 : ASR (immediate) : Rd4, Rm4, #8
+0x08000055 : LSR (immediate) : Rd0, Rm2, #0
+0x08000056 : MOV (immediate) : Rd1, #66
+0x08000056 : ASR (immediate) : Rd1, Rm4, #0
+0x08000056 : CMP (register) : Rm0, Rn4
+0x08000056 : ASR (immediate) : Rd2, Rm4, #4
+0x08000057 : ADD (register) : Rm1, Rd0
+0x08000057 : LSL (immediate) : Rd2, Rm0, #4
+0x08000057 : LSL (immediate) : Rd0, Rm1, #16
+0x08000057 : ASR (immediate) : Rd0, Rm4, #0
+0x08000058 : LSL (register) : Rm0, Rd0
+0x08000058 : ASR (immediate) : Rd2, Rm4, #4
+0x08000058 : ADD (register) : Rm1, Rd0
+0x08000058 : ASR (immediate) : Rd2, Rm4, #4
+0x08000059 : ADD (register) : Rm1, Rd0
+0x08000059 : B : #450
+0x08000059 : STRH (immediate) : Rt0, Rn1, #16
+0x08000059 : SUB (immediate) : Rd4, Rn7, Rm0
+0x0800005a : LDRB (immediate) : Rt0, Rn6, #3
+0x0800005a : LSL (immediate) : Rd3, Rm0, #4
+0x0800005a : LSL (immediate) : Rd7, Rm1, #28
+0x0800005a : STRB (immediate) : Rt0, Rn4, #3
+0x0800005b : STM, STMIA, STMEA : Rn0
+0x0800005b : BLX : Rm1
+0x0800005b : ADD (immediate) : Rd0, Rn7, Rm0
+0x0800005b : STRB (immediate) : Rt0, Rn5, #19
+0x0800005c : B : #1998
+0x0800005c : LDR (immediate) : #58, Rt5
+0x0800005d : SUB (immediate) : Rd7, #127
+0x0800005d : LDRH (immediate) : Rt7, Rn3, #28
+0x0800005d : SUB (immediate) : Rd4, Rn7, Rm0
+0x0800005e : LDRB (immediate) : Rt1, Rn6, #3
+0x0800005e : ASR (immediate) : Rd3, Rm4, #4
+0x0800005e : BLX : Rm1
+0x0800005e : MOV (immediate) : Rd1, #66
+0x0800005f : STRH (immediate) : Rt0, Rn1, #16
+0x0800005f : LSL (immediate) : Rd4, Rm0, #8
+0x0800005f : LSR (immediate) : Rd0, Rm2, #0
+0x0800005f : MOV (immediate) : Rd0, #64
+0x08000060 : STRH (immediate) : Rt1, Rn0, #0
+0x08000060 : LSL (immediate) : Rd4, Rm0, #8
+0x08000060 : LSR (immediate) : Rd0, Rm2, #0
+0x08000060 : STR (immediate) : Rt0, Rn0, #3
+0x08000061 : STRH (immediate) : Rt1, Rn0, #0
+0x08000061 : LDR (register) : Rt0, Rn6, Rm2
+0x08000061 : LDR (immediate) : #58, Rt5
+0x08000062 : STRB (immediate) : Rt3, Rn5, #23
+0x08000062 : SUB (immediate) : Rd1, #115
+0x08000062 : B : #1998
+0x08000062 : MOV (immediate) : Rd3, #71
+0x08000063 : LDRH (immediate) : Rt4, Rn3, #24
+0x08000063 : LDM, LDMIA, LDMFD : Rn0
+0x08000063 : LDRB (immediate) : Rt6, Rn6, #15
+0x08000064 : LDRSH (register) : Rt5, Rn7, Rm2
+0x08000064 : SBC (register) : Rm0, Rd2
+0x08000064 : LSL (immediate) : Rd3, Rm1, #20
+0x08000065 : B : #1224
+0x08000065 : STR (immediate) : #32, Rt0
+0x08000065 : LDRB (immediate) : Rt2, Rn6, #7
+0x08000066 : LSR (immediate) : Rd3, Rm3, #20
+0x08000066 : ADD (immediate) : Rd7, #111
+0x08000066 : LSL (register) : Rm0, Rd1
+0x08000066 : LSL (immediate) : Rd6, Rm0, #12
+0x08000067 : BL : #232, #232
+0x08000067 : LDRSH (register) : Rt6, Rn7, Rm6
+0x08000067 : LDRB (immediate) : Rt2, Rn7, #23
+0x08000067 : LSL (immediate) : Rd3, Rm1, #20
+0x08000068 : ASR (immediate) : Rd7, Rm5, #28
+0x08000068 : LSL (register) : Rm0, Rd0
+0x08000068 : LSL (immediate) : Rd2, Rm0, #4
+0x08000068 : STRH (immediate) : Rt0, Rn1, #16
+0x08000069 : ASR (immediate) : Rd0, Rm4, #0
+0x08000069 : LSR (immediate) : Rd0, Rm2, #0
+0x08000069 : MOV (immediate) : Rd1, #66
+0x08000069 : ASR (immediate) : Rd1, Rm4, #0
+0x0800006a : CMP (register) : Rm0, Rn4
+0x0800006a : ASR (immediate) : Rd2, Rm4, #4
+0x0800006a : ADD (register) : Rm1, Rd0
+0x0800006a : B : #450
+0x0800006b : STRH (immediate) : Rt0, Rn1, #16
+0x0800006b : LDRB (immediate) : Rt0, Rn6, #3
+0x0800006b : ADD (immediate) : Rd3, Rn7, Rm4
+0x0800006c : STRB (immediate) : Rt7, Rn5, #31
+0x0800006c : STR (immediate) : Rt3, Rn0, #7
+0x0800006c : STRH (immediate) : Rt6, Rn1, #28
+0x0800006c : BL : #748, #748
+0x0800006d : SUB (immediate) : Rd6, Rn7, Rm4
+0x0800006d : LDRB (immediate) : Rt3, Rn7, #23
+0x0800006d : ASR (immediate) : Rd3, Rm4, #4
+0x0800006d : BLX : Rm1
+0x0800006e : MOV (immediate) : Rd1, #66
+0x0800006e : STRH (immediate) : Rt0, Rn1, #16
+0x0800006e : STRH (immediate) : Rt4, Rn0, #8
+0x0800006e : LSR (immediate) : Rd0, Rm2, #0
+0x0800006f : CMP (immediate) : Rn0, #80
+0x0800006f : ADR : #65, Rd0
+0x0800006f : LSL (immediate) : Rd5, Rm0, #8
+0x0800006f : LSR (immediate) : Rd4, Rm2, #8
+0x08000070 : LSL (register) : Rm0, Rd0
+0x08000070 : LSL (immediate) : Rd1, Rm0, #0
+0x08000070 : STR (register) : Rt0, Rn4, Rm2
+0x08000071 : ADD (immediate) : Rd2, Rn7, Rm4
+0x08000071 : STRB (immediate) : Rt2, Rn5, #23
+0x08000071 : STRH (immediate) : Rt3, Rn0, #4
+0x08000071 : LSL (immediate) : Rd6, Rm1, #28
+0x08000072 : CMP (immediate) : Rn0, #80
+0x08000072 : ADR : #64, Rd0
+0x08000072 : MOV (immediate) : Rd2, #69
+0x08000072 : LDRH (immediate) : Rt4, Rn2, #8
+0x08000073 : LSL (immediate) : Rd4, Rm0, #8
+0x08000073 : LSR (immediate) : Rd1, Rm2, #0
+0x08000073 : ADD (immediate) : Rd0, #96
+0x08000073 : STM, STMIA, STMEA : Rn0
+0x08000074 : STR (immediate) : Rt6, Rn0, #15
+0x08000074 : LDRH (immediate) : Rt0, Rn3, #16
+0x08000074 : BL : #748, #748
+0x08000074 : SUB (immediate) : Rd7, #126
+0x08000075 : LDR (literal) : #159, Rt7
+0x08000075 : STM, STMIA, STMEA : Rn1
+0x08000075 : LSL (immediate) : Rd1, Rm1, #16
+0x08000076 : LDR (immediate) : #63, Rt7
+0x08000076 : LDRB (immediate) : Rt6, Rn7, #31
+0x08000076 : ADD (register) : Rd3, Rn6, Rm4
+0x08000077 : STR (immediate) : Rt7, Rn1, #31
+0x08000077 : STR (register) : Rt3, Rn4, Rm6
+0x08000077 : MOV (register) : Rd4, Rm1
+0x08000077 : BL : #490, #490
+0x08000078 : SUB (immediate) : Rd7, #127
+0x08000078 : LSR (immediate) : Rd7, Rm3, #28
+0x08000079 : STRH (immediate) : Rt0, Rn1, #16
+0x08000079 : ASR (immediate) : Rd1, Rm4, #0
+0x08000079 : ADD (register) : Rd0, Rn6, Rm0
+0x08000079 : STR (immediate) : Rt2, Rn0, #7
+0x0800007a : LSL (immediate) : Rd3, Rm0, #4
+0x0800007a : LSL (immediate) : Rd4, Rm1, #24
+0x0800007a : LSL (register) : Rm0, Rd0
+0x0800007b : LSL (immediate) : Rd0, Rm1, #16
+0x0800007b : ASR (immediate) : Rd0, Rm4, #0
+0x0800007b : SUB (immediate) : Rd7, #126
+0x0800007c : LDM, LDMIA, LDMFD : Rn7
+0x0800007c : LDRB (immediate) : Rt6, Rn7, #31
+0x0800007d : SUB (immediate) : Rd7, #126
+0x0800007d : LDRH (immediate) : Rt7, Rn3, #28
+0x0800007e : STRB (immediate) : Rt4, Rn5, #27
+0x0800007e : B : #1998
+0x0800007e : LDR (immediate) : #59, Rt5
+0x0800007f : LDRB (immediate) : Rt3, Rn6, #7
+0x0800007f : LSR (immediate) : Rd3, Rm3, #20
+0x0800007f : ADD (immediate) : Rd7, #111
+0x08000080 : LSL (register) : Rm0, Rd1
+0x08000080 : LSL (immediate) : Rd6, Rm0, #12
+0x08000080 : BL : #232, #232
+0x08000080 : SUB (immediate) : Rd6, Rn7, Rm4
+0x08000081 : LDRB (immediate) : Rt2, Rn7, #23
+0x08000081 : LSL (immediate) : Rd3, Rm0, #4
+0x08000081 : LSL (immediate) : Rd7, Rm1, #28
+0x08000081 : MOV (immediate) : Rd0, #64
+0x08000082 : STRH (immediate) : Rt0, Rn0, #0
+0x08000082 : STR (immediate) : #36, Rt2
+0x08000082 : LDR (literal) : #144, Rt0
+0x08000082 : LDRH (immediate) : Rt2, Rn2, #4
+0x08000083 : MOV (immediate) : Rd4, #73
+0x08000083 : SUB (immediate) : Rd0, #113
+0x08000083 : B : #708
+0x08000083 : BIC (register) : Rm0, Rd7
+0x08000084 : LSR (immediate) : Rd4, Rm3, #24
+0x08000084 : STR (register) : Rt1, Rn4, Rm2
+0x08000085 : LDR (immediate) : #63, Rt7
+0x08000085 : LDRB (immediate) : Rt6, Rn7, #31
+0x08000085 : LSR (immediate) : Rd3, Rm2, #4
+0x08000085 : MOV (immediate) : Rd7, #79
+0x08000086 : STRH (immediate) : Rt1, Rn0, #0
+0x08000086 : LSL (immediate) : Rd4, Rm0, #8
+0x08000086 : CMP (immediate) : Rn0, #80
+0x08000086 : ADR : #64, Rd0
+0x08000087 : LDRB (immediate) : Rt6, Rn7, #31
+0x08000087 : SUB (immediate) : Rd7, Rn7, Rm4
+0x08000088 : LDRH (immediate) : Rt0, Rn2, #0
+0x08000088 : MOV (immediate) : Rd1, #67
+0x08000088 : SUB (immediate) : Rd0, #113
+0x08000088 : B : #708
+0x08000089 : STR (immediate) : Rt7, Rn0, #15
+0x08000089 : LDRH (immediate) : Rt4, Rn3, #24
+0x08000089 : B : #1740
+0x08000089 : LDR (immediate) : #49, Rt0
+0x0800008a : LDRB (immediate) : Rt3, Rn6, #7
+0x0800008a : LSR (immediate) : Rd3, Rm3, #20
+0x0800008a : ADD (immediate) : Rd7, #111
+0x0800008b : LSL (register) : Rm0, Rd1
+0x0800008b : LSL (immediate) : Rd6, Rm0, #12
+0x0800008b : BL : #232, #232
+0x0800008b : SUB (immediate) : Rd7, #126
+0x0800008c : LSR (immediate) : Rd7, Rm3, #28
+0x0800008c : STRH (immediate) : Rt0, Rn0, #0
+0x0800008c : LSL (immediate) : Rd1, Rm0, #0
+0x0800008d : LSR (immediate) : Rd7, Rm3, #28
+0x0800008d : SUB (immediate) : Rd7, #127
+0x0800008e : LSL (register) : Rm0, Rd1
+0x0800008e : LSL (immediate) : Rd7, Rm0, #12
+0x0800008e : BL : #232, #232
+0x0800008e : SUB (immediate) : Rd6, Rn7, Rm4
+0x0800008f : LDRB (immediate) : Rt2, Rn7, #23
+0x0800008f : SBC (register) : Rm0, Rd3
+0x0800008f : LSL (immediate) : Rd7, Rm1, #28
+0x0800008f : STRH (immediate) : Rt0, Rn1, #16
+0x08000090 : ASR (immediate) : Rd0, Rm4, #0
+0x08000090 : ADD (register) : Rd0, Rn6, Rm0
+0x08000090 : STR (immediate) : Rt2, Rn0, #7
+0x08000090 : STR (immediate) : Rt3, Rn0, #7
+0x08000091 : STRH (immediate) : Rt4, Rn1, #24
+0x08000091 : LSL (immediate) : Rd4, Rm1, #24
+0x08000091 : ADD (register) : Rd0, Rn6, Rm0
+0x08000091 : LSL (register) : Rm0, Rd0
+0x08000092 : LSL (immediate) : Rd3, Rm0, #4
+0x08000092 : STR (register) : Rt0, Rn4, Rm2
+0x08000092 : LDR (immediate) : #58, Rt5
+0x08000093 : STRB (immediate) : Rt2, Rn5, #23
+0x08000093 : LDR (immediate) : #51, Rt1
+0x08000093 : STR (immediate) : Rt6, Rn1, #31
+0x08000093 : LDRH (immediate) : Rt3, Rn2, #4
+0x08000094 : MOV (immediate) : Rd6, #76
+0x08000094 : LSR (immediate) : Rd7, Rm3, #28
+0x08000095 : SUB (immediate) : Rd7, #127
+0x08000095 : STR (immediate) : Rt1, Rn0, #3
+0x08000095 : STRH (immediate) : Rt7, Rn0, #12
+0x08000095 : LDRSB (register) : Rt4, Rn5, Rm2
+0x08000096 : LDR (register) : Rt0, Rn6, Rm2
+0x08000096 : BL : #490, #490
+0x08000096 : LDRSH (register) : Rt6, Rn7, Rm6
+0x08000096 : LDRB (immediate) : Rt2, Rn7, #23
+0x08000097 : CMP (register) : Rn1, Rm3
+0x08000097 : ASR (immediate) : Rd7, Rm5, #28
+0x08000097 : LSL (immediate) : Rd0, Rm1, #16
+0x08000097 : ASR (immediate) : Rd2, Rm4, #4
+0x08000098 : STRH (immediate) : Rt0, Rn0, #0
+0x08000098 : LSL (immediate) : Rd2, Rm0, #4
+0x08000098 : LDR (immediate) : Rt0, Rn2, #3
+0x08000098 : ADR : #64, Rd0
+0x08000099 : STR (immediate) : Rt5, Rn1, #27
+0x08000099 : LDR (immediate) : #52, Rt2
+0x08000099 : BL : #748, #748
+0x08000099 : LSR (immediate) : Rd6, Rm3, #28
+0x0800009a : SUB (immediate) : Rd5, #123
+0x0800009a : LSL (immediate) : Rd1, Rm0, #0
+0x0800009a : LSL (immediate) : Rd7, Rm0, #12
+0x0800009a : LSL (register) : Rm0, Rd0
+0x0800009b : MOV (immediate) : Rd4, #72
+0x0800009b : STR (immediate) : #32, Rt0
+0x0800009b : B : #708
+0x0800009c : LDRH (immediate) : Rt2, Rn2, #4
+0x0800009c : LDRB (immediate) : Rt1, Rn6, #3
+0x0800009c : LDRH (immediate) : Rt3, Rn3, #20
+0x0800009d : ADD (immediate) : Rd7, #111
+0x0800009d : LDM, LDMIA, LDMFD : Rn7
+0x0800009d : SUB (immediate) : Rd6, #124
+0x0800009e : LDR (immediate) : #57, Rt4
+0x0800009e : STRB (immediate) : Rt7, Rn4, #15
+0x0800009e : SUB (immediate) : Rd1, #115
+0x0800009e : B : #1998
+0x0800009f : ASR (immediate) : Rd7, Rm4, #12
+0x0800009f : LDR (literal) : #156, Rt6
+0x0800009f : STRH (immediate) : Rt2, Rn0, #4
+0x0800009f : LSL (immediate) : Rd1, Rm1, #16
+0x080000a0 : LDR (immediate) : Rt0, Rn2, #3
+0x080000a0 : ADR : #64, Rd0
+0x080000a0 : LSL (immediate) : Rd5, Rm1, #24
+0x080000a0 : SUB (register) : Rd4, Rn6, Rm0
+0x080000a1 : LSL (register) : Rm0, Rd0
+0x080000a1 : LSL (immediate) : Rd3, Rm0, #4
+0x080000a1 : STR (register) : Rt0, Rn4, Rm2
+0x080000a2 : ADD (immediate) : Rd2, Rn7, Rm4
+0x080000a2 : STRB (immediate) : Rt2, Rn5, #23
+0x080000a2 : STRH (immediate) : Rt3, Rn0, #4
+0x080000a2 : LSL (immediate) : Rd6, Rm1, #28
+0x080000a3 : LDRH (immediate) : Rt0, Rn2, #0
+0x080000a3 : MOV (immediate) : Rd0, #64
+0x080000a3 : LSR (immediate) : Rd1, Rm2, #0
+0x080000a3 : MOV (immediate) : Rd2, #68
+0x080000a4 : STM, STMIA, STMEA : Rn0
+0x080000a4 : LSL (immediate) : Rd4, Rm0, #8
+0x080000a4 : ADD (immediate) : Rd0, Rn7, Rm0
+0x080000a4 : STRB (immediate) : Rt0, Rn4, #3
+0x080000a5 : STR (immediate) : Rt3, Rn0, #7
+0x080000a5 : STRH (immediate) : Rt6, Rn1, #28
+0x080000a5 : LDR (register) : Rt0, Rn6, Rm2
+0x080000a6 : LDR (immediate) : #58, Rt5
+0x080000a6 : STRB (immediate) : Rt3, Rn5, #23
+0x080000a6 : LDR (literal) : #147, Rt1
+0x080000a6 : MOV (immediate) : Rd7, #78
+0x080000a7 : STRH (register) : Rt4, Rn4, Rm2
+0x080000a7 : LDRH (immediate) : Rt2, Rn3, #20
+0x080000a7 : ADD (immediate) : Rd5, #106
+0x080000a8 : LSR (immediate) : Rd1, Rm2, #0
+0x080000a8 : MOV (immediate) : Rd3, #70
+0x080000a8 : ASR (immediate) : Rd1, Rm4, #0
+0x080000a8 : CMP (register) : Rm0, Rn4
+0x080000a9 : LSL (immediate) : Rd2, Rm0, #4
+0x080000a9 : LSL (immediate) : Rd0, Rm1, #16
+0x080000aa : STRB (immediate) : Rt0, Rn4, #3
+0x080000aa : STM, STMIA, STMEA : Rn0
+0x080000aa : STRB (immediate) : Rt6, Rn5, #31
+0x080000ab : LDRSB (register) : Rt6, Rn5, Rm6
+0x080000ab : LDRB (register) : Rt3, Rn7, Rm6
+0x080000ab : B : #1482
+0x080000ab : STR (immediate) : #43, Rt5
+0x080000ac : SUB (immediate) : Rd4, Rn7, Rm0
+0x080000ac : LDRB (immediate) : Rt2, Rn6, #7
+0x080000ac : LSL (immediate) : Rd3, Rm0, #4
+0x080000ac : LSL (immediate) : Rd7, Rm1, #28
+0x080000ad : ADR : #64, Rd0
+0x080000ad : STRH (immediate) : Rt0, Rn0, #0
+0x080000ad : LDRH (immediate) : Rt4, Rn2, #8
+0x080000ad : CMP (immediate) : Rn0, #80
+0x080000ae : LDM, LDMIA, LDMFD : Rn0
+0x080000ae : MOV (immediate) : Rd2, #69
+0x080000ae : LDR (literal) : #153, Rt4
+0x080000ae : ADD (immediate) : Rd2, #100
+0x080000af : STRB(register) : Rt1, Rn5, Rm2
+0x080000af : STRH (register) : Rt6, Rn4, Rm6
+0x080000af : ADR : #74, Rd5
+0x080000af : STR (immediate) : #42, Rt5
+0x080000b0 : LDRH (register) : Rt4, Rn6, Rm2
+0x080000b0 : LDR (immediate) : Rt2, Rn2, #7
+0x080000b0 : LSL (immediate) : Rd3, Rm1, #20
+0x080000b0 : ASR (immediate) : Rd5, Rm5, #24
+0x080000b1 : MOV (immediate) : Rd0, #64
+0x080000b1 : STRH (immediate) : Rt2, Rn0, #4
+0x080000b1 : STR (immediate) : Rt4, Rn0, #11
+0x080000b1 : LDRH (immediate) : Rt0, Rn2, #0
+0x080000b2 : B : #1740
+0x080000b2 : LDR (immediate) : #49, Rt0
+0x080000b2 : SUB (immediate) : Rd7, #127
+0x080000b3 : LDRH (immediate) : Rt7, Rn3, #28
+0x080000b3 : SUB (immediate) : Rd4, Rn7, Rm0
+0x080000b3 : LDRB (immediate) : Rt1, Rn6, #3
+0x080000b4 : LSL (immediate) : Rd3, Rm0, #4
+0x080000b4 : LSL (immediate) : Rd7, Rm1, #28
+0x080000b4 : ADR : #64, Rd0
+0x080000b4 : STRH (immediate) : Rt0, Rn0, #0
+0x080000b5 : LDRH (immediate) : Rt4, Rn2, #8
+0x080000b5 : CMP (immediate) : Rn0, #80
+0x080000b5 : LSR (immediate) : Rd1, Rm2, #0
+0x080000b5 : MOV (immediate) : Rd2, #69
+0x080000b6 : STRH (immediate) : Rt1, Rn0, #0
+0x080000b6 : LSL (immediate) : Rd4, Rm0, #8
+0x080000b6 : LSR (immediate) : Rd0, Rm2, #0
+0x080000b6 : MOV (immediate) : Rd0, #64
+0x080000b7 : STR (immediate) : Rt1, Rn0, #3
+0x080000b7 : STRH (immediate) : Rt4, Rn0, #8
+0x080000b7 : LDR (register) : Rt0, Rn6, Rm2
+0x080000b8 : LDR (immediate) : #58, Rt5
+0x080000b8 : STRB (immediate) : Rt3, Rn5, #23
+0x080000b8 : SUB (immediate) : Rd1, #115
+0x080000b8 : B : #1998
+0x080000b9 : MOV (immediate) : Rd3, #71
+0x080000b9 : LDRH (immediate) : Rt4, Rn3, #24
+0x080000b9 : LDM, LDMIA, LDMFD : Rn0
+0x080000ba : SUB (register) : Rd6, Rn6, Rm4
+0x080000ba : LDR (immediate) : Rt1, Rn3, #19
+0x080000ba : ASR (immediate) : Rd3, Rm4, #4
+0x080000ba : MOV (register) : Rd5, Rm1
+0x080000bb : ADR : #66, Rd1
+0x080000bb : STRH (immediate) : Rt0, Rn1, #16
+0x080000bb : LDRH (immediate) : Rt4, Rn2, #8
+0x080000bb : CMP (immediate) : Rn0, #80
+0x080000bc : LDM, LDMIA, LDMFD : Rn0
+0x080000bc : MOV (immediate) : Rd2, #69
+0x080000bc : LDR (literal) : #153, Rt4
+0x080000bc : ADD (immediate) : Rd2, #100
+0x080000bd : STRH (register) : Rt6, Rn4, Rm6
+0x080000bd : SUB (immediate) : Rd7, Rn7, Rm4
+0x080000be : LDRB (immediate) : Rt6, Rn7, #31
+0x080000be : LSL (immediate) : Rd3, Rm0, #4
+0x080000be : LSL (immediate) : Rd7, Rm1, #28
+0x080000be : STR (immediate) : Rt0, Rn0, #3
+0x080000bf : STRH (immediate) : Rt0, Rn0, #0
+0x080000bf : BL : #748, #748
+0x080000bf : LDRB (immediate) : Rt3, Rn7, #23
+0x080000c0 : ADD (immediate) : Rd3, Rn7, Rm4
+0x080000c0 : STRB (immediate) : Rt7, Rn5, #31
+0x080000c0 : STRH (immediate) : Rt3, Rn0, #4
+0x080000c0 : LSL (immediate) : Rd6, Rm1, #28
+0x080000c1 : LDRH (immediate) : Rt0, Rn2, #0
+0x080000c1 : MOV (immediate) : Rd0, #64
+0x080000c1 : CMP (immediate) : Rn0, #81
+0x080000c1 : ADR : #68, Rd2
+0x080000c2 : LSL (immediate) : Rd5, Rm0, #8
+0x080000c2 : LSR (immediate) : Rd4, Rm2, #8
+0x080000c2 : LSL (register) : Rm0, Rd0
+0x080000c2 : LSL (immediate) : Rd1, Rm0, #0
+0x080000c3 : STR (register) : Rt0, Rn4, Rm2
+0x080000c3 : LDR (immediate) : #58, Rt5
+0x080000c3 : STRB (immediate) : Rt2, Rn5, #23
+0x080000c4 : LDRH (immediate) : Rt3, Rn2, #4
+0x080000c4 : MOV (immediate) : Rd7, #78
+0x080000c4 : CMP (immediate) : Rn0, #81
+0x080000c4 : ADR : #68, Rd2
+0x080000c5 : MOV (immediate) : Rd2, #69
+0x080000c5 : LDRH (immediate) : Rt4, Rn2, #8
+0x080000c5 : LSL (immediate) : Rd4, Rm0, #8
+0x080000c5 : LSR (immediate) : Rd1, Rm2, #0
+0x080000c6 : MOV (immediate) : Rd0, #64
+0x080000c6 : STRH (immediate) : Rt1, Rn0, #0
+0x080000c6 : STR (immediate) : Rt4, Rn0, #11
+0x080000c6 : LDRH (immediate) : Rt0, Rn2, #0
+0x080000c7 : BL : #748, #748
+0x080000c7 : LSR (immediate) : Rd7, Rm3, #28
+0x080000c7 : SUB (immediate) : Rd7, #127
+0x080000c8 : LSL (immediate) : Rd1, Rm0, #0
+0x080000c8 : LSL (immediate) : Rd7, Rm0, #12
+0x080000c8 : B : #192
+0x080000c8 : STRH (immediate) : Rt0, Rn0, #0
+0x080000c9 : LDRB (immediate) : Rt5, Rn7, #27
+0x080000ca : SUB (immediate) : Rd7, #126
+0x080000ca : LDRH (immediate) : Rt7, Rn3, #28
+0x080000cb : LDRSB (register) : Rt4, Rn5, Rm2
+0x080000cb : LDR (register) : Rt1, Rn6, Rm2
+0x080000cb : STR (immediate) : Rt2, Rn1, #23
+0x080000cb : STR (immediate) : #43, Rt5
+0x080000cc : STR (immediate) : #44, Rt6
+0x080000cc : LDR (register) : Rt2, Rn6, Rm6
+0x080000cc : LDR (literal) : #146, Rt1
+0x080000cc : MOV (immediate) : Rd5, #75
+0x080000cd : STRB(register) : Rt1, Rn5, Rm2
+0x080000cd : STRH (register) : Rt4, Rn4, Rm2
+0x080000cd : ADD (immediate) : Rd5, #106
+0x080000ce : MOV (immediate) : Rd3, #70
+0x080000ce : LDRH (immediate) : Rt2, Rn3, #20
+0x080000ce : ASR (immediate) : Rd4, Rm4, #8
+0x080000ce : LDR (literal) : #145, Rt0
+0x080000cf : STM, STMIA, STMEA : Rn1
+0x080000cf : LSL (immediate) : Rd1, Rm1, #16
+0x080000cf : LDRH (immediate) : Rt0, Rn3, #16
+0x080000cf : ADD (immediate) : Rd0, #96
+0x080000d0 : LDR (immediate) : Rt1, Rn2, #3
+0x080000d0 : ADR : #70, Rd3
+0x080000d0 : STRH (immediate) : Rt5, Rn1, #24
+0x080000d0 : SUB (register) : Rd4, Rn6, Rm0
+0x080000d1 : LSR (immediate) : Rd0, Rm2, #0
+0x080000d1 : MOV (immediate) : Rd1, #67
+0x080000d1 : LSL (immediate) : Rd1, Rm0, #0
+0x080000d1 : LSL (immediate) : Rd4, Rm0, #8
+0x080000d2 : STRB (immediate) : Rt0, Rn4, #3
+0x080000d2 : STM, STMIA, STMEA : Rn0
+0x080000d2 : STR (immediate) : #46, Rt7
+0x080000d2 : LDRB (register) : Rt0, Rn7, Rm2
+0x080000d3 : STR (immediate) : Rt3, Rn1, #23
+0x080000d3 : LDRB (register) : Rt3, Rn7, Rm6
+0x080000d3 : STRB (immediate) : Rt4, Rn5, #27
+0x080000d4 : B : #1483
+0x080000d4 : STR (immediate) : #46, Rt7
+0x080000d4 : SUB (immediate) : Rd4, Rn7, Rm0
+0x080000d4 : LDRB (immediate) : Rt2, Rn6, #7
+0x080000d5 : LSL (immediate) : Rd3, Rm0, #4
+0x080000d5 : LSL (immediate) : Rd7, Rm1, #28
+0x080000d5 : LSL (register) : Rm0, Rd0
+0x080000d6 : STRH (immediate) : Rt0, Rn1, #16
+0x080000d6 : ASR (immediate) : Rd0, Rm4, #0
+0x080000d6 : LSR (immediate) : Rd0, Rm2, #0
+0x080000d6 : MOV (immediate) : Rd1, #66
+0x080000d7 : ASR (immediate) : Rd1, Rm4, #0
+0x080000d7 : CMP (register) : Rm0, Rn4
+0x080000d7 : STR (register) : Rt2, Rn4, Rm6
+0x080000d7 : ADD (register) : Rm1, Rd0
+0x080000d8 : ADR : #74, Rd5
+0x080000d8 : STR (immediate) : #40, Rt4
+0x080000d8 : LDRH (register) : Rt4, Rn6, Rm2
+0x080000d8 : LDR (immediate) : Rt2, Rn2, #7
+0x080000d9 : LSL (immediate) : Rd3, Rm1, #20
+0x080000d9 : ASR (immediate) : Rd5, Rm5, #24
+0x080000d9 : LSL (immediate) : Rd2, Rm0, #4
+0x080000da : STRB (immediate) : Rt0, Rn4, #3
+0x080000da : STM, STMIA, STMEA : Rn0
+0x080000da : B : #1998
+0x080000da : LDR (immediate) : #56, Rt4
+0x080000db : SUB (immediate) : Rd7, #127
+0x080000db : LDRH (immediate) : Rt7, Rn3, #28
+0x080000dc : LDRB (immediate) : Rt4, Rn7, #27
+0x080000dc : SUB (immediate) : Rd7, Rn7, Rm4
+0x080000dc : MOV (immediate) : Rd0, #64
+0x080000dd : STRH (immediate) : Rt3, Rn0, #4
+0x080000dd : LSL (immediate) : Rd4, Rm0, #8
+0x080000dd : LSR (immediate) : Rd0, Rm2, #0
+0x080000dd : MOV (immediate) : Rd0, #64
+0x080000de : STRH (immediate) : Rt1, Rn0, #0
+0x080000de : LSL (immediate) : Rd4, Rm0, #8
+0x080000de : LSR (immediate) : Rd0, Rm2, #0
+0x080000de : STR (immediate) : Rt0, Rn0, #3
+0x080000df : STRH (immediate) : Rt1, Rn0, #0
+0x080000df : LDR (register) : Rt0, Rn6, Rm2
+0x080000df : LDR (immediate) : #58, Rt5
+0x080000e0 : STRB (immediate) : Rt3, Rn5, #23
+0x080000e0 : SUB (immediate) : Rd1, #115
+0x080000e0 : B : #1998
+0x080000e0 : MOV (immediate) : Rd3, #71
+0x080000e1 : LDRH (immediate) : Rt4, Rn3, #24
+0x080000e1 : LDM, LDMIA, LDMFD : Rn0
+0x080000e1 : SUB (register) : Rd6, Rn6, Rm4
+0x080000e2 : LDR (immediate) : Rt1, Rn3, #19
+0x080000e2 : ASR (immediate) : Rd3, Rm4, #4
+0x080000e2 : MOV (register) : Rd5, Rm1
+0x080000e2 : SBC (register) : Rm0, Rd2
+0x080000e3 : LSL (immediate) : Rd0, Rm1, #16
+0x080000e3 : STRH (immediate) : Rt0, Rn1, #16
+0x080000e3 : ASR (immediate) : Rd0, Rm4, #0
+0x080000e3 : LSR (immediate) : Rd0, Rm2, #0
+0x080000e4 : MOV (immediate) : Rd1, #66
+0x080000e4 : ASR (immediate) : Rd1, Rm4, #0
+0x080000e4 : CMP (register) : Rm0, Rn4
+0x080000e4 : ASR (immediate) : Rd2, Rm4, #4
+0x080000e5 : ADD (register) : Rm1, Rd0
+0x080000e5 : B : #450
+0x080000e5 : STRH (immediate) : Rt0, Rn1, #16
+0x080000e5 : LDRB (immediate) : Rt4, Rn7, #27
+0x080000e6 : SUB (immediate) : Rd7, Rn7, Rm4
+0x080000e6 : STR (immediate) : Rt0, Rn0, #3
+0x080000e6 : STRH (immediate) : Rt3, Rn0, #4
+0x080000e7 : BL : #748, #748
+0x080000e7 : LDRB (immediate) : Rt3, Rn7, #23
+0x080000e7 : ADD (immediate) : Rd3, Rn7, Rm4
+0x080000e8 : STRB (immediate) : Rt7, Rn5, #31
+0x080000e8 : MOV (immediate) : Rd1, #67
+0x080000e8 : STRH (immediate) : Rt6, Rn1, #28
+0x080000e8 : STRH (immediate) : Rt4, Rn0, #8
+0x080000e9 : LSR (immediate) : Rd0, Rm2, #0
+0x080000e9 : CMP (immediate) : Rn0, #80
+0x080000e9 : ADR : #65, Rd0
+0x080000e9 : LSL (immediate) : Rd5, Rm0, #8
+0x080000ea : LSR (immediate) : Rd4, Rm2, #8
+0x080000ea : LSL (register) : Rm0, Rd0
+0x080000ea : LSL (immediate) : Rd1, Rm0, #0
+0x080000eb : STR (register) : Rt0, Rn4, Rm2
+0x080000eb : ADD (immediate) : Rd2, Rn7, Rm4
+0x080000eb : STRB (immediate) : Rt2, Rn5, #23
+0x080000eb : STRH (immediate) : Rt3, Rn0, #4
+0x080000ec : LSL (immediate) : Rd6, Rm1, #28
+0x080000ec : CMP (immediate) : Rn0, #80
+0x080000ec : ADR : #64, Rd0
+0x080000ec : MOV (immediate) : Rd2, #69
+0x080000ed : LDRH (immediate) : Rt4, Rn2, #8
+0x080000ed : STR (immediate) : Rt4, Rn0, #11
+0x080000ed : LDRH (immediate) : Rt1, Rn2, #0
+0x080000ed : MOV (immediate) : Rd6, #76
+0x080000ee : LDR (immediate) : #49, Rt0
+0x080000ee : STR (immediate) : Rt4, Rn0, #11
+0x080000ee : LDRH (immediate) : Rt3, Rn2, #4
+0x080000ee : BL : #748, #748
+0x080000ef : LSR (immediate) : Rd7, Rm3, #28
+0x080000ef : SUB (immediate) : Rd7, #127
+0x080000ef : STR (immediate) : Rt1, Rn0, #3
+0x080000f0 : STRH (immediate) : Rt7, Rn0, #12
+0x080000f0 : B : #1740
+0x080000f0 : LDR (immediate) : #48, Rt0
+0x080000f1 : LDRB (immediate) : Rt7, Rn7, #31
+0x080000f2 : SUB (immediate) : Rd7, #126
+0x080000f2 : LDRH (immediate) : Rt7, Rn3, #28
+0x080000f3 : STR (immediate) : #44, Rt6
+0x080000f3 : LDR (register) : Rt1, Rn6, Rm2
+0x080000f3 : ADD (register) : Rd2, Rn6, Rm4
+0x080000f3 : STR (immediate) : Rt3, Rn1, #23
+0x080000f4 : LSL (immediate) : Rd3, Rm0, #4
+0x080000f4 : LSL (immediate) : Rd4, Rm1, #24
+0x080000f4 : LSL (register) : Rm0, Rd0
+0x080000f5 : STM, STMIA, STMEA : Rn4
+0x080000f5 : ASR (immediate) : Rd0, Rm4, #0
+0x080000f5 : LDR (literal) : #152, Rt4
+0x080000f5 : ADD (immediate) : Rd1, #98
+0x080000f6 : MOV (immediate) : Rd4, #73
+0x080000f6 : STR (immediate) : #38, Rt3
+0x080000f6 : LSL (immediate) : Rd4, Rm0, #8
+0x080000f6 : LSR (immediate) : Rd2, Rm2, #4
+0x080000f7 : STM, STMIA, STMEA : Rn0
+0x080000f7 : LSL (immediate) : Rd1, Rm0, #0
+0x080000f7 : LDR (immediate) : #63, Rt7
+0x080000f8 : LDRB (immediate) : Rt6, Rn7, #31
+0x080000f8 : ADD (register) : Rd3, Rn6, Rm4
+0x080000f8 : STR (immediate) : Rt7, Rn1, #31
+0x080000f8 : STR (register) : Rt3, Rn4, Rm6
+0x080000f9 : MOV (register) : Rd4, Rm1
+0x080000f9 : BL : #490, #490
+0x080000f9 : SUB (immediate) : Rd7, #127
+0x080000fa : LDRH (immediate) : Rt7, Rn3, #28
+0x080000fa : LDRH (immediate) : Rt4, Rn3, #24
+0x080000fa : SUB (immediate) : Rd0, #113
+0x080000fb : LDRH (immediate) : Rt1, Rn2, #0
+0x080000fb : MOV (immediate) : Rd3, #71
+0x080000fb : SUB (immediate) : Rd0, #113
+0x080000fb : B : #708
+0x080000fc : BIC (register) : Rm0, Rd7
+0x080000fc : LSR (immediate) : Rd4, Rm3, #24
+0x080000fc : STR (register) : Rt1, Rn4, Rm2
+0x080000fd : LDR (immediate) : #63, Rt7
+0x080000fd : LDRB (immediate) : Rt6, Rn7, #31
+0x080000fd : CMP (immediate) : Rn1, #83
+0x080000fe : ADR : #79, Rd7
+0x080000fe : LSL (immediate) : Rd5, Rm0, #8
+0x080000fe : LSR (immediate) : Rd4, Rm2, #8
+0x080000fe : STRH (immediate) : Rt0, Rn0, #0
+0x080000ff : LSL (immediate) : Rd1, Rm0, #0
+0x080000ff : ADD (register) : Rd0, Rn6, Rm0
+0x080000ff : STR (immediate) : Rt0, Rn0, #3
+0x080000ff : STR (immediate) : Rt3, Rn0, #7
+0x08000100 : STRH (immediate) : Rt4, Rn1, #24
+0x08000100 : LDR (register) : Rt0, Rn6, Rm2
+0x08000100 : SUB (immediate) : Rd5, #122
+0x08000101 : LSR (immediate) : Rd6, Rm3, #28
+0x08000101 : ASR (immediate) : Rd0, Rm5, #16
+0x08000101 : STR (register) : Rt1, Rn4, Rm2
+0x08000102 : LSL (immediate) : Rd2, Rm0, #4
+0x08000102 : LSL (immediate) : Rd2, Rm1, #20
+0x08000102 : STR (register) : Rt0, Rn4, Rm2
+0x08000102 : LSL (register) : Rm0, Rd0
+0x08000103 : MOV (immediate) : Rd5, #74
+0x08000103 : STR (immediate) : #40, Rt4
+0x08000103 : ASR (immediate) : Rd4, Rm4, #8
+0x08000103 : LDR (literal) : #146, Rt1
+0x08000104 : B : #450
+0x08000104 : STRH (immediate) : Rt1, Rn1, #16
+0x08000104 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000104 : LDRB (immediate) : Rt0, Rn6, #3
+0x08000105 : STRH (immediate) : Rt3, Rn0, #4
+0x08000105 : LSL (immediate) : Rd7, Rm1, #28
+0x08000105 : LDR (literal) : #144, Rt0
+0x08000105 : MOV (immediate) : Rd0, #64
+0x08000106 : STRB(register) : Rt1, Rn5, Rm2
+0x08000106 : STRH (register) : Rt4, Rn4, Rm2
+0x08000106 : LSL (immediate) : Rd2, Rm1, #20
+0x08000106 : ASR (immediate) : Rd2, Rm5, #20
+0x08000107 : LSL (immediate) : Rd2, Rm0, #4
+0x08000107 : LSL (register) : Rm0, Rd0
+0x08000108 : B : #1224
+0x08000108 : STR (immediate) : #32, Rt0
+0x08000108 : LDRSH (register) : Rt4, Rn7, Rm2
+0x08000108 : LDRB (immediate) : Rt2, Rn6, #7
+0x08000109 : LSL (immediate) : Rd3, Rm1, #20
+0x08000109 : ASR (immediate) : Rd7, Rm5, #28
+0x08000109 : STR (register) : Rt0, Rn4, Rm2
+0x08000109 : SBC (register) : Rm0, Rd2
+0x0800010a : BL : #490, #490
+0x0800010a : LDRSH (register) : Rt6, Rn7, Rm6
+0x0800010a : LDRB (immediate) : Rt2, Rn7, #23
+0x0800010a : STR (immediate) : Rt3, Rn1, #23
+0x0800010b : STR (immediate) : #47, Rt7
+0x0800010b : LDR (register) : Rt2, Rn6, Rm6
+0x0800010c : BL : #491, #491
+0x0800010d : LDM, LDMIA, LDMFD : Rn7
+0x0800010d : LDRSB (register) : Rt6, Rn5, Rm6
+0x0800010d : LDRB (register) : Rt1, Rn7, Rm2
+0x0800010d : LSL (immediate) : Rd2, Rm1, #20
+0x0800010e : ASR (immediate) : Rd3, Rm5, #20
+0x0800010e : MOV (immediate) : Rd0, #64
+0x0800010e : STRH (immediate) : Rt2, Rn0, #4
+0x0800010f : LDM, LDMIA, LDMFD : Rn7
+0x0800010f : SUB (immediate) : Rd4, #121
+0x0800010f : B : #999, #999
+0x08000110 : LDR (immediate) : Rt5, Rn3, #27
+0x08000110 : LDR (immediate) : #59, Rt5
+0x08000110 : STRB (immediate) : Rt5, Rn5, #27
+0x08000111 : LSR (immediate) : Rd3, Rm2, #4
+0x08000111 : MOV (immediate) : Rd7, #78
+0x08000111 : LSL (immediate) : Rd1, Rm0, #0
+0x08000111 : LSL (immediate) : Rd4, Rm0, #8
+0x08000112 : MOV (immediate) : Rd0, #64
+0x08000112 : STRH (immediate) : Rt0, Rn0, #0
+0x08000112 : LDR (literal) : #144, Rt0
+0x08000113 : B : cond:3, #41, cond:3
+0x08000113 : CMP (immediate) : Rn7, #94
+0x08000113 : ADD (register) : Rd1, Rn6, Rm0
+0x08000114 : STR (immediate) : Rt5, Rn0, #11
+0x08000114 : ADR : #67, Rd1
+0x08000114 : STRH (immediate) : Rt4, Rn1, #24
+0x08000114 : SUB (register) : Rd4, Rn6, Rm0
+0x08000115 : LDR (immediate) : Rt0, Rn2, #3
+0x08000115 : STM, STMIA, STMEA : Rn1
+0x08000115 : LSL (immediate) : Rd5, Rm1, #24
+0x08000116 : LDR (immediate) : Rt6, Rn3, #31
+0x08000116 : LSL (immediate) : Rd3, Rm1, #20
+0x08000116 : ASR (immediate) : Rd5, Rm5, #24
+0x08000117 : LSL (immediate) : Rd2, Rm0, #4
+0x08000117 : STM, STMIA, STMEA : Rn0
+0x08000118 : LDRH (immediate) : Rt0, Rn3, #16
+0x08000118 : ADD (immediate) : Rd0, #96
+0x08000118 : LDM, LDMIA, LDMFD : Rn0
+0x08000118 : MOV (immediate) : Rd3, #70
+0x08000119 : SUB (immediate) : Rd4, #121
+0x08000119 : LDR (literal) : #158, Rt7
+0x08000119 : SBC (register) : Rm0, Rd2
+0x0800011a : LSL (immediate) : Rd1, Rm1, #16
+0x0800011a : MOV (immediate) : Rd4, #72
+0x0800011a : STR (immediate) : #32, Rt0
+0x0800011a : LSL (immediate) : Rd4, Rm0, #8
+0x0800011b : LSR (immediate) : Rd2, Rm2, #4
+0x0800011b : STR (immediate) : Rt0, Rn0, #3
+0x0800011b : STRH (immediate) : Rt1, Rn0, #0
+0x0800011b : LSL (immediate) : Rd4, Rm1, #24
+0x0800011c : ADD (register) : Rd0, Rn6, Rm0
+0x0800011c : STR (immediate) : Rt0, Rn0, #3
+0x0800011c : STRH (immediate) : Rt3, Rn0, #4
+0x0800011c : LSL (immediate) : Rd4, Rm1, #24
+0x0800011d : ADD (register) : Rd0, Rn6, Rm0
+0x0800011d : STR (immediate) : Rt0, Rn0, #3
+0x0800011d : STRH (immediate) : Rt3, Rn0, #4
+0x0800011e : LDR (register) : Rt0, Rn6, Rm2
+0x0800011e : SUB (immediate) : Rd5, #122
+0x0800011e : LSR (immediate) : Rd6, Rm3, #28
+0x0800011f : LDR (literal) : #152, Rt4
+0x0800011f : ADD (immediate) : Rd0, #97
+0x0800011f : ADD (immediate) : Rd4, #105
+0x08000120 : STRH (immediate) : Rt6, Rn0, #12
+0x08000120 : LSR (immediate) : Rd2, Rm3, #20
+0x08000120 : LSR (immediate) : Rd0, Rm2, #0
+0x08000120 : MOV (immediate) : Rd0, #65
+0x08000121 : ASR (immediate) : Rd1, Rm4, #0
+0x08000121 : CMP (register) : Rm0, Rn4
+0x08000121 : LSL (immediate) : Rd2, Rm0, #4
+0x08000121 : LSL (immediate) : Rd0, Rm1, #16
+0x08000122 : ADD (immediate) : Rd0, #96
+0x08000122 : STM, STMIA, STMEA : Rn0
+0x08000122 : LDRSH (register) : Rt6, Rn7, Rm6
+0x08000123 : LDRB (immediate) : Rt1, Rn7, #19
+0x08000123 : B : #1483
+0x08000123 : STR (immediate) : #47, Rt7
+0x08000123 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000124 : LDRB (immediate) : Rt2, Rn6, #7
+0x08000124 : LSL (immediate) : Rd3, Rm0, #4
+0x08000124 : LSL (immediate) : Rd7, Rm1, #28
+0x08000124 : LSL (register) : Rm0, Rd0
+0x08000125 : STRH (immediate) : Rt0, Rn1, #16
+0x08000125 : ASR (immediate) : Rd0, Rm4, #0
+0x08000125 : LDR (literal) : #144, Rt0
+0x08000126 : MOV (immediate) : Rd1, #66
+0x08000126 : LSL (immediate) : Rd1, Rm1, #16
+0x08000126 : ASR (immediate) : Rd4, Rm4, #8
+0x08000126 : STRB (immediate) : Rt0, Rn4, #3
+0x08000127 : STM, STMIA, STMEA : Rn1
+0x08000127 : ADR : #78, Rd7
+0x08000127 : LDR (immediate) : #56, Rt4
+0x08000127 : LDRH (register) : Rt4, Rn6, Rm2
+0x08000128 : LDR (immediate) : Rt3, Rn2, #7
+0x08000128 : LSL (immediate) : Rd3, Rm1, #20
+0x08000128 : ASR (immediate) : Rd5, Rm5, #24
+0x08000128 : LSL (register) : Rm0, Rd0
+0x08000129 : LSL (immediate) : Rd2, Rm0, #4
+0x08000129 : STRH (immediate) : Rt0, Rn1, #16
+0x08000129 : ASR (immediate) : Rd0, Rm4, #0
+0x08000129 : LDR (immediate) : Rt0, Rn2, #3
+0x0800012a : ADR : #66, Rd1
+0x0800012a : ASR (immediate) : Rd5, Rm5, #24
+0x0800012a : LDRH (register) : Rt4, Rn6, Rm2
+0x0800012a : ADD (immediate) : Rd1, #98
+0x0800012b : STM, STMIA, STMEA : Rn5
+0x0800012b : ADR : #70, Rd3
+0x0800012b : LDRH (immediate) : Rt0, Rn3, #16
+0x0800012b : LDRH (register) : Rt4, Rn6, Rm2
+0x0800012c : LDR (immediate) : Rt1, Rn2, #3
+0x0800012c : STR (immediate) : #43, Rt5
+0x0800012c : LDRSB (register) : Rt5, Rn5, Rm2
+0x0800012c : LDRH (immediate) : Rt2, Rn2, #4
+0x0800012d : MOV (immediate) : Rd5, #74
+0x0800012d : LDM, LDMIA, LDMFD : Rn0
+0x0800012d : MOV (immediate) : Rd2, #68
+0x0800012d : LDRB (register) : Rt1, Rn7, Rm2
+0x0800012e : STRB (immediate) : Rt4, Rn4, #11
+0x0800012e : LSL (immediate) : Rd3, Rm1, #20
+0x0800012e : ASR (immediate) : Rd6, Rm5, #28
+0x0800012f : LSL (immediate) : Rd2, Rm0, #4
+0x0800012f : STM, STMIA, STMEA : Rn0
+0x08000130 : LDRB (immediate) : Rt5, Rn7, #27
+0x08000130 : SUB (immediate) : Rd7, Rn7, Rm4
+0x08000130 : STR (register) : Rt0, Rn4, Rm2
+0x08000131 : SBC (register) : Rm0, Rd3
+0x08000131 : BL : #490, #490
+0x08000131 : LDRB (immediate) : Rt6, Rn7, #31
+0x08000132 : LDR (immediate) : #63, Rt7
+0x08000132 : BL : #748, #748
+0x08000132 : LSR (immediate) : Rd6, Rm3, #28
+0x08000132 : SUB (immediate) : Rd5, #123
+0x08000133 : ASR (immediate) : Rd1, Rm4, #0
+0x08000133 : BIC (register) : Rm0, Rd7
+0x08000133 : B : #450
+0x08000133 : STRH (immediate) : Rt0, Rn1, #16
+0x08000134 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000134 : LDRB (immediate) : Rt0, Rn6, #3
+0x08000134 : BLX : Rm1
+0x08000135 : LDRSH (register) : Rt5, Rn7, Rm2
+0x08000136 : LDRH (immediate) : Rt2, Rn3, #20
+0x08000136 : ADD (immediate) : Rd5, #107
+0x08000136 : CMP (immediate) : Rn0, #81
+0x08000136 : ADR : #70, Rd3
+0x08000137 : STR (immediate) : Rt5, Rn0, #11
+0x08000137 : LDRH (immediate) : Rt4, Rn2, #8
+0x08000137 : STM, STMIA, STMEA : Rn6
+0x08000137 : ADD (register) : Rd1, Rn6, Rm0
+0x08000138 : LDRH (immediate) : Rt0, Rn3, #16
+0x08000138 : ADD (immediate) : Rd1, #99
+0x08000138 : LSR (immediate) : Rd1, Rm2, #0
+0x08000138 : MOV (immediate) : Rd3, #70
+0x08000139 : STR (immediate) : Rt1, Rn0, #3
+0x08000139 : STRH (immediate) : Rt4, Rn0, #8
+0x08000139 : MOV (immediate) : Rd6, #76
+0x08000139 : LDR (immediate) : #48, Rt0
+0x0800013a : LSL (immediate) : Rd4, Rm0, #8
+0x0800013a : LSR (immediate) : Rd3, Rm2, #4
+0x0800013a : LSL (immediate) : Rd1, Rm0, #0
+0x0800013b : MOV (immediate) : Rd0, #64
+0x0800013b : STRH (immediate) : Rt0, Rn0, #0
+0x0800013c : LDR (literal) : #144, Rt0
+0x0800013c : B : cond:3, #41, cond:3
+0x0800013d : CMP (immediate) : Rn7, #94
+0x0800013d : STR (immediate) : Rt5, Rn0, #11
+0x0800013d : LDR (literal) : #155, Rt5
+0x0800013e : ADD (immediate) : Rd6, #108
+0x0800013e : LSL (immediate) : Rd1, Rm1, #16
+0x0800013e : ASR (immediate) : Rd6, Rm4, #12
+0x0800013f : LSL (immediate) : Rd2, Rm0, #4
+0x08000140 : LDRB (immediate) : Rt0, Rn7, #19
+0x08000141 : ADD (immediate) : Rd3, Rn7, Rm4
+0x08000141 : STRB (immediate) : Rt7, Rn5, #31
+0x08000141 : B : #451
+0x08000141 : STRH (immediate) : Rt6, Rn1, #28
+0x08000142 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000142 : LDRB (immediate) : Rt0, Rn6, #3
+0x08000142 : LSL (immediate) : Rd3, Rm0, #4
+0x08000142 : LSL (immediate) : Rd7, Rm1, #28
+0x08000143 : ADR : #64, Rd0
+0x08000143 : STRH (immediate) : Rt0, Rn0, #0
+0x08000143 : LDRH (register) : Rt4, Rn6, Rm2
+0x08000143 : LDR (immediate) : Rt0, Rn2, #3
+0x08000144 : LSL (immediate) : Rd3, Rm1, #20
+0x08000144 : ASR (immediate) : Rd5, Rm5, #24
+0x08000144 : LSL (immediate) : Rd2, Rm0, #4
+0x08000145 : MOV (immediate) : Rd0, #64
+0x08000145 : STRH (immediate) : Rt0, Rn0, #0
+0x08000145 : LDM, LDMIA, LDMFD : Rn0
+0x08000146 : SUB (immediate) : Rd3, #118
+0x08000146 : LDR (literal) : #157, Rt6
+0x08000146 : SBC (register) : Rm0, Rd2
+0x08000147 : LSL (immediate) : Rd1, Rm1, #16
+0x08000147 : STRH (immediate) : Rt0, Rn1, #16
+0x08000147 : ASR (immediate) : Rd0, Rm4, #0
+0x08000147 : LDR (immediate) : Rt0, Rn2, #3
+0x08000148 : ADR : #66, Rd1
+0x08000148 : ASR (immediate) : Rd5, Rm5, #24
+0x08000148 : LDRH (register) : Rt4, Rn6, Rm2
+0x08000149 : LSR (immediate) : Rd6, Rm3, #28
+0x08000149 : SUB (immediate) : Rd4, #120
+0x08000149 : ASR (immediate) : Rd1, Rm4, #0
+0x08000149 : BIC (register) : Rm0, Rd7
+0x0800014a : B : #450
+0x0800014a : STRH (immediate) : Rt0, Rn1, #16
+0x0800014a : LDRSH (register) : Rt4, Rn7, Rm2
+0x0800014a : LDRB (immediate) : Rt0, Rn6, #3
+0x0800014b : LSL (immediate) : Rd3, Rm1, #20
+0x0800014b : ASR (immediate) : Rd7, Rm5, #28
+0x0800014b : SBC (register) : Rm0, Rd2
+0x0800014c : LDRSH (register) : Rt5, Rn7, Rm2
+0x0800014d : LDRH (immediate) : Rt2, Rn3, #20
+0x0800014d : ADD (immediate) : Rd5, #107
+0x0800014d : CMP (immediate) : Rn0, #81
+0x0800014d : ADR : #70, Rd3
+0x0800014e : STR (immediate) : Rt5, Rn0, #11
+0x0800014e : LDRH (immediate) : Rt4, Rn2, #8
+0x0800014e : STR (immediate) : Rt4, Rn1, #27
+0x0800014e : LDR (immediate) : #49, Rt0
+0x0800014f : STRH (immediate) : Rt4, Rn1, #24
+0x0800014f : ADD (register) : Rd3, Rn6, Rm4
+0x0800014f : LSR (immediate) : Rd0, Rm2, #0
+0x0800014f : MOV (immediate) : Rd1, #67
+0x08000150 : LSL (immediate) : Rd1, Rm0, #0
+0x08000150 : LSL (immediate) : Rd4, Rm0, #8
+0x08000150 : MOV (immediate) : Rd0, #64
+0x08000150 : STRH (immediate) : Rt0, Rn0, #0
+0x08000151 : LDR (literal) : #144, Rt0
+0x08000151 : B : cond:3, #41, cond:3
+0x08000152 : CMP (immediate) : Rn7, #94
+0x08000152 : LDRB (immediate) : Rt1, Rn6, #3
+0x08000152 : B : #709
+0x08000152 : BLX : Rm1
+0x08000153 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000153 : LSL (immediate) : Rd0, Rm1, #16
+0x08000153 : ASR (immediate) : Rd3, Rm4, #4
+0x08000154 : LSL (immediate) : Rd2, Rm0, #4
+0x08000154 : STRH (immediate) : Rt0, Rn0, #0
+0x08000155 : LDRH (immediate) : Rt0, Rn2, #0
+0x08000155 : MOV (immediate) : Rd0, #64
+0x08000155 : ADD (SP plus immediate) : #81, Rd0
+0x08000156 : ADR : #68, Rd2
+0x08000156 : SUB (immediate) : Rd2, #117
+0x08000156 : PKHBT, PKHTB : Rn4, #6, Rd3, #3, tb0, T0, Rn4
+0x08000156 : LDRH (immediate) : Rt5, Rn3, #24
+0x08000157 : SUB (immediate) : Rd3, #118
+0x08000158 : LSR (immediate) : Rd5, Rm3, #24
+0x08000158 : LDR (literal) : #152, Rt4
+0x08000158 : ADD (immediate) : Rd0, #97
+0x08000158 : LSL (immediate) : Rd1, Rm1, #16
+0x08000159 : ASR (immediate) : Rd6, Rm4, #12
+0x08000159 : LSL (immediate) : Rd2, Rm0, #4
+0x08000159 : STR (immediate) : Rt0, Rn0, #3
+0x0800015a : STRH (immediate) : Rt0, Rn0, #0
+0x0800015a : ADD (immediate) : Rd6, #108
+0x0800015a : STRH (immediate) : Rt6, Rn0, #12
+0x0800015b : LSR (immediate) : Rd3, Rm3, #20
+0x0800015b : LDM, LDMIA, LDMFD : Rn0
+0x0800015b : MOV (immediate) : Rd0, #65
+0x0800015b : ADD (immediate) : Rd1, Rn7, Rm0
+0x0800015c : STRB (immediate) : Rt4, Rn4, #11
+0x0800015c : STRH (immediate) : Rt3, Rn0, #4
+0x0800015c : LSL (immediate) : Rd6, Rm1, #28
+0x0800015c : LDM, LDMIA, LDMFD : Rn0
+0x0800015d : MOV (immediate) : Rd0, #64
+0x0800015d : LSR (immediate) : Rd1, Rm3, #16
+0x0800015d : ADD (immediate) : Rd2, #100
+0x0800015d : LSL (register) : Rm0, Rd1
+0x0800015e : LSL (immediate) : Rd6, Rm0, #12
+0x0800015e : STR (register) : Rt0, Rn4, Rm2
+0x0800015e : ADD (immediate) : Rd2, Rn7, Rm4
+0x0800015f : STRB (immediate) : Rt2, Rn5, #23
+0x0800015f : STRH (immediate) : Rt3, Rn0, #4
+0x0800015f : LSL (immediate) : Rd6, Rm1, #28
+0x0800015f : LSR (immediate) : Rd0, Rm2, #0
+0x08000160 : MOV (immediate) : Rd0, #64
+0x08000160 : STRB (immediate) : Rt1, Rn4, #3
+0x08000160 : STM, STMIA, STMEA : Rn2
+0x08000160 : BLX : Rm1
+0x08000161 : ADD (immediate) : Rd0, Rn7, Rm0
+0x08000161 : LSL (immediate) : Rd0, Rm1, #16
+0x08000161 : ASR (immediate) : Rd3, Rm4, #4
+0x08000161 : STRH (immediate) : Rt0, Rn0, #0
+0x08000162 : LSL (immediate) : Rd2, Rm0, #4
+0x08000162 : LDRH (immediate) : Rt0, Rn2, #0
+0x08000162 : MOV (immediate) : Rd0, #64
+0x08000162 : LDRH (immediate) : Rt1, Rn2, #0
+0x08000163 : MOV (immediate) : Rd2, #68
+0x08000163 : LDM, LDMIA, LDMFD : Rn0
+0x08000163 : MOV (immediate) : Rd2, #68
+0x08000163 : CMP (immediate) : Rn4, #89
+0x08000164 : LSL (immediate) : Rd5, Rm0, #8
+0x08000164 : LSR (immediate) : Rd6, Rm2, #12
+0x08000165 : LSR (immediate) : Rd6, Rm3, #28
+0x08000165 : SUB (immediate) : Rd4, #120
+0x08000165 : LSL (register) : Rm0, Rd1
+0x08000165 : LSL (immediate) : Rd7, Rm0, #12
+0x08000166 : B : #1224
+0x08000166 : STR (immediate) : #32, Rt0
+0x08000166 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000166 : LDRB (immediate) : Rt2, Rn6, #7
+0x08000167 : STRH (immediate) : Rt3, Rn0, #4
+0x08000167 : LSL (immediate) : Rd7, Rm1, #28
+0x08000167 : LDR (literal) : #144, Rt0
+0x08000167 : MOV (immediate) : Rd0, #64
+0x08000168 : STRH (immediate) : Rt1, Rn1, #16
+0x08000168 : ASR (immediate) : Rd4, Rm4, #8
+0x08000168 : LDR (literal) : #157, Rt6
+0x08000169 : SUB (immediate) : Rd2, #116
+0x08000169 : STRB(register) : Rt1, Rn5, Rm2
+0x08000169 : STRH (register) : Rt7, Rn4, Rm6
+0x08000169 : MOV (immediate) : Rd5, #74
+0x0800016a : STR (immediate) : #42, Rt5
+0x0800016a : LSL (immediate) : Rd4, Rm0, #8
+0x0800016a : LSR (immediate) : Rd2, Rm2, #4
+0x0800016a : STR (register) : Rt0, Rn4, Rm2
+0x0800016b : LSL (register) : Rm0, Rd1
+0x0800016b : ASR (immediate) : Rd2, Rm5, #20
+0x0800016b : STRB(register) : Rt0, Rn5, Rm2
+0x0800016b : LSL (immediate) : Rd2, Rm0, #4
+0x0800016c : LSL (immediate) : Rd2, Rm1, #20
+0x0800016c : B : #192
+0x0800016c : STRH (immediate) : Rt0, Rn0, #0
+0x0800016c : SUB (immediate) : Rd4, Rn7, Rm0
+0x0800016d : LDRB (immediate) : Rt0, Rn6, #3
+0x0800016d : LSL (immediate) : Rd3, Rm0, #4
+0x0800016d : LSL (immediate) : Rd7, Rm1, #28
+0x0800016d : STRB (immediate) : Rt0, Rn4, #3
+0x0800016e : STM, STMIA, STMEA : Rn0
+0x0800016e : STR (immediate) : Rt6, Rn1, #31
+0x0800016e : LDR (immediate) : #56, Rt4
+0x0800016e : B : #1740
+0x0800016f : LDR (immediate) : #51, Rt1
+0x0800016f : SUB (immediate) : Rd7, #127
+0x08000170 : LDRH (immediate) : Rt7, Rn3, #28
+0x08000170 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000170 : LDRB (immediate) : Rt1, Rn6, #3
+0x08000170 : LSL (immediate) : Rd3, Rm0, #4
+0x08000171 : LSL (immediate) : Rd7, Rm1, #28
+0x08000171 : STRH (immediate) : Rt0, Rn0, #0
+0x08000171 : LSR (immediate) : Rd0, Rm2, #0
+0x08000172 : MOV (immediate) : Rd0, #64
+0x08000172 : STRH (immediate) : Rt1, Rn0, #0
+0x08000172 : LSL (immediate) : Rd4, Rm0, #8
+0x08000172 : LSR (immediate) : Rd0, Rm2, #0
+0x08000173 : MOV (immediate) : Rd0, #64
+0x08000173 : STR (immediate) : Rt1, Rn0, #3
+0x08000173 : STRH (immediate) : Rt4, Rn0, #8
+0x08000174 : LDR (register) : Rt0, Rn6, Rm2
+0x08000174 : LDR (immediate) : #58, Rt5
+0x08000174 : STRB (immediate) : Rt3, Rn5, #23
+0x08000174 : SUB (immediate) : Rd1, #115
+0x08000175 : B : #1998
+0x08000175 : MOV (immediate) : Rd3, #71
+0x08000175 : LDRH (immediate) : Rt4, Rn3, #24
+0x08000176 : LDM, LDMIA, LDMFD : Rn0
+0x08000176 : LDRH (register) : Rt6, Rn6, Rm6
+0x08000176 : LDR (immediate) : Rt1, Rn3, #19
+0x08000176 : ASR (immediate) : Rd3, Rm5, #20
+0x08000177 : LDRSB (register) : Rt5, Rn5, Rm2
+0x08000177 : SBC (register) : Rm0, Rd2
+0x08000177 : LSL (immediate) : Rd2, Rm1, #20
+0x08000177 : STRH (immediate) : Rt0, Rn1, #16
+0x08000178 : ASR (immediate) : Rd0, Rm4, #0
+0x08000178 : LDR (literal) : #157, Rt6
+0x08000178 : SUB (immediate) : Rd2, #116
+0x08000179 : BL : #233, #233
+0x08000179 : LSR (immediate) : Rd7, Rm3, #28
+0x0800017a : SUB (immediate) : Rd7, #127
+0x0800017a : STR (immediate) : Rt1, Rn0, #3
+0x0800017a : STRH (immediate) : Rt7, Rn0, #12
+0x0800017a : BL : #748, #748
+0x0800017b : SUB (immediate) : Rd6, Rn7, Rm4
+0x0800017b : LDRB (immediate) : Rt3, Rn7, #23
+0x0800017b : LSL (immediate) : Rd3, Rm0, #4
+0x0800017b : LSL (immediate) : Rd7, Rm1, #28
+0x0800017c : STRH (immediate) : Rt0, Rn0, #0
+0x0800017c : LDRH (immediate) : Rt0, Rn2, #0
+0x0800017c : MOV (immediate) : Rd0, #64
+0x0800017d : LDR (immediate) : Rt1, Rn2, #3
+0x0800017d : ADR : #68, Rd2
+0x0800017d : LSL (immediate) : Rd5, Rm1, #24
+0x0800017d : SUB (register) : Rd4, Rn6, Rm0
+0x0800017e : LSL (register) : Rm0, Rd0
+0x0800017e : LSL (immediate) : Rd3, Rm0, #4
+0x0800017e : STR (register) : Rt0, Rn4, Rm2
+0x0800017f : LDR (immediate) : #58, Rt5
+0x0800017f : STRB (immediate) : Rt2, Rn5, #23
+0x0800017f : LDRH (immediate) : Rt3, Rn2, #4
+0x0800017f : MOV (immediate) : Rd7, #78
+0x08000180 : LDR (immediate) : Rt1, Rn2, #3
+0x08000180 : ADR : #68, Rd2
+0x08000180 : STR (immediate) : Rt5, Rn1, #27
+0x08000180 : LDR (immediate) : #52, Rt2
+0x08000181 : LSL (immediate) : Rd4, Rm1, #24
+0x08000181 : ADD (register) : Rd3, Rn6, Rm4
+0x08000181 : MOV (immediate) : Rd0, #64
+0x08000181 : STRH (immediate) : Rt3, Rn0, #4
+0x08000182 : STR (immediate) : Rt4, Rn0, #11
+0x08000182 : LDRH (immediate) : Rt0, Rn2, #0
+0x08000182 : BL : #748, #748
+0x08000182 : SUB (immediate) : Rd6, Rn7, Rm4
+0x08000183 : LDRB (immediate) : Rt3, Rn7, #23
+0x08000183 : ASR (immediate) : Rd3, Rm4, #4
+0x08000183 : BLX : Rm1
+0x08000183 : LSL (immediate) : Rd2, Rm0, #4
+0x08000184 : LSL (immediate) : Rd0, Rm1, #16
+0x08000184 : B : #192
+0x08000184 : STRH (immediate) : Rt0, Rn0, #0
+0x08000184 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000185 : LDRB (immediate) : Rt0, Rn6, #3
+0x08000185 : LDRB (immediate) : Rt6, Rn7, #31
+0x08000186 : LDRB (immediate) : Rt6, Rn7, #31
+0x08000186 : LDR (immediate) : #63, Rt7
+0x08000187 : STRB (immediate) : Rt4, Rn5, #27
+0x08000187 : BLX : Rm1
+0x08000187 : ADD (immediate) : Rd3, Rn7, Rm4
+0x08000188 : STR (immediate) : Rt0, Rn1, #19
+0x08000188 : STR (immediate) : #35, Rt1
+0x08000188 : STR (immediate) : #44, Rt6
+0x08000188 : LDR (register) : Rt2, Rn6, Rm6
+0x08000189 : LDR (literal) : #146, Rt1
+0x08000189 : MOV (immediate) : Rd5, #75
+0x08000189 : STRB(register) : Rt1, Rn5, Rm2
+0x08000189 : STRH (register) : Rt4, Rn4, Rm2
+0x0800018a : ADD (immediate) : Rd5, #106
+0x0800018a : STR (immediate) : Rt6, Rn0, #15
+0x0800018a : LDRH (immediate) : Rt2, Rn3, #20
+0x0800018b : LDRH (immediate) : Rt6, Rn2, #12
+0x0800018b : CMP (immediate) : Rn5, #91
+0x0800018c : LDRH (immediate) : Rt1, Rn2, #0
+0x0800018c : MOV (immediate) : Rd2, #69
+0x0800018c : LDR (immediate) : Rt1, Rn2, #3
+0x0800018c : ADR : #68, Rd2
+0x0800018d : STM, STMIA, STMEA : Rn6
+0x0800018d : SUB (register) : Rd4, Rn6, Rm0
+0x0800018d : LDM, LDMIA, LDMFD : Rn4
+0x0800018d : ADD (immediate) : Rd1, #99
+0x0800018e : LDRB (immediate) : Rt1, Rn7, #19
+0x0800018e : SUB (immediate) : Rd6, Rn7, Rm4
+0x0800018e : LSL (immediate) : Rd0, Rm1, #16
+0x0800018f : ASR (immediate) : Rd3, Rm4, #4
+0x0800018f : MOV (immediate) : Rd0, #64
+0x0800018f : STRH (immediate) : Rt2, Rn0, #4
+0x0800018f : LSL (immediate) : Rd4, Rm0, #8
+0x08000190 : LSR (immediate) : Rd0, Rm2, #0
+0x08000190 : STR (immediate) : #32, Rt0
+0x08000190 : LSL (register) : Rm0, Rd1
+0x08000190 : SUB (immediate) : Rd1, #114
+0x08000191 : B : #1224
+0x08000191 : BIC (register) : Rm0, Rd7
+0x08000191 : LSR (immediate) : Rd4, Rm3, #24
+0x08000191 : B : #1224
+0x08000192 : STR (immediate) : #33, Rt0
+0x08000192 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000192 : LDRB (immediate) : Rt2, Rn6, #7
+0x08000192 : STRH (immediate) : Rt3, Rn0, #4
+0x08000193 : LSL (immediate) : Rd7, Rm1, #28
+0x08000193 : LDR (literal) : #144, Rt0
+0x08000193 : MOV (immediate) : Rd0, #64
+0x08000193 : STRH (immediate) : Rt1, Rn1, #16
+0x08000194 : ASR (immediate) : Rd4, Rm4, #8
+0x08000194 : CMP (immediate) : Rn0, #80
+0x08000194 : ADR : #66, Rd1
+0x08000194 : ADD (immediate) : Rd2, #101
+0x08000195 : LDM, LDMIA, LDMFD : Rn2
+0x08000195 : ADD (immediate) : Rd3, #102
+0x08000195 : LDM, LDMIA, LDMFD : Rn4
+0x08000195 : LSL (immediate) : Rd6, Rm0, #12
+0x08000196 : LSR (immediate) : Rd1, Rm3, #16
+0x08000196 : SUB (immediate) : Rd7, #126
+0x08000197 : LSR (immediate) : Rd7, Rm3, #28
+0x08000197 : B : #192
+0x08000197 : STRH (immediate) : Rt1, Rn0, #0
+0x08000197 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000198 : LDRB (immediate) : Rt0, Rn6, #3
+0x08000198 : LSL (immediate) : Rd3, Rm0, #4
+0x08000198 : LSL (immediate) : Rd7, Rm1, #28
+0x08000198 : ASR (immediate) : Rd0, Rm4, #0
+0x08000199 : LSL (register) : Rm0, Rd0
+0x08000199 : STR (immediate) : Rt2, Rn0, #7
+0x08000199 : STRH (immediate) : Rt0, Rn1, #16
+0x08000199 : B : #1740
+0x0800019a : LDR (immediate) : #48, Rt0
+0x0800019a : SUB (immediate) : Rd7, #127
+0x0800019b : LDRH (immediate) : Rt7, Rn3, #28
+0x0800019b : LDRB (immediate) : Rt1, Rn6, #3
+0x0800019b : LSR (immediate) : Rd3, Rm3, #20
+0x0800019c : ADD (immediate) : Rd7, #111
+0x0800019c : STR (immediate) : Rt1, Rn0, #3
+0x0800019c : STRH (immediate) : Rt6, Rn0, #12
+0x0800019c : LSL (immediate) : Rd4, Rm1, #24
+0x0800019d : ADD (register) : Rd0, Rn6, Rm0
+0x0800019d : STR (immediate) : Rt0, Rn0, #3
+0x0800019d : STRH (immediate) : Rt3, Rn0, #4
+0x0800019d : LSL (immediate) : Rd4, Rm1, #24
+0x0800019e : ADD (register) : Rd0, Rn6, Rm0
+0x0800019e : STR (immediate) : Rt0, Rn0, #3
+0x0800019e : STRH (immediate) : Rt3, Rn0, #4
+0x0800019f : LDR (register) : Rt0, Rn6, Rm2
+0x0800019f : LDR (immediate) : #58, Rt5
+0x0800019f : STRB (immediate) : Rt3, Rn5, #23
+0x0800019f : SUB (immediate) : Rd1, #115
+0x080001a0 : B : #1998
+0x080001a0 : MOV (immediate) : Rd3, #71
+0x080001a0 : LDRH (immediate) : Rt4, Rn3, #24
+0x080001a1 : LDM, LDMIA, LDMFD : Rn0
+0x080001a1 : LDRH (register) : Rt6, Rn6, Rm6
+0x080001a1 : LDR (immediate) : Rt1, Rn3, #19
+0x080001a1 : ASR (immediate) : Rd3, Rm5, #20
+0x080001a2 : LDRSB (register) : Rt5, Rn5, Rm2
+0x080001a2 : SBC (register) : Rm0, Rd2
+0x080001a2 : LSL (immediate) : Rd2, Rm1, #20
+0x080001a2 : STRH (immediate) : Rt0, Rn1, #16
+0x080001a3 : ASR (immediate) : Rd0, Rm4, #0
+0x080001a3 : CMP (immediate) : Rn0, #80
+0x080001a3 : ADR : #66, Rd1
+0x080001a3 : ADD (immediate) : Rd2, #101
+0x080001a4 : LDM, LDMIA, LDMFD : Rn2
+0x080001a4 : ADD (immediate) : Rd3, #102
+0x080001a4 : LDM, LDMIA, LDMFD : Rn4
+0x080001a4 : B : #966
+0x080001a5 : LDRH (immediate) : Rt1, Rn3, #16
+0x080001a5 : LSR (immediate) : Rd7, Rm3, #28
+0x080001a5 : SUB (immediate) : Rd7, #127
+0x080001a6 : LSL (register) : Rm0, Rd1
+0x080001a6 : LSL (immediate) : Rd7, Rm0, #12
+0x080001a6 : STR (immediate) : Rt0, Rn1, #19
+0x080001a6 : STR (immediate) : #32, Rt0
+0x080001a7 : BL : #748, #748
+0x080001a7 : LDRB (immediate) : Rt3, Rn7, #23
+0x080001a7 : LSR (immediate) : Rd3, Rm3, #20
+0x080001a8 : ADD (immediate) : Rd7, #111
+0x080001a8 : STR (immediate) : Rt1, Rn0, #3
+0x080001a8 : STRH (immediate) : Rt6, Rn0, #12
+0x080001a8 : STRH (immediate) : Rt4, Rn1, #24
+0x080001a9 : ADD (register) : Rd0, Rn6, Rm0
+0x080001a9 : LDR (immediate) : Rt0, Rn2, #3
+0x080001a9 : ADR : #67, Rd1
+0x080001a9 : LSL (immediate) : Rd5, Rm1, #24
+0x080001aa : SUB (register) : Rd4, Rn6, Rm0
+0x080001aa : LSL (register) : Rm0, Rd0
+0x080001aa : LSL (immediate) : Rd3, Rm0, #4
+0x080001ab : STR (register) : Rt0, Rn4, Rm2
+0x080001ab : SUB (immediate) : Rd5, #122
+0x080001ab : B : cond:7, #42, cond:7
+0x080001ab : LSR (immediate) : Rd6, Rm3, #28
+0x080001ac : LDR (immediate) : Rt0, Rn2, #3
+0x080001ac : ADR : #65, Rd0
+0x080001ac : STM, STMIA, STMEA : Rn6
+0x080001ac : SUB (register) : Rd4, Rn6, Rm0
+0x080001ad : STRB (immediate) : Rt3, Rn4, #7
+0x080001ad : CMP (immediate) : Rn5, #91
+0x080001ae : STR (immediate) : Rt5, Rn0, #11
+0x080001ae : LDRH (immediate) : Rt6, Rn2, #12
+0x080001ae : BL : #748, #748
+0x080001ae : SUB (immediate) : Rd6, Rn7, Rm4
+0x080001af : LDRB (immediate) : Rt3, Rn7, #23
+0x080001af : ASR (immediate) : Rd3, Rm4, #4
+0x080001af : BLX : Rm1
+0x080001af : B : #450
+0x080001b0 : STRH (immediate) : Rt0, Rn1, #16
+0x080001b0 : LDR (immediate) : #61, Rt6
+0x080001b0 : LDRB (immediate) : Rt7, Rn6, #15
+0x080001b1 : ADD (register) : Rd3, Rn6, Rm4
+0x080001b1 : STR (immediate) : Rt7, Rn1, #31
+0x080001b1 : STR (register) : Rt3, Rn4, Rm6
+0x080001b1 : MOV (register) : Rd4, Rm1
+0x080001b2 : BL : #490, #490
+0x080001b2 : SUB (immediate) : Rd7, #127
+0x080001b3 : LSR (immediate) : Rd7, Rm3, #28
+0x080001b3 : SUB (immediate) : Rd5, Rn7, Rm0
+0x080001b3 : LDRB (immediate) : Rt6, Rn6, #15
+0x080001b4 : LDRB (immediate) : Rt6, Rn7, #31
+0x080001b5 : LDRB (immediate) : Rt3, Rn7, #23
+0x080001b5 : LDRB (immediate) : Rt3, Rn7, #23
+0x080001b5 : B : #1007, #1007
+0x080001b6 : LDRSH (register) : Rt6, Rn7, Rm6
+0x080001b6 : ADD (register) : Rd2, Rn6, Rm4
+0x080001b6 : STR (immediate) : Rt3, Rn1, #23
+0x080001b6 : MOV (immediate) : Rd1, #67
+0x080001b7 : STRH (immediate) : Rt4, Rn1, #24
+0x080001b7 : CMP (register) : Rm0, Rn4
+0x080001b7 : LSR (immediate) : Rd0, Rm2, #0
+0x080001b7 : LSL (immediate) : Rd0, Rm1, #16
+0x080001b8 : ASR (immediate) : Rd1, Rm4, #0
+0x080001b8 : STR (immediate) : #32, Rt0
+0x080001b8 : SBC (register) : Rm0, Rd2
+0x080001b8 : LDRH (immediate) : Rt2, Rn2, #4
+0x080001b9 : MOV (immediate) : Rd4, #72
+0x080001b9 : SUB (immediate) : Rd0, #113
+0x080001b9 : B : #708
+0x080001b9 : BIC (register) : Rm0, Rd7
+0x080001ba : LSR (immediate) : Rd4, Rm3, #24
+0x080001ba : STR (register) : Rt1, Rn4, Rm2
+0x080001bb : LDR (immediate) : #63, Rt7
+0x080001bb : LDRB (immediate) : Rt6, Rn7, #31
+0x080001bb : LSR (immediate) : Rd3, Rm2, #4
+0x080001bb : MOV (immediate) : Rd7, #79
+0x080001bc : STRH (immediate) : Rt1, Rn0, #0
+0x080001bc : LSL (immediate) : Rd4, Rm0, #8
+0x080001bc : LDRH (immediate) : Rt0, Rn2, #0
+0x080001bc : MOV (immediate) : Rd0, #64
+0x080001bd : CMP (immediate) : Rn0, #81
+0x080001bd : ADR : #68, Rd2
+0x080001bd : LDR (literal) : #148, Rt2
+0x080001be : ADD (immediate) : Rd2, Rn7, Rm4
+0x080001be : STRB (immediate) : Rt1, Rn5, #19
+0x080001be : STR (immediate) : Rt3, Rn0, #7
+0x080001be : STRH (immediate) : Rt6, Rn1, #28
+0x080001bf : LSL (immediate) : Rd4, Rm1, #24
+0x080001bf : ADD (register) : Rd0, Rn6, Rm0
+0x080001bf : LSL (register) : Rm0, Rd0
+0x080001bf : LSL (immediate) : Rd3, Rm0, #4
+0x080001c0 : STR (register) : Rt0, Rn4, Rm2
+0x080001c0 : SUB (immediate) : Rd5, #122
+0x080001c0 : B : cond:7, #42, cond:7
+0x080001c1 : LSR (immediate) : Rd6, Rm3, #28
+0x080001c1 : LDRH (immediate) : Rt0, Rn2, #0
+0x080001c1 : MOV (immediate) : Rd0, #65
+0x080001c2 : LDRSH (register) : Rt7, Rn7, Rm6
+0x080001c2 : LDRB (immediate) : Rt4, Rn7, #27
+0x080001c2 : LSL (immediate) : Rd3, Rm1, #20
+0x080001c2 : ASR (immediate) : Rd7, Rm5, #28
+0x080001c3 : ADR : #64, Rd0
+0x080001c3 : STRH (immediate) : Rt2, Rn0, #4
+0x080001c3 : LDRH (register) : Rt4, Rn6, Rm2
+0x080001c3 : LDR (immediate) : Rt0, Rn2, #3
+0x080001c4 : BL : #491, #491
+0x080001c4 : LDR (immediate) : #62, Rt7
+0x080001c4 : LDRB (immediate) : Rt2, Rn7, #23
+0x080001c4 : ADD (register) : Rd3, Rn6, Rm4
+0x080001c5 : STR (immediate) : Rt7, Rn1, #31
+0x080001c5 : MOV (immediate) : Rd1, #67
+0x080001c5 : STRH (immediate) : Rt4, Rn1, #24
+0x080001c5 : B : #708
+0x080001c6 : LDRH (immediate) : Rt0, Rn2, #0
+0x080001c6 : SUB (immediate) : Rd6, #124
+0x080001c6 : LSR (immediate) : Rd7, Rm3, #28
+0x080001c7 : LSL (register) : Rm0, Rd0
+0x080001c7 : LSL (immediate) : Rd1, Rm0, #0
+0x080001c7 : BL : #232, #232
+0x080001c7 : SUB (immediate) : Rd6, Rn7, Rm4
+0x080001c8 : LDRB (immediate) : Rt2, Rn7, #23
+0x080001c8 : SBC (register) : Rm0, Rd3
+0x080001c8 : LSL (immediate) : Rd7, Rm1, #28
+0x080001c8 : MOV (immediate) : Rd4, #72
+0x080001c9 : STR (immediate) : #32, Rt0
+0x080001c9 : LSL (immediate) : Rd4, Rm0, #8
+0x080001c9 : LSR (immediate) : Rd2, Rm2, #4
+0x080001ca : LSL (immediate) : Rd1, Rm0, #0
+0x080001ca : LSL (register) : Rm0, Rd0
+0x080001ca : MOV (immediate) : Rd4, #72
+0x080001cb : STR (immediate) : #32, Rt0
+0x080001cb : B : #708
+0x080001cb : LDRH (immediate) : Rt2, Rn2, #4
+0x080001cb : LDRSH (register) : Rt4, Rn7, Rm2
+0x080001cc : LDRB (immediate) : Rt1, Rn6, #3
+0x080001cc : STRH (immediate) : Rt3, Rn1, #20
+0x080001cc : ASR (immediate) : Rd7, Rm5, #28
+0x080001cc : LDRB (immediate) : Rt0, Rn6, #3
+0x080001cd : B : #450
+0x080001cd : B : #1999
+0x080001cd : LDR (immediate) : #60, Rt6
+0x080001cd : LDRSH (register) : Rt4, Rn7, Rm2
+0x080001ce : LDRB (immediate) : Rt3, Rn6, #7
+0x080001ce : LSL (immediate) : Rd3, Rm1, #20
+0x080001ce : ASR (immediate) : Rd7, Rm5, #28
+0x080001ce : LSL (register) : Rm0, Rd0
+0x080001cf : LSL (immediate) : Rd2, Rm0, #4
+0x080001cf : BL : #232, #232
+0x080001cf : SUB (immediate) : Rd7, #126
+0x080001d0 : LSR (immediate) : Rd7, Rm3, #28
+0x080001d0 : MOV (immediate) : Rd0, #64
+0x080001d0 : STRH (immediate) : Rt1, Rn0, #0
+0x080001d0 : STR (immediate) : Rt4, Rn0, #11
+0x080001d1 : LDRH (immediate) : Rt0, Rn2, #0
+0x080001d1 : LDRSB (register) : Rt4, Rn5, Rm2
+0x080001d1 : LDR (register) : Rt1, Rn6, Rm2
+0x080001d1 : ADR : #74, Rd5
+0x080001d2 : STR (immediate) : #43, Rt5
+0x080001d2 : LDR (literal) : #148, Rt2
+0x080001d2 : CMP (immediate) : Rn1, #82
+0x080001d2 : B : #1225
+0x080001d3 : STR (immediate) : #37, Rt2
+0x080001d3 : LDRSH (register) : Rt4, Rn7, Rm2
+0x080001d3 : LDRB (immediate) : Rt2, Rn6, #7
+0x080001d3 : LSL (immediate) : Rd3, Rm1, #20
+0x080001d4 : ASR (immediate) : Rd7, Rm5, #28
+0x080001d4 : STR (register) : Rt0, Rn4, Rm2
+0x080001d4 : SBC (register) : Rm0, Rd2
+0x080001d4 : BL : #490, #490
+0x080001d5 : LDRSH (register) : Rt6, Rn7, Rm6
+0x080001d5 : LDRB (immediate) : Rt2, Rn7, #23
+0x080001d5 : STR (immediate) : Rt3, Rn1, #23
+0x080001d5 : STR (immediate) : #47, Rt7
+0x080001d6 : ADD (immediate) : Rd6, #108
+0x080001d6 : LDM, LDMIA, LDMFD : Rn5
+0x080001d7 : SUB (immediate) : Rd3, #118
+0x080001d7 : LDR (literal) : #157, Rt6
+0x080001d7 : LDM, LDMIA, LDMFD : Rn5
+0x080001d8 : ADD (immediate) : Rd4, #105
+0x080001d8 : LDRH (immediate) : Rt1, Rn3, #16
+0x080001d8 : ADD (immediate) : Rd3, #102
+0x080001d8 : LDRH (immediate) : Rt1, Rn2, #0
+0x080001d9 : MOV (immediate) : Rd3, #70
+0x080001d9 : CMP (immediate) : Rn0, #81
+0x080001d9 : ADR : #68, Rd2
+0x080001d9 : STRH (register) : Rt5, Rn4, Rm2
+0x080001da : LDR (literal) : #148, Rt2
+0x080001da : STRH (immediate) : Rt2, Rn1, #20
+0x080001da : ASR (immediate) : Rd1, Rm5, #16
+0x080001da : LDR (literal) : #144, Rt0
+0x080001db : MOV (immediate) : Rd1, #66
+0x080001db : ASR (immediate) : Rd1, Rm5, #16
+0x080001db : STRH (register) : Rt4, Rn4, Rm2
+0x080001db : ADD (immediate) : Rd1, #98
+0x080001dc : STM, STMIA, STMEA : Rn5
+0x080001dc : ADR : #70, Rd3
+0x080001dc : LDRH (immediate) : Rt0, Rn3, #16
+0x080001dd : LDR (immediate) : Rt5, Rn3, #27
+0x080001dd : LDR (immediate) : Rt3, Rn2, #7
+0x080001dd : ADR : #77, Rd6
+0x080001de : LDRSB (register) : Rt5, Rn5, Rm2
+0x080001de : LDRH (register) : Rt4, Rn6, Rm2
+0x080001de : LSL (immediate) : Rd2, Rm1, #20
+0x080001de : ASR (immediate) : Rd3, Rm5, #20
+0x080001df : LSL (immediate) : Rd2, Rm0, #4
+0x080001df : STM, STMIA, STMEA : Rn0
+0x080001e0 : LDRH (immediate) : Rt0, Rn3, #16
+0x080001e0 : ADD (immediate) : Rd0, #96
+0x080001e0 : LDM, LDMIA, LDMFD : Rn0
+0x080001e0 : MOV (immediate) : Rd3, #70
+0x080001e1 : ADD (immediate) : Rd1, Rn7, Rm0
+0x080001e1 : STRB (immediate) : Rt4, Rn4, #11
+0x080001e1 : STM, STMIA, STMEA : Rn7
+0x080001e2 : LDR (immediate) : Rt0, Rn3, #19
+0x080001e2 : LDRH (immediate) : Rt3, Rn3, #20
+0x080001e2 : ADD (immediate) : Rd6, #109
+0x080001e3 : LDRH (immediate) : Rt1, Rn2, #0
+0x080001e3 : MOV (immediate) : Rd3, #70
+0x080001e3 : LSR (immediate) : Rd1, Rm2, #0
+0x080001e3 : MOV (immediate) : Rd2, #68
+0x080001e4 : ADR : #65, Rd0
+0x080001e4 : STRH (immediate) : Rt4, Rn0, #8
+0x080001e4 : SUB (immediate) : Rd2, #116
+0x080001e5 : LDR (literal) : #157, Rt6
+0x080001e5 : ASR (immediate) : Rd2, Rm4, #4
+0x080001e5 : ADD (register) : Rm1, Rd1
+0x080001e5 : B : #450
+0x080001e6 : STRH (immediate) : Rt0, Rn1, #16
+0x080001e6 : LDRH (immediate) : Rt4, Rn3, #24
+0x080001e6 : SUB (immediate) : Rd0, #112
+0x080001e6 : LSR (immediate) : Rd1, Rm2, #0
+0x080001e7 : MOV (immediate) : Rd3, #71
+0x080001e7 : B : #193
+0x080001e7 : STRH (immediate) : Rt4, Rn0, #8
+0x080001e7 : SUB (immediate) : Rd6, #124
+0x080001e8 : LDR (literal) : #159, Rt7
+0x080001e9 : LDR (immediate) : Rt6, Rn3, #31
+0x080001e9 : B : #1483
+0x080001e9 : STR (immediate) : #45, Rt6
+0x080001e9 : LDRH (immediate) : Rt4, Rn3, #24
+0x080001ea : SUB (immediate) : Rd1, #114
+0x080001ea : LSR (immediate) : Rd1, Rm2, #0
+0x080001ea : MOV (immediate) : Rd3, #71
+0x080001ea : B : #193
+0x080001eb : STRH (immediate) : Rt4, Rn0, #8
+0x080001eb : LSR (immediate) : Rd4, Rm3, #24
+0x080001eb : SUB (immediate) : Rd0, #112
+0x080001eb : STR (immediate) : Rt1, Rn0, #3
+0x080001ec : STRH (immediate) : Rt7, Rn0, #12
+0x080001ec : STR (immediate) : #44, Rt6
+0x080001ec : LDR (register) : Rt0, Rn6, Rm2
+0x080001ec : LSR (immediate) : Rd2, Rm2, #4
+0x080001ed : MOV (immediate) : Rd5, #75
+0x080001ed : STR (immediate) : Rt1, Rn0, #3
+0x080001ed : STRH (immediate) : Rt4, Rn0, #8
+0x080001ed : MOV (register) : Rd4, Rm1
+0x080001ee : ADD (register) : Rd0, Rn6, Rm0
+0x080001ee : ADD (register) : Rm1, Rd0
+0x080001ee : ASR (immediate) : Rd3, Rm4, #4
+0x080001ee : LSL (immediate) : Rd0, Rm1, #16
+0x080001ef : ASR (immediate) : Rd2, Rm4, #4
+0x080001ef : MOV (immediate) : Rd0, #64
+0x080001ef : STRH (immediate) : Rt2, Rn0, #4
+0x080001f0 : LDR (literal) : #144, Rt0
+0x080001f0 : B : #233, #233
+0x080001f1 : LDR (immediate) : Rt5, Rn3, #27
+0x080001f1 : STM, STMIA, STMEA : Rn1
+0x080001f1 : LSL (immediate) : Rd5, Rm1, #24
+0x080001f1 : LDR (immediate) : #56, Rt4
+0x080001f2 : STRB (immediate) : Rt0, Rn4, #3
+0x080001f2 : LSR (immediate) : Rd3, Rm2, #4
+0x080001f2 : MOV (immediate) : Rd7, #78
+0x080001f2 : LSL (immediate) : Rd1, Rm0, #0
+0x080001f3 : LSL (immediate) : Rd4, Rm0, #8
+0x080001f4 : LDR (immediate) : Rt5, Rn3, #27
+0x080001f5 : LDRB (immediate) : Rt0, Rn7, #19
+0x080001f5 : LSR (immediate) : Rd3, Rm3, #20
+0x080001f5 : ADD (immediate) : Rd7, #111
+0x080001f5 : LSL (immediate) : Rd1, Rm0, #0
+0x080001f6 : LSL (immediate) : Rd6, Rm0, #12
+0x080001f6 : B : #192
+0x080001f6 : STRH (immediate) : Rt0, Rn0, #0
+0x080001f6 : SUB (immediate) : Rd4, Rn7, Rm0
+0x080001f7 : LDRB (immediate) : Rt0, Rn6, #3
+0x080001f7 : LSL (immediate) : Rd3, Rm0, #4
+0x080001f7 : LSL (immediate) : Rd7, Rm1, #28
+0x080001f7 : STM, STMIA, STMEA : Rn0
+0x080001f8 : LDR (immediate) : #56, Rt4
+0x080001f8 : STRB (immediate) : Rt0, Rn4, #3
+0x080001f8 : LDR (immediate) : #51, Rt1
+0x080001f9 : STR (immediate) : Rt6, Rn1, #31
+0x080001f9 : LSR (immediate) : Rd3, Rm2, #4
+0x080001f9 : MOV (immediate) : Rd6, #76
+0x080001f9 : MOV (immediate) : Rd0, #65
+0x080001fa : STRH (immediate) : Rt4, Rn0, #8
+0x080001fa : LDR (literal) : #144, Rt0
+0x080001fb : BL : #233, #233
+0x080001fb : LDR (immediate) : Rt6, Rn3, #31
+0x080001fb : LDRH (immediate) : Rt3, Rn3, #20
+0x080001fb : ADD (immediate) : Rd6, #109
+0x080001fc : ADD (register) : Rd1, Rn6, Rm0
+0x080001fc : STR (immediate) : Rt6, Rn0, #15
+0x080001fc : LSL (immediate) : Rd3, Rm0, #4
+0x080001fc : LSL (immediate) : Rd4, Rm1, #24
+0x080001fd : ASR (immediate) : Rd0, Rm4, #0
+0x080001fd : LSL (register) : Rm0, Rd0
+0x080001fd : MOV (immediate) : Rd1, #66
+0x080001fd : STRH (immediate) : Rt0, Rn1, #16
+0x080001fe : B : #708
+0x080001fe : LDRH (immediate) : Rt0, Rn2, #0
+0x080001ff : LDR (immediate) : Rt7, Rn3, #31
+0x080001ff : STR (immediate) : #43, Rt5
+0x080001ff : LDRSB (register) : Rt5, Rn5, Rm2
+0x080001ff : CMP (immediate) : Rn1, #82
+0x08000200 : ADR : #74, Rd5
+0x08000200 : STRB (immediate) : Rt5, Rn4, #11
+0x08000200 : LDM, LDMIA, LDMFD : Rn2
+0x08000200 : STR (immediate) : #46, Rt7
+0x08000201 : LDRB (register) : Rt1, Rn7, Rm2
+0x08000201 : LSR (immediate) : Rd5, Rm3, #24
+0x08000201 : SUB (immediate) : Rd2, #116
+0x08000202 : B : #193
+0x08000202 : STRH (immediate) : Rt7, Rn0, #12
+0x08000202 : SUB (immediate) : Rd4, Rn7, Rm0
+0x08000202 : LDRB (immediate) : Rt0, Rn6, #3
+0x08000203 : LSL (immediate) : Rd3, Rm0, #4
+0x08000203 : LSL (immediate) : Rd7, Rm1, #28
+0x08000204 : STR (immediate) : Rt0, Rn0, #3
+0x08000204 : STRH (immediate) : Rt0, Rn0, #0
+0x08000204 : B : #1740
+0x08000204 : LDR (immediate) : #48, Rt0
+0x08000205 : SUB (immediate) : Rd7, Rn7, Rm4
+0x08000205 : LDRB (immediate) : Rt7, Rn7, #31
+0x08000205 : B : #451
+0x08000206 : STRH (immediate) : Rt7, Rn1, #28
+0x08000206 : LDR (immediate) : #63, Rt7
+0x08000206 : LDRB (immediate) : Rt7, Rn7, #31
+0x08000207 : CMP (immediate) : Rn1, #83
+0x08000207 : ADR : #79, Rd7
+0x08000207 : STR (immediate) : Rt5, Rn0, #11
+0x08000207 : LDRH (immediate) : Rt4, Rn2, #8
+0x08000208 : B : #1740
+0x08000208 : LDR (immediate) : #49, Rt0
+0x08000208 : SUB (immediate) : Rd7, Rn7, Rm4
+0x08000209 : LDRB (immediate) : Rt7, Rn7, #31
+0x08000209 : B : #451
+0x08000209 : STRH (immediate) : Rt7, Rn1, #28
+0x0800020a : LDR (immediate) : #63, Rt7
+0x0800020a : LDRB (immediate) : Rt7, Rn7, #31
+0x0800020a : LDRB (immediate) : Rt5, Rn7, #27
+0x0800020b : LDRSH (register) : Rt7, Rn7, Rm6
+0x0800020b : SUB (immediate) : Rd1, #114
+0x0800020b : B : #1483
+0x0800020c : LSL (immediate) : Rd7, Rm0, #12
+0x0800020c : LSR (immediate) : Rd4, Rm3, #24
+0x0800020c : STR (register) : Rt0, Rn4, Rm2
+0x0800020c : LSL (register) : Rm0, Rd1
+0x0800020d : LSL (immediate) : Rd2, Rm1, #20
+0x0800020d : ASR (immediate) : Rd0, Rm5, #16
+0x0800020d : LSL (immediate) : Rd2, Rm0, #4
+0x0800020e : B : #192
+0x0800020e : STRH (immediate) : Rt0, Rn0, #0
+0x0800020e : LDRB (immediate) : Rt4, Rn7, #27
+0x0800020f : LDRSH (register) : Rt7, Rn7, Rm6
+0x0800020f : ASR (immediate) : Rd2, Rm4, #4
+0x0800020f : CMP (register) : Rn1, Rm3
+0x0800020f : MOV (immediate) : Rd1, #66
+0x08000210 : STRH (immediate) : Rt0, Rn1, #16
+0x08000210 : STRH (register) : Rt4, Rn4, Rm2
+0x08000210 : LDR (literal) : #144, Rt0
+0x08000210 : LSL (immediate) : Rd2, Rm1, #20
+0x08000211 : ASR (immediate) : Rd1, Rm5, #16
+0x08000211 : LSL (immediate) : Rd2, Rm0, #4
+0x08000211 : MOV (immediate) : Rd0, #64
+0x08000212 : STRH (immediate) : Rt0, Rn0, #0
+0x08000212 : STRB (immediate) : Rt4, Rn4, #11
+0x08000212 : LDM, LDMIA, LDMFD : Rn0
+0x08000212 : LDRSB (register) : Rt6, Rn5, Rm6
+0x08000213 : LDRB (register) : Rt1, Rn7, Rm2
+0x08000213 : STR (immediate) : #42, Rt5
+0x08000213 : STRB(register) : Rt3, Rn5, Rm6
+0x08000213 : CMP (immediate) : Rn1, #82
+0x08000214 : ADR : #74, Rd5
+0x08000214 : STRB (immediate) : Rt5, Rn4, #11
+0x08000214 : LDM, LDMIA, LDMFD : Rn2
+0x08000214 : STRB (immediate) : Rt6, Rn5, #31
+0x08000215 : ADR : #78, Rd7
+0x08000215 : LDR (immediate) : #59, Rt5
+0x08000215 : LSR (immediate) : Rd4, Rm2, #8
+0x08000216 : CMP (immediate) : Rn1, #83
+0x08000216 : ASR (immediate) : Rd1, Rm4, #0
+0x08000216 : CMP (register) : Rm0, Rn5
+0x08000216 : LSL (immediate) : Rd2, Rm0, #4
+0x08000217 : LSL (immediate) : Rd0, Rm1, #16
+0x08000217 : B : #192
+0x08000218 : STRH (immediate) : Rt0, Rn0, #0
+0x08000218 : LDRSH (register) : Rt4, Rn7, Rm2
+0x08000218 : LDRB (immediate) : Rt0, Rn6, #3
+0x08000218 : STRH (immediate) : Rt3, Rn1, #20
+0x08000219 : ASR (immediate) : Rd7, Rm5, #28
+0x08000219 : LDM, LDMIA, LDMFD : Rn0
+0x08000219 : MOV (immediate) : Rd1, #66
+0x08000219 : LSR (immediate) : Rd1, Rm3, #16
+0x0800021a : ADD (immediate) : Rd2, #100
+0x0800021a : LSL (register) : Rm0, Rd1
+0x0800021a : LSL (immediate) : Rd6, Rm0, #12
+0x0800021a : LSL (immediate) : Rd0, Rm1, #16
+0x0800021b : ASR (immediate) : Rd0, Rm4, #0
+0x0800021b : LSL (immediate) : Rd2, Rm0, #4
+0x0800021d : MOV (immediate) : Rd0, #64
+0x0800021d : STRH (immediate) : Rt0, Rn0, #0
+0x0800021d : MOV (immediate) : Rd2, #68
+0x0800021e : LDRH (immediate) : Rt0, Rn2, #0
+0x0800021e : LSL (immediate) : Rd4, Rm0, #8
+0x0800021e : LSR (immediate) : Rd1, Rm2, #0
+0x0800021f : LSL (immediate) : Rd1, Rm0, #0
+0x08000222 : ADR : #64, Rd0
+0x08000222 : STRH (immediate) : Rt0, Rn0, #0
+0x08000222 : LDRB (immediate) : Rt4, Rn6, #11
+0x08000223 : LDRSH (register) : Rt5, Rn7, Rm2
+0x08000223 : ASR (immediate) : Rd2, Rm4, #4
+0x08000223 : CMP (register) : Rn1, Rm3
+0x08000224 : LSL (immediate) : Rd2, Rm0, #4
+0x08000224 : LSL (immediate) : Rd0, Rm1, #16
+0x08000225 : ASR (immediate) : Rd0, Rm4, #0
+0x08000225 : LSL (register) : Rm0, Rd0
+0x08000225 : LSL (immediate) : Rd2, Rm0, #4
+0x08000225 : LSL (immediate) : Rd0, Rm1, #16
+0x08000226 : STR (immediate) : Rt0, Rn0, #3
+0x08000226 : STRH (immediate) : Rt0, Rn0, #0
+0x08000226 : B : #1740
+0x08000226 : LDR (immediate) : #48, Rt0
+0x08000227 : LDRSH (register) : Rt7, Rn7, Rm6
+0x08000227 : LDRB (immediate) : Rt7, Rn7, #31
+0x08000227 : ASR (immediate) : Rd3, Rm5, #20
+0x08000228 : LDRSB (register) : Rt7, Rn5, Rm6
+0x08000228 : STR (immediate) : #34, Rt1
+0x08000228 : CMP (register) : Rn1, Rm2
+0x08000228 : LDR (immediate) : Rt2, Rn2, #7
+0x08000229 : ADR : #72, Rd4
+0x08000229 : LSL (immediate) : Rd5, Rm1, #24
+0x08000229 : SUB (register) : Rd4, Rn6, Rm0
+0x08000229 : MOV (immediate) : Rd0, #64
+0x0800022a : STRH (immediate) : Rt3, Rn0, #4
+0x0800022a : STR (immediate) : #36, Rt2
+0x0800022a : LDR (literal) : #144, Rt0
+0x0800022a : LDR (immediate) : Rt2, Rn2, #7
+0x0800022b : ADR : #73, Rd4
+0x0800022b : LSL (immediate) : Rd5, Rm1, #24
+0x0800022b : SUB (register) : Rd4, Rn6, Rm0
+0x0800022b : MOV (immediate) : Rd0, #64
+0x0800022c : STRH (immediate) : Rt3, Rn0, #4
+0x0800022c : STR (immediate) : Rt4, Rn0, #11
+0x0800022c : LDRH (immediate) : Rt0, Rn2, #0
+0x0800022c : STRB (immediate) : Rt4, Rn5, #27
+0x0800022d : ADD (immediate) : Rd7, #110
+0x0800022d : STR (immediate) : Rt6, Rn0, #15
+0x0800022e : LDRH (immediate) : Rt3, Rn3, #20
+0x0800022e : STR (immediate) : #44, Rt6
+0x0800022e : LDR (register) : Rt1, Rn6, Rm2
+0x0800022e : LDR (immediate) : Rt2, Rn2, #7
+0x0800022f : ADR : #75, Rd5
+0x0800022f : LSL (immediate) : Rd5, Rm1, #24
+0x0800022f : SUB (register) : Rd4, Rn6, Rm0
+0x0800022f : ADR : #64, Rd0
+0x08000230 : STRH (immediate) : Rt3, Rn0, #4
+0x08000230 : LDR (immediate) : Rt4, Rn2, #11
+0x08000230 : ADD (SP plus immediate) : #80, Rd0
+0x08000230 : ASR (immediate) : Rd5, Rm5, #24
+0x08000231 : LDRH (register) : Rt5, Rn6, Rm2
+0x08000231 : ASR (immediate) : Rd2, Rm4, #4
+0x08000231 : CMP (register) : Rn1, Rm3
+0x08000231 : LSL (immediate) : Rd2, Rm0, #4
+0x08000232 : LSL (immediate) : Rd0, Rm1, #16
+0x08000232 : ASR (immediate) : Rd0, Rm4, #0
+0x08000232 : LSL (register) : Rm0, Rd0
+0x08000232 : LSL (immediate) : Rd2, Rm0, #4
+0x08000233 : LSL (immediate) : Rd0, Rm1, #16
+0x08000233 : B : #192
+0x08000234 : STRH (immediate) : Rt0, Rn0, #0
+0x08000234 : LDRSH (register) : Rt4, Rn7, Rm2
+0x08000234 : LDRB (immediate) : Rt0, Rn6, #3
+0x08000234 : STRH (immediate) : Rt3, Rn1, #20
+0x08000235 : ASR (immediate) : Rd7, Rm5, #28
+0x08000235 : LDM, LDMIA, LDMFD : Rn0
+0x08000235 : MOV (immediate) : Rd1, #66
+0x08000235 : LSR (immediate) : Rd1, Rm3, #16
+0x08000236 : ADD (immediate) : Rd2, #100
+0x08000236 : LSL (immediate) : Rd1, Rm0, #0
+0x08000236 : LSL (immediate) : Rd6, Rm0, #12
+0x0800023a : LSL (register) : Rm0, Rd0
+0x0800023a : LSL (immediate) : Rd0, Rm1, #16
+0x0800023b : ASR (immediate) : Rd0, Rm4, #0
+0x0800023b : LSL (immediate) : Rd2, Rm0, #4
+0x0800023c : STRH (immediate) : Rt0, Rn0, #0
+0x0800023d : ADD (register) : Rd0, Rn6, Rm0
+0x0800023d : STR (immediate) : Rt0, Rn0, #3
+0x0800023d : B : #451
+0x0800023e : STRH (immediate) : Rt4, Rn1, #24
+0x0800023f : LDRSH (register) : Rt5, Rn7, Rm2
+0x0800023f : MOV (immediate) : Rd1, #66
+0x0800023f : STRH (immediate) : Rt3, Rn1, #20
+0x0800023f : LSL (immediate) : Rd4, Rm0, #8
+0x08000240 : LSR (immediate) : Rd0, Rm2, #0
+0x08000240 : B : #192
+0x08000240 : STRH (immediate) : Rt1, Rn0, #0
+0x08000240 : LDR (immediate) : Rt4, Rn3, #27
+0x08000241 : MOV (register) : Rd5, Rm1
+0x08000241 : SUB (register) : Rd7, Rn6, Rm4
+0x08000241 : STR (immediate) : Rt0, Rn1, #19
+0x08000242 : STR (immediate) : #35, Rt1
+0x08000242 : MOV (register) : Rd4, Rm1
+0x08000242 : ADD (register) : Rd2, Rn6, Rm4
+0x08000242 : MOV (immediate) : Rd4, #72
+0x08000243 : STR (immediate) : #35, Rt1
+0x08000243 : LSL (immediate) : Rd4, Rm0, #8
+0x08000243 : LSR (immediate) : Rd2, Rm2, #4
+0x08000244 : LSL (immediate) : Rd1, Rm0, #0
+0x08000244 : ASR (immediate) : Rd0, Rm4, #0
+0x08000245 : LSL (register) : Rm0, Rd0
+0x08000245 : LSL (immediate) : Rd2, Rm0, #4
+0x08000245 : LSL (immediate) : Rd0, Rm1, #16
+0x08000245 : STR (immediate) : Rt0, Rn0, #3
+0x08000246 : STRH (immediate) : Rt0, Rn0, #0
+0x08000246 : B : #1740
+0x08000246 : LDR (immediate) : #48, Rt0
+0x08000247 : LDRSH (register) : Rt7, Rn7, Rm6
+0x08000247 : LDRB (immediate) : Rt7, Rn7, #31
+0x08000247 : ASR (immediate) : Rd3, Rm5, #20
+0x08000247 : LDRSB (register) : Rt7, Rn5, Rm6
+0x08000248 : STR (immediate) : #34, Rt1
+0x08000248 : CMP (register) : Rn1, Rm2
+0x08000248 : LDRH (immediate) : Rt2, Rn2, #4
+0x08000248 : MOV (immediate) : Rd4, #72
+0x08000249 : LSR (immediate) : Rd1, Rm2, #0
+0x08000249 : MOV (immediate) : Rd2, #68
+0x08000249 : MOV (immediate) : Rd0, #65
+0x08000249 : STRH (immediate) : Rt4, Rn0, #8
+0x0800024a : STR (immediate) : Rt4, Rn0, #11
+0x0800024a : LDRH (immediate) : Rt0, Rn2, #0
+0x0800024a : STRB (immediate) : Rt4, Rn5, #27
+0x0800024b : MOV (immediate) : Rd7, #78
+0x0800024b : LDR (immediate) : #59, Rt5
+0x0800024b : STR (immediate) : Rt4, Rn0, #11
+0x0800024b : LDRH (immediate) : Rt3, Rn2, #4
+0x0800024c : STR (immediate) : #44, Rt6
+0x0800024c : LDR (register) : Rt1, Rn6, Rm2
+0x0800024c : LDRH (immediate) : Rt2, Rn2, #4
+0x0800024c : MOV (immediate) : Rd5, #75
+0x0800024d : LSR (immediate) : Rd1, Rm2, #0
+0x0800024d : MOV (immediate) : Rd2, #68
+0x0800024d : MOV (immediate) : Rd0, #65
+0x0800024d : STRH (immediate) : Rt4, Rn0, #8
+0x0800024e : STRB (immediate) : Rt4, Rn4, #11
+0x0800024e : LDM, LDMIA, LDMFD : Rn0
+0x0800024e : STRB (immediate) : Rt6, Rn5, #31
+0x0800024f : STR (immediate) : Rt6, Rn1, #31
+0x0800024f : LDR (immediate) : #59, Rt5
+0x0800024f : LSL (immediate) : Rd4, Rm1, #24
+0x0800024f : ADD (register) : Rd3, Rn6, Rm4
+0x08000250 : LDR (immediate) : Rt6, Rn3, #31
+0x08000250 : MOV (register) : Rd5, Rm1
+0x08000251 : SUB (register) : Rd7, Rn6, Rm4
+0x08000251 : STRH (immediate) : Rt0, Rn1, #16
+0x08000251 : ASR (immediate) : Rd3, Rm4, #4
+0x08000251 : LDR (immediate) : #48, Rt0
+0x08000252 : STR (immediate) : Rt2, Rn0, #7
+0x08000252 : ADD (SP plus immediate) : #83, Rd1
+0x08000252 : ADR : #76, Rd6
+0x08000252 : LSR (immediate) : Rd5, Rm2, #8
+0x08000253 : CMP (immediate) : Rn2, #84
+0x08000253 : ADR : #65, Rd0
+0x08000253 : STRH (immediate) : Rt5, Rn0, #8
+0x08000253 : LDR (immediate) : Rt4, Rn2, #11
+0x08000254 : ADD (SP plus immediate) : #80, Rd0
+0x08000254 : ASR (immediate) : Rd5, Rm5, #24
+0x08000254 : LDRH (register) : Rt5, Rn6, Rm2
+0x08000254 : MOV (immediate) : Rd1, #66
+0x08000255 : STRH (immediate) : Rt3, Rn1, #20
+0x08000255 : LSL (immediate) : Rd4, Rm0, #8
+0x08000255 : LSR (immediate) : Rd0, Rm2, #0
+0x08000255 : ASR (immediate) : Rd0, Rm4, #0
+0x08000256 : LSL (register) : Rm0, Rd1
+0x08000256 : LSL (immediate) : Rd2, Rm0, #4
+0x08000256 : LSL (immediate) : Rd0, Rm1, #16
+0x08000257 : ASR (immediate) : Rd0, Rm4, #0
+0x08000258 : LSL (register) : Rm0, Rd0
+0x08000258 : ADR : #66, Rd1
+0x08000258 : STRH (immediate) : Rt0, Rn1, #16
+0x08000258 : LDR (immediate) : #52, Rt2
+0x08000259 : LDR (immediate) : Rt0, Rn2, #3
+0x08000259 : ADD (register) : Rd3, Rn6, Rm4
+0x08000259 : STR (immediate) : Rt5, Rn1, #27
+0x08000259 : ASR (immediate) : Rd3, Rm4, #4
+0x0800025a : MOV (register) : Rd4, Rm1
+0x0800025a : LSL (immediate) : Rd2, Rm0, #4
+0x0800025a : LSL (immediate) : Rd0, Rm1, #16
+0x0800025b : ASR (immediate) : Rd0, Rm4, #0
+0x0800025c : LSL (register) : Rm0, Rd0
+0x0800025c : ADR : #66, Rd1
+0x0800025c : STRH (immediate) : Rt0, Rn1, #16
+0x0800025c : LDR (immediate) : #52, Rt2
+0x0800025d : LDR (immediate) : Rt0, Rn2, #3
+0x0800025d : STR (immediate) : Rt5, Rn1, #27
+0x0800025d : LSR (immediate) : Rd3, Rm3, #20
+0x0800025e : ADD (immediate) : Rd6, #108
+0x0800025e : LSL (immediate) : Rd1, Rm0, #0
+0x0800025e : LSL (immediate) : Rd6, Rm0, #12
+0x08000262 : ASR (immediate) : Rd0, Rm4, #0
+0x08000262 : LSL (register) : Rm0, Rd0
+0x08000262 : LSL (immediate) : Rd2, Rm0, #4
+0x08000263 : LSL (immediate) : Rd0, Rm1, #16
+0x08000264 : ASR (immediate) : Rd0, Rm4, #0
+0x08000264 : LSL (register) : Rm0, Rd0
+0x08000264 : ADR : #66, Rd1
+0x08000265 : STRH (immediate) : Rt0, Rn1, #16
+0x08000265 : LDR (immediate) : #52, Rt2
+0x08000265 : LDR (immediate) : Rt0, Rn2, #3
+0x08000265 : ADD (register) : Rd3, Rn6, Rm4
+0x08000266 : STR (immediate) : Rt5, Rn1, #27
+0x08000266 : ASR (immediate) : Rd3, Rm4, #4
+0x08000266 : MOV (register) : Rd4, Rm1
+0x08000266 : LSL (immediate) : Rd2, Rm0, #4
+0x08000267 : LSL (immediate) : Rd0, Rm1, #16
+0x08000268 : ASR (immediate) : Rd0, Rm4, #0
+0x08000268 : LSL (register) : Rm0, Rd0
+0x08000268 : ADR : #66, Rd1
+0x08000269 : STRH (immediate) : Rt0, Rn1, #16
+0x08000269 : LDR (immediate) : #52, Rt2
+0x08000269 : LDR (immediate) : Rt0, Rn2, #3
+0x08000269 : ADD (register) : Rd3, Rn6, Rm4
+0x0800026a : STR (immediate) : Rt5, Rn1, #27
+0x0800026a : ASR (immediate) : Rd3, Rm4, #4
+0x0800026a : MOV (register) : Rd4, Rm1
+0x0800026a : LSL (immediate) : Rd2, Rm0, #4
+0x0800026b : LSL (immediate) : Rd0, Rm1, #16
+0x0800026c : ASR (immediate) : Rd0, Rm4, #0
+0x0800026c : LSL (register) : Rm0, Rd0
+0x0800026c : ADR : #66, Rd1
+0x0800026d : STRH (immediate) : Rt0, Rn1, #16
+0x0800026d : LDR (immediate) : #52, Rt2
+0x0800026d : LDR (immediate) : Rt0, Rn2, #3
+0x0800026d : ADD (register) : Rd3, Rn6, Rm4
+0x0800026e : STR (immediate) : Rt5, Rn1, #27
+0x0800026e : ASR (immediate) : Rd3, Rm4, #4
+0x0800026e : MOV (register) : Rd4, Rm1
+0x0800026e : LSL (immediate) : Rd2, Rm0, #4
+0x0800026f : LSL (immediate) : Rd0, Rm1, #16
+0x08000270 : ASR (immediate) : Rd0, Rm4, #0
+0x08000270 : LSL (register) : Rm0, Rd0
+0x08000270 : ADR : #66, Rd1
+0x08000271 : STRH (immediate) : Rt0, Rn1, #16
+0x08000271 : LDR (immediate) : #52, Rt2
+0x08000271 : LDR (immediate) : Rt0, Rn2, #3
+0x08000271 : ADD (register) : Rd3, Rn6, Rm4
+0x08000272 : STR (immediate) : Rt5, Rn1, #27
+0x08000272 : ASR (immediate) : Rd3, Rm4, #4
+0x08000272 : MOV (register) : Rd4, Rm1
+0x08000272 : LSL (immediate) : Rd2, Rm0, #4
+0x08000273 : LSL (immediate) : Rd0, Rm1, #16
+0x08000274 : ASR (immediate) : Rd0, Rm4, #0
+0x08000274 : LSL (register) : Rm0, Rd0
+0x08000274 : ADR : #66, Rd1
+0x08000275 : STRH (immediate) : Rt0, Rn1, #16
+0x08000275 : LDR (immediate) : #52, Rt2
+0x08000275 : LDR (immediate) : Rt0, Rn2, #3
+0x08000275 : ADD (register) : Rd3, Rn6, Rm4
+0x08000276 : STR (immediate) : Rt5, Rn1, #27
+0x08000276 : ASR (immediate) : Rd3, Rm4, #4
+0x08000276 : MOV (register) : Rd4, Rm1
+0x08000276 : LSL (immediate) : Rd2, Rm0, #4
+0x08000277 : LSL (immediate) : Rd0, Rm1, #16
+0x08000278 : ASR (immediate) : Rd0, Rm4, #0
+0x08000278 : LSL (register) : Rm0, Rd0
+0x08000278 : ADR : #66, Rd1
+0x08000279 : STRH (immediate) : Rt0, Rn1, #16
+0x08000279 : LDR (immediate) : #52, Rt2
+0x08000279 : LDR (immediate) : Rt0, Rn2, #3
+0x08000279 : ADD (register) : Rd3, Rn6, Rm4
+0x0800027a : STR (immediate) : Rt5, Rn1, #27
+0x0800027a : ASR (immediate) : Rd3, Rm4, #4
+0x0800027a : MOV (register) : Rd4, Rm1
+0x0800027a : LSL (immediate) : Rd2, Rm0, #4
+0x0800027b : LSL (immediate) : Rd0, Rm1, #16
+0x0800027c : ASR (immediate) : Rd0, Rm4, #0
+0x0800027c : LSL (register) : Rm0, Rd0
+0x0800027c : ADR : #66, Rd1
+0x0800027d : STRH (immediate) : Rt0, Rn1, #16
+0x0800027d : LDR (immediate) : #52, Rt2
+0x0800027d : LDR (immediate) : Rt0, Rn2, #3
+0x0800027d : LDR (register) : Rt3, Rn6, Rm6
+0x0800027e : STR (immediate) : Rt5, Rn1, #27
+0x0800027e : ASR (immediate) : Rd3, Rm5, #20
+0x0800027e : LDRSB (register) : Rt4, Rn5, Rm2
+0x0800027e : ASR (immediate) : Rd2, Rm4, #4
+0x0800027f : CMP (register) : Rn1, Rm2
+0x0800027f : LSL (immediate) : Rd2, Rm0, #4
+0x0800027f : LSL (immediate) : Rd0, Rm1, #16
+0x08000280 : ASR (immediate) : Rd0, Rm4, #0
+0x08000281 : LSL (register) : Rm0, Rd0
+0x08000281 : ADR : #66, Rd1
+0x08000281 : STRH (immediate) : Rt0, Rn1, #16
+0x08000281 : LDR (immediate) : #52, Rt2
+0x08000282 : LDR (immediate) : Rt0, Rn2, #3
+0x08000282 : ADD (register) : Rd3, Rn6, Rm4
+0x08000282 : STR (immediate) : Rt5, Rn1, #27
+0x08000282 : ASR (immediate) : Rd3, Rm4, #4
+0x08000283 : MOV (register) : Rd4, Rm1
+0x08000283 : LSL (immediate) : Rd2, Rm0, #4
+0x08000283 : LSL (immediate) : Rd0, Rm1, #16
+0x08000284 : ASR (immediate) : Rd0, Rm4, #0
+0x08000285 : LSL (register) : Rm0, Rd0
+0x08000285 : ADR : #66, Rd1
+0x08000285 : STRH (immediate) : Rt0, Rn1, #16
+0x08000285 : LDR (immediate) : #52, Rt2
+0x08000286 : LDR (immediate) : Rt0, Rn2, #3
+0x08000286 : ADD (register) : Rd3, Rn6, Rm4
+0x08000286 : STR (immediate) : Rt5, Rn1, #27
+0x08000286 : ASR (immediate) : Rd3, Rm4, #4
+0x08000287 : MOV (register) : Rd4, Rm1
+0x08000287 : LSL (immediate) : Rd2, Rm0, #4
+0x08000287 : LSL (immediate) : Rd0, Rm1, #16
+0x08000288 : ASR (immediate) : Rd0, Rm4, #0
+0x08000289 : LSL (register) : Rm0, Rd0
+0x08000289 : ADR : #66, Rd1
+0x08000289 : STRH (immediate) : Rt0, Rn1, #16
+0x08000289 : LDR (immediate) : #52, Rt2
+0x0800028a : LDR (immediate) : Rt0, Rn2, #3
+0x0800028a : ADD (register) : Rd3, Rn6, Rm4
+0x0800028a : STR (immediate) : Rt5, Rn1, #27
+0x0800028a : ASR (immediate) : Rd3, Rm4, #4
+0x0800028b : MOV (register) : Rd4, Rm1
+0x0800028b : LSL (immediate) : Rd2, Rm0, #4
+0x0800028b : LSL (immediate) : Rd0, Rm1, #16
+0x0800028c : ASR (immediate) : Rd0, Rm4, #0
+0x0800028d : LSL (register) : Rm0, Rd0
+0x0800028d : ADR : #66, Rd1
+0x0800028d : STRH (immediate) : Rt0, Rn1, #16
+0x0800028d : LDR (immediate) : #52, Rt2
+0x0800028e : LDR (immediate) : Rt0, Rn2, #3
+0x0800028e : ADD (register) : Rd3, Rn6, Rm4
+0x0800028e : STR (immediate) : Rt5, Rn1, #27
+0x0800028e : ASR (immediate) : Rd3, Rm4, #4
+0x0800028f : MOV (register) : Rd4, Rm1
+0x0800028f : LSL (immediate) : Rd2, Rm0, #4
+0x0800028f : LSL (immediate) : Rd0, Rm1, #16
+0x08000290 : ASR (immediate) : Rd0, Rm4, #0
+0x08000291 : LSL (register) : Rm0, Rd0
+0x08000291 : ADR : #66, Rd1
+0x08000291 : STRH (immediate) : Rt0, Rn1, #16
+0x08000291 : LDR (immediate) : #52, Rt2
+0x08000292 : LDR (immediate) : Rt0, Rn2, #3
+0x08000292 : ADD (register) : Rd3, Rn6, Rm4
+0x08000292 : STR (immediate) : Rt5, Rn1, #27
+0x08000292 : ASR (immediate) : Rd3, Rm4, #4
+0x08000293 : MOV (register) : Rd4, Rm1
+0x08000293 : LSL (immediate) : Rd2, Rm0, #4
+0x08000293 : LSL (immediate) : Rd0, Rm1, #16
+0x08000294 : ASR (immediate) : Rd0, Rm4, #0
+0x08000295 : LSL (register) : Rm0, Rd0
+0x08000295 : ADR : #66, Rd1
+0x08000295 : STRH (immediate) : Rt0, Rn1, #16
+0x08000295 : LDR (immediate) : #52, Rt2
+0x08000296 : LDR (immediate) : Rt0, Rn2, #3
+0x08000296 : ADD (register) : Rd3, Rn6, Rm4
+0x08000296 : STR (immediate) : Rt5, Rn1, #27
+0x08000296 : ASR (immediate) : Rd3, Rm4, #4
+0x08000297 : MOV (register) : Rd4, Rm1
+0x08000297 : LSL (immediate) : Rd2, Rm0, #4
+0x08000297 : LSL (immediate) : Rd0, Rm1, #16
+0x08000298 : ASR (immediate) : Rd0, Rm4, #0
+0x08000299 : LSL (register) : Rm0, Rd0
+0x08000299 : ADR : #66, Rd1
+0x08000299 : STRH (immediate) : Rt0, Rn1, #16
+0x08000299 : LDR (immediate) : #52, Rt2
+0x0800029a : LDR (immediate) : Rt0, Rn2, #3
+0x0800029a : ADD (register) : Rd3, Rn6, Rm4
+0x0800029a : STR (immediate) : Rt5, Rn1, #27
+0x0800029a : ASR (immediate) : Rd3, Rm4, #4
+0x0800029b : MOV (register) : Rd4, Rm1
+0x0800029b : LSL (immediate) : Rd2, Rm0, #4
+0x0800029b : LSL (immediate) : Rd0, Rm1, #16
+0x0800029c : ASR (immediate) : Rd0, Rm4, #0
+0x0800029d : LSL (register) : Rm0, Rd0
+0x0800029d : ADR : #66, Rd1
+0x0800029d : STRH (immediate) : Rt0, Rn1, #16
+0x0800029d : LDR (immediate) : #52, Rt2
+0x0800029e : LDR (immediate) : Rt0, Rn2, #3
+0x0800029e : LDR (immediate) : #51, Rt1
+0x0800029e : STR (immediate) : Rt5, Rn1, #27
+0x0800029e : ADD (register) : Rd3, Rn6, Rm4
+0x0800029f : STR (immediate) : Rt4, Rn1, #27
+0x0800029f : ASR (immediate) : Rd3, Rm4, #4
+0x0800029f : MOV (register) : Rd4, Rm1
+0x0800029f : LSL (immediate) : Rd2, Rm0, #4
+0x080002a0 : LSL (immediate) : Rd0, Rm1, #16
+0x080002a1 : ASR (immediate) : Rd0, Rm4, #0
+0x080002a1 : LSL (register) : Rm0, Rd0
+0x080002a1 : ADR : #66, Rd1
+0x080002a2 : STRH (immediate) : Rt0, Rn1, #16
+0x080002a2 : LDR (immediate) : #52, Rt2
+0x080002a2 : LDR (immediate) : Rt0, Rn2, #3
+0x080002a2 : ADD (register) : Rd3, Rn6, Rm4
+0x080002a3 : STR (immediate) : Rt5, Rn1, #27
+0x080002a3 : ASR (immediate) : Rd3, Rm4, #4
+0x080002a3 : MOV (register) : Rd4, Rm1
+0x080002a3 : LSL (immediate) : Rd2, Rm0, #4
+0x080002a4 : LSL (immediate) : Rd0, Rm1, #16
+0x080002a5 : ASR (immediate) : Rd0, Rm4, #0
+0x080002a5 : LSL (register) : Rm0, Rd0
+0x080002a5 : ADR : #66, Rd1
+0x080002a6 : STRH (immediate) : Rt0, Rn1, #16
+0x080002a6 : LDR (immediate) : #52, Rt2
+0x080002a6 : LDR (immediate) : Rt0, Rn2, #3
+0x080002a6 : ADD (register) : Rd3, Rn6, Rm4
+0x080002a7 : STR (immediate) : Rt5, Rn1, #27
+0x080002a7 : ASR (immediate) : Rd3, Rm4, #4
+0x080002a7 : MOV (register) : Rd4, Rm1
+0x080002a7 : LSL (immediate) : Rd2, Rm0, #4
+0x080002a8 : LSL (immediate) : Rd0, Rm1, #16
+0x080002a9 : ASR (immediate) : Rd0, Rm4, #0
+0x080002a9 : LSL (register) : Rm0, Rd0
+0x080002a9 : ADR : #66, Rd1
+0x080002aa : STRH (immediate) : Rt0, Rn1, #16
+0x080002aa : LDR (immediate) : #52, Rt2
+0x080002aa : LDR (immediate) : Rt0, Rn2, #3
+0x080002aa : ADD (register) : Rd3, Rn6, Rm4
+0x080002ab : STR (immediate) : Rt5, Rn1, #27
+0x080002ab : ASR (immediate) : Rd3, Rm4, #4
+0x080002ab : MOV (register) : Rd4, Rm1
+0x080002ab : LSL (immediate) : Rd2, Rm0, #4
+0x080002ac : LSL (immediate) : Rd0, Rm1, #16
+0x080002ad : ASR (immediate) : Rd0, Rm4, #0
+0x080002ad : LSL (register) : Rm0, Rd0
+0x080002ad : ADR : #66, Rd1
+0x080002ae : STRH (immediate) : Rt0, Rn1, #16
+0x080002ae : LDR (immediate) : #52, Rt2
+0x080002ae : LDR (immediate) : Rt0, Rn2, #3
+0x080002ae : ADD (register) : Rd3, Rn6, Rm4
+0x080002af : STR (immediate) : Rt5, Rn1, #27
+0x080002af : ASR (immediate) : Rd3, Rm4, #4
+0x080002af : MOV (register) : Rd4, Rm1
+0x080002af : LSL (immediate) : Rd2, Rm0, #4
+0x080002b0 : LSL (immediate) : Rd0, Rm1, #16
+0x080002b1 : ASR (immediate) : Rd0, Rm4, #0
+0x080002b1 : LSL (register) : Rm0, Rd0
+0x080002b1 : ADR : #66, Rd1
+0x080002b2 : STRH (immediate) : Rt0, Rn1, #16
+0x080002b2 : LDR (immediate) : #52, Rt2
+0x080002b2 : LDR (immediate) : Rt0, Rn2, #3
+0x080002b2 : ADD (register) : Rd3, Rn6, Rm4
+0x080002b3 : STR (immediate) : Rt5, Rn1, #27
+0x080002b3 : ASR (immediate) : Rd3, Rm4, #4
+0x080002b3 : MOV (register) : Rd4, Rm1
+0x080002b3 : LSL (immediate) : Rd2, Rm0, #4
+0x080002b4 : LSL (immediate) : Rd0, Rm1, #16
+0x080002b5 : ASR (immediate) : Rd0, Rm4, #0
+0x080002b5 : LSL (register) : Rm0, Rd0
+0x080002b5 : ADR : #66, Rd1
+0x080002b6 : STRH (immediate) : Rt0, Rn1, #16
+0x080002b6 : LDR (immediate) : #52, Rt2
+0x080002b6 : LDR (immediate) : Rt0, Rn2, #3
+0x080002b6 : ADD (register) : Rd3, Rn6, Rm4
+0x080002b7 : STR (immediate) : Rt5, Rn1, #27
+0x080002b7 : ASR (immediate) : Rd3, Rm4, #4
+0x080002b7 : MOV (register) : Rd4, Rm1
+0x080002b7 : LSL (immediate) : Rd2, Rm0, #4
+0x080002b8 : LSL (immediate) : Rd0, Rm1, #16
+0x080002b9 : ASR (immediate) : Rd0, Rm4, #0
+0x080002b9 : LSL (register) : Rm0, Rd0
+0x080002b9 : ADR : #66, Rd1
+0x080002ba : STRH (immediate) : Rt0, Rn1, #16
+0x080002ba : LDR (immediate) : #52, Rt2
+0x080002ba : LDR (immediate) : Rt0, Rn2, #3
+0x080002ba : ADD (register) : Rd3, Rn6, Rm4
+0x080002bb : STR (immediate) : Rt5, Rn1, #27
+0x080002bb : ASR (immediate) : Rd3, Rm4, #4
+0x080002bb : MOV (register) : Rd4, Rm1
+0x080002bb : LSL (immediate) : Rd2, Rm0, #4
+0x080002bc : LSL (immediate) : Rd0, Rm1, #16
+0x080002bd : ASR (immediate) : Rd0, Rm4, #0
+0x080002bd : LSL (register) : Rm0, Rd0
+0x080002bd : ADR : #66, Rd1
+0x080002be : STRH (immediate) : Rt0, Rn1, #16
+0x080002be : LDR (immediate) : #52, Rt2
+0x080002be : LDR (immediate) : Rt0, Rn2, #3
+0x080002bf : STR (immediate) : Rt5, Rn1, #27
+0x080002bf : ADD (immediate) : Rd3, Rn7, Rm4
+0x080002bf : STRB (immediate) : Rt4, Rn5, #27
+0x080002bf : ASR (immediate) : Rd3, Rm4, #4
+0x080002c0 : BLX : Rm1
+0x080002c0 : LSL (immediate) : Rd2, Rm0, #4
+0x080002c0 : LSL (immediate) : Rd0, Rm1, #16
+0x080002c1 : ASR (immediate) : Rd0, Rm4, #0
+0x080002c2 : LSL (register) : Rm0, Rd0
+0x080002c2 : ADR : #66, Rd1
+0x080002c2 : STRH (immediate) : Rt0, Rn1, #16
+0x080002c2 : LDR (immediate) : #52, Rt2
+0x080002c3 : LDR (immediate) : Rt0, Rn2, #3
+0x080002c3 : ADD (register) : Rd3, Rn6, Rm4
+0x080002c3 : STR (immediate) : Rt5, Rn1, #27
+0x080002c3 : ASR (immediate) : Rd3, Rm4, #4
+0x080002c4 : MOV (register) : Rd4, Rm1
+0x080002c4 : LSL (immediate) : Rd2, Rm0, #4
+0x080002c4 : LSL (immediate) : Rd0, Rm1, #16
+0x080002c5 : ASR (immediate) : Rd0, Rm4, #0
+0x080002c6 : LSL (register) : Rm0, Rd0
+0x080002c6 : ADR : #66, Rd1
+0x080002c6 : STRH (immediate) : Rt0, Rn1, #16
+0x080002c6 : LDR (immediate) : #52, Rt2
+0x080002c7 : LDR (immediate) : Rt0, Rn2, #3
+0x080002c7 : ADD (register) : Rd3, Rn6, Rm4
+0x080002c7 : STR (immediate) : Rt5, Rn1, #27
+0x080002c7 : ASR (immediate) : Rd3, Rm4, #4
+0x080002c8 : MOV (register) : Rd4, Rm1
+0x080002c8 : LSL (immediate) : Rd2, Rm0, #4
+0x080002c8 : LSL (immediate) : Rd0, Rm1, #16
+0x080002c9 : ASR (immediate) : Rd0, Rm4, #0
+0x080002ca : LSL (register) : Rm0, Rd0
+0x080002ca : ADR : #66, Rd1
+0x080002ca : STRH (immediate) : Rt0, Rn1, #16
+0x080002ca : LDR (immediate) : #52, Rt2
+0x080002cb : LDR (immediate) : Rt0, Rn2, #3
+0x080002cb : ADD (register) : Rd3, Rn6, Rm4
+0x080002cb : STR (immediate) : Rt5, Rn1, #27
+0x080002cb : ASR (immediate) : Rd3, Rm4, #4
+0x080002cc : MOV (register) : Rd4, Rm1
+0x080002cc : LSL (immediate) : Rd2, Rm0, #4
+0x080002cc : LSL (immediate) : Rd0, Rm1, #16
+0x080002cd : ASR (immediate) : Rd0, Rm4, #0
+0x080002ce : LSL (register) : Rm0, Rd0
+0x080002ce : ADR : #66, Rd1
+0x080002ce : STRH (immediate) : Rt0, Rn1, #16
+0x080002ce : LDR (immediate) : #52, Rt2
+0x080002cf : LDR (immediate) : Rt0, Rn2, #3
+0x080002cf : ADD (register) : Rd3, Rn6, Rm4
+0x080002cf : STR (immediate) : Rt5, Rn1, #27
+0x080002cf : ASR (immediate) : Rd3, Rm4, #4
+0x080002d0 : MOV (register) : Rd4, Rm1
+0x080002d0 : LSL (immediate) : Rd2, Rm0, #4
+0x080002d0 : LSL (immediate) : Rd0, Rm1, #16
+0x080002d1 : ASR (immediate) : Rd0, Rm4, #0
+0x080002d2 : LSL (register) : Rm0, Rd0
+0x080002d2 : ADR : #66, Rd1
+0x080002d2 : STRH (immediate) : Rt0, Rn1, #16
+0x080002d2 : LDR (immediate) : #52, Rt2
+0x080002d3 : LDR (immediate) : Rt0, Rn2, #3
+0x080002d3 : ADD (register) : Rd3, Rn6, Rm4
+0x080002d3 : STR (immediate) : Rt5, Rn1, #27
+0x080002d3 : ASR (immediate) : Rd3, Rm4, #4
+0x080002d4 : MOV (register) : Rd4, Rm1
+0x080002d4 : LSL (immediate) : Rd2, Rm0, #4
+0x080002d4 : LSL (immediate) : Rd0, Rm1, #16
+0x080002d5 : ASR (immediate) : Rd0, Rm4, #0
+0x080002d6 : LSL (register) : Rm0, Rd0
+0x080002d6 : ADR : #66, Rd1
+0x080002d6 : STRH (immediate) : Rt0, Rn1, #16
+0x080002d6 : LDR (immediate) : #52, Rt2
+0x080002d7 : LDR (immediate) : Rt0, Rn2, #3
+0x080002d7 : ADD (register) : Rd3, Rn6, Rm4
+0x080002d7 : STR (immediate) : Rt5, Rn1, #27
+0x080002d7 : ASR (immediate) : Rd3, Rm4, #4
+0x080002d8 : MOV (register) : Rd4, Rm1
+0x080002d8 : LSL (immediate) : Rd2, Rm0, #4
+0x080002d8 : LSL (immediate) : Rd0, Rm1, #16
+0x080002d9 : ASR (immediate) : Rd0, Rm4, #0
+0x080002da : LSL (register) : Rm0, Rd0
+0x080002da : ADR : #66, Rd1
+0x080002da : STRH (immediate) : Rt0, Rn1, #16
+0x080002da : LDR (immediate) : #52, Rt2
+0x080002db : LDR (immediate) : Rt0, Rn2, #3
+0x080002db : ADD (register) : Rd3, Rn6, Rm4
+0x080002db : STR (immediate) : Rt5, Rn1, #27
+0x080002db : ASR (immediate) : Rd3, Rm4, #4
+0x080002dc : MOV (register) : Rd4, Rm1
+0x080002dc : LSL (immediate) : Rd2, Rm0, #4
+0x080002dc : LSL (immediate) : Rd0, Rm1, #16
+0x080002dd : ASR (immediate) : Rd0, Rm4, #0
+0x080002de : LSL (register) : Rm0, Rd0
+0x080002de : ADR : #66, Rd1
+0x080002de : STRH (immediate) : Rt0, Rn1, #16
+0x080002de : LDR (immediate) : #52, Rt2
+0x080002df : LDR (immediate) : Rt0, Rn2, #3
+0x080002df : ADD (register) : Rd3, Rn6, Rm4
+0x080002df : STR (immediate) : Rt5, Rn1, #27
+0x080002df : LSL (immediate) : Rd3, Rm0, #4
+0x080002e0 : LSL (immediate) : Rd4, Rm1, #24
+0x080002e0 : ASR (immediate) : Rd0, Rm4, #0
+0x080002e0 : LSL (register) : Rm0, Rd0
+0x080002e0 : LSL (immediate) : Rd2, Rm0, #4
+0x080002e1 : LSL (immediate) : Rd0, Rm1, #16
+0x080002e2 : ASR (immediate) : Rd0, Rm4, #0
+0x080002e2 : LSL (register) : Rm0, Rd0
+0x080002e2 : ADR : #66, Rd1
+0x080002e3 : STRH (immediate) : Rt0, Rn1, #16
+0x080002e3 : LDR (immediate) : #52, Rt2
+0x080002e3 : LDR (immediate) : Rt0, Rn2, #3
+0x080002e3 : ADD (register) : Rd3, Rn6, Rm4
+0x080002e4 : STR (immediate) : Rt5, Rn1, #27
+0x080002e4 : ASR (immediate) : Rd3, Rm4, #4
+0x080002e4 : MOV (register) : Rd4, Rm1
+0x080002e4 : LSL (immediate) : Rd2, Rm0, #4
+0x080002e5 : LSL (immediate) : Rd0, Rm1, #16
+0x080002e6 : ASR (immediate) : Rd0, Rm4, #0
+0x080002e6 : LSL (register) : Rm0, Rd0
+0x080002e6 : ADR : #66, Rd1
+0x080002e7 : STRH (immediate) : Rt0, Rn1, #16
+0x080002e7 : LDR (immediate) : #52, Rt2
+0x080002e7 : LDR (immediate) : Rt0, Rn2, #3
+0x080002e7 : ADD (register) : Rd3, Rn6, Rm4
+0x080002e8 : STR (immediate) : Rt5, Rn1, #27
+0x080002e8 : ASR (immediate) : Rd3, Rm4, #4
+0x080002e8 : MOV (register) : Rd4, Rm1
+0x080002e8 : LSL (immediate) : Rd2, Rm0, #4
+0x080002e9 : LSL (immediate) : Rd0, Rm1, #16
+0x080002ea : ASR (immediate) : Rd0, Rm4, #0
+0x080002ea : LSL (register) : Rm0, Rd0
+0x080002ea : ADR : #66, Rd1
+0x080002eb : STRH (immediate) : Rt0, Rn1, #16
+0x080002eb : LDR (immediate) : #52, Rt2
+0x080002eb : LDR (immediate) : Rt0, Rn2, #3
+0x080002eb : ADD (register) : Rd3, Rn6, Rm4
+0x080002ec : STR (immediate) : Rt5, Rn1, #27
+0x080002ec : ASR (immediate) : Rd3, Rm4, #4
+0x080002ec : MOV (register) : Rd4, Rm1
+0x080002ec : LSL (immediate) : Rd2, Rm0, #4
+0x080002ed : LSL (immediate) : Rd0, Rm1, #16
+0x080002ee : ASR (immediate) : Rd0, Rm4, #0
+0x080002ee : LSL (register) : Rm0, Rd0
+0x080002ee : ADR : #66, Rd1
+0x080002ef : STRH (immediate) : Rt0, Rn1, #16
+0x080002ef : LDR (immediate) : #52, Rt2
+0x080002ef : LDR (immediate) : Rt0, Rn2, #3
+0x080002ef : ADD (register) : Rd3, Rn6, Rm4
+0x080002f0 : STR (immediate) : Rt5, Rn1, #27
+0x080002f0 : ASR (immediate) : Rd3, Rm4, #4
+0x080002f0 : MOV (register) : Rd4, Rm1
+0x080002f0 : LSL (immediate) : Rd2, Rm0, #4
+0x080002f1 : LSL (immediate) : Rd0, Rm1, #16
+0x080002f2 : ASR (immediate) : Rd0, Rm4, #0
+0x080002f2 : LSL (register) : Rm0, Rd0
+0x080002f2 : ADR : #66, Rd1
+0x080002f3 : STRH (immediate) : Rt0, Rn1, #16
+0x080002f3 : LDR (immediate) : #52, Rt2
+0x080002f3 : LDR (immediate) : Rt0, Rn2, #3
+0x080002f3 : ADD (register) : Rd3, Rn6, Rm4
+0x080002f4 : STR (immediate) : Rt5, Rn1, #27
+0x080002f4 : ASR (immediate) : Rd3, Rm4, #4
+0x080002f4 : MOV (register) : Rd4, Rm1
+0x080002f4 : LSL (immediate) : Rd2, Rm0, #4
+0x080002f5 : LSL (immediate) : Rd0, Rm1, #16
+0x080002f6 : ASR (immediate) : Rd0, Rm4, #0
+0x080002f6 : LSL (register) : Rm0, Rd0
+0x080002f6 : ADR : #66, Rd1
+0x080002f7 : STRH (immediate) : Rt0, Rn1, #16
+0x080002f7 : LDR (immediate) : #52, Rt2
+0x080002f7 : LDR (immediate) : Rt0, Rn2, #3
+0x080002f7 : ADD (register) : Rd3, Rn6, Rm4
+0x080002f8 : STR (immediate) : Rt5, Rn1, #27
+0x080002f8 : ASR (immediate) : Rd3, Rm4, #4
+0x080002f8 : MOV (register) : Rd4, Rm1
+0x080002f8 : LSL (immediate) : Rd2, Rm0, #4
+0x080002f9 : LSL (immediate) : Rd0, Rm1, #16
+0x080002fa : ASR (immediate) : Rd0, Rm4, #0
+0x080002fa : LSL (register) : Rm0, Rd0
+0x080002fa : ADR : #66, Rd1
+0x080002fb : STRH (immediate) : Rt0, Rn1, #16
+0x080002fb : LDR (immediate) : #52, Rt2
+0x080002fb : LDR (immediate) : Rt0, Rn2, #3
+0x080002fb : ADD (register) : Rd3, Rn6, Rm4
+0x080002fc : STR (immediate) : Rt5, Rn1, #27
+0x080002fc : ASR (immediate) : Rd3, Rm4, #4
+0x080002fc : MOV (register) : Rd4, Rm1
+0x080002fc : LSL (immediate) : Rd2, Rm0, #4
+0x080002fd : LSL (immediate) : Rd0, Rm1, #16
+0x080002fe : ASR (immediate) : Rd0, Rm4, #0
+0x080002fe : LSL (register) : Rm0, Rd0
+0x080002fe : ADR : #66, Rd1
+0x080002ff : STRH (immediate) : Rt0, Rn1, #16
+0x080002ff : LDR (immediate) : #52, Rt2
+0x080002ff : LDR (immediate) : Rt0, Rn2, #3
+0x080002ff : LDR (register) : Rt3, Rn6, Rm6
+0x08000300 : STR (immediate) : Rt5, Rn1, #27
+0x08000300 : LSL (immediate) : Rd3, Rm1, #20
+0x08000300 : ASR (immediate) : Rd4, Rm5, #24
+0x08000300 : ASR (immediate) : Rd0, Rm4, #0
+0x08000301 : SBC (register) : Rm0, Rd2
+0x08000301 : LSL (immediate) : Rd2, Rm0, #4
+0x08000301 : LSL (immediate) : Rd0, Rm1, #16
+0x08000302 : ASR (immediate) : Rd0, Rm4, #0
+0x08000303 : LSL (register) : Rm0, Rd0
+0x08000303 : ADR : #66, Rd1
+0x08000303 : STRH (immediate) : Rt0, Rn1, #16
+0x08000303 : LDR (immediate) : #52, Rt2
+0x08000304 : LDR (immediate) : Rt0, Rn2, #3
+0x08000304 : ADD (register) : Rd3, Rn6, Rm4
+0x08000304 : STR (immediate) : Rt5, Rn1, #27
+0x08000304 : ASR (immediate) : Rd3, Rm4, #4
+0x08000305 : MOV (register) : Rd4, Rm1
+0x08000305 : LSL (immediate) : Rd2, Rm0, #4
+0x08000305 : LSL (immediate) : Rd0, Rm1, #16
+0x08000306 : ASR (immediate) : Rd0, Rm4, #0
+0x08000307 : LSL (register) : Rm0, Rd0
+0x08000307 : ADR : #66, Rd1
+0x08000307 : STRH (immediate) : Rt0, Rn1, #16
+0x08000307 : LDR (immediate) : #52, Rt2
+0x08000308 : LDR (immediate) : Rt0, Rn2, #3
+0x08000308 : ADD (register) : Rd3, Rn6, Rm4
+0x08000308 : STR (immediate) : Rt5, Rn1, #27
+0x08000308 : ASR (immediate) : Rd3, Rm4, #4
+0x08000309 : MOV (register) : Rd4, Rm1
+0x08000309 : LSL (immediate) : Rd2, Rm0, #4
+0x08000309 : LSL (immediate) : Rd0, Rm1, #16
+0x0800030a : ASR (immediate) : Rd0, Rm4, #0
+0x0800030b : LSL (register) : Rm0, Rd0
+0x0800030b : ADR : #66, Rd1
+0x0800030b : STRH (immediate) : Rt0, Rn1, #16
+0x0800030b : LDR (immediate) : #52, Rt2
+0x0800030c : LDR (immediate) : Rt0, Rn2, #3
+0x0800030c : ADD (register) : Rd3, Rn6, Rm4
+0x0800030c : STR (immediate) : Rt5, Rn1, #27
+0x0800030c : ASR (immediate) : Rd3, Rm4, #4
+0x0800030d : MOV (register) : Rd4, Rm1
+0x0800030d : LSL (immediate) : Rd2, Rm0, #4
+0x0800030d : LSL (immediate) : Rd0, Rm1, #16
+0x0800030e : ASR (immediate) : Rd0, Rm4, #0
+0x0800030f : LSL (register) : Rm0, Rd0
+0x0800030f : ADR : #66, Rd1
+0x0800030f : STRH (immediate) : Rt0, Rn1, #16
+0x0800030f : LDR (immediate) : #52, Rt2
+0x08000310 : LDR (immediate) : Rt0, Rn2, #3
+0x08000310 : ADD (register) : Rd3, Rn6, Rm4
+0x08000310 : STR (immediate) : Rt5, Rn1, #27
+0x08000310 : ASR (immediate) : Rd3, Rm4, #4
+0x08000311 : MOV (register) : Rd4, Rm1
+0x08000311 : LSL (immediate) : Rd2, Rm0, #4
+0x08000311 : LSL (immediate) : Rd0, Rm1, #16
+0x08000312 : ASR (immediate) : Rd0, Rm4, #0
+0x08000313 : LSL (register) : Rm0, Rd0
+0x08000313 : ADR : #66, Rd1
+0x08000313 : STRH (immediate) : Rt0, Rn1, #16
+0x08000313 : LDR (immediate) : #52, Rt2
+0x08000314 : LDR (immediate) : Rt0, Rn2, #3
+0x08000314 : ADD (register) : Rd3, Rn6, Rm4
+0x08000314 : STR (immediate) : Rt5, Rn1, #27
+0x08000314 : ASR (immediate) : Rd3, Rm4, #4
+0x08000315 : MOV (register) : Rd4, Rm1
+0x08000315 : LSL (immediate) : Rd2, Rm0, #4
+0x08000315 : LSL (immediate) : Rd0, Rm1, #16
+0x08000316 : ASR (immediate) : Rd0, Rm4, #0
+0x08000317 : LSL (register) : Rm0, Rd0
+0x08000317 : ADR : #66, Rd1
+0x08000317 : STRH (immediate) : Rt0, Rn1, #16
+0x08000317 : LDR (immediate) : #52, Rt2
+0x08000318 : LDR (immediate) : Rt0, Rn2, #3
+0x08000318 : ADD (register) : Rd3, Rn6, Rm4
+0x08000318 : STR (immediate) : Rt5, Rn1, #27
+0x08000318 : ASR (immediate) : Rd3, Rm4, #4
+0x08000319 : MOV (register) : Rd4, Rm1
+0x08000319 : LSL (immediate) : Rd2, Rm0, #4
+0x08000319 : LSL (immediate) : Rd0, Rm1, #16
+0x0800031a : ASR (immediate) : Rd0, Rm4, #0
+0x0800031b : LSL (register) : Rm0, Rd0
+0x0800031b : ADR : #66, Rd1
+0x0800031b : STRH (immediate) : Rt0, Rn1, #16
+0x0800031b : LDR (immediate) : #52, Rt2
+0x0800031c : LDR (immediate) : Rt0, Rn2, #3
+0x0800031c : ADD (register) : Rd3, Rn6, Rm4
+0x0800031c : STR (immediate) : Rt5, Rn1, #27
+0x0800031c : ASR (immediate) : Rd3, Rm4, #4
+0x0800031d : MOV (register) : Rd4, Rm1
+0x0800031d : LSL (immediate) : Rd2, Rm0, #4
+0x0800031d : LSL (immediate) : Rd0, Rm1, #16
+0x0800031e : ASR (immediate) : Rd0, Rm4, #0
+0x0800031f : LSL (register) : Rm0, Rd0
+0x0800031f : ADR : #66, Rd1
+0x0800031f : STRH (immediate) : Rt0, Rn1, #16
+0x0800031f : LDR (immediate) : #52, Rt2
+0x08000320 : LDR (immediate) : Rt0, Rn2, #3
+0x08000320 : LDR (immediate) : #51, Rt1
+0x08000320 : STR (immediate) : Rt5, Rn1, #27
+0x08000320 : LSR (immediate) : Rd3, Rm2, #4
+0x08000321 : MOV (immediate) : Rd6, #76
+0x08000321 : ASR (immediate) : Rd1, Rm4, #0
+0x08000321 : CMP (register) : Rm0, Rn4
+0x08000321 : LSL (immediate) : Rd2, Rm0, #4
+0x08000322 : LSL (immediate) : Rd0, Rm1, #16
+0x08000323 : ASR (immediate) : Rd0, Rm4, #0
+0x08000323 : LSL (register) : Rm0, Rd0
+0x08000323 : ADR : #66, Rd1
+0x08000324 : STRH (immediate) : Rt0, Rn1, #16
+0x08000324 : LDR (immediate) : #52, Rt2
+0x08000324 : LDR (immediate) : Rt0, Rn2, #3
+0x08000324 : ADD (register) : Rd3, Rn6, Rm4
+0x08000325 : STR (immediate) : Rt5, Rn1, #27
+0x08000325 : ASR (immediate) : Rd3, Rm4, #4
+0x08000325 : MOV (register) : Rd4, Rm1
+0x08000325 : LSL (immediate) : Rd2, Rm0, #4
+0x08000326 : LSL (immediate) : Rd0, Rm1, #16
+0x08000327 : ASR (immediate) : Rd0, Rm4, #0
+0x08000327 : LSL (register) : Rm0, Rd0
+0x08000327 : ADR : #66, Rd1
+0x08000328 : STRH (immediate) : Rt0, Rn1, #16
+0x08000328 : LDR (immediate) : #52, Rt2
+0x08000328 : LDR (immediate) : Rt0, Rn2, #3
+0x08000328 : ADD (register) : Rd3, Rn6, Rm4
+0x08000329 : STR (immediate) : Rt5, Rn1, #27
+0x08000329 : ASR (immediate) : Rd3, Rm4, #4
+0x08000329 : MOV (register) : Rd4, Rm1
+0x08000329 : LSL (immediate) : Rd2, Rm0, #4
+0x0800032a : LSL (immediate) : Rd0, Rm1, #16
+0x0800032b : ASR (immediate) : Rd0, Rm4, #0
+0x0800032b : LSL (register) : Rm0, Rd0
+0x0800032b : ADR : #66, Rd1
+0x0800032c : STRH (immediate) : Rt0, Rn1, #16
+0x0800032c : LDR (immediate) : #52, Rt2
+0x0800032c : LDR (immediate) : Rt0, Rn2, #3
+0x0800032c : ADD (register) : Rd3, Rn6, Rm4
+0x0800032d : STR (immediate) : Rt5, Rn1, #27
+0x0800032d : ASR (immediate) : Rd3, Rm4, #4
+0x0800032d : MOV (register) : Rd4, Rm1
+0x0800032d : LSL (immediate) : Rd2, Rm0, #4
+0x0800032e : LSL (immediate) : Rd0, Rm1, #16
+0x0800032f : ASR (immediate) : Rd0, Rm4, #0
+0x0800032f : LSL (register) : Rm0, Rd0
+0x0800032f : ADR : #66, Rd1
+0x08000330 : STRH (immediate) : Rt0, Rn1, #16
+0x08000330 : LDR (immediate) : #52, Rt2
+0x08000330 : LDR (immediate) : Rt0, Rn2, #3
+0x08000330 : ADD (register) : Rd3, Rn6, Rm4
+0x08000331 : STR (immediate) : Rt5, Rn1, #27
+0x08000331 : ASR (immediate) : Rd3, Rm4, #4
+0x08000331 : MOV (register) : Rd4, Rm1
+0x08000331 : LSL (immediate) : Rd2, Rm0, #4
+0x08000332 : LSL (immediate) : Rd0, Rm1, #16
+0x08000333 : ASR (immediate) : Rd0, Rm4, #0
+0x08000333 : LSL (register) : Rm0, Rd0
+0x08000333 : ADR : #66, Rd1
+0x08000334 : STRH (immediate) : Rt0, Rn1, #16
+0x08000334 : LDR (immediate) : #52, Rt2
+0x08000334 : LDR (immediate) : Rt0, Rn2, #3
+0x08000334 : ADD (register) : Rd3, Rn6, Rm4
+0x08000335 : STR (immediate) : Rt5, Rn1, #27
+0x08000335 : ASR (immediate) : Rd3, Rm4, #4
+0x08000335 : MOV (register) : Rd4, Rm1
+0x08000335 : LSL (immediate) : Rd2, Rm0, #4
+0x08000336 : LSL (immediate) : Rd0, Rm1, #16
+0x08000337 : ASR (immediate) : Rd0, Rm4, #0
+0x08000337 : LSL (register) : Rm0, Rd0
+0x08000337 : ADR : #66, Rd1
+0x08000338 : STRH (immediate) : Rt0, Rn1, #16
+0x08000338 : LDR (immediate) : #52, Rt2
+0x08000338 : LDR (immediate) : Rt0, Rn2, #3
+0x08000338 : ADD (register) : Rd3, Rn6, Rm4
+0x08000339 : STR (immediate) : Rt5, Rn1, #27
+0x08000339 : ASR (immediate) : Rd3, Rm4, #4
+0x08000339 : MOV (register) : Rd4, Rm1
+0x08000339 : LSL (immediate) : Rd2, Rm0, #4
+0x0800033a : LSL (immediate) : Rd0, Rm1, #16
+0x0800033b : ASR (immediate) : Rd0, Rm4, #0
+0x0800033b : LSL (register) : Rm0, Rd0
+0x0800033b : ADR : #66, Rd1
+0x0800033c : STRH (immediate) : Rt0, Rn1, #16
+0x0800033c : LDR (immediate) : #52, Rt2
+0x0800033c : LDR (immediate) : Rt0, Rn2, #3
+0x0800033c : ADD (register) : Rd3, Rn6, Rm4
+0x0800033d : STR (immediate) : Rt5, Rn1, #27
+0x0800033d : ASR (immediate) : Rd3, Rm4, #4
+0x0800033d : MOV (register) : Rd4, Rm1
+0x0800033d : LSL (immediate) : Rd2, Rm0, #4
+0x0800033e : LSL (immediate) : Rd0, Rm1, #16
+0x0800033f : ASR (immediate) : Rd0, Rm4, #0
+0x0800033f : LSL (register) : Rm0, Rd0
+0x0800033f : ADR : #66, Rd1
+0x08000340 : STRH (immediate) : Rt0, Rn1, #16
+0x08000340 : LDR (immediate) : #52, Rt2
+0x08000340 : LDR (immediate) : Rt0, Rn2, #3
+0x08000341 : STR (immediate) : Rt5, Rn1, #27
+0x08000341 : LSR (immediate) : Rd3, Rm3, #20
+0x08000341 : ADD (immediate) : Rd6, #108
+0x08000341 : ASR (immediate) : Rd1, Rm4, #0
+0x08000342 : BIC (register) : Rm0, Rd6
+0x08000342 : LSL (immediate) : Rd2, Rm0, #4
+0x08000342 : LSL (immediate) : Rd0, Rm1, #16
+0x08000343 : ASR (immediate) : Rd0, Rm4, #0
+0x08000344 : LSL (register) : Rm0, Rd0
+0x08000344 : ADR : #66, Rd1
+0x08000344 : STRH (immediate) : Rt0, Rn1, #16
+0x08000344 : LDR (immediate) : #52, Rt2
+0x08000345 : LDR (immediate) : Rt0, Rn2, #3
+0x08000345 : ADD (register) : Rd3, Rn6, Rm4
+0x08000345 : STR (immediate) : Rt5, Rn1, #27
+0x08000345 : ASR (immediate) : Rd3, Rm4, #4
+0x08000346 : MOV (register) : Rd4, Rm1
+0x08000346 : LSL (immediate) : Rd2, Rm0, #4
+0x08000346 : LSL (immediate) : Rd0, Rm1, #16
+0x08000347 : ASR (immediate) : Rd0, Rm4, #0
+0x08000348 : LSL (register) : Rm0, Rd0
+0x08000348 : ADR : #66, Rd1
+0x08000348 : STRH (immediate) : Rt0, Rn1, #16
+0x08000348 : LDR (immediate) : #52, Rt2
+0x08000349 : LDR (immediate) : Rt0, Rn2, #3
+0x08000349 : ADD (register) : Rd3, Rn6, Rm4
+0x08000349 : STR (immediate) : Rt5, Rn1, #27
+0x08000349 : ASR (immediate) : Rd3, Rm4, #4
+0x0800034a : MOV (register) : Rd4, Rm1
+0x0800034a : LSL (immediate) : Rd2, Rm0, #4
+0x0800034a : LSL (immediate) : Rd0, Rm1, #16
+0x0800034b : ASR (immediate) : Rd0, Rm4, #0
+0x0800034c : LSL (register) : Rm0, Rd0
+0x0800034c : ADR : #66, Rd1
+0x0800034c : STRH (immediate) : Rt0, Rn1, #16
+0x0800034c : LDR (immediate) : #52, Rt2
+0x0800034d : LDR (immediate) : Rt0, Rn2, #3
+0x0800034d : ADD (register) : Rd3, Rn6, Rm4
+0x0800034d : STR (immediate) : Rt5, Rn1, #27
+0x0800034d : ASR (immediate) : Rd3, Rm4, #4
+0x0800034e : MOV (register) : Rd4, Rm1
+0x0800034e : LSL (immediate) : Rd2, Rm0, #4
+0x0800034e : LSL (immediate) : Rd0, Rm1, #16
+0x0800034f : ASR (immediate) : Rd0, Rm4, #0
+0x08000350 : LSL (register) : Rm0, Rd0
+0x08000350 : ADR : #66, Rd1
+0x08000350 : STRH (immediate) : Rt0, Rn1, #16
+0x08000350 : LDR (immediate) : #52, Rt2
+0x08000351 : LDR (immediate) : Rt0, Rn2, #3
+0x08000351 : ADD (register) : Rd3, Rn6, Rm4
+0x08000351 : STR (immediate) : Rt5, Rn1, #27
+0x08000351 : ASR (immediate) : Rd3, Rm4, #4
+0x08000352 : MOV (register) : Rd4, Rm1
+0x08000352 : LSL (immediate) : Rd2, Rm0, #4
+0x08000352 : LSL (immediate) : Rd0, Rm1, #16
+0x08000353 : ASR (immediate) : Rd0, Rm4, #0
+0x08000354 : LSL (register) : Rm0, Rd0
+0x08000354 : ADR : #66, Rd1
+0x08000354 : STRH (immediate) : Rt0, Rn1, #16
+0x08000354 : LDR (immediate) : #52, Rt2
+0x08000355 : LDR (immediate) : Rt0, Rn2, #3
+0x08000355 : ADD (register) : Rd3, Rn6, Rm4
+0x08000355 : STR (immediate) : Rt5, Rn1, #27
+0x08000355 : ASR (immediate) : Rd3, Rm4, #4
+0x08000356 : MOV (register) : Rd4, Rm1
+0x08000356 : LSL (immediate) : Rd2, Rm0, #4
+0x08000356 : LSL (immediate) : Rd0, Rm1, #16
+0x08000357 : ASR (immediate) : Rd0, Rm4, #0
+0x08000358 : LSL (register) : Rm0, Rd0
+0x08000358 : ADR : #66, Rd1
+0x08000358 : STRH (immediate) : Rt0, Rn1, #16
+0x08000358 : LDR (immediate) : #52, Rt2
+0x08000359 : LDR (immediate) : Rt0, Rn2, #3
+0x08000359 : ADD (register) : Rd3, Rn6, Rm4
+0x08000359 : STR (immediate) : Rt5, Rn1, #27
+0x08000359 : ASR (immediate) : Rd3, Rm4, #4
+0x0800035a : MOV (register) : Rd4, Rm1
+0x0800035a : LSL (immediate) : Rd2, Rm0, #4
+0x0800035a : LSL (immediate) : Rd0, Rm1, #16
+0x0800035b : ASR (immediate) : Rd0, Rm4, #0
+0x0800035c : LSL (register) : Rm0, Rd0
+0x0800035c : ADR : #66, Rd1
+0x0800035c : STRH (immediate) : Rt0, Rn1, #16
+0x0800035c : LDR (immediate) : #52, Rt2
+0x0800035d : LDR (immediate) : Rt0, Rn2, #3
+0x0800035d : ADD (register) : Rd3, Rn6, Rm4
+0x0800035d : STR (immediate) : Rt5, Rn1, #27
+0x0800035d : ASR (immediate) : Rd3, Rm4, #4
+0x0800035e : MOV (register) : Rd4, Rm1
+0x0800035e : LSL (immediate) : Rd2, Rm0, #4
+0x0800035e : LSL (immediate) : Rd0, Rm1, #16
+0x0800035f : ASR (immediate) : Rd0, Rm4, #0
+0x08000360 : LSL (register) : Rm0, Rd0
+0x08000360 : ADR : #66, Rd1
+0x08000360 : STRH (immediate) : Rt0, Rn1, #16
+0x08000360 : LDR (immediate) : #52, Rt2
+0x08000361 : LDR (immediate) : Rt0, Rn2, #3
+0x08000361 : ADD (register) : Rd3, Rn6, Rm4
+0x08000361 : STR (immediate) : Rt5, Rn1, #27
+0x08000361 : ASR (immediate) : Rd3, Rm4, #4
+0x08000362 : MOV (register) : Rd4, Rm1
+0x08000362 : ASR (immediate) : Rd2, Rm4, #4
+0x08000362 : ADD (register) : Rm1, Rd0
+0x08000362 : LSL (immediate) : Rd2, Rm0, #4
+0x08000363 : LSL (immediate) : Rd0, Rm1, #16
+0x08000364 : ASR (immediate) : Rd0, Rm4, #0
+0x08000364 : LSL (register) : Rm0, Rd0
+0x08000364 : ADR : #66, Rd1
+0x08000365 : STRH (immediate) : Rt0, Rn1, #16
+0x08000365 : LDR (immediate) : #52, Rt2
+0x08000365 : LDR (immediate) : Rt0, Rn2, #3
+0x08000365 : ADD (register) : Rd3, Rn6, Rm4
+0x08000366 : STR (immediate) : Rt5, Rn1, #27
+0x08000366 : ASR (immediate) : Rd3, Rm4, #4
+0x08000366 : MOV (register) : Rd4, Rm1
+0x08000366 : LSL (immediate) : Rd2, Rm0, #4
+0x08000367 : LSL (immediate) : Rd0, Rm1, #16
+0x08000368 : ASR (immediate) : Rd0, Rm4, #0
+0x08000368 : LSL (register) : Rm0, Rd0
+0x08000368 : ADR : #66, Rd1
+0x08000369 : STRH (immediate) : Rt0, Rn1, #16
+0x08000369 : LDR (immediate) : #52, Rt2
+0x08000369 : LDR (immediate) : Rt0, Rn2, #3
+0x08000369 : ADD (register) : Rd3, Rn6, Rm4
+0x0800036a : STR (immediate) : Rt5, Rn1, #27
+0x0800036a : ASR (immediate) : Rd3, Rm4, #4
+0x0800036a : MOV (register) : Rd4, Rm1
+0x0800036a : LSL (immediate) : Rd2, Rm0, #4
+0x0800036b : LSL (immediate) : Rd0, Rm1, #16
+0x0800036c : ASR (immediate) : Rd0, Rm4, #0
+0x0800036c : LSL (register) : Rm0, Rd0
+0x0800036c : ADR : #66, Rd1
+0x0800036d : STRH (immediate) : Rt0, Rn1, #16
+0x0800036d : LDR (immediate) : #52, Rt2
+0x0800036d : LDR (immediate) : Rt0, Rn2, #3
+0x0800036d : ADD (register) : Rd3, Rn6, Rm4
+0x0800036e : STR (immediate) : Rt5, Rn1, #27
+0x0800036e : ASR (immediate) : Rd3, Rm4, #4
+0x0800036e : MOV (register) : Rd4, Rm1
+0x0800036e : LSL (immediate) : Rd2, Rm0, #4
+0x0800036f : LSL (immediate) : Rd0, Rm1, #16
+0x08000370 : ASR (immediate) : Rd0, Rm4, #0
+0x08000370 : LSL (register) : Rm0, Rd0
+0x08000370 : ADR : #66, Rd1
+0x08000371 : STRH (immediate) : Rt0, Rn1, #16
+0x08000371 : LDR (immediate) : #52, Rt2
+0x08000371 : LDR (immediate) : Rt0, Rn2, #3
+0x08000371 : ADD (register) : Rd3, Rn6, Rm4
+0x08000372 : STR (immediate) : Rt5, Rn1, #27
+0x08000372 : ASR (immediate) : Rd3, Rm4, #4
+0x08000372 : MOV (register) : Rd4, Rm1
+0x08000372 : LSL (immediate) : Rd2, Rm0, #4
+0x08000373 : LSL (immediate) : Rd0, Rm1, #16
+0x08000374 : ASR (immediate) : Rd0, Rm4, #0
+0x08000374 : LSL (register) : Rm0, Rd0
+0x08000374 : ADR : #66, Rd1
+0x08000375 : STRH (immediate) : Rt0, Rn1, #16
+0x08000375 : LDR (immediate) : #52, Rt2
+0x08000375 : LDR (immediate) : Rt0, Rn2, #3
+0x08000375 : ADD (register) : Rd3, Rn6, Rm4
+0x08000376 : STR (immediate) : Rt5, Rn1, #27
+0x08000376 : ASR (immediate) : Rd3, Rm4, #4
+0x08000376 : MOV (register) : Rd4, Rm1
+0x08000376 : LSL (immediate) : Rd2, Rm0, #4
+0x08000377 : LSL (immediate) : Rd0, Rm1, #16
+0x08000378 : ASR (immediate) : Rd0, Rm4, #0
+0x08000378 : LSL (register) : Rm0, Rd0
+0x08000378 : ADR : #66, Rd1
+0x08000379 : STRH (immediate) : Rt0, Rn1, #16
+0x08000379 : LDR (immediate) : #52, Rt2
+0x08000379 : LDR (immediate) : Rt0, Rn2, #3
+0x08000379 : ADD (register) : Rd3, Rn6, Rm4
+0x0800037a : STR (immediate) : Rt5, Rn1, #27
+0x0800037a : ASR (immediate) : Rd3, Rm4, #4
+0x0800037a : MOV (register) : Rd4, Rm1
+0x0800037a : LSL (immediate) : Rd2, Rm0, #4
+0x0800037b : LSL (immediate) : Rd0, Rm1, #16
+0x0800037c : ASR (immediate) : Rd0, Rm4, #0
+0x0800037c : LSL (register) : Rm0, Rd0
+0x0800037c : ADR : #66, Rd1
+0x0800037d : STRH (immediate) : Rt0, Rn1, #16
+0x0800037d : LDR (immediate) : #52, Rt2
+0x0800037d : LDR (immediate) : Rt0, Rn2, #3
+0x0800037d : ADD (register) : Rd3, Rn6, Rm4
+0x0800037e : STR (immediate) : Rt5, Rn1, #27
+0x0800037e : ASR (immediate) : Rd3, Rm4, #4
+0x0800037e : MOV (register) : Rd4, Rm1
+0x0800037e : LSL (immediate) : Rd2, Rm0, #4
+0x0800037f : LSL (immediate) : Rd0, Rm1, #16
+0x08000380 : ASR (immediate) : Rd0, Rm4, #0
+0x08000380 : LSL (register) : Rm0, Rd0
+0x08000380 : ADR : #66, Rd1
+0x08000381 : STRH (immediate) : Rt0, Rn1, #16
+0x08000381 : LDR (immediate) : #52, Rt2
+0x08000381 : LDR (immediate) : Rt0, Rn2, #3
+0x08000381 : LDR (register) : Rt3, Rn6, Rm6
+0x08000382 : STR (immediate) : Rt5, Rn1, #27
+0x08000382 : ASR (immediate) : Rd3, Rm5, #20
+0x08000382 : LDRSB (register) : Rt4, Rn5, Rm2
+0x08000382 : ASR (immediate) : Rd2, Rm4, #4
+0x08000383 : CMP (register) : Rn1, Rm2
+0x08000383 : LSL (immediate) : Rd2, Rm0, #4
+0x08000383 : LSL (immediate) : Rd0, Rm1, #16
+0x08000384 : ASR (immediate) : Rd0, Rm4, #0
+0x08000385 : LSL (register) : Rm0, Rd0
+0x08000385 : ADR : #66, Rd1
+0x08000385 : STRH (immediate) : Rt0, Rn1, #16
+0x08000385 : LDR (immediate) : #52, Rt2
+0x08000386 : LDR (immediate) : Rt0, Rn2, #3
+0x08000386 : ADD (register) : Rd3, Rn6, Rm4
+0x08000386 : STR (immediate) : Rt5, Rn1, #27
+0x08000386 : ASR (immediate) : Rd3, Rm4, #4
+0x08000387 : MOV (register) : Rd4, Rm1
+0x08000387 : LSL (immediate) : Rd2, Rm0, #4
+0x08000387 : LSL (immediate) : Rd0, Rm1, #16
+0x08000388 : ASR (immediate) : Rd0, Rm4, #0
+0x08000389 : LSL (register) : Rm0, Rd0
+0x08000389 : ADR : #66, Rd1
+0x08000389 : STRH (immediate) : Rt0, Rn1, #16
+0x08000389 : LDR (immediate) : #52, Rt2
+0x0800038a : LDR (immediate) : Rt0, Rn2, #3
+0x0800038a : ADD (register) : Rd3, Rn6, Rm4
+0x0800038a : STR (immediate) : Rt5, Rn1, #27
+0x0800038a : ASR (immediate) : Rd3, Rm4, #4
+0x0800038b : MOV (register) : Rd4, Rm1
+0x0800038b : LSL (immediate) : Rd2, Rm0, #4
+0x0800038b : LSL (immediate) : Rd0, Rm1, #16
+0x0800038c : ASR (immediate) : Rd0, Rm4, #0
+0x0800038d : LSL (register) : Rm0, Rd0
+0x0800038d : ADR : #66, Rd1
+0x0800038d : STRH (immediate) : Rt0, Rn1, #16
+0x0800038d : LDR (immediate) : #52, Rt2
+0x0800038e : LDR (immediate) : Rt0, Rn2, #3
+0x0800038e : ADD (register) : Rd3, Rn6, Rm4
+0x0800038e : STR (immediate) : Rt5, Rn1, #27
+0x0800038e : ASR (immediate) : Rd3, Rm4, #4
+0x0800038f : MOV (register) : Rd4, Rm1
+0x0800038f : LSL (immediate) : Rd2, Rm0, #4
+0x0800038f : LSL (immediate) : Rd0, Rm1, #16
+0x08000390 : ASR (immediate) : Rd0, Rm4, #0
+0x08000391 : LSL (register) : Rm0, Rd0
+0x08000391 : ADR : #66, Rd1
+0x08000391 : STRH (immediate) : Rt0, Rn1, #16
+0x08000391 : LDR (immediate) : #52, Rt2
+0x08000392 : LDR (immediate) : Rt0, Rn2, #3
+0x08000392 : ADD (register) : Rd3, Rn6, Rm4
+0x08000392 : STR (immediate) : Rt5, Rn1, #27
+0x08000392 : ASR (immediate) : Rd3, Rm4, #4
+0x08000393 : MOV (register) : Rd4, Rm1
+0x08000393 : LSL (immediate) : Rd2, Rm0, #4
+0x08000393 : LSL (immediate) : Rd0, Rm1, #16
+0x08000394 : ASR (immediate) : Rd0, Rm4, #0
+0x08000395 : LSL (register) : Rm0, Rd0
+0x08000395 : ADR : #66, Rd1
+0x08000395 : STRH (immediate) : Rt0, Rn1, #16
+0x08000395 : LDR (immediate) : #52, Rt2
+0x08000396 : LDR (immediate) : Rt0, Rn2, #3
+0x08000396 : ADD (register) : Rd3, Rn6, Rm4
+0x08000396 : STR (immediate) : Rt5, Rn1, #27
+0x08000396 : ASR (immediate) : Rd3, Rm4, #4
+0x08000397 : MOV (register) : Rd4, Rm1
+0x08000397 : LSL (immediate) : Rd2, Rm0, #4
+0x08000397 : LSL (immediate) : Rd0, Rm1, #16
+0x08000398 : ASR (immediate) : Rd0, Rm4, #0
+0x08000399 : LSL (register) : Rm0, Rd0
+0x08000399 : ADR : #66, Rd1
+0x08000399 : STRH (immediate) : Rt0, Rn1, #16
+0x08000399 : LDR (immediate) : #52, Rt2
+0x0800039a : LDR (immediate) : Rt0, Rn2, #3
+0x0800039a : ADD (register) : Rd3, Rn6, Rm4
+0x0800039a : STR (immediate) : Rt5, Rn1, #27
+0x0800039a : ASR (immediate) : Rd3, Rm4, #4
+0x0800039b : MOV (register) : Rd4, Rm1
+0x0800039b : LSL (immediate) : Rd2, Rm0, #4
+0x0800039b : LSL (immediate) : Rd0, Rm1, #16
+0x0800039c : ASR (immediate) : Rd0, Rm4, #0
+0x0800039d : LSL (register) : Rm0, Rd0
+0x0800039d : ADR : #66, Rd1
+0x0800039d : STRH (immediate) : Rt0, Rn1, #16
+0x0800039d : LDR (immediate) : #52, Rt2
+0x0800039e : LDR (immediate) : Rt0, Rn2, #3
+0x0800039e : ADD (register) : Rd3, Rn6, Rm4
+0x0800039e : STR (immediate) : Rt5, Rn1, #27
+0x0800039e : ASR (immediate) : Rd3, Rm4, #4
+0x0800039f : MOV (register) : Rd4, Rm1
+0x0800039f : LSL (immediate) : Rd2, Rm0, #4
+0x0800039f : LSL (immediate) : Rd0, Rm1, #16
+0x080003a0 : ASR (immediate) : Rd0, Rm4, #0
+0x080003a1 : LSL (register) : Rm0, Rd0
+0x080003a1 : ADR : #66, Rd1
+0x080003a1 : STRH (immediate) : Rt0, Rn1, #16
+0x080003a1 : LDR (immediate) : #52, Rt2
+0x080003a2 : LDR (immediate) : Rt0, Rn2, #3
+0x080003a2 : SUB (immediate) : Rd1, #115
+0x080003a2 : B : #1741
+0x080003a2 : ASR (immediate) : Rd7, Rm4, #12
+0x080003a3 : LDR (literal) : #156, Rt6
+0x080003a3 : ASR (immediate) : Rd2, Rm4, #4
+0x080003a3 : ADD (register) : Rm1, Rd1
+0x080003a3 : LSL (immediate) : Rd2, Rm0, #4
+0x080003a4 : LSL (immediate) : Rd0, Rm1, #16
+0x080003a5 : ASR (immediate) : Rd0, Rm4, #0
+0x080003a5 : LSL (register) : Rm0, Rd0
+0x080003a5 : ADR : #66, Rd1
+0x080003a6 : STRH (immediate) : Rt0, Rn1, #16
+0x080003a6 : LDR (immediate) : #52, Rt2
+0x080003a6 : LDR (immediate) : Rt0, Rn2, #3
+0x080003a6 : LSR (immediate) : Rd3, Rm2, #4
+0x080003a7 : MOV (immediate) : Rd6, #77
+0x080003a7 : ASR (immediate) : Rd1, Rm4, #0
+0x080003a7 : CMP (register) : Rm0, Rn4
+0x080003a7 : LSL (immediate) : Rd2, Rm0, #4
+0x080003a8 : LSL (immediate) : Rd0, Rm1, #16
+0x080003a9 : ASR (immediate) : Rd0, Rm4, #0
+0x080003a9 : LSL (register) : Rm0, Rd0
+0x080003a9 : B : #450
+0x080003aa : STRH (immediate) : Rt0, Rn1, #16
+0x080003aa : LDRB (immediate) : Rt4, Rn7, #27
+0x080003aa : SUB (immediate) : Rd7, Rn7, Rm4
+0x080003ab : LSL (immediate) : Rd3, Rm0, #4
+0x080003af : ASR (immediate) : Rd0, Rm4, #0
+0x080003af : LSL (register) : Rm0, Rd0
+0x080003af : LSL (immediate) : Rd2, Rm0, #4
+0x080003af : LSL (immediate) : Rd0, Rm1, #16
+0x080003b1 : ASR (immediate) : Rd0, Rm4, #0
+0x080003b1 : LSL (register) : Rm0, Rd0
+0x080003b1 : MOV (immediate) : Rd1, #66
+0x080003b1 : STRH (immediate) : Rt0, Rn1, #16
+0x080003b2 : STR (immediate) : Rt4, Rn0, #11
+0x080003b2 : LDRH (immediate) : Rt0, Rn2, #0
+0x080003b2 : LSL (immediate) : Rd4, Rm1, #24
+0x080003b2 : ADD (register) : Rd1, Rn6, Rm0
+0x080003b3 : ASR (immediate) : Rd0, Rm4, #0
+0x080003b3 : SBC (register) : Rm0, Rd3
+0x080003b3 : LSL (immediate) : Rd2, Rm0, #4
+0x080003b3 : LSL (immediate) : Rd0, Rm1, #16
+0x080003b5 : ASR (immediate) : Rd0, Rm4, #0
+0x080003b5 : LSL (register) : Rm0, Rd0
+0x080003b5 : STR (immediate) : Rt2, Rn0, #7
+0x080003b5 : STRH (immediate) : Rt0, Rn1, #16
+0x080003b6 : MOV (register) : Rd4, Rm1
+0x080003b6 : ADD (register) : Rd0, Rn6, Rm0
+0x080003b6 : LSL (immediate) : Rd0, Rm1, #16
+0x080003b6 : ASR (immediate) : Rd3, Rm4, #4
+0x080003b7 : LSL (immediate) : Rd2, Rm0, #4
+0x080003c2 : B : #192
+0x080003c2 : STRH (immediate) : Rt0, Rn0, #0
+0x080003c3 : SUB (immediate) : Rd4, Rn7, Rm0
+0x080003c3 : LDRB (immediate) : Rt0, Rn6, #3
+0x080003c3 : LSL (immediate) : Rd3, Rm0, #4
+0x080003c3 : LSL (immediate) : Rd7, Rm1, #28
+0x080003c7 : ASR (immediate) : Rd0, Rm4, #0
+0x080003c7 : LSL (register) : Rm0, Rd0
+0x080003c8 : LSL (immediate) : Rd2, Rm0, #4
+0x080003c8 : LSL (immediate) : Rd0, Rm1, #16
+0x080003c9 : ASR (immediate) : Rd0, Rm4, #0
+0x080003c9 : LSL (register) : Rm0, Rd0
+0x080003ca : ADR : #66, Rd1
+0x080003ca : STRH (immediate) : Rt0, Rn1, #16
+0x080003ca : SUB (immediate) : Rd2, #116
+0x080003cb : LSR (immediate) : Rd5, Rm3, #24
+0x080003cb : ASR (immediate) : Rd0, Rm4, #0
+0x080003cb : LSL (register) : Rm0, Rd1
+0x080003cb : LSL (immediate) : Rd2, Rm0, #4
+0x080003cc : LSL (immediate) : Rd0, Rm1, #16
+0x080003cd : ASR (immediate) : Rd0, Rm4, #0
+0x080003cd : LSL (register) : Rm0, Rd0
+0x080003cd : B : #450
+0x080003ce : STRH (immediate) : Rt0, Rn1, #16
+0x080003ce : CMP (immediate) : Rn6, #92
+0x080003ce : LSL (immediate) : Rd5, Rm0, #8
+0x080003cf : LSR (immediate) : Rd7, Rm2, #12
+0x080003cf : ASR (immediate) : Rd0, Rm4, #0
+0x080003cf : LSL (register) : Rm0, Rd1
+0x080003cf : LSL (immediate) : Rd2, Rm0, #4
+0x080003d0 : LSL (immediate) : Rd0, Rm1, #16
+0x080003d1 : ASR (immediate) : Rd0, Rm4, #0
+0x080003d1 : LSL (register) : Rm0, Rd0
+0x080003d1 : MOV (immediate) : Rd1, #66
+0x080003d2 : STRH (immediate) : Rt0, Rn1, #16
+0x080003d2 : MOV (immediate) : Rd2, #68
+0x080003d2 : LDRH (immediate) : Rt0, Rn2, #0
+0x080003d2 : LSL (immediate) : Rd4, Rm0, #8
+0x080003d3 : LSR (immediate) : Rd1, Rm2, #0
+0x080003d3 : ASR (immediate) : Rd0, Rm4, #0
+0x080003d3 : LSL (register) : Rm0, Rd1
+0x080003d3 : LSL (immediate) : Rd2, Rm0, #4
+0x080003d4 : LSL (immediate) : Rd0, Rm1, #16
+0x080003d5 : ASR (immediate) : Rd0, Rm4, #0
+0x080003d5 : LSL (register) : Rm0, Rd0
+0x080003d5 : STR (immediate) : Rt2, Rn0, #7
+0x080003d6 : STRH (immediate) : Rt0, Rn1, #16
+0x080003d6 : ASR (immediate) : Rd4, Rm5, #24
+0x080003d6 : LDR (register) : Rt0, Rn6, Rm2
+0x080003d6 : LSL (immediate) : Rd2, Rm0, #4
+0x080003d7 : LSL (immediate) : Rd3, Rm1, #20
+0x080003d7 : ASR (immediate) : Rd0, Rm4, #0
+0x080003d7 : LSL (register) : Rm0, Rd0
+0x080003d7 : LSL (immediate) : Rd2, Rm0, #4
+0x080003d8 : LSL (immediate) : Rd0, Rm1, #16
+0x080003d9 : ASR (immediate) : Rd0, Rm4, #0
+0x080003d9 : LSL (register) : Rm0, Rd0
+0x080003d9 : ADR : #66, Rd1
+0x080003da : STRH (immediate) : Rt0, Rn1, #16
+0x080003da : LSR (immediate) : Rd4, Rm2, #8
+0x080003da : CMP (immediate) : Rn0, #80
+0x080003da : LSL (immediate) : Rd1, Rm0, #0
+0x080003db : LSL (immediate) : Rd5, Rm0, #8
+0x080003db : ASR (immediate) : Rd0, Rm4, #0
+0x080003db : LSL (register) : Rm0, Rd0
+0x080003db : LSL (immediate) : Rd2, Rm0, #4
+0x080003dc : LSL (immediate) : Rd0, Rm1, #16
+0x080003dd : ASR (immediate) : Rd0, Rm4, #0
+0x080003dd : LSL (register) : Rm0, Rd0
+0x080003dd : ADR : #66, Rd1
+0x080003de : STRH (immediate) : Rt0, Rn1, #16
+0x080003de : LSR (immediate) : Rd7, Rm3, #28
+0x080003de : SUB (immediate) : Rd6, #125
+0x080003df : LSL (register) : Rm0, Rd1
+0x080003df : LSL (immediate) : Rd7, Rm0, #12
+0x080003df : MOV (immediate) : Rd4, #72
+0x080003df : STR (immediate) : #32, Rt0
+0x080003e0 : LSL (immediate) : Rd4, Rm0, #8
+0x080003e0 : LSR (immediate) : Rd2, Rm2, #4
+0x080003e0 : LSL (immediate) : Rd1, Rm0, #0
+0x080003e1 : ASR (immediate) : Rd0, Rm4, #0
+0x080003e1 : LSL (register) : Rm0, Rd0
+0x080003e2 : LSL (immediate) : Rd2, Rm0, #4
+0x080003e2 : LSL (immediate) : Rd0, Rm1, #16

@@ -235,6 +235,7 @@ def describe_instructions(code):
     nb32lines = 0
     count = 0
     for line in lines:
+        increment_barre_progression()
         if is32bits(line):
             nb32lines += 1
             # Data processing (shifted register)

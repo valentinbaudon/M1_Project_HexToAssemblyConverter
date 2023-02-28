@@ -118,7 +118,6 @@ class MainWindow(object):
         writeBinaryInstructions("./ConversionFiles/Hexa.txt")
         describe_instructions(self.selected_button.text())
         stop = time.time()
-        print(stop-start)
 
         # update du nombre d'instructions et du temps estimé
         with open("./ConversionFiles/Hexa.txt", "r") as f:
