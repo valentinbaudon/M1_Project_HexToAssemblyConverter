@@ -587,10 +587,7 @@ def describe_instructions(code):
             # Shift (immediate), add, subtract, move, and compare
             if line[:2] == "00":
                 if line[2:5] in ["000", "001", "010", "001", "100", "101", "110", "111"]:
-                    if GetDictField_16(json_16, line, 5) == "Rd0, Rm0, #0":
-                        pass
-                    else:
-                        write_described_instruction_16(assembly_description, json_16, line, 5, code, address)
+                    write_described_instruction_16(assembly_description, json_16, line, 5, code, address)
                 elif line[2:7] in ["01100", "01101", "01110", "01111"]:
                     write_described_instruction_16(assembly_description, json_16, line, 7, code, address)
             # Data processing

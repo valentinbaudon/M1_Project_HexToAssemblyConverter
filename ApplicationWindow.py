@@ -13,6 +13,7 @@ class MainWindow(object):
 
     def __init__(self):
         # Initialisation des attributs de la classe
+        self.selected_hex_file_CSV = None
         self.progressBar = None
         self.DownloadAssemblyInCSVButton = None
         self.nbInstructionsValue = None
@@ -118,6 +119,7 @@ class MainWindow(object):
 
     # Fonction permettant de faire la traduction du fichier hexa et de mettre le résultat dans le fichier "Assembly.txt"
     def translate(self):
+        self.progressBar.show()
         start = time.time()
         writeBinaryInstructions("./ConversionFiles/Hexa.txt")
         describe_instructions(self.selected_button.text())
@@ -147,6 +149,9 @@ class MainWindow(object):
             hex_name = os.path.basename(file_name).rpartition(".")[0]
             newHexName = hex_name + "_assembly.txt"
             self.selected_hex_file = newHexName
+
+            newHexNameCSV = hex_name + "_assembly.csv"
+            self.selected_hex_file_CSV = newHexNameCSV
             with open(file_name, "r") as f:
                 hexa_code = f.read()
             with open("./ConversionFiles/Hexa.txt", "w") as f1:
@@ -167,8 +172,8 @@ class MainWindow(object):
 
     # Fonction permettant de télécharger sur notre ordi le fichier converti en csv
     def download_csv_file(self):
-        with open("./ConversionFiles/Assembly.csv", "w", newline='') as f:
-            writer = csv.writer(f, dialect='excel')
+        with open("./ConversionFiles/Assembly.csv", mode="w", newline='') as f:
+            writer = csv.writer(f, delimiter=';')
             match self.selected_button.text():
                 case "Compact":
                     header = ["address", "instruction", "values"]
@@ -181,11 +186,26 @@ class MainWindow(object):
             writer.writerow(header)
             assembly = open("./ConversionFiles/Assembly.txt")
             lines = assembly.readlines()
-            data = []
             for line in lines:
                 arguments = line[:-1].split(" : ")
-                data.append(arguments)
-            writer.writerows(data)
+                match self.selected_button.text():
+                    case "Compact":
+                        writer.writerow([arguments[0], arguments[1], arguments[2]])
+                    case "Classique":
+                        writer.writerow([arguments[0], arguments[1], arguments[2]])
+                    case "Classic":
+                        writer.writerow([arguments[0], arguments[1], arguments[2]])
+                    case "Integral":
+                        writer.writerow([arguments[0], str(arguments[1]), arguments[2], arguments[3]])
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+        file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.csv", self.selected_hex_file_CSV,
+                                                   "Tous les fichiers ()", options=options)
+        if file_name:
+            with open("./ConversionFiles/Assembly.csv", "r") as f:
+                assembly_code = f.read()
+            with open(file_name, "w") as f:
+                f.write(assembly_code)
 
     # Fonction permettant de mettre à jour le bouton d'option d'affichage sélectionnée
     def store_selection(self, button):
@@ -523,8 +543,9 @@ class MainWindow(object):
         self.InstructionsLayout.addItem(spacerRightNbInstruction)
 
         self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar.setProperty("value", 0)
+        self.progressBar.setProperty("value", 80)
         self.progressBar.setObjectName("progressBar")
+        self.progressBar.hide()
         self.InstructionsLayout.addWidget(self.progressBar)
 
         self.OptionsConversionLayout.addItem(self.InstructionsLayout)
