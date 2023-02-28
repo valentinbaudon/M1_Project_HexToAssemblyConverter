@@ -32,10 +32,10 @@ def writeBinaryInstructions(filepath):
         tmp = data_reformatted[i:i + 32]
         # print(tmp)
         if tmp[0:3] == "111" and tmp[3:5] != "00":
-            instructions_file.write(addresses[round(i/256)] + tmp + '\n')
+            instructions_file.write(addresses[round(i / 256)] + tmp + '\n')
             i += 32
         else:
-            instructions_file.write(addresses[min(round(i/256), len(addresses)-1)] + tmp[:16] + '\n')
+            instructions_file.write(addresses[min(round(i / 256), len(addresses) - 1)] + tmp[:16] + '\n')
             i += 16
 
 
@@ -109,7 +109,8 @@ def write_described_instruction_16(descr_file, json_file, line, index, code, add
                 'meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Integral":
             descr_file.write(
-                "0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(line[:index])][
+                "0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' +
+                json_file[str(line[:index])][
                     'meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
 
 
@@ -220,7 +221,8 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
                 'meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Integral":
             descr_file.write(
-                "0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(instruction)][
+                "0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' +
+                json_file[str(instruction)][
                     'meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
 
 
@@ -239,7 +241,7 @@ def describe_instructions(code):
     nb32lines = 0
     for binary_line in lines:
         address = binary_line[:8]
-        line = binary_line [8:-1]
+        line = binary_line[8:-1]
         increment_barre_progression()
         if is32bits(line):
             nb32lines += 1

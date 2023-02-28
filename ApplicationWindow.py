@@ -11,6 +11,8 @@ class MainWindow(object):
 
     def __init__(self):
         # Initialisation des attributs de la classe
+        self.progressBar = None
+        self.DownloadAssemblyInCSVButton = None
         self.nbInstructionsValue = None
         self.nbInstructions = None
         self.InstructionsLayout = None
@@ -126,12 +128,12 @@ class MainWindow(object):
         with open("./ConversionFiles/instructions_file.txt", "r") as f:
             flines = f.readlines()
             nblignes = len(flines)
-        self.nbInstructionsValue.setText(str(nblignes) + ". Execution: " + str("{:.3f}".format(nblignesHexa * 0.00186574944)) + "s")
+        self.nbInstructionsValue.setText(
+            str(nblignes) + ". Execution: " + str("{:.3f}".format(nblignesHexa * 0.00186574944)) + "s")
 
         with open("./ConversionFiles/Assembly.txt", "r") as f:
             assembly_code = f.read()
         self.AssemblyCode.setText(assembly_code)
-
 
     # Fonction permettant de télécharger le contenu d"un fichier hexa présent sur notre ordi qui sera mis dans le fichier "Hexa.txt" pour être traîté
     def download_hex_file(self):
@@ -199,6 +201,7 @@ class MainWindow(object):
         self.nbInstructionsValue.setText(_translate("Converter", self.JSON_lang["nbInstructionsValue"]))
         self.HowToDownloadAssembly_Text.setText(_translate("Converter", self.JSON_lang["HowToDownloadAssembly_Text"]))
         self.DownloadAssemblyButton.setText(_translate("Converter", self.JSON_lang["DownloadAssemblyButton"]))
+        self.DownloadAssemblyInCSVButton.setText(_translate("Converter", self.JSON_lang["DownloadAssemblyInCSVButton"]))
         self.menu_Help.setTitle(_translate("Converter", self.JSON_lang["menu_Help"]))
         self.menuFonctionnement.setTitle(_translate("Converter", self.JSON_lang["menuFonctionnement"]))
         self.menuFichier.setTitle(_translate("Converter", self.JSON_lang["menuFichier"]))
@@ -491,9 +494,15 @@ class MainWindow(object):
         self.InstructionsLayout.addWidget(self.nbInstructionsValue)
 
         # Spacer à droite du nombre d'instructions
-        spacerRightNbInstruction = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+        spacerRightNbInstruction = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
                                                          QtWidgets.QSizePolicy.Minimum)
         self.InstructionsLayout.addItem(spacerRightNbInstruction)
+
+        self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
+        self.progressBar.setProperty("value", 0)
+        self.progressBar.setObjectName("progressBar")
+        self.InstructionsLayout.addWidget(self.progressBar)
+
         self.OptionsConversionLayout.addItem(self.InstructionsLayout)
 
         # Ligne à droite de l'application
@@ -526,26 +535,41 @@ class MainWindow(object):
         self.HowToDownloadAssembly_Text.setObjectName("HowToDownloadAssembly_Text")
         self.FooterLayout.addWidget(self.HowToDownloadAssembly_Text)
 
+        # Spacer entre titre footer et boutons de téléchargement
+        spacer_CentreFooter = QtWidgets.QSpacerItem(17, 17, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.FooterLayout.addItem(spacer_CentreFooter)
+
         # Layout autour du bouton de téléchargement de l'assembleur
         self.DownloadAssemblyButtonLayout = QtWidgets.QHBoxLayout()
         self.DownloadAssemblyButtonLayout.setObjectName("DownloadAssemblyButtonLayout")
 
         # Spacer gauche bouton DownloadAssembly
-        spacer_leftDownloadAssembly = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
-                                                            QtWidgets.QSizePolicy.Minimum)
-        self.DownloadAssemblyButtonLayout.addItem(spacer_leftDownloadAssembly)
+        spacer_leftDownloadAssemblyText = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
+                                                                QtWidgets.QSizePolicy.Minimum)
+        self.DownloadAssemblyButtonLayout.addItem(spacer_leftDownloadAssemblyText)
 
-        # Bouton de téléchargement de l'assembleur
+        # Bouton de téléchargement de l'assembleur en fichier texte
         self.DownloadAssemblyButton = QtWidgets.QPushButton(self.centralwidget)
         self.DownloadAssemblyButton.setMaximumSize(QtCore.QSize(400, 16777215))
         self.DownloadAssemblyButton.setFont(font2)
         self.DownloadAssemblyButton.setObjectName("DownloadAssemblyButton")
         self.DownloadAssemblyButtonLayout.addWidget(self.DownloadAssemblyButton)
 
-        # Spacer droite bouton DownloadAssembly
-        spacer_RightDownloadAssembly = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
-                                                             QtWidgets.QSizePolicy.Minimum)
-        self.DownloadAssemblyButtonLayout.addItem(spacer_RightDownloadAssembly)
+        # Spacer entre les 2 boutons DownloadAssembly
+        spacer_BetweenDownloadAssembly = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
+                                                               QtWidgets.QSizePolicy.Minimum)
+        self.DownloadAssemblyButtonLayout.addItem(spacer_BetweenDownloadAssembly)
+
+        # Bouton de téléchargement de l'assembleur en fichier CSV
+        self.DownloadAssemblyInCSVButton = QtWidgets.QPushButton(self.centralwidget)
+        self.DownloadAssemblyInCSVButton.setFont(font2)
+        self.DownloadAssemblyInCSVButton.setObjectName("DownloadAssemblyInCSVButton")
+        self.DownloadAssemblyButtonLayout.addWidget(self.DownloadAssemblyInCSVButton)
+
+        # Spacer droite bontons DownloadAssembly
+        spacer_RightDownloadAssemblyCSV = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.DownloadAssemblyButtonLayout.addItem(spacer_RightDownloadAssemblyCSV)
+
         self.FooterLayout.addLayout(self.DownloadAssemblyButtonLayout)
         self.GlobalLayout.addLayout(self.FooterLayout)
 
