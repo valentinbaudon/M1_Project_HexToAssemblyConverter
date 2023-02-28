@@ -1,3 +1,5 @@
+import csv
+
 from PyQt5.QtWidgets import QFileDialog, QButtonGroup
 import os
 from conversionHexToAssembly import *
@@ -162,6 +164,28 @@ class MainWindow(object):
                 assembly_code = f.read()
             with open(file_name, "w") as f:
                 f.write(assembly_code)
+
+    # Fonction permettant de télécharger sur notre ordi le fichier converti en csv
+    def download_csv_file(self):
+        with open("./ConversionFiles/Assembly.csv", "w", newline='') as f:
+            writer = csv.writer(f, dialect='excel')
+            match self.selected_button.text():
+                case "Compact":
+                    header = ["address", "instruction", "values"]
+                case "Classique":
+                    header = ["address", "meaning", "values"]
+                case "Classic":
+                    header = ["address", "meaning", "values"]
+                case "Integral":
+                    header = ["address", "bits", "meaning", "values"]
+            writer.writerow(header)
+            assembly = open("./ConversionFiles/Assembly.txt")
+            lines = assembly.readlines()
+            data = []
+            for line in lines:
+                arguments = line[:-1].split(" : ")
+                data.append(arguments)
+            writer.writerows(data)
 
     # Fonction permettant de mettre à jour le bouton d'option d'affichage sélectionnée
     def store_selection(self, button):
@@ -567,7 +591,8 @@ class MainWindow(object):
         self.DownloadAssemblyButtonLayout.addWidget(self.DownloadAssemblyInCSVButton)
 
         # Spacer droite bontons DownloadAssembly
-        spacer_RightDownloadAssemblyCSV = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacer_RightDownloadAssemblyCSV = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
+                                                                QtWidgets.QSizePolicy.Minimum)
         self.DownloadAssemblyButtonLayout.addItem(spacer_RightDownloadAssemblyCSV)
 
         self.FooterLayout.addLayout(self.DownloadAssemblyButtonLayout)
@@ -648,6 +673,7 @@ class MainWindow(object):
         self.convertButton.clicked.connect(self.translate)
         self.DownloadHexButton.clicked.connect(self.download_hex_file)
         self.DownloadAssemblyButton.clicked.connect(self.download_assembly_file)
+        self.DownloadAssemblyInCSVButton.clicked.connect(self.download_csv_file)
         self.actionFonctionnement.triggered.connect(self.ExplanationWindow)
         self.actionFrancais.triggered.connect(self.select_language_fr)
         self.actionEnglish.triggered.connect(self.select_language_en)
