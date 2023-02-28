@@ -6,17 +6,18 @@ def writeBinaryInstructions(filepath):
     STMfile = open(filepath)
     STMfileLines = STMfile.readlines()
     data_STMfile = ""
+    addresses = []
     for STMfileLine in STMfileLines:
-        data_STMfile += STMfileLine[12:-2]
+        data_STMfile += STMfileLine[12:-3]
+        addresses.append(STMfileLine[4:12])
     data_binary = ""
     # Loop to convert Hex to Binary, and adjust the length to 4 digits
     for c in data_STMfile:
         data_binary += str(bin(int(c, 16))[2:].zfill(4))
     data_big_endian = ""
     # Loop to convert the data from Little Endian to Big Endian
-    for i in range(0, len(data_binary) - 15):
+    for i in range(0, len(data_binary) - 15, 8):
         data_big_endian = data_binary[i:i + 8] + data_big_endian
-        i += 8
     i = 0
     data_reformatted = ""
     # Loop to write every group of 32 bits
@@ -31,10 +32,10 @@ def writeBinaryInstructions(filepath):
         tmp = data_reformatted[i:i + 32]
         # print(tmp)
         if tmp[0:3] == "111" and tmp[3:5] != "00":
-            instructions_file.write(tmp + '\n')
+            instructions_file.write(addresses[round(i/256)] + tmp + '\n')
             i += 32
         else:
-            instructions_file.write(tmp[:16] + '\n')
+            instructions_file.write(addresses[min(round(i/256), len(addresses)-1)] + tmp[:16] + '\n')
             i += 16
 
 
@@ -98,17 +99,17 @@ def GetDictField_16(json_file, line, index):
 def write_described_instruction_16(descr_file, json_file, line, index, code, address):
     match code:
         case "Compact":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])][
+            descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + json_file[str(line[:index])][
                 'instruction'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Classique":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])][
+            descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + json_file[str(line[:index])][
                 'meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Classic":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(line[:index])][
+            descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + json_file[str(line[:index])][
                 'meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Integral":
             descr_file.write(
-                "0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(line[:index])][
+                "0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(line[:index])][
                     'meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
 
 
@@ -209,18 +210,22 @@ def GetDictField_32(json_file, line, instruction):
 def write_described_instruction_32(descr_file, json_file, line, instruction, code, address):
     match code:
         case "Compact":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)][
+            descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + json_file[str(instruction)][
                 'instruction'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Classique":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)][
+            descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + json_file[str(instruction)][
                 'meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Classic":
-            descr_file.write("0x" + str(hex(address))[2:].zfill(8) + " : " + json_file[str(instruction)][
+            descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + json_file[str(instruction)][
                 'meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Integral":
             descr_file.write(
-                "0x" + str(hex(address))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(instruction)][
+                "0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(instruction)][
                     'meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
+
+
+def increment_barre_progression():
+    return
 
 
 # Function that read the bits and write the instructions
@@ -231,10 +236,10 @@ def describe_instructions(code):
     lines = file.readlines()
     json_16 = json.load(open("./ConversionFiles/Json_Decoding_ARM_16bit.json", "r"))
     json_32 = json.load(open("./ConversionFiles/Json_Decoding_ARM_32bit.json", "r"))
-    address = 0x08000000
     nb32lines = 0
-    count = 0
-    for line in lines:
+    for binary_line in lines:
+        address = binary_line[:8]
+        line = binary_line [8:-1]
         increment_barre_progression()
         if is32bits(line):
             nb32lines += 1
@@ -628,7 +633,3 @@ def describe_instructions(code):
             # Unconditional branch, Generate PC-relative address, Generate SP-relative address, Store multiple registers, Load multiple registers, LDR (literal)
             elif line[:5] in ["11100", "10100", "10101", "11000", "11001", "01001"]:
                 write_described_instruction_16(assembly_description, json_16, line, 5, code, address)
-        count += 1
-        if count == 4:
-            address += 1
-            count = 0
