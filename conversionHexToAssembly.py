@@ -227,7 +227,7 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
 
 
 def increment_barre_progression():
-    return
+    return 0
 
 
 # Function that read the bits and write the instructions

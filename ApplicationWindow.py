@@ -11,6 +11,7 @@ class MainWindow(object):
     # Constructeur de la classe
     language = str(locale.getlocale()[0])
 
+
     def __init__(self):
         # Initialisation des attributs de la classe
         self.selected_hex_file_CSV = None
