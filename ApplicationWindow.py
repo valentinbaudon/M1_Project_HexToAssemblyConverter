@@ -11,7 +11,6 @@ class MainWindow(object):
     # Constructeur de la classe
     language = str(locale.getlocale()[0])
 
-
     def __init__(self):
         # Initialisation des attributs de la classe
         self.selected_hex_file_CSV = None
@@ -121,12 +120,9 @@ class MainWindow(object):
     # Fonction permettant de faire la traduction du fichier hexa et de mettre le résultat dans le fichier "Assembly.txt"
     def translate(self):
         self.progressBar.show()
-        start = time.time()
         writeBinaryInstructions("./ConversionFiles/Hexa.txt")
         describe_instructions(self.selected_button.text())
-        stop = time.time()
 
-        # update du nombre d'instructions et du temps estimé
         with open("./ConversionFiles/Hexa.txt", "r") as f:
             flines = f.readlines()
             nblignesHexa = len(flines)
@@ -158,6 +154,11 @@ class MainWindow(object):
             with open("./ConversionFiles/Hexa.txt", "w") as f1:
                 f1.write(hexa_code)
             self.HexaCode.setText(hexa_code)
+
+            with open("./ConversionFiles/Hexa.txt", "r") as f:
+                flines = f.readlines()
+                nblignesHexa = len(flines)
+                self.EstimateTime = nblignesHexa * 0.00186574944
 
     # Fonction permettant de télécharger sur notre ordi le fichier converti
     def download_assembly_file(self):
@@ -200,7 +201,8 @@ class MainWindow(object):
                         writer.writerow([arguments[0], str(arguments[1]), arguments[2], arguments[3]])
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
-        file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.csv", self.selected_hex_file_CSV,
+        file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.csv",
+                                                   self.selected_hex_file_CSV,
                                                    "Tous les fichiers ()", options=options)
         if file_name:
             with open("./ConversionFiles/Assembly.csv", "r") as f:
