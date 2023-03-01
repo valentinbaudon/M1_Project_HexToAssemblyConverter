@@ -117,8 +117,8 @@
 				},
 
 	"0100000000" : {
-			    "instruction" : "bitwise AND",
-				"meaning" : "bitwise AND",
+			    "instruction" : "Bitwise AND",
+				"meaning" : "Bitwise AND",
 				"fields" : {
 							"Rm" : [5,3],
 							"Rdn" : [2,0]

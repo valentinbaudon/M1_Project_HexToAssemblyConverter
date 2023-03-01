@@ -206,14 +206,12 @@ class MainWindow(object):
             assembly.close()
             for line in lines:
                 arguments = line[:-1].split(" : ")
-                match self.selected_button.text():
-                    case "Compact":
+                match len(arguments):
+                    case 2:
+                        writer.writerow([arguments[0], arguments[1]])
+                    case 3:
                         writer.writerow([arguments[0], arguments[1], arguments[2]])
-                    case "Classique":
-                        writer.writerow([arguments[0], arguments[1], arguments[2]])
-                    case "Classic":
-                        writer.writerow([arguments[0], arguments[1], arguments[2]])
-                    case "Integral":
+                    case 4:
                         writer.writerow([arguments[0], str(arguments[1]), arguments[2], arguments[3]])
         f.close()
 
