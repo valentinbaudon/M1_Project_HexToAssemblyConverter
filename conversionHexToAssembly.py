@@ -685,4 +685,3 @@ def describe_instructions(code):
             # Unconditional branch, Generate PC-relative address, Generate SP-relative address, Store multiple registers, Load multiple registers, LDR (literal)
             elif line[:5] in ["11100", "10100", "10101", "11000", "11001", "01001"]:
                 write_described_instruction_16(assembly_description, json_16, line, 5, code, address)
-
