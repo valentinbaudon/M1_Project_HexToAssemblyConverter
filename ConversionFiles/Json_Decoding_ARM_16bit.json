@@ -557,7 +557,7 @@
 		"encoding_format": "ADR<c> <Rd>,<label>"
 	},
 
-	"10110110011 " : {
+	"10110110011" : {
 		"instruction": "CPS",
 		"meaning": "Change Processor State",
 		"fields": {
@@ -568,7 +568,7 @@
 		"encoding_format": "CPS<effect> <iflags>"
 	},
 
-	"101100000 " : {
+	"101100000" : {
 		"instruction": "ADD (SP plus immediate)",
 		"meaning": "ADD (SP plus immediate) adds an immediate value to the SP value",
 		"fields": {
@@ -577,7 +577,7 @@
 		"encoding_format": "ADD<c> SP,SP,#<imm7>"
 	},
 
-	"101100001 " : {
+	"10110000" : {
 		"instruction": "SUB (SP minus immediate)",
 		"meaning": "Subtract (SP minus immediate) subtracts an immediate value from the SP value",
 		"fields": {
@@ -593,7 +593,7 @@
 			"Rn": [2,0],
 			"imm5": [7,3],
 			"i": [9,9],
-			"op": [11]
+			"op": [11, 11]
 		},
 		"encoding_format": "CB{N}Z <Rn>,<label>"
 	},
@@ -605,7 +605,7 @@
 			"Rn": [2,0],
 			"imm5": [7,3],
 			"i": [9,9],
-			"op": [11]
+			"op": [11, 11]
 		},
 		"encoding_format": "CB{N}Z <Rn>,<label>"
 	},
@@ -617,7 +617,7 @@
 			"Rn": [2,0],
 			"imm5": [7,3],
 			"i": [9,9],
-			"op": [11]
+			"op": [11, 11]
 		},
 		"encoding_format": "CB{N}Z <Rn>,<label>"
 	},
@@ -629,7 +629,7 @@
 			"Rn": [2,0],
 			"imm5": [7,3],
 			"i": [9,9],
-			"op": [11]
+			"op": [11, 11]
 		},
 		"encoding_format": "CB{N}Z <Rn>,<label>"
 	},
