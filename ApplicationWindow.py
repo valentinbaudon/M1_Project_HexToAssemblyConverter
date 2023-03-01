@@ -1,10 +1,10 @@
 import csv
+import os
+import time
 
 from PyQt5.QtWidgets import QFileDialog, QButtonGroup
-import os
 from conversionHexToAssembly import *
 from SecondaryWindows import *
-import time
 
 
 class MainWindow(object):
@@ -13,6 +13,7 @@ class MainWindow(object):
 
     def __init__(self):
         # Initialisation des attributs de la classe
+        self.thread = None
         self.selected_hex_file_CSV = None
         self.progressBar = None
         self.DownloadAssemblyInCSVButton = None
@@ -79,8 +80,13 @@ class MainWindow(object):
         # Reset des fichiers hexa et assembleur
         with open("./ConversionFiles/Hexa.txt", "w") as f:
             f.write("")
+        f.close()
         with open("./ConversionFiles/Assembly.txt", "w") as f:
             f.write("")
+        f.close()
+        with open("./ConversionFiles/Assembly.csv", "w") as f:
+            f.write("")
+        f.close()
 
         # Gestion de la langue d'affichage par défaut comme étant la même que celle du système de l'utilisateur
         if locale.getlocale()[0] in ["fr_FR", "en_EN"]:
@@ -104,36 +110,42 @@ class MainWindow(object):
     def clearAllFiles(self):
         with open("./ConversionFiles/Hexa.txt", "w") as f:
             f.write("")
+        f.close()
         with open("./ConversionFiles/Assembly.txt", "w") as f:
             f.write("")
-
-        with open("./ConversionFiles/Hexa.txt", "r") as f:
-            hexa = f.read()
-        self.HexaCode.setText(hexa)
-        with open("./ConversionFiles/Assembly.txt", "r") as f:
-            assembly = f.read()
-        self.AssemblyCode.setText(assembly)
-
+        f.close()
+        with open("./ConversionFiles/Assembly.csv", "w") as f:
+            f.write("")
+        f.close()
         with open("./ConversionFiles/instructions_file.txt", "w") as f:
             f.write("")
+        f.close()
+
+        self.HexaCode.setText("")
+        self.AssemblyCode.setText("")
 
     # Fonction permettant de faire la traduction du fichier hexa et de mettre le résultat dans le fichier "Assembly.txt"
     def translate(self):
         self.progressBar.show()
+        self.nbInstructionsValue.show()
+        self.nbInstructions.show()
+        self.thread.start()
+        start = time.time()
         writeBinaryInstructions("./ConversionFiles/Hexa.txt")
         describe_instructions(self.selected_button.text())
+        end = time.time()
 
-        with open("./ConversionFiles/Hexa.txt", "r") as f:
-            flines = f.readlines()
-            nblignesHexa = len(flines)
         with open("./ConversionFiles/instructions_file.txt", "r") as f:
             flines = f.readlines()
             nblignes = len(flines)
+        f.close()
+
         self.nbInstructionsValue.setText(
-            str(nblignes) + ". Execution: " + str("{:.3f}".format(nblignesHexa * 0.00186574944)) + "s")
+            str(nblignes) + ". Execution: " + str("{:.3f}".format(end - start)) + "s")
 
         with open("./ConversionFiles/Assembly.txt", "r") as f:
             assembly_code = f.read()
+        f.close()
         self.AssemblyCode.setText(assembly_code)
 
     # Fonction permettant de télécharger le contenu d"un fichier hexa présent sur notre ordi qui sera mis dans le fichier "Hexa.txt" pour être traîté
@@ -149,18 +161,19 @@ class MainWindow(object):
 
             newHexNameCSV = hex_name + "_assembly.csv"
             self.selected_hex_file_CSV = newHexNameCSV
+
             with open(file_name, "r") as f:
                 hexa_code = f.read()
-            with open("./ConversionFiles/Hexa.txt", "w") as f1:
-                f1.write(hexa_code)
+            f.close()
+            with open("./ConversionFiles/Hexa.txt", "w") as f:
+                f.write(hexa_code)
+            f.close()
             self.HexaCode.setText(hexa_code)
 
-            with open("./ConversionFiles/Hexa.txt", "r") as f:
-                flines = f.readlines()
-                nblignesHexa = len(flines)
-                self.EstimateTime = nblignesHexa * 0.00186574944
+            self.thread = ProgressThread()
+            self.thread.progress_signal.connect(self.update_progress)
 
-    # Fonction permettant de télécharger sur notre ordi le fichier converti
+    # Fonction permettant de télécharger sur notre ordi le fichier converti en txt
     def download_assembly_file(self):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
@@ -169,8 +182,10 @@ class MainWindow(object):
         if file_name:
             with open("./ConversionFiles/Assembly.txt", "r") as f:
                 assembly_code = f.read()
+            f.close()
             with open(file_name, "w") as f:
                 f.write(assembly_code)
+            f.close()
 
     # Fonction permettant de télécharger sur notre ordi le fichier converti en csv
     def download_csv_file(self):
@@ -188,6 +203,7 @@ class MainWindow(object):
             writer.writerow(header)
             assembly = open("./ConversionFiles/Assembly.txt")
             lines = assembly.readlines()
+            assembly.close()
             for line in lines:
                 arguments = line[:-1].split(" : ")
                 match self.selected_button.text():
@@ -199,16 +215,19 @@ class MainWindow(object):
                         writer.writerow([arguments[0], arguments[1], arguments[2]])
                     case "Integral":
                         writer.writerow([arguments[0], str(arguments[1]), arguments[2], arguments[3]])
+        f.close()
+
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
         file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.csv",
-                                                   self.selected_hex_file_CSV,
-                                                   "Tous les fichiers ()", options=options)
+                                                   self.selected_hex_file_CSV, "Tous les fichiers ()", options=options)
         if file_name:
             with open("./ConversionFiles/Assembly.csv", "r") as f:
                 assembly_code = f.read()
+            f.close()
             with open(file_name, "w") as f:
                 f.write(assembly_code)
+            f.close()
 
     # Fonction permettant de mettre à jour le bouton d'option d'affichage sélectionnée
     def store_selection(self, button):
@@ -221,6 +240,10 @@ class MainWindow(object):
         self.language = "fr_FR"
         self.actionEnglish.setChecked(False)
         self.actionFrancais.setChecked(True)
+        self.clearAllFiles()
+        self.nbInstructions.hide()
+        self.nbInstructionsValue.hide()
+        self.progressBar.hide()
 
     # Fonction permettant de changer la langue d'affichage en anglais
     def select_language_en(self):
@@ -229,6 +252,10 @@ class MainWindow(object):
         self.language = "en_EN"
         self.actionFrancais.setChecked(False)
         self.actionEnglish.setChecked(True)
+        self.clearAllFiles()
+        self.nbInstructions.hide()
+        self.nbInstructionsValue.hide()
+        self.progressBar.hide()
 
     # Partie initialisation des textes et noms des éléments de la fenêtre
     def NameInit(self):
@@ -259,6 +286,10 @@ class MainWindow(object):
         self.actionQuitter.setText(_translate("Converter", self.JSON_lang["actionQuitter"]))
         self.actionFrancais.setText(_translate("Converter", self.JSON_lang["actionFrancais"]))
         self.actionEnglish.setText(_translate("Converter", self.JSON_lang["actionEnglish"]))
+
+    # Fonction qui met à jour la valeur de la barre de progression
+    def update_progress(self, val):
+        self.progressBar.setValue(val)
 
     # Fonction de définition des composants de notre fenêtre principale
     def setupUi(self, ConverterWindow):
@@ -436,8 +467,10 @@ class MainWindow(object):
         self.OptionsGlobalLayout = QtWidgets.QHBoxLayout()
         self.OptionsGlobalLayout.setObjectName("OptionsGlobalLayout")
 
-        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.OptionsGlobalLayout.addItem(spacerItem6)
+        # Spacer à gauche des options d'affichage
+        spacerLeftOptionsConversion = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+                                                            QtWidgets.QSizePolicy.Minimum)
+        self.OptionsGlobalLayout.addItem(spacerLeftOptionsConversion)
 
         # Layout contenant les boutons d'options d'affichage
         self.OptionsLayout = QtWidgets.QVBoxLayout()
@@ -531,6 +564,7 @@ class MainWindow(object):
         self.nbInstructions.setFont(font2)
         self.nbInstructions.setWordWrap(False)
         self.nbInstructions.setObjectName("nbInstructions")
+        self.nbInstructions.hide()
         self.InstructionsLayout.addWidget(self.nbInstructions)
 
         # valeur nombre d'instructions
@@ -538,15 +572,16 @@ class MainWindow(object):
         self.nbInstructionsValue.setFont(font2)
         self.nbInstructionsValue.setWordWrap(False)
         self.nbInstructionsValue.setObjectName("nbInstructions")
+        self.nbInstructionsValue.hide()
         self.InstructionsLayout.addWidget(self.nbInstructionsValue)
 
         # Spacer à droite du nombre d'instructions
-        spacerRightNbInstruction = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
+        spacerRightNbInstruction = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Expanding,
                                                          QtWidgets.QSizePolicy.Minimum)
         self.InstructionsLayout.addItem(spacerRightNbInstruction)
 
+        # Barre de progression de la conversion
         self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar.setProperty("value", 80)
         self.progressBar.setObjectName("progressBar")
         self.progressBar.hide()
         self.InstructionsLayout.addWidget(self.progressBar)
@@ -708,6 +743,7 @@ class MainWindow(object):
         # Affichage du fichier "Hexa.txt" dans la partie correpondante
         with open("./ConversionFiles/Hexa.txt", "r") as f:
             hexa_code = f.read()
+        f.close()
         self.HexaCode.setText(hexa_code)
 
         # Initialisation des noms des objets de la fenêtre
