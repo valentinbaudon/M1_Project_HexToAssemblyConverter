@@ -5,9 +5,9 @@ from PyQt5.QtCore import pyqtSignal
 
 CurrentInstruction = 0
 TotalInstructions = 1
-ProgressBarIsProgressing = 1
 
 
+# Thread qui met à jour la valeur de la barre de progression
 class ProgressThread(QtCore.QThread):
     progress_signal = pyqtSignal(int)
 
@@ -20,7 +20,7 @@ class ProgressThread(QtCore.QThread):
             sleep(0.1)
 
 
-# Function which read the input file, and write each instruction using the bits
+# Fonction qui lit le fichier d'entrée, et écrit chaque instruction en binaire
 def writeBinaryInstructions(filepath):
     global TotalInstructions
     global CurrentInstruction
@@ -34,26 +34,25 @@ def writeBinaryInstructions(filepath):
         data_STMfile += STMfileLine[12:-3]
         addresses.append(STMfileLine[4:12])
     data_binary = ""
-    # Loop to convert Hex to Binary, and adjust the length to 4 digits
+    # Boucle qui convertit l'hexadécimal au binaire
     for c in data_STMfile:
         data_binary += str(bin(int(c, 16))[2:].zfill(4))
     data_big_endian = ""
-    # Loop to convert the data from Little Endian to Big Endian
+    # Boucle qui convertit les données de Little Endian en Big Endian
     for i in range(0, len(data_binary) - 15, 8):
         data_big_endian = data_binary[i:i + 8] + data_big_endian
     i = 0
     data_reformatted = ""
-    # Loop to write every group of 32 bits
+    # BOucle qui reformatte les données par groupe de 32 bits
     while i < len(data_big_endian) - 15:
         tmp = data_big_endian[i:i + 32]
         data_reformatted += tmp[24:] + tmp[16:24] + tmp[8:16] + tmp[:8]
         i += 32
     instructions_file = open("./ConversionFiles/instructions_file.txt", "w")
     i = 0
-    # Loop to write the output file with each instruction
+    # Boucle qui écrit le fichier de sortie avec chaque instruction
     while i < len(data_reformatted) - 15:
         tmp = data_reformatted[i:i + 32]
-        # print(tmp)
         if tmp[0:3] == "111" and tmp[3:5] != "00":
             instructions_file.write(addresses[round(i / 256)] + tmp + '\n')
             i += 32
@@ -62,14 +61,15 @@ def writeBinaryInstructions(filepath):
             i += 16
 
 
-def is32bits(line):  # Function that determine if a line of bits is a 16-bits or a 32-bits instruction
-    if line[0:3] == '111' and line[3:5] != "00":
+# Fonction qui détermine si une instruction est 16 bits ou 32 bits
+def is32bits(instruction):
+    if instruction[0:3] == '111' and instruction[3:5] != "00":
         return True
     else:
         return False
 
 
-# Function that read the JSON and return each argument with its value
+# Fonction qui lit le JSON et retourne les arguments d'une instruction avec leurs valeurs
 def GetDictField_16(json_file, line, index):
     finalString = ""
     fields = json_file[str(line[:index])]['fields']
@@ -118,7 +118,7 @@ def GetDictField_16(json_file, line, index):
     return finalString
 
 
-# Function that write the detailed instruction in an output file
+# Fonction qui écrit les instruction détaillées dans un fichier de sortie
 def write_described_instruction_16(descr_file, json_file, line, index, code, address):
     match code:
         case "Compact":
@@ -137,7 +137,7 @@ def write_described_instruction_16(descr_file, json_file, line, index, code, add
                     'meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
 
 
-# Function that read the JSON and return each argument with its value
+# Fonction qui lit le JSON et retourne les arguments d'une instruction avec leurs valeurs
 def GetDictField_32(json_file, line, instruction):
     finalString = ""
     fields = json_file[str(instruction)]['fields']
@@ -230,7 +230,7 @@ def GetDictField_32(json_file, line, instruction):
     return finalString
 
 
-# Function that write the detailed instruction in an output file
+# Fonction qui écrit les instruction détaillées dans un fichier de sortie
 def write_described_instruction_32(descr_file, json_file, line, instruction, code, address):
     match code:
         case "Compact":
@@ -249,13 +249,11 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
                     'meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
 
 
-# Function that read the bits and write the instructions
-# It also contains the decision tree
+# Fonction qui lit les bits et lance l'écriture des instructions
+# Elle contient aussi l'arbre de décision
 def describe_instructions(code):
     global TotalInstructions
     global CurrentInstruction
-    global ProgressBarIsProgressing
-    ProgressBarIsProgressing = 1
     file = open("./ConversionFiles/instructions_file.txt", "r")
     assembly_description = open("./ConversionFiles/Assembly.txt", "w")
     lines = file.readlines()
@@ -701,4 +699,3 @@ def describe_instructions(code):
             # Unconditional branch, Generate PC-relative address, Generate SP-relative address, Store multiple registers, Load multiple registers, LDR (literal)
             elif line[:5] in ["11100", "10100", "10101", "11000", "11001", "01001"]:
                 write_described_instruction_16(assembly_description, json_16, line, 5, code, address)
-    ProgressBarIsProgressing = 0

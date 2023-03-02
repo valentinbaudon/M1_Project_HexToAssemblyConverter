@@ -1,5 +1,3 @@
-from PyQt5 import QtWidgets
-
 from ApplicationWindow import *
 
 # Initialisation des composantes fenêtres de l'application
