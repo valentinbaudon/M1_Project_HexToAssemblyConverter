@@ -287,7 +287,6 @@ class MainWindow(object):
 
     # Fonction qui met à jour la valeur de la barre de progression
     def update_progress(self, val):
-        print(val)
         self.progressBar.setValue(val)
 
     # Fonction de définition des composants de notre fenêtre principale
