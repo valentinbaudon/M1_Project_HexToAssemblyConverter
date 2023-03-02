@@ -129,11 +129,14 @@ class MainWindow(object):
         self.progressBar.show()
         self.nbInstructionsValue.show()
         self.nbInstructions.show()
-        self.thread.start()
+        self.thread = ProgressThread(self.selected_button.text())
+        self.thread.progress_signal.connect(self.update_progress)
         start = time.time()
         writeBinaryInstructions("./ConversionFiles/Hexa.txt")
-        describe_instructions(self.selected_button.text())
+        self.thread.start()
+        # describe_instructions(self.selected_button.text())
         end = time.time()
+        # self.thread.terminate()
 
         with open("./ConversionFiles/instructions_file.txt", "r") as f:
             flines = f.readlines()
@@ -169,9 +172,6 @@ class MainWindow(object):
                 f.write(hexa_code)
             f.close()
             self.HexaCode.setText(hexa_code)
-
-            self.thread = ProgressThread()
-            self.thread.progress_signal.connect(self.update_progress)
 
     # Fonction permettant de télécharger sur notre ordi le fichier converti en txt
     def download_assembly_file(self):
@@ -287,6 +287,7 @@ class MainWindow(object):
 
     # Fonction qui met à jour la valeur de la barre de progression
     def update_progress(self, val):
+        print(val)
         self.progressBar.setValue(val)
 
     # Fonction de définition des composants de notre fenêtre principale
