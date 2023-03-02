@@ -3,8 +3,9 @@ import os
 import time
 
 from PyQt5.QtWidgets import QFileDialog, QButtonGroup
-from conversionHexToAssembly import *
+
 from SecondaryWindows import *
+from conversionHexToAssembly import *
 
 
 class MainWindow(object):
@@ -78,22 +79,22 @@ class MainWindow(object):
         self.selected_button.setText("Compact")
 
         # Reset des fichiers hexa et assembleur
-        with open("./ConversionFiles/Hexa.txt", "w") as f:
+        with open(resource_path("ConversionFiles\\Hexa.txt"), "w") as f:
             f.write("")
         f.close()
-        with open("./ConversionFiles/Assembly.txt", "w") as f:
+        with open(resource_path("ConversionFiles\\Assembly.txt"), "w") as f:
             f.write("")
         f.close()
-        with open("./ConversionFiles/Assembly.csv", "w") as f:
+        with open(resource_path("ConversionFiles\\Assembly.csv"), "w") as f:
             f.write("")
         f.close()
 
         # Gestion de la langue d'affichage par défaut comme étant la même que celle du système de l'utilisateur
         if locale.getlocale()[0] in ["fr_FR", "en_EN"]:
-            self.JSON_lang = json.load(open("./OtherFiles/text_" + locale.getlocale()[0] + ".json"))
+            self.JSON_lang = json.load(open(resource_path("OtherFiles\\text_" + locale.getlocale()[0] + ".json")))
             self.language = locale.getlocale()[0]
         else:
-            self.JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
+            self.JSON_lang = json.load(open(resource_path("OtherFiles\\text_en_EN.json")))
             self.language = "en_EN"
 
     # Fonction permettant d'ouvrir la fenêtre "Fonctionnement"
@@ -108,16 +109,16 @@ class MainWindow(object):
 
     # Fonction qui nettoie les fichiers
     def clearAllFiles(self):
-        with open("./ConversionFiles/Hexa.txt", "w") as f:
+        with open(resource_path("ConversionFiles\\Hexa.txt"), "w") as f:
             f.write("")
         f.close()
-        with open("./ConversionFiles/Assembly.txt", "w") as f:
+        with open(resource_path("ConversionFiles\\Assembly.txt"), "w") as f:
             f.write("")
         f.close()
-        with open("./ConversionFiles/Assembly.csv", "w") as f:
+        with open(resource_path("ConversionFiles\\Assembly.csv"), "w") as f:
             f.write("")
         f.close()
-        with open("./ConversionFiles/instructions_file.txt", "w") as f:
+        with open(resource_path("ConversionFiles\\instructions_file.txt"), "w") as f:
             f.write("")
         f.close()
 
@@ -131,11 +132,11 @@ class MainWindow(object):
         self.nbInstructions.show()
         self.thread.start()
         start = time.time()
-        writeBinaryInstructions("./ConversionFiles/Hexa.txt")
+        writeBinaryInstructions(resource_path("ConversionFiles\\Hexa.txt"))
         describe_instructions(self.selected_button.text())
         end = time.time()
 
-        with open("./ConversionFiles/instructions_file.txt", "r") as f:
+        with open(resource_path("ConversionFiles\\instructions_file.txt"), "r") as f:
             flines = f.readlines()
             nblignes = len(flines)
         f.close()
@@ -143,7 +144,7 @@ class MainWindow(object):
         self.nbInstructionsValue.setText(
             str(nblignes) + ". Execution: " + str("{:.3f}".format(end - start)) + "s")
 
-        with open("./ConversionFiles/Assembly.txt", "r") as f:
+        with open(resource_path("ConversionFiles\\Assembly.txt"), "r") as f:
             assembly_code = f.read()
         f.close()
         self.AssemblyCode.setText(assembly_code)
@@ -165,7 +166,7 @@ class MainWindow(object):
             with open(file_name, "r") as f:
                 hexa_code = f.read()
             f.close()
-            with open("./ConversionFiles/Hexa.txt", "w") as f:
+            with open(resource_path("ConversionFiles\\Hexa.txt"), "w") as f:
                 f.write(hexa_code)
             f.close()
             self.HexaCode.setText(hexa_code)
@@ -180,7 +181,7 @@ class MainWindow(object):
         file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.txt", self.selected_hex_file,
                                                    "Tous les fichiers ()", options=options)
         if file_name:
-            with open("./ConversionFiles/Assembly.txt", "r") as f:
+            with open(resource_path("ConversionFiles\\Assembly.txt"), "r") as f:
                 assembly_code = f.read()
             f.close()
             with open(file_name, "w") as f:
@@ -189,7 +190,7 @@ class MainWindow(object):
 
     # Fonction permettant de télécharger sur notre ordi le fichier converti en csv
     def download_csv_file(self):
-        with open("./ConversionFiles/Assembly.csv", mode="w", newline='') as f:
+        with open(resource_path("ConversionFiles\\Assembly.csv"), mode="w", newline='') as f:
             writer = csv.writer(f, delimiter=';')
             match self.selected_button.text():
                 case "Compact":
@@ -201,7 +202,7 @@ class MainWindow(object):
                 case "Integral":
                     header = ["address", "bits", "meaning", "values"]
             writer.writerow(header)
-            assembly = open("./ConversionFiles/Assembly.txt")
+            assembly = open("ConversionFiles\\Assembly.txt")
             lines = assembly.readlines()
             assembly.close()
             for line in lines:
@@ -220,7 +221,7 @@ class MainWindow(object):
         file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.csv",
                                                    self.selected_hex_file_CSV, "Tous les fichiers ()", options=options)
         if file_name:
-            with open("./ConversionFiles/Assembly.csv", "r") as f:
+            with open(resource_path("ConversionFiles\\Assembly.csv"), "r") as f:
                 assembly_code = f.read()
             f.close()
             with open(file_name, "w") as f:
@@ -233,7 +234,7 @@ class MainWindow(object):
 
     # Fonction permettant de changer la langue d'affichage en français
     def select_language_fr(self):
-        self.JSON_lang = json.load(open("./OtherFiles/text_fr_FR.json"))
+        self.JSON_lang = json.load(open(resource_path("OtherFiles\\text_fr_FR.json")))
         self.NameInit()
         self.language = "fr_FR"
         self.actionEnglish.setChecked(False)
@@ -245,7 +246,7 @@ class MainWindow(object):
 
     # Fonction permettant de changer la langue d'affichage en anglais
     def select_language_en(self):
-        self.JSON_lang = json.load(open("./OtherFiles/text_en_EN.json"))
+        self.JSON_lang = json.load(open(resource_path("OtherFiles\\text_en_EN.json")))
         self.NameInit()
         self.language = "en_EN"
         self.actionFrancais.setChecked(False)
@@ -295,7 +296,7 @@ class MainWindow(object):
         ConverterWindow.setObjectName("HexaToAssemblyConverter")
         ConverterWindow.resize(1216, 842)
         ConverterWindow.setWindowState(QtCore.Qt.WindowMaximized)
-        icon = QIcon("graphicResources/TemporaryIcon.ico")
+        icon = QIcon(resource_path("graphicResources\\TemporaryIcon.ico"))
         ConverterWindow.setWindowIcon(icon)
 
         # Paramètres de polices utilisées
@@ -670,7 +671,7 @@ class MainWindow(object):
         self.menuFichier = QtWidgets.QMenu(self.menubar)
         self.menuFichier.setObjectName("menuFichier")
         self.menuLangues = QtWidgets.QMenu(self.menuFichier)
-        self.menuLangues.setIcon(QIcon("graphicResources/LanguagesLogo.png"))
+        self.menuLangues.setIcon(QIcon("graphicResources\\LanguagesLogo.png"))
         self.menuLangues.setObjectName("menuLangues")
         ConverterWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(ConverterWindow)
@@ -679,22 +680,22 @@ class MainWindow(object):
 
         # Création de l'action liée au menu "à propos"
         self.actionAbout = QtWidgets.QAction(ConverterWindow)
-        self.actionAbout.setIcon(QIcon("graphicResources/AboutLogo.png"))
+        self.actionAbout.setIcon(QIcon("graphicResources\\AboutLogo.png"))
         self.actionAbout.setObjectName("actionAbout")
 
         # Création de l'action liée au menu "fonctionnement"
         self.actionFonctionnement = QtWidgets.QAction(ConverterWindow)
-        self.actionFonctionnement.setIcon(QIcon("graphicResources/ExplanationLogo.png"))
+        self.actionFonctionnement.setIcon(QIcon("graphicResources\\ExplanationLogo.png"))
         self.actionFonctionnement.setObjectName("actionFonctionnement")
 
         # Création de l'action liée au sous menu "nettoyer les fichiers"
         self.actionClearFiles = QtWidgets.QAction(ConverterWindow)
-        self.actionClearFiles.setIcon(QIcon("graphicResources/cleanFilesLogo.png"))
+        self.actionClearFiles.setIcon(QIcon("graphicResources\\cleanFilesLogo.png"))
         self.actionClearFiles.setObjectName("actionClearFiles")
 
         # Création de l'action liée au sous menu "quitter"
         self.actionQuitter = QtWidgets.QAction(ConverterWindow)
-        self.actionQuitter.setIcon(QIcon("graphicResources/QuitLogo.png"))
+        self.actionQuitter.setIcon(QIcon("graphicResources\\QuitLogo.png"))
         self.actionQuitter.setObjectName("actionQuitter")
 
         # Création de l'action liée au sous sous-menu "changer la langue en français"
@@ -739,7 +740,7 @@ class MainWindow(object):
         self.actionQuitter.triggered.connect(ConverterWindow.close)
 
         # Affichage du fichier "Hexa.txt" dans la partie correpondante
-        with open("./ConversionFiles/Hexa.txt", "r") as f:
+        with open(resource_path("ConversionFiles\\Hexa.txt"), "r") as f:
             hexa_code = f.read()
         f.close()
         self.HexaCode.setText(hexa_code)
