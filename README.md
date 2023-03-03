@@ -1,10 +1,10 @@
 
 # Projet M1
-### Traducteur de fichier hexadécimaux bruts provenant de microcontrôleurs basés sur une architecture ARM vers leur code assembleur
+### Traducteur de fichier hexa bruts provenant de microcontrôleurs basés sur une architecture ARM vers leur code assembleur
 
 Cette application est un moyen de convertir des fichiers hexadécimaux en leur code assembleur.
 
-Le fonctionnement de l'application est simple:
+Le fonctionnement de l'application est simple :
 
     1) Cliquez sur le bouton 'Download Hex File' pour télécharger le fichier héxadecimal que vous souhaitez traduire. Le contenu de votre fichier original devrait s'afficher dans le carré de texte comportant l'en-tete 'Hexadécimal'
     2) Selectionnez l'option d'affichage qui vous convient

@@ -149,7 +149,7 @@ class MainWindow(object):
         f.close()
         self.AssemblyCode.setText(assembly_code)
 
-    # Fonction permettant de télécharger le contenu d"un fichier hexa présent sur notre ordi qui sera mis dans le fichier "Hexa.txt" pour être traîté
+    # Fonction permettant de télécharger le contenu d'un fichier hexa présent sur notre ordi qui sera mis dans le fichier "Hexa.txt" pour être traîté
     def download_hex_file(self):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
@@ -708,7 +708,7 @@ class MainWindow(object):
         self.actionEnglish.setObjectName("actionEnglish")
         self.actionEnglish.setCheckable(True)
 
-        # Liaison entre les actions crées et les menus et sous menus
+        # Liaison entre les actions créés et les menus et sous menus
         self.menu_Help.addAction(self.actionAbout)
         self.menuFonctionnement.addAction(self.actionFonctionnement)
         self.menuFichier.addAction(self.actionClearFiles)

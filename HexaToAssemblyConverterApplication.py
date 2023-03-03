@@ -19,7 +19,7 @@ app = QtWidgets.QApplication(sys.argv)
 HexaToAssemblyConverter = QtWidgets.QMainWindow()
 window = MainWindow()
 
-# Affichage et lien des fenêtres crées aux objets et valeurs crées dans le fichier "ApplicationWindow.py"
+# Affichage et lien des fenêtres créés aux objets et valeurs créés dans le fichier "ApplicationWindow.py"
 window.setupUi(HexaToAssemblyConverter)
 HexaToAssemblyConverter.show()
 sys.exit(app.exec_())
