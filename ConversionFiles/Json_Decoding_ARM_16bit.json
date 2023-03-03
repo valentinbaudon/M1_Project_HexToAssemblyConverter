@@ -577,7 +577,7 @@
 		"encoding_format": "ADD<c> SP,SP,#<imm7>"
 	},
 
-	"10110000" : {
+	"101100001" : {
 		"instruction": "SUB (SP minus immediate)",
 		"meaning": "Subtract (SP minus immediate) subtracts an immediate value from the SP value",
 		"fields": {

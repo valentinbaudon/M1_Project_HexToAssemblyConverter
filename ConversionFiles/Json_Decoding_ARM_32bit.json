@@ -535,6 +535,18 @@
 				}
 	},
 
+	"11110x00001": {
+				"instruction": "BIC (immediate)",
+				"meaning": "Bitwise Clear",
+				"fields":
+				{
+					"imm8": [7,0],
+					"Rd": [11,8],
+					"imm3": [14,12],
+					"Rn": [19,16]
+				}
+	},
+
 	"11110x00000xxxxxxxxx1111": {
 				"instruction": "TST (immediate)",
 				"meaning": "Test",

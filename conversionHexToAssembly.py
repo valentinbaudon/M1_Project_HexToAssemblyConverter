@@ -1,4 +1,5 @@
 import json
+import math
 from time import sleep
 from PyQt5 import QtCore
 from PyQt5.QtCore import pyqtSignal
@@ -41,21 +42,21 @@ def writeBinaryInstructions(filepath):
     data_big_endian = ""
     # Boucle qui convertit les données de Little Endian en Big Endian
     for i in range(0, len(data_binary) - 15, 8):
-        data_big_endian = data_binary[i:i + 8] + data_big_endian
+        data_big_endian = data_big_endian + data_binary[i:i + 8]
     i = 0
     data_reformatted = ""
     # Boucle qui reformatte les données par groupe de 32 bits
-    while i < len(data_big_endian) - 15:
+    while i < len(data_big_endian) - 31:
         tmp = data_big_endian[i:i + 32]
         data_reformatted += tmp[24:] + tmp[16:24] + tmp[8:16] + tmp[:8]
         i += 32
     instructions_file = open(resource_path("ConversionFiles\\instructions_file.txt"), "w")
     i = 0
     # Boucle qui écrit le fichier de sortie avec chaque instruction
-    while i < len(data_reformatted) - 15:
+    while i < len(data_reformatted) - 31:
         tmp = data_reformatted[i:i + 32]
         if tmp[0:3] == "111" and tmp[3:5] != "00":
-            instructions_file.write(addresses[round(i / 256)] + tmp + '\n')
+            instructions_file.write(addresses[math.floor(i / 256)] + tmp + '\n')
             i += 32
         else:
             instructions_file.write(addresses[min(round(i / 256), len(addresses) - 1)] + tmp[:16] + '\n')
@@ -73,7 +74,10 @@ def is32bits(instruction):
 # Fonction qui lit le JSON et retourne les arguments d'une instruction avec leurs valeurs
 def GetDictField_16(json_file, line, index):
     finalString = ""
-    fields = json_file[str(line[:index])]['fields']
+    try:
+        fields = json_file[str(line[:index])]['fields']
+    except:
+        return ""
     keys = fields.keys()
     newBit = dict()
     for i in range(len(fields)):
@@ -367,28 +371,24 @@ def describe_instructions(code):
                     match line[7:11]:
                         case "0000":
                             if line[20:24] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00000",
-                                                               code,
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00000", code,
                                                                address)
                             else:
                                 write_described_instruction_32(assembly_description, json_32, line,
                                                                "11110x00000xxxxxxxxx1111", code, address)
                         case "0001":
-                            write_described_instruction_32(assembly_description, json_32, line, "11110x00001",
-                                                           code,
+                            write_described_instruction_32(assembly_description, json_32, line, "11110x00001", code,
                                                            address)
                         case "0010":
                             if line[12:16] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00010",
-                                                               code,
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00010", code,
                                                                address)
                             else:
                                 write_described_instruction_32(assembly_description, json_32, line, "11110x00010x1111",
                                                                code, address)
                         case "0011":
                             if line[12:16] != "1111":
-                                write_described_instruction_32(assembly_description, json_32, line, "11110x00011",
-                                                               code,
+                                write_described_instruction_32(assembly_description, json_32, line, "11110x00011", code,
                                                                address)
                             else:
                                 write_described_instruction_32(assembly_description, json_32, line, "11110x00011x1111",
@@ -733,7 +733,10 @@ def describe_instructions(code):
                     write_described_instruction_16(assembly_description, json_16, line, 7, code, address)
                 elif line[4:8] == "1111":
                     if line[12:16] == "0000":
-                        write_described_instruction_16(assembly_description, json_16, line, 16, code, address)
+                        if line[8:12] in ["0000", "0001", "0010", "0011", "0100"]:
+                            write_described_instruction_16(assembly_description, json_16, line, 16, code, address)
+                        else:
+                            assembly_description.write("0x" + address + " : " + line + "\n")
                     else:
                         write_described_instruction_16(assembly_description, json_16, line, 8, code, address)
                 elif line[:4] == "1100":
