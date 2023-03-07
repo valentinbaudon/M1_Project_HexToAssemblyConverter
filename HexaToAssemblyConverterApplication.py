@@ -1,17 +1,15 @@
 from ApplicationWindow import *
 
 
+# Fonction pour récupérer le path des fichiers
 def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
         base_path = sys._MEIPASS2
     except Exception:
         base_path = os.path.abspath(".")
-
     return os.path.join(base_path, relative_path)
 
-
+# Permet de récupérer le logo pour la génération de l'exécutable
 Logo = resource_path("graphicResources/TemporaryIcon.ico")
 
 # Initialisation des composantes fenêtres de l'application

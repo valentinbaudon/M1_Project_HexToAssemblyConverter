@@ -123,7 +123,7 @@ def GetDictField_16(json_file, line, index):
     return finalString
 
 
-# Fonction qui écrit les instruction détaillées dans un fichier de sortie
+# Fonction qui écrit les instructions détaillées dans un fichier de sortie
 def write_described_instruction_16(descr_file, json_file, line, index, code, address):
     match code:
         case "Compact":
@@ -271,7 +271,7 @@ def describe_instructions(code):
         CurrentInstruction += 1
         if is32bits(line):
             if line == "11111111111111111111111111111111":
-                assembly_description.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : UNDEFINED")
+                assembly_description.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : UNDEFINED\n")
             else:
                 # Data processing (shifted register)
                 if line[:7] == "1110101":

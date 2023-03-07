@@ -708,7 +708,7 @@ class MainWindow(object):
         self.actionEnglish.setObjectName("actionEnglish")
         self.actionEnglish.setCheckable(True)
 
-        # Liaison entre les actions créés et les menus et sous menus
+        # Liaison entre les actions créée et les menus et sous menus
         self.menu_Help.addAction(self.actionAbout)
         self.menuFonctionnement.addAction(self.actionFonctionnement)
         self.menuFichier.addAction(self.actionClearFiles)
