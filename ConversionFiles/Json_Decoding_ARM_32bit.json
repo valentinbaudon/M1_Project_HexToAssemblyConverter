@@ -254,7 +254,7 @@
 				}
 	},
 
-	"11101010010x1111": {
+	"11101010010x1111xxxxxxxxxx00": {
 				"instruction": "LSL (immediate)",
 				"meaning": "Logical Shift Left",
 				"fields":
@@ -1166,6 +1166,18 @@
 				}
 	},
 
+	"111110110000xxxxxxxxxxxx0000": {
+				"instruction": "MLA",
+				"meaning": "Multiply Accumulate",
+				"fields":
+				{
+					"Rm": [3,0],
+					"Rd": [11,8],
+					"Ra": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
 	"111110110000xxxx1111xxxx0000": {
 				"instruction": "MUL",
 				"meaning": "Multiply",
@@ -1173,6 +1185,88 @@
 				{
 					"Rm": [3,0],
 					"Rd": [11,8],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110110000xxxxxxxxxxxx0001": {
+				"instruction": "MLS",
+				"meaning": "Multiply and Substract",
+				"fields":
+				{
+					"Rm": [3,0],
+					"Rd": [11,8],
+					"Ra": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110111000xxxxxxxxxxxx0000": {
+				"instruction": "SMULL",
+				"meaning": "Signed Multiply Long",
+				"fields":
+				{
+					"Rm": [3,0],
+					"RdHi": [11,8],
+					"RdLo": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110111001xxxxxxxxxxxx1111": {
+				"instruction": "SDIV",
+				"meaning": "Signed Divide",
+				"fields":
+				{
+					"Rm": [3,0],
+					"Rd": [11,8],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110111010xxxxxxxxxxxx0000": {
+				"instruction": "UMULL",
+				"meaning": "Signed Divide",
+				"fields":
+				{
+					"Rm": [3,0],
+					"RdHi": [11,8],
+					"RdLo": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110111011xxxxxxxxxxxx1111": {
+				"instruction": "UDIV",
+				"meaning": "Signed Divide",
+				"fields":
+				{
+					"Rm": [3,0],
+					"Rd": [11,8],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110111100xxxxxxxxxxxx0000": {
+				"instruction": "SMLAL",
+				"meaning": "Signed Multiply Accumulate Long",
+				"fields":
+				{
+					"Rm": [3,0],
+					"RdHi": [11,8],
+					"RdLo": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110111110xxxxxxxxxxxx0000": {
+				"instruction": "UMLAL",
+				"meaning": "Unsigned Multiply Accumulate Long",
+				"fields":
+				{
+					"Rm": [3,0],
+					"RdHi": [11,8],
+					"RdLo": [15,12],
 					"Rn": [19,16]
 				}
 	},

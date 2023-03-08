@@ -333,7 +333,7 @@ def describe_instructions(code):
                                 if line[26:28] == "00" and line[17:20] == "000" and line[24:26] == "00":
                                     write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111x000xxxx0000", code, address)
                                 elif line[26:28] == "00" and line[17:20] != "000" and line[24:26] != "00":
-                                    write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111", code, address)
+                                    write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111xxxxxxxxxx00", code, address)
                                 elif line[26:28] == "01":
                                     write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111xxxxxxxxxx01", code, address)
                                 elif line[26:28] == "10":
@@ -555,7 +555,14 @@ def describe_instructions(code):
                     elif line[8:11] == "000" and line[20] == "0":
                         write_described_instruction_32(assembly_description, json_32, line, "11111000000", code, address)
                     elif (line[8:11] == "101") or (line[8:11] == "001" and line[20] == "1"):
-                        write_described_instruction_32(assembly_description, json_32, line, "", code, address)
+                        write_described_instruction_32(assembly_description, json_32, line, "11111000101", code, address)
+                    elif line[8:11] == "001" and line[20] == "0":
+                        write_described_instruction_32(assembly_description, json_32, line, "11111000001", code, address)
+                    elif (line[8:11] == "110") or (line[8:11] == "010" and line[20] == "1"):
+                        write_described_instruction_32(assembly_description, json_32, line, "11111000110", code, address)
+                    elif line[8:11] == "010":
+                        write_described_instruction_32(assembly_description, json_32, line, "11111000010", code, address)
+                # Data processing (register)
                 elif line[:8] == "11111010" and line[16:20] == "1111":
                     if line[24:28] == "0000":
                         match line[8:11]:
@@ -583,6 +590,7 @@ def describe_instructions(code):
                                 assembly_description.write("0x" + address + " : " + line + "\n")
                     else:
                         assembly_description.write("0x" + address + " : " + line + "\n")
+                # Miscellaneous operations
                 elif line[:10] == "1111101010":
                     if line[10:12] == "01":
                         match line[26:28]:
@@ -602,6 +610,26 @@ def describe_instructions(code):
                 elif line[:9] == "111110110":
                     if line[9:12] == "000" and line[26:28] == "00" and line[16:20] == "1111":
                         write_described_instruction_32(assembly_description, json_32, line, "111110110000xxxx1111xxxx0000", code, address)
+                    elif line[9:12] == "000" and line[26:28] == "00" and line[16:20] != "1111":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110110000xxxxxxxxxxxx0000", code, address)
+                    elif line[9:12] == "000" and line[26:28] == "01":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110110000xxxxxxxxxxxx0001", code, address)
+                    else:
+                        assembly_description.write("0x" + address + " : " + line + "\n")
+                # Long multiply, long multiply accumulate, and divide
+                elif line[:9] == "111110111":
+                    if line[9:12] == "000" and line[24:28] == "0000":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110111000xxxxxxxxxxxx0000", code, address)
+                    elif line[9:12] == "001" and line[24:28] == "1111":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110111001xxxxxxxxxxxx1111", code, address)
+                    elif line[9:12] == "010" and line[24:28] == "0000":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110111010xxxxxxxxxxxx0000", code, address)
+                    elif line[9:12] == "011" and line[24:28] == "1111":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110111011xxxxxxxxxxxx1111", code, address)
+                    elif line[9:12] == "100" and line[24:28] == "0000":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110111100xxxxxxxxxxxx0000", code, address)
+                    elif line[9:12] == "110" and line[24:28] == "0000":
+                        write_described_instruction_32(assembly_description, json_32, line, "111110111110xxxxxxxxxxxx0000", code, address)
                     else:
                         assembly_description.write("0x" + address + " : " + line + "\n")
                 else:
