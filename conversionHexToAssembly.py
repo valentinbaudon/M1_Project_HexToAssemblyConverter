@@ -193,6 +193,10 @@ def GetDictField_32(json_file, line, instruction):
             finalString += 'mask:' + str(newDict[list(keys)[j]]) + ', '
         elif key[:4] == 'cond':
             finalString += 'cond:' + str(newDict[list(keys)[j]]) + ', '
+        elif key[:4] == 'RdLo':
+            finalString += 'RdLo:' + str(newDict[list(keys)[j]])
+        elif key[:4] == 'RdHi':
+            finalString += 'RdHi:' + str(newDict[list(keys)[j]])
         elif key[:6] == 'option':
             finalString += 'option:' + str(newDict[list(keys)[j]]) + ', '
         elif key[:6] == 'rotate':
@@ -218,10 +222,14 @@ def GetDictField_32(json_file, line, instruction):
         finalString += 'P' + str(newDict[list(keys)[-1]])
     elif key[0] == 'M':
         finalString += 'M' + str(newDict[list(keys)[-1]])
+    elif key[0] == 'U':
+        finalString += 'U' + str(newDict[list(keys)[-1]]) + ', '
     elif key[:2] == 'tb':
         finalString += 'tb' + str(newDict[list(keys)[-1]])
     elif key[:3] == 'imm':
         finalString += '#' + str(newDict[list(keys)[-1]])
+    elif key[:3] == 'Rt2':
+        finalString += 'Rt2 ' + str(newDict[list(keys)[-1]]) + ', '
     elif key[:4] == 'type':
         finalString += 'type:' + str(newDict[list(keys)[-1]])
     elif key[:4] == 'SYSm':
@@ -230,6 +238,10 @@ def GetDictField_32(json_file, line, instruction):
         finalString += 'mask:' + str(newDict[list(keys)[-1]])
     elif key[:4] == 'cond':
         finalString += 'cond:' + str(newDict[list(keys)[-1]])
+    elif key[:4] == 'RdLo':
+        finalString += 'RdLo:' + str(newDict[list(keys)[-1]])
+    elif key[:4] == 'RdHi':
+        finalString += 'RdHi:' + str(newDict[list(keys)[-1]])
     elif key[:6] == 'option':
         finalString += 'option:' + str(newDict[list(keys)[-1]])
     elif key[:6] == 'rotate':
