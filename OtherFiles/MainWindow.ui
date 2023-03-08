@@ -283,7 +283,7 @@
                </font>
               </property>
               <property name="text">
-               <string>Par défaut</string>
+               <string>Compact</string>
               </property>
              </widget>
             </item>
@@ -352,10 +352,10 @@
            </font>
           </property>
           <property name="text">
-           <string>Exemple d'affichage selon les options sélectionnées :
-- Par défaut : LSR (immediate) R7, R3, #28
-- Classique : LSR (immediate) R7, R3, #28 : Logical Shift Right (Immediate)
-- Intégral : 0000111100011111 : LSR (immediate) R7, R3, #28 : Logical Shift Right (Immediate)</string>
+           <string>Exemple d'affichage selon les options selectionnees :
+- Compact : 0x08000003 : LSR (immediate) : R7, R3, #28
+- Classique : 0x08000003 : Logical Shift Right (Immediate) : R7, R3, #28 : 
+- Integral : 0x08000003 : 0000111100011111 : Logical Shift Right (Immediate) : R7, R3, #28</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
