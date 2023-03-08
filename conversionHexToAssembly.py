@@ -367,11 +367,11 @@ def describe_instructions(code):
                                 case "0101":
                                     write_described_instruction_32(assembly_description, json_32, line, "111010001101xxxxxxxx111101011111", code, address)
                                 case _:
-                                    assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                         else:
-                            assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                            assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Data processing (shifted register)
                 elif line[:7] == "1110101":
                     match line[7:11]:
@@ -381,7 +381,7 @@ def describe_instructions(code):
                             elif line[20:24] == "1111" and line[11] == "1":
                                 write_described_instruction_32(assembly_description, json_32, line, "111010100001xxxxxxxx1111", code, address)
                             else:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                         case "0001":
                             write_described_instruction_32(assembly_description, json_32, line, "11101010001", code, address)
                         case "0010":
@@ -402,7 +402,7 @@ def describe_instructions(code):
                                     else:
                                         write_described_instruction_32(assembly_description, json_32, line, "11101010010x1111xxxxxxxxxx11", code, address)
                                 else:
-                                    assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                         case "0011":
                             if line[12:16] != "1111":
                                 write_described_instruction_32(assembly_description, json_32, line, "11101010011", code, address)
@@ -414,7 +414,7 @@ def describe_instructions(code):
                             elif line[20:24] == "1111" and line[11] == "1":
                                 write_described_instruction_32(assembly_description, json_32, line, "111010101001xxxxxxxx1111", code, address)
                             else:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                         case "0110":
                             write_described_instruction_32(assembly_description, json_32, line, "11101010110", code, address)
                         case "1000":
@@ -423,7 +423,7 @@ def describe_instructions(code):
                             elif line[20:24] == "1111" and line[11] == "1":
                                 write_described_instruction_32(assembly_description, json_32, line, "111010110001xxxxxxxx1111", code, address)
                             else:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                         case "1010":
                             write_described_instruction_32(assembly_description, json_32, line, "11101011010", code, address)
                         case "1011":
@@ -434,11 +434,11 @@ def describe_instructions(code):
                             elif line[20:24] == "1111" and line[11] == "1":
                                 write_described_instruction_32(assembly_description, json_32, line, "111010111011xxxxxxxx1111", code, address)
                             else:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                         case "1111":
                             write_described_instruction_32(assembly_description, json_32, line, "11101011110", code, address)
                         case _:
-                            assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                            assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Data processing (modified immediate)
                 elif line[:5] == "11110" and line[16] == "0":
                     if line[6] == "0":
@@ -482,7 +482,7 @@ def describe_instructions(code):
                             case "1110":
                                 write_described_instruction_32(assembly_description, json_32, line, "11110x01110", code, address)
                             case _:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     # Data processing (plain binary immediate)
                     else:
                         match line[7:12]:
@@ -506,7 +506,7 @@ def describe_instructions(code):
                                 if line[17:20] != "000" and line[24:26] != "00":
                                     write_described_instruction_32(assembly_description, json_32, line, "1111001100x0xxxx0xxxxxxxxx0", code, address)
                                 else:
-                                    assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                             case "10100":
                                 write_described_instruction_32(assembly_description, json_32, line, "111100110100xxxx0xxxxxxxxx0", code, address)
                             case "10110":
@@ -520,11 +520,11 @@ def describe_instructions(code):
                                 if line[17:20] != "000" and line[24:26] != "00":
                                     write_described_instruction_32(assembly_description, json_32, line, "1111001110x0xxxx0xxxxxxxxx0", code, address)
                                 else:
-                                    assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                             case "11100":
                                 write_described_instruction_32(assembly_description, json_32, line, "111100111100xxxx0xxxxxxxxx0", code, address)
                             case _:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Branches and miscellaneous control
                 elif line[:5] == "11110" and line[16] == "1":
                     if line[17:20] in ["000", "010"]:
@@ -550,9 +550,9 @@ def describe_instructions(code):
                                     case "00000100":
                                         write_described_instruction_32(assembly_description, json_32, line, "111100111010xxxx10x0x00000000100", code, address)
                                     case _:
-                                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                             else:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                         elif line[5:12] == "0111011":
                             match line[24:28]:
                                 case "0010":
@@ -564,15 +564,15 @@ def describe_instructions(code):
                                 case "0110":
                                     write_described_instruction_32(assembly_description, json_32, line, "111100111011xxxx10x0xxxx0110", code, address)
                                 case _:
-                                    assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                         else:
-                            assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                            assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     elif line[17:20] in ["001", "011"]:
                         write_described_instruction_32(assembly_description, json_32, line, "11110xxxxxxxxxxx10x1", code, address)
                     elif line[17:20] in ["101", "111"]:
                         write_described_instruction_32(assembly_description, json_32, line, "11110xxxxxxxxxxx11x1", code, address)
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Store single data item
                 elif line[:8] == "11111000" and line[11] == "0":
                     if line[8:12] == "100" or (line[8:12] == "000" and line[20] == "1"):
@@ -586,7 +586,7 @@ def describe_instructions(code):
                     elif line[8:12] == "110" or (line[8:12] == "010" and line[20] == "1"):
                         write_described_instruction_32(assembly_description, json_32, line, "11111000110", code, address)
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # STR et LDR
                 elif line[:7] == "1111100":
                     # Load Byte
@@ -604,7 +604,7 @@ def describe_instructions(code):
                         elif line[7:9] == "10" and line[20:26] == "000000" and line[12:16] != "1111" and line[16:20] != "1111":
                             write_described_instruction_32(assembly_description, json_32, line, "111110010001", code, address)
                         else:
-                            assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                            assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     # Load halfword
                     elif line[9:12] == "011":
                         if line[7] == "0" and line[12:16] == "1111" and line[16:20] != "1111":
@@ -620,7 +620,7 @@ def describe_instructions(code):
                         elif line[7:9] == "10" and line[20:26] == "000000" and line[12:16] != "1111" and line[16:20] != "1111":
                             write_described_instruction_32(assembly_description, json_32, line, "111110010011", code, address)
                         else:
-                            assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                            assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     # Load word
                     elif line[9:12] == "101":
                         if line[7] == "0" and line[12:16] == "1111":
@@ -630,9 +630,9 @@ def describe_instructions(code):
                         elif line[7:9] == "01" and line[20:26] == "000000" and line[12:16] != "1111":
                             write_described_instruction_32(assembly_description, json_32, line, "111110001101xxxxxxxx000000", code, address)
                         else:
-                            assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                            assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Store single data item
                 elif line[:8] == "11111000":
                     if (line[8:11] == "100") or (line[8:11] == "000" and line[20] == "1"):
@@ -660,7 +660,7 @@ def describe_instructions(code):
                             case "011":
                                 write_described_instruction_32(assembly_description, json_32, line, "11111010011", code, address)
                             case _:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     elif line[12:16] == "1111" and line[24] == "1":
                         match line[8:12]:
                             case "0000":
@@ -672,9 +672,9 @@ def describe_instructions(code):
                             case "0101":
                                 write_described_instruction_32(assembly_description, json_32, line, "11111010010111111111xxxx1", code, address)
                             case _:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Miscellaneous operations
                 elif line[:10] == "1111101010":
                     if line[10:12] == "01":
@@ -688,9 +688,9 @@ def describe_instructions(code):
                             case "11":
                                 write_described_instruction_32(assembly_description, json_32, line, "111110101001xxxx1111xxxx1011", code, address)
                             case _:
-                                assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Multiply, multiply accumulate, and absolute difference
                 elif line[:9] == "111110110":
                     if line[9:12] == "000" and line[26:28] == "00" and line[16:20] == "1111":
@@ -700,7 +700,7 @@ def describe_instructions(code):
                     elif line[9:12] == "000" and line[26:28] == "01":
                         write_described_instruction_32(assembly_description, json_32, line, "111110110000xxxxxxxxxxxx0001", code, address)
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Long multiply, long multiply accumulate, and divide
                 elif line[:9] == "111110111":
                     if line[9:12] == "000" and line[24:28] == "0000":
@@ -716,7 +716,7 @@ def describe_instructions(code):
                     elif line[9:12] == "110" and line[24:28] == "0000":
                         write_described_instruction_32(assembly_description, json_32, line, "111110111110xxxxxxxxxxxx0000", code, address)
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 # Coprocessor instructions
                 elif line[:3] == "111" and line[4:6] == "11":
                     if line[6] == "0" and line[11] == "0" and line[6:9] != "000" and line[11] != "0":
@@ -735,7 +735,7 @@ def describe_instructions(code):
                         else:
                             write_described_instruction_32(assembly_description, json_32, line, "111x1110xxx1xxxxxxxxxxxxxxx1", code, address)
                 else:
-                    assembly_description.write("0x" + address + " : " + line + "UNDEFINED or UNPREDICTABLE\n")
+                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
         else:  # 16-bits
             # Shift (immediate), add, subtract, move, and compare
             if line[:2] == "00":
