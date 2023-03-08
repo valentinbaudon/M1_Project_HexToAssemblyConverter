@@ -163,91 +163,133 @@ def GetDictField_32(json_file, line, instruction):
         newDict[list(newBit.keys())[i]] = int(line[tmp[1]:tmp[0] + 1], 2)
     for j in (range(len(newDict) - 1, 0, -1)):
         key = list(keys)[j]
-        if key[0] == 'R':
-            match key[1]:
-                case "n":
-                    finalString += 'Rn' + str(newDict[list(keys)[j]]) + ', '
-                case "m":
-                    finalString += 'Rm' + str(newDict[list(keys)[j]]) + ', '
-                case "d":
-                    finalString += 'Rd' + str(newDict[list(keys)[j]]) + ', '
-                case "t":
-                    finalString += 'Rt' + str(newDict[list(keys)[j]]) + ', '
-        elif key[0] == 'W':
-            finalString += 'W' + str(newDict[list(keys)[j]]) + ', '
-        elif key[0] == 'T':
-            finalString += 'T' + str(newDict[list(keys)[j]]) + ', '
-        elif key[0] == 'U':
-            finalString += 'U' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:2] == 'tb':
-            finalString += 'tb' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:3] == 'imm':
-            finalString += '#' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:3] == 'Rt2':
-            finalString += 'Rt2 ' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:4] == 'type':
-            finalString += 'type:' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:4] == 'SYSm':
-            finalString += 'SYSm:' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:4] == 'mask':
-            finalString += 'mask:' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:4] == 'cond':
-            finalString += 'cond:' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:4] == 'RdLo':
-            finalString += 'RdLo:' + str(newDict[list(keys)[j]])
-        elif key[:4] == 'RdHi':
-            finalString += 'RdHi:' + str(newDict[list(keys)[j]])
-        elif key[:6] == 'option':
-            finalString += 'option:' + str(newDict[list(keys)[j]]) + ', '
-        elif key[:6] == 'rotate':
-            finalString += 'rotate:' + str(newDict[list(keys)[j]]) + ', '
+        match key[0]:
+            case 'R':
+                match key[1]:
+                    case "n":
+                        finalString += 'Rn' + str(newDict[list(keys)[j]]) + ', '
+                    case "m":
+                        finalString += 'Rm' + str(newDict[list(keys)[j]]) + ', '
+                    case "d":
+                        finalString += 'Rd' + str(newDict[list(keys)[j]]) + ', '
+                    case "t":
+                        finalString += 'Rt' + str(newDict[list(keys)[j]]) + ', '
+            case 'W':
+                finalString += 'W' + str(newDict[list(keys)[j]]) + ', '
+            case 'T':
+                finalString += 'T' + str(newDict[list(keys)[j]]) + ', '
+            case 'U':
+                finalString += 'U' + str(newDict[list(keys)[j]]) + ', '
+        match key[:2]:
+            case 'tb':
+                finalString += 'tb' + str(newDict[list(keys)[j]]) + ', '
+            case 'sh':
+                finalString += 'tb' + str(newDict[list(keys)[j]]) + ', '
+        match key[:3]:
+            case 'imm':
+                finalString += '#' + str(newDict[list(keys)[j]]) + ', '
+            case 'Rt2':
+                finalString += 'Rt2 ' + str(newDict[list(keys)[j]]) + ', '
+            case 'CRd':
+                finalString += 'CRd' + str(newDict[list(keys)[j]]) + ', '
+            case 'CRm':
+                finalString += 'CRm ' + str(newDict[list(keys)[j]]) + ', '
+            case 'CRn':
+                finalString += 'CRm ' + str(newDict[list(keys)[j]]) + ', '
+        match key[:4]:
+            case 'type':
+                finalString += 'type:' + str(newDict[list(keys)[j]]) + ', '
+            case 'SYSm':
+                finalString += 'SYSm:' + str(newDict[list(keys)[j]]) + ', '
+            case 'mask':
+                finalString += 'mask:' + str(newDict[list(keys)[j]]) + ', '
+            case 'cond':
+                finalString += 'cond:' + str(newDict[list(keys)[j]]) + ', '
+            case 'RdLo':
+                finalString += 'RdLo:' + str(newDict[list(keys)[j]])
+            case 'RdHi':
+                finalString += 'RdHi:' + str(newDict[list(keys)[j]])
+            case 'opc1':
+                finalString += 'opc1:' + str(newDict[list(keys)[j]])
+            case 'opc2':
+                finalString += 'opc2:' + str(newDict[list(keys)[j]])
+        match key[:6]:
+            case 'option':
+                finalString += 'option:' + str(newDict[list(keys)[j]]) + ', '
+            case 'rotate':
+                finalString += 'rotate:' + str(newDict[list(keys)[j]]) + ', '
+            case 'coproc':
+                finalString += 'coproc:' + str(newDict[list(keys)[j]]) + ', '
+        if key[:7] == 'sat_imm':
+            finalString += 'sat_imm:' + str(newDict[list(keys)[j]]) + ', '
+        elif key[:7] == 'widthm1':
+            finalString += 'widthm1:' + str(newDict[list(keys)[j]]) + ', '
         elif key[:13] == 'register_list':
             finalString += 'register_list:' + str(newDict[list(keys)[j]]) + ', '
     key = list(keys)[-1]
-    if key[0] == 'R':
-        match key[1]:
-            case "n":
-                finalString += 'Rn' + str(newDict[list(keys)[-1]])
-            case "m":
-                finalString += 'Rm' + str(newDict[list(keys)[-1]])
-            case "d":
-                finalString += 'Rd' + str(newDict[list(keys)[-1]])
-            case "t":
-                finalString += 'Rt' + str(newDict[list(keys)[-1]])
-    elif key[0] == 'W':
-        finalString += 'W' + str(newDict[list(keys)[-1]])
-    elif key[0] == 'T':
-        finalString += 'T' + str(newDict[list(keys)[-1]])
-    elif key[0] == 'P':
-        finalString += 'P' + str(newDict[list(keys)[-1]])
-    elif key[0] == 'M':
-        finalString += 'M' + str(newDict[list(keys)[-1]])
-    elif key[0] == 'U':
-        finalString += 'U' + str(newDict[list(keys)[-1]]) + ', '
-    elif key[:2] == 'tb':
-        finalString += 'tb' + str(newDict[list(keys)[-1]])
-    elif key[:3] == 'imm':
-        finalString += '#' + str(newDict[list(keys)[-1]])
-    elif key[:3] == 'Rt2':
-        finalString += 'Rt2 ' + str(newDict[list(keys)[-1]]) + ', '
-    elif key[:4] == 'type':
-        finalString += 'type:' + str(newDict[list(keys)[-1]])
-    elif key[:4] == 'SYSm':
-        finalString += 'SYSm:' + str(newDict[list(keys)[-1]])
-    elif key[:4] == 'mask':
-        finalString += 'mask:' + str(newDict[list(keys)[-1]])
-    elif key[:4] == 'cond':
-        finalString += 'cond:' + str(newDict[list(keys)[-1]])
-    elif key[:4] == 'RdLo':
-        finalString += 'RdLo:' + str(newDict[list(keys)[-1]])
-    elif key[:4] == 'RdHi':
-        finalString += 'RdHi:' + str(newDict[list(keys)[-1]])
-    elif key[:6] == 'option':
-        finalString += 'option:' + str(newDict[list(keys)[-1]])
-    elif key[:6] == 'rotate':
-        finalString += 'rotate:' + str(newDict[list(keys)[-1]])
+    match key[0]:
+        case 'R':
+            match key[1]:
+                case "n":
+                    finalString += 'Rn' + str(newDict[list(keys)[-1]]) + ', '
+                case "m":
+                    finalString += 'Rm' + str(newDict[list(keys)[-1]]) + ', '
+                case "d":
+                    finalString += 'Rd' + str(newDict[list(keys)[-1]]) + ', '
+                case "t":
+                    finalString += 'Rt' + str(newDict[list(keys)[-1]]) + ', '
+        case 'W':
+            finalString += 'W' + str(newDict[list(keys)[-1]]) + ', '
+        case 'T':
+            finalString += 'T' + str(newDict[list(keys)[-1]]) + ', '
+        case 'U':
+            finalString += 'U' + str(newDict[list(keys)[-1]]) + ', '
+    match key[:2]:
+        case 'tb':
+            finalString += 'tb' + str(newDict[list(keys)[-1]]) + ', '
+        case 'sh':
+            finalString += 'tb' + str(newDict[list(keys)[-1]]) + ', '
+    match key[:3]:
+        case 'imm':
+            finalString += '#' + str(newDict[list(keys)[-1]]) + ', '
+        case 'Rt2':
+            finalString += 'Rt2 ' + str(newDict[list(keys)[-1]]) + ', '
+        case 'CRd':
+            finalString += 'CRd' + str(newDict[list(keys)[-1]]) + ', '
+        case 'CRm':
+            finalString += 'CRm ' + str(newDict[list(keys)[-1]]) + ', '
+        case 'CRn':
+            finalString += 'CRm ' + str(newDict[list(keys)[-1]]) + ', '
+    match key[:4]:
+        case 'type':
+            finalString += 'type:' + str(newDict[list(keys)[-1]]) + ', '
+        case 'SYSm':
+            finalString += 'SYSm:' + str(newDict[list(keys)[-1]]) + ', '
+        case 'mask':
+            finalString += 'mask:' + str(newDict[list(keys)[-1]]) + ', '
+        case 'cond':
+            finalString += 'cond:' + str(newDict[list(keys)[-1]]) + ', '
+        case 'RdLo':
+            finalString += 'RdLo:' + str(newDict[list(keys)[-1]])
+        case 'RdHi':
+            finalString += 'RdHi:' + str(newDict[list(keys)[-1]])
+        case 'opc1':
+            finalString += 'opc1:' + str(newDict[list(keys)[-1]])
+        case 'opc2':
+            finalString += 'opc2:' + str(newDict[list(keys)[-1]])
+    match key[:6]:
+        case 'option':
+            finalString += 'option:' + str(newDict[list(keys)[-1]]) + ', '
+        case 'rotate':
+            finalString += 'rotate:' + str(newDict[list(keys)[-1]]) + ', '
+        case 'coproc':
+            finalString += 'coproc:' + str(newDict[list(keys)[-1]]) + ', '
+    if key[:7] == 'sat_imm':
+        finalString += 'sat_imm:' + str(newDict[list(keys)[-1]]) + ', '
+    elif key[:7] == 'widthm1':
+        finalString += 'widthm1:' + str(newDict[list(keys)[-1]]) + ', '
     elif key[:13] == 'register_list':
-        finalString += 'register_list:' + str(newDict[list(keys)[-1]])
+        finalString += 'register_list:' + str(newDict[list(keys)[-1]]) + ', '
     return finalString
 
 
