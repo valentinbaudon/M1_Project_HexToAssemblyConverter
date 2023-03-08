@@ -177,10 +177,14 @@ def GetDictField_32(json_file, line, instruction):
             finalString += 'W' + str(newDict[list(keys)[j]]) + ', '
         elif key[0] == 'T':
             finalString += 'T' + str(newDict[list(keys)[j]]) + ', '
+        elif key[0] == 'U':
+            finalString += 'U' + str(newDict[list(keys)[j]]) + ', '
         elif key[:2] == 'tb':
             finalString += 'tb' + str(newDict[list(keys)[j]]) + ', '
         elif key[:3] == 'imm':
             finalString += '#' + str(newDict[list(keys)[j]]) + ', '
+        elif key[:3] == 'Rt2':
+            finalString += 'Rt2 ' + str(newDict[list(keys)[j]]) + ', '
         elif key[:4] == 'type':
             finalString += 'type:' + str(newDict[list(keys)[j]]) + ', '
         elif key[:4] == 'SYSm':
