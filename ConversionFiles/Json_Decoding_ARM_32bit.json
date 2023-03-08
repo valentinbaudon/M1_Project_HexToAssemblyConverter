@@ -804,7 +804,7 @@
 				"meaning": "Unsigned Bit Field Extract",
 				"fields":
 				{
-					"msb": [4,0],
+					"widthm1": [4,0],
 					"imm2": [7,6],
 					"Rd": [11,8],
 					"imm3": [14,12],
