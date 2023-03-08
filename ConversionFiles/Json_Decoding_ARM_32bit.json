@@ -93,67 +93,7 @@
 
 	"111010000110": {
 				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
-				"fields" :
-				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
-					"Rt" : [15,12],
-					"Rn": [19,16]
-				}
-	},
-
-	"111010001110": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
-				"fields" :
-				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
-					"Rt" : [15,12],
-					"Rn": [19,16]
-				}
-	},
-
-	"111010010100": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
-				"fields" :
-				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
-					"Rt" : [15,12],
-					"Rn": [19,16]
-				}
-	},
-
-	"111010010110": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
-				"fields" :
-				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
-					"Rt" : [15,12],
-					"Rn": [19,16]
-				}
-	},
-
-	"111010011100": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
-				"fields" :
-				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
-					"Rt" : [15,12],
-					"Rn": [19,16]
-				}
-	},
-
-	"111010011110": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
+				"meaning" : "Store Register Dual (immediate)",
 				"fields" :
 				{
 					"imm8" : [7,0],
@@ -165,7 +105,7 @@
 
 	"111010000111": {
 				"instruction" : "LDRD (immediate)",
-				"meaning" : "Load Register Dual",
+				"meaning" : "Load Register Dual (immediate)",
 				"fields" :
 				{
 					"imm8" : [7,0],
@@ -175,9 +115,9 @@
 				}
 	},
 
-	"111010001111": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
+	"1110100xx1x11111": {
+				"instruction" : "LDRD (literal)",
+				"meaning" : "Load Register Dual (literal)",
 				"fields" :
 				{
 					"imm8" : [7,0],
@@ -187,51 +127,65 @@
 				}
 	},
 
-	"111010010101": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
+	"111010001100xxxxxxxx11110100": {
+				"instruction" : "STREXB",
+				"meaning" : "Store Register Exclusive Byte",
 				"fields" :
 				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
-					"Rt" : [15,12],
-					"Rn": [19,16]
+					"Rd" : [3,0],
+					"Rt": [15,12],
+					"Rn" : [19,16]
 				}
 	},
 
-	"111010010111": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
+	"111010001100xxxxxxxx11110101": {
+				"instruction" : "STREXH",
+				"meaning" : "Store Register Exclusive Halfword",
 				"fields" :
 				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
-					"Rt" : [15,12],
-					"Rn": [19,16]
+					"Rd" : [3,0],
+					"Rt": [15,12],
+					"Rn" : [19,16]
 				}
 	},
 
-	"111010011101": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
+	"111010001101xxxx111100000000": {
+				"instruction" : "TBB",
+				"meaning" : "Table Branch Byte",
 				"fields" :
 				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
-					"Rt" : [15,12],
-					"Rn": [19,16]
+					"Rm" : [3,0],
+					"Rn" : [19,16]
 				}
 	},
 
-	"111010011111": {
-				"instruction" : "STRD (immediate)",
-				"meaning" : "Store Register Dual",
+	"111010001101xxxx111100000001": {
+				"instruction" : "TBH",
+				"meaning" : "Table Branch Halfword",
 				"fields" :
 				{
-					"imm8" : [7,0],
-					"Rt2": [11,8],
+					"Rm" : [3,0],
+					"Rn" : [19,16]
+				}
+	},
+
+	"111010001101xxxxxxxx111101001111": {
+				"instruction" : "LDREXB",
+				"meaning" : "Table Branch Byte",
+				"fields" :
+				{
 					"Rt" : [15,12],
-					"Rn": [19,16]
+					"Rn" : [19,16]
+				}
+	},
+
+	"111010001101xxxxxxxx111101011111": {
+				"instruction" : "LDREXH",
+				"meaning" : "Table Branch Halfword",
+				"fields" :
+				{
+					"Rm" : [3,0],
+					"Rn" : [19,16]
 				}
 	},
 
