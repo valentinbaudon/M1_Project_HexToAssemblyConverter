@@ -9,6 +9,7 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
+
 # Permet de récupérer le logo pour la génération de l'exécutable
 Logo = resource_path("graphicResources/TemporaryIcon.ico")
 
