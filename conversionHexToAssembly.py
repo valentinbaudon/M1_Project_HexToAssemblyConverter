@@ -303,7 +303,7 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
         case "Classic":
             descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + json_file[str(instruction)]['meaning'] + ' : ' + GetDictField_32(json_file, line, instruction) + "\n")
         case "Integral":
-            descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' +json_file[str(instruction)]['meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
+            descr_file.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' + json_file[str(instruction)]['meaning'] + " : " + GetDictField_32(json_file, line, instruction) + "\n")
 
 
 # Fonction qui lit les bits et lance l'écriture des instructions.
