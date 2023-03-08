@@ -644,6 +644,23 @@ def describe_instructions(code):
                         write_described_instruction_32(assembly_description, json_32, line, "111110111110xxxxxxxxxxxx0000", code, address)
                     else:
                         assembly_description.write("0x" + address + " : " + line + "\n")
+                # Coprocessor instructions
+                elif line[:3] == "111" and line[4:6] == "11":
+                    if line[6] == "0" and line[11] == "0" and line[6:9] != "000" and line[11] != "0":
+                        write_described_instruction_32(assembly_description, json_32, line, "111x110xxxx0", code, address)
+                    elif line[6] == "0" and line[11] == "1" and line[6:9] != "000" and line[11] != "0":
+                        write_described_instruction_32(assembly_description, json_32, line, "111x110xxxx0", code, address)
+                    elif line[6:12] == "000100":
+                        write_described_instruction_32(assembly_description, json_32, line, "111x11000100", code, address)
+                    elif line[6:12] == "000101":
+                        write_described_instruction_32(assembly_description, json_32, line, "111x11000101", code, address)
+                    elif line[6:8] == "10" and line[27] == "0":
+                        write_described_instruction_32(assembly_description, json_32, line, "111x1110xxxxxxxxxxxxxxxxxxx0", code, address)
+                    elif line[6:8] == "10" and line[27] == "1":
+                        if line[11] == "0":
+                            write_described_instruction_32(assembly_description, json_32, line, "111x1110xxx0xxxxxxxxxxxxxxx1", code, address)
+                        else:
+                            write_described_instruction_32(assembly_description, json_32, line, "111x1110xxx1xxxxxxxxxxxxxxx1", code, address)
                 else:
                     assembly_description.write("0x" + address + " : " + line + "\n")
         else:  # 16-bits

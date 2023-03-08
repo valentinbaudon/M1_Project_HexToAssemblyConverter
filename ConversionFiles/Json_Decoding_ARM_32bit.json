@@ -1313,7 +1313,98 @@
 					"Rd": [11,8],
 					"Rn": [19,16]
 				}
-	}
+	},
 
+	"111x110xxxx0": {
+				"instruction": "STC",
+				"meaning": "Store Coprocessor",
+				"fields":
+				{
+					"imm8": [7,0],
+					"coproc": [11,8],
+					"CRd": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
+	"111x110xxxx1": {
+				"instruction": "LDC",
+				"meaning": "Store Coprocessor",
+				"fields":
+				{
+					"imm8": [7,0],
+					"coproc": [11,8],
+					"CRd": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
+	"111x11000100": {
+				"instruction": "MCRR",
+				"meaning": "Move to Coprocessor from two ARM Registers",
+				"fields":
+				{
+					"CRm": [3,0],
+					"opc1": [7,4],
+					"coproc": [11,8],
+					"Rt": [15,12],
+					"Rt2": [19,16]
+				}
+	},
+
+	"111x11000101": {
+				"instruction": "MRRC",
+				"meaning": "Move to two ARM Registers from Coprocessor",
+				"fields":
+				{
+					"CRm": [3,0],
+					"opc1": [7,4],
+					"coproc": [11,8],
+					"Rt": [15,12],
+					"Rt2": [19,16]
+				}
+	},
+
+	"111x1110xxxxxxxxxxxxxxxxxxx0": {
+				"instruction": "CDP",
+				"meaning": "Coprocessor Data Processing",
+				"fields":
+				{
+					"CRm": [3,0],
+					"opc2": [7,5],
+					"coproc": [11,8],
+					"CRd": [15,12],
+					"CRn": [19,16],
+					"opc1": [23,20]
+				}
+	},
+
+	"111x1110xxx0xxxxxxxxxxxxxxx1": {
+				"instruction": "MCR",
+				"meaning": "Coprocessor Data Processing",
+				"fields":
+				{
+					"CRm": [3,0],
+					"opc2": [7,5],
+					"coproc": [11,8],
+					"Rt": [15,12],
+					"CRn": [19,16],
+					"opc1": [23,21]
+				}
+	},
+
+	"111x1110xxx1xxxxxxxxxxxxxxx1": {
+				"instruction": "MRC",
+				"meaning": "Coprocessor Data Processing",
+				"fields":
+				{
+					"CRm": [3,0],
+					"opc2": [7,5],
+					"coproc": [11,8],
+					"Rt": [15,12],
+					"CRn": [19,16],
+					"opc1": [23,21]
+				}
+	}
 }
 
