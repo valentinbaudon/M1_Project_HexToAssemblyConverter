@@ -1,5 +1,5 @@
 {
-	"1110100010x0xxxx" : {
+	"1110100010x0" : {
 				"instruction" : "STM, STMIA, STMEA",
 				"meaning" : "Store Multiple (Increment After, Empty Ascending)",
 				"fields" :
@@ -10,7 +10,7 @@
 				}
 	},
 
-	"1110100010x1xxxx": {
+	"1110100010x1": {
 				"instruction" : "LDM, LDMIA, LDMEA",
 				"meaning" : "Load Multiple (Increment After, Full Descending)",
 				"fields" :
@@ -34,7 +34,7 @@
 				}
 	},
 
-	"1110100100x0xxxx": {
+	"1110100100x0": {
 				"instruction" : "STMDB, STMFD",
 				"meaning" : "Store Multiple (Decrement Before, Full Descending)",
 				"fields" :
@@ -55,7 +55,7 @@
 				}
 	},
 
-	"1110100100x1xxxx": {
+	"1110100100x1": {
 				"instruction" : "LDMDB, LDMEA",
 				"meaning" : "Store Multiple (Decrement Before, Full Descending)",
 				"fields" :

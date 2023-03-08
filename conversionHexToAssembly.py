@@ -267,8 +267,24 @@ def describe_instructions(code):
             if line == "11111111111111111111111111111111":
                 assembly_description.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : UNDEFINED\n")
             else:
+                # Load/Store
+                if line[:7] == "1110100":
+                    # Load/Store Multiple
+                    if line[7:9] == "01" and line[11] == "0":
+                        write_described_instruction_32(assembly_description, json_32, line, "1110100010x0", code, address)
+                    elif line[7:9] == "01" and line[11] == "1" and line[10] != "0" and line[12:16] != "1101":
+                        write_described_instruction_32(assembly_description, json_32, line, "1110100010x1", code, address)
+                    elif line[7:9] == "01" and line[11] == "1" and line[10] == "0" and line[12:16] == "1101":
+                        write_described_instruction_32(assembly_description, json_32, line, "1110100010111101", code, address)
+                    elif line[7:9] == "10" and line[11] == "0" and line[10] != "0" and line[12:16] != "1101":
+                        write_described_instruction_32(assembly_description, json_32, line, "1110100100x0", code, address)
+                    elif line[7:9] == "10" and line[11] == "0" and line[10] == "0" and line[12:16] == "1101":
+                        write_described_instruction_32(assembly_description, json_32, line, "1110100100101101", code, address)
+                    elif line[7:9] == "10" and line[11] == "1":
+                        write_described_instruction_32(assembly_description, json_32, line, "1110100100x1", code, address)
+                    # Load/Store dual or exclusive, table branch
                 # Data processing (shifted register)
-                if line[:7] == "1110101":
+                elif line[:7] == "1110101":
                     match line[7:11]:
                         case "0000":
                             if line[20:24] != "1111":
@@ -556,7 +572,7 @@ def describe_instructions(code):
                 elif line[2:7] in ["01100", "01101", "01110", "01111"]:
                     write_described_instruction_16(assembly_description, json_16, line, 7, code, address)
                 else:
-                    assembly_description.write("0x" + address + " : " + line + "\n")
+                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED\n")
             # Data processing
             elif line[:6] == "010000":
                 write_described_instruction_16(assembly_description, json_16, line, 10, code, address)
@@ -569,7 +585,7 @@ def describe_instructions(code):
                 elif line[6:10] == "0101":
                     write_described_instruction_16(assembly_description, json_16, line, 10, code, address)
                 else:
-                    assembly_description.write("0x" + address + " : " + line + "\n")
+                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED\n")
             # Load / store single data item
             elif line[:4] == "0101":
                 write_described_instruction_16(assembly_description, json_16, line, 7, code, address)
@@ -593,7 +609,7 @@ def describe_instructions(code):
                         if line[8:12] in ["0000", "0001", "0010", "0011", "0100"]:
                             write_described_instruction_16(assembly_description, json_16, line, 16, code, address)
                         else:
-                            assembly_description.write("0x" + address + " : " + line + "\n")
+                            assembly_description.write("0x" + address + " : " + line + " : UNDEFINED\n")
                     else:
                         write_described_instruction_16(assembly_description, json_16, line, 8, code, address)
                 elif line[:4] == "1100":
@@ -602,18 +618,18 @@ def describe_instructions(code):
                     elif line[4:7] not in ["1110", "1110"]:
                         write_described_instruction_16(assembly_description, json_16, line, 7, code, address)
                     else:
-                        assembly_description.write("0x" + address + " : " + line + "\n")
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED\n")
                 else:
-                    assembly_description.write("0x" + address + " : " + line + "\n")
+                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED\n")
             elif line[:4] == "1101":
                 if line[4:8] == "1111":
                     write_described_instruction_16(assembly_description, json_16, line, 8, code, address)
                 elif line[4:7] != "111":
                     write_described_instruction_16(assembly_description, json_16, line, 4, code, address)
                 else:
-                    assembly_description.write("0x" + address + " : " + line + "\n")
+                    assembly_description.write("0x" + address + " : " + line + " : UNDEFINED\n")
             # Unconditional branch, Generate PC-relative address, Generate SP-relative address, Store multiple registers, Load multiple registers, LDR (literal)
             elif line[:5] in ["11100", "10100", "10101", "11000", "11001", "01001"]:
                 write_described_instruction_16(assembly_description, json_16, line, 5, code, address)
             else:
-                assembly_description.write("0x" + address + " : " + line + "\n")
+                assembly_description.write("0x" + address + " : " + line + " : UNDEFINED\n")
