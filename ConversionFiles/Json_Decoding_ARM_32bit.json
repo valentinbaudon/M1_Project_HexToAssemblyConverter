@@ -993,9 +993,32 @@
 				}
 	},
 
+	"111110001001": {
+				"instruction": "LDRB (immediate)",
+				"meaning": "Load Register Byte",
+				"fields":
+				{
+					"imm8": [7,0],
+					"Rt": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
 	"111110000001xxxxxxxx000000": {
 				"instruction": "LDRB (register)",
 				"meaning": "Load Register Byte",
+				"fields":
+				{
+					"Rm": [3,0],
+					"imm2": [5,4],
+					"Rt": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110000001xxxxxxxx1110": {
+				"instruction": "LDRBT",
+				"meaning": "Load Register Byte Unprivileged",
 				"fields":
 				{
 					"imm8": [7,0],
@@ -1070,6 +1093,17 @@
 				}
 	},
 
+	"111110000011xxxxxxxx1110": {
+				"instruction": "LDRHT",
+				"meaning": "Load Register Halfword Unprivileged",
+				"fields":
+				{
+					"imm8": [7, 0],
+					"Rt": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
 	"111110011011": {
 				"instruction": "LDRSH (immediate)",
 				"meaning": "Load Register Signed Halfword",
@@ -1103,6 +1137,17 @@
 				}
 	},
 
+	"111110010011xxxxxxxx1110": {
+				"instruction": "LDRSHT",
+				"meaning": "Load Register Signed Halfword Unprivileged",
+				"fields":
+				{
+					"imm8": [7, 0],
+					"Rt": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
 	"11111000x1011111": {
 				"instruction": "LDR (literal)",
 				"meaning": "Load Register",
@@ -1124,6 +1169,17 @@
 				}
 	},
 
+	"111110000101xxxxxxxx1110": {
+				"instruction": "LDRT",
+				"meaning": "Load Register",
+				"fields":
+				{
+					"imm8": [7,0],
+					"Rt": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
 	"111110001101xxxxxxxx000000": {
 				"instruction": "LDR (register)",
 				"meaning": "Load Register",
@@ -1132,6 +1188,47 @@
 					"Rm": [3,0],
 					"imm2": [5, 4],
 					"Rt": [15,12],
+					"Rn": [19,16]
+				}
+	},
+
+	"11111000x00111111111": {
+				"instruction": "PLD (immediate)",
+				"meaning": "Preload Data (immediate)",
+				"fields":
+				{
+					"imm8": [7,0],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110000001xxxx1111000000": {
+				"instruction": "PLD (register)",
+				"meaning": "Preload Data (register)",
+				"fields":
+				{
+					"Rm": [3,0],
+					"shift": [5,4]
+				}
+	},
+
+	"111110011001xxxx1111": {
+				"instruction": "PLI",
+				"meaning": "Preload Instruction",
+				"fields":
+				{
+					"imm12": [11,0],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110010001xxxx1111000000": {
+				"instruction": "PLI (register)",
+				"meaning": "Preload Instruction",
+				"fields":
+				{
+					"Rm": [3,0],
+					"shift": [5,4],
 					"Rn": [19,16]
 				}
 	},
@@ -1398,6 +1495,17 @@
 	"111110101001xxxx1111xxxx1011": {
 				"instruction": "REVSH",
 				"meaning": "Byte-Reverse Signed Halfword",
+				"fields":
+				{
+					"Rm": [3,0],
+					"Rd": [11,8],
+					"Rn": [19,16]
+				}
+	},
+
+	"111110101011": {
+				"instruction": "CLZ",
+				"meaning": "Count Leading Zeros",
 				"fields":
 				{
 					"Rm": [3,0],
