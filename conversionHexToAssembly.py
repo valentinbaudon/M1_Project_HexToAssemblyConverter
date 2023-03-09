@@ -220,7 +220,9 @@ def GetDictField_32(json_file, line, instruction):
                 finalString += 'rotate:' + str(newDict[list(keys)[j]]) + ', '
             case 'coproc':
                 finalString += 'coproc:' + str(newDict[list(keys)[j]]) + ', '
-        if key[:7] == 'sat_imm':
+        if key[:5] == 'shift':
+            finalString += 'shift:' + str(newDict[list(keys)[j]]) + ', '
+        elif key[:7] == 'sat_imm':
             finalString += 'sat_imm:' + str(newDict[list(keys)[j]]) + ', '
         elif key[:7] == 'widthm1':
             finalString += 'widthm1:' + str(newDict[list(keys)[j]]) + ', '
@@ -284,7 +286,9 @@ def GetDictField_32(json_file, line, instruction):
             finalString += 'rotate:' + str(newDict[list(keys)[-1]]) + ', '
         case 'coproc':
             finalString += 'coproc:' + str(newDict[list(keys)[-1]]) + ', '
-    if key[:7] == 'sat_imm':
+    if key[:5] == 'shift':
+        finalString += 'shift:' + str(newDict[list(keys)[-1]]) + ', '
+    elif key[:7] == 'sat_imm':
         finalString += 'sat_imm:' + str(newDict[list(keys)[-1]]) + ', '
     elif key[:7] == 'widthm1':
         finalString += 'widthm1:' + str(newDict[list(keys)[-1]]) + ', '
