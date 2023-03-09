@@ -756,6 +756,8 @@ def describe_instructions(code):
                             write_described_instruction_32(assembly_description, json_32, line, "111x1110xxx0xxxxxxxxxxxxxxx1", code, address)
                         else:
                             write_described_instruction_32(assembly_description, json_32, line, "111x1110xxx1xxxxxxxxxxxxxxx1", code, address)
+                    else:
+                        assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
                 else:
                     assembly_description.write("0x" + address + " : " + line + " : UNDEFINED or UNPREDICTABLE\n")
         else:  # 16-bits
