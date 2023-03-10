@@ -14,6 +14,9 @@ class MainWindow(object):
 
     def __init__(self):
         # Initialisation des attributs de la classe
+        self.SConversion = None
+        self.SConversion = None
+        self.actionSimpleConversion = None
         self.thread = None
         self.selected_hex_file_CSV = None
         self.progressBar = None
@@ -49,9 +52,9 @@ class MainWindow(object):
         self.FooterLayout = None
         self.ConvertButtonLayout = None
         self.Exemple_OptionConversion = None
-        self.radioButton_3 = None
-        self.radioButton_2 = None
-        self.radioButton_1 = None
+        self.IntegralOption = None
+        self.ClassiqueOption = None
+        self.CompactOption = None
         self.OptionsLayout = None
         self.OptionsGlobalLayout = None
         self.optionConversion_Title = None
@@ -106,6 +109,11 @@ class MainWindow(object):
     def AboutWindow(self):
         self.about = About(self.language)
         self.about.exec_()
+
+    # Fonction permettant d'ouvrir la fenêtre "Fonctionnement"
+    def SConversionWindow(self):
+        self.SConversion = SConversion(self.language)
+        self.SConversion.exec_()
 
     # Fonction qui nettoie les fichiers
     def clearAllFiles(self):
@@ -265,9 +273,9 @@ class MainWindow(object):
         self.HowToDownloadHex_Text.setText(_translate("Converter", self.JSON_lang["HowToDownloadHex_Text"]))
         self.DownloadHexButton.setText(_translate("Converter", self.JSON_lang["DownloadHexButton"]))
         self.optionConversion_Title.setText(_translate("Converter", self.JSON_lang["optionConversion_Title"]))
-        self.radioButton_1.setText(_translate("Converter", self.JSON_lang["radioButton_1"]))
-        self.radioButton_2.setText(_translate("Converter", self.JSON_lang["radioButton_2"]))
-        self.radioButton_3.setText(_translate("Converter", self.JSON_lang["radioButton_3"]))
+        self.CompactOption.setText(_translate("Converter", self.JSON_lang["CompactOption"]))
+        self.ClassiqueOption.setText(_translate("Converter", self.JSON_lang["ClassiqueOption"]))
+        self.IntegralOption.setText(_translate("Converter", self.JSON_lang["IntegralOption"]))
         self.Exemple_OptionConversion.setText(_translate("Converter", self.JSON_lang["Exemple_OptionConversion"]))
         self.convertButton.setText(_translate("Converter", self.JSON_lang["convertButton"]))
         self.nbInstructions.setText(_translate("Converter", self.JSON_lang["nbInstructions"]))
@@ -477,26 +485,26 @@ class MainWindow(object):
         self.button_group = QButtonGroup()
 
         # Bouton option d'affichage compact
-        self.radioButton_1 = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton_1.setFont(font)
-        self.radioButton_1.setObjectName("radioButton_1")
-        self.OptionsLayout.addWidget(self.radioButton_1)
-        self.button_group.addButton(self.radioButton_1)
-        self.radioButton_1.setChecked(True)
+        self.CompactOption = QtWidgets.QRadioButton(self.centralwidget)
+        self.CompactOption.setFont(font)
+        self.CompactOption.setObjectName("CompactOption")
+        self.OptionsLayout.addWidget(self.CompactOption)
+        self.button_group.addButton(self.CompactOption)
+        self.CompactOption.setChecked(True)
 
         # Bouton option d'affichage classique
-        self.radioButton_2 = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton_2.setFont(font)
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.OptionsLayout.addWidget(self.radioButton_2)
-        self.button_group.addButton(self.radioButton_2)
+        self.ClassiqueOption = QtWidgets.QRadioButton(self.centralwidget)
+        self.ClassiqueOption.setFont(font)
+        self.ClassiqueOption.setObjectName("ClassiqueOption")
+        self.OptionsLayout.addWidget(self.ClassiqueOption)
+        self.button_group.addButton(self.ClassiqueOption)
 
         # Bouton option d'affichage intégral
-        self.radioButton_3 = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton_3.setFont(font)
-        self.radioButton_3.setObjectName("radioButton_3")
-        self.OptionsLayout.addWidget(self.radioButton_3)
-        self.button_group.addButton(self.radioButton_3)
+        self.IntegralOption = QtWidgets.QRadioButton(self.centralwidget)
+        self.IntegralOption.setFont(font)
+        self.IntegralOption.setObjectName("IntegralOption")
+        self.OptionsLayout.addWidget(self.IntegralOption)
+        self.button_group.addButton(self.IntegralOption)
         self.checked_button = self.button_group.checkedButton()
         self.OptionsGlobalLayout.addLayout(self.OptionsLayout)
 
@@ -678,15 +686,20 @@ class MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         ConverterWindow.setStatusBar(self.statusbar)
 
-        # Création de l'action liée au menu "à propos"
+        # Création de l'action liée à la fenêtre "à propos"
         self.actionAbout = QtWidgets.QAction(ConverterWindow)
         self.actionAbout.setIcon(QIcon("graphicResources\\AboutLogo.png"))
         self.actionAbout.setObjectName("actionAbout")
 
-        # Création de l'action liée au menu "fonctionnement"
+        # Création de l'action liée à la fenêtre "fonctionnement"
         self.actionFonctionnement = QtWidgets.QAction(ConverterWindow)
         self.actionFonctionnement.setIcon(QIcon("graphicResources\\ExplanationLogo.png"))
         self.actionFonctionnement.setObjectName("actionFonctionnement")
+
+        # Création de l'action liée à la fenêtre "fonctionnement"
+        self.actionSimpleConversion = QtWidgets.QAction(ConverterWindow)
+        self.actionSimpleConversion.setIcon(QIcon("graphicResources\\ExplanationLogo.png"))
+        self.actionSimpleConversion.setObjectName("actionSimpleConversion")
 
         # Création de l'action liée au sous menu "nettoyer les fichiers"
         self.actionClearFiles = QtWidgets.QAction(ConverterWindow)
@@ -709,8 +722,9 @@ class MainWindow(object):
         self.actionEnglish.setCheckable(True)
 
         # Liaison entre les actions créée et les menus et sous menus
+        self.menu_Help.addAction(self.actionFonctionnement)
         self.menu_Help.addAction(self.actionAbout)
-        self.menuFonctionnement.addAction(self.actionFonctionnement)
+        self.menuFonctionnement.addAction(self.actionSimpleConversion)
         self.menuFichier.addAction(self.actionClearFiles)
         self.menuLangues.addAction(self.actionFrancais)
         self.menuLangues.addAction(self.actionEnglish)
@@ -733,9 +747,10 @@ class MainWindow(object):
         self.DownloadAssemblyButton.clicked.connect(self.download_assembly_file)
         self.DownloadAssemblyInCSVButton.clicked.connect(self.download_csv_file)
         self.actionFonctionnement.triggered.connect(self.ExplanationWindow)
+        self.actionAbout.triggered.connect(self.AboutWindow)
+        self.actionSimpleConversion.triggered.connect(self.SConversionWindow)
         self.actionFrancais.triggered.connect(self.select_language_fr)
         self.actionEnglish.triggered.connect(self.select_language_en)
-        self.actionAbout.triggered.connect(self.AboutWindow)
         self.actionClearFiles.triggered.connect(self.clearAllFiles)
         self.actionQuitter.triggered.connect(ConverterWindow.close)
 
