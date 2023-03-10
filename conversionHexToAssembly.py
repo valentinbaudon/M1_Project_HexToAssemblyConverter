@@ -327,7 +327,7 @@ def describe_instructions(code):
         CurrentInstruction += 1
         if is32bits(line):
             if line == "11111111111111111111111111111111":
-                assembly_description.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : UNDEFINED\n")
+                assembly_description.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : UNDEFINED or UNPREDICTABLE\n")
             else:
                 # Load/Store
                 if line[:7] == "1110100":
