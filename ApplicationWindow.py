@@ -5,7 +5,6 @@ import time
 from PyQt5.QtWidgets import QFileDialog, QButtonGroup
 
 from SecondaryWindows import *
-from conversionHexToAssembly import *
 
 
 class MainWindow(object):
@@ -113,6 +112,7 @@ class MainWindow(object):
     # Fonction permettant d'ouvrir la fenêtre "Fonctionnement"
     def SConversionWindow(self):
         self.SConversion = SConversion(self.language)
+        self.SConversion.setupUi()
         self.SConversion.exec_()
 
     # Fonction qui nettoie les fichiers
@@ -293,6 +293,7 @@ class MainWindow(object):
         self.actionQuitter.setText(_translate("Converter", self.JSON_lang["actionQuitter"]))
         self.actionFrancais.setText(_translate("Converter", self.JSON_lang["actionFrancais"]))
         self.actionEnglish.setText(_translate("Converter", self.JSON_lang["actionEnglish"]))
+        self.actionSimpleConversion.setText(_translate("Converter", self.JSON_lang["actionSimpleConversion"]))
 
     # Fonction qui met à jour la valeur de la barre de progression
     def update_progress(self, val):
@@ -698,7 +699,7 @@ class MainWindow(object):
 
         # Création de l'action liée à la fenêtre "fonctionnement"
         self.actionSimpleConversion = QtWidgets.QAction(ConverterWindow)
-        self.actionSimpleConversion.setIcon(QIcon("graphicResources\\ExplanationLogo.png"))
+        self.actionSimpleConversion.setIcon(QIcon("graphicResources\\SC_logo.png"))
         self.actionSimpleConversion.setObjectName("actionSimpleConversion")
 
         # Création de l'action liée au sous menu "nettoyer les fichiers"

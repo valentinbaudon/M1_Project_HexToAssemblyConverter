@@ -4,7 +4,9 @@ import os
 import sys
 from PyQt5 import QtWidgets, QtCore, Qt, QtGui
 from PyQt5.QtGui import QIcon, QTextCursor
-from PyQt5.QtWidgets import QDialog, QTextEdit, QVBoxLayout, QMainWindow, QLabel, QMenu, QAction
+from PyQt5.QtWidgets import QDialog, QTextEdit, QVBoxLayout, QMainWindow, QLabel, QMenu, QAction, QButtonGroup
+
+from conversionHexToAssembly import *
 
 
 def resource_path(relative_path):
@@ -104,6 +106,78 @@ class SConversion(QDialog):
     def __init__(self, langue):
         # récupération des initialisations de la classe mère
         super().__init__()
+
+        # Gestion de la langue d'affichage par défaut comme étant la même que celle du système de l'utilisateur
+        self.instruction = None
+        self.selected_OptionConversion = None
+        self.selected_typeInstruction = None
+        self.ConversionOption_Group = None
+        self.TypeInstruction_Group = None
+        self.ConvertedInstructionText = None
+        self.ResultTitle = None
+        self.ResultConversionLayout = None
+        self.ConvertButton = None
+        self.ConvertButtonLayout = None
+        self.RawInstructionText = None
+        self.InsertInstructionTittle = None
+        self.InsertInstructionLayout = None
+        self.IntegralOption = None
+        self.ClassiqueOption = None
+        self.CompactOption = None
+        self.ConversionOptionsTitle = None
+        self.ConversionOptionsLayout = None
+        self.BinaryInstruction = None
+        self.HexadecimalInstruction = None
+        self.InstructionTypeTitle = None
+        self.InstructionOptionsLayout = None
+        self.GlobalOptionsLayout = None
+        self.Title = None
+        self.TitleLayout = None
+        self.GlobalLayout = None
+        self.language = langue
+        self.JSON_lang = json.load(open(resource_path("OtherFiles\\text_" + self.language + ".json")))
+
+    def NameInit(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.Title.setText(_translate("SimpleCWindow", self.JSON_lang["SC_Title"]))
+        self.InstructionTypeTitle.setText(_translate("SimpleCWindow", self.JSON_lang["SC_InstructionType"]))
+        self.HexadecimalInstruction.setText(_translate("SimpleCWindow", self.JSON_lang["SC_HexaInstruction"]))
+        self.BinaryInstruction.setText(_translate("SimpleCWindow", self.JSON_lang["SC_BinaryInstruction"]))
+        self.ConversionOptionsTitle.setText(_translate("SimpleCWindow", self.JSON_lang["SC_ConversionOptionTitle"]))
+        self.CompactOption.setText(_translate("SimpleCWindow", self.JSON_lang["CompactOption"]))
+        self.ClassiqueOption.setText(_translate("SimpleCWindow", self.JSON_lang["ClassiqueOption"]))
+        self.IntegralOption.setText(_translate("SimpleCWindow", self.JSON_lang["IntegralOption"]))
+        self.InsertInstructionTittle.setText(_translate("SimpleCWindow", self.JSON_lang["SC_InsertInstructionTitle"]))
+        self.ConvertButton.setText(_translate("SimpleCWindow", self.JSON_lang["convertButton"]))
+        self.ResultTitle.setText(_translate("SimpleCWindow", self.JSON_lang["SC_resultConversionTitle"]))
+
+    def store_TypeInstruction(self, button):
+        self.selected_typeInstruction = button
+
+    def store_OptionConversion(self, button):
+        self.selected_OptionConversion = button
+
+    def translate(self):
+        self.instruction = self.RawInstructionText.toPlainText()
+        print(self.selected_typeInstruction.text()[:3])
+        if self.selected_typeInstruction.text()[:3] == "Hex":
+            with open(resource_path("ConversionFiles\\Hexa.txt"), "w") as f:
+                f.write(self.instruction)
+            f.close()
+            writeBinaryInstructions(resource_path("ConversionFiles\\Hexa.txt"))
+            describe_instructions(self.selected_OptionConversion.text())
+        else:
+            with open(resource_path("ConversionFiles\\instructions_file.txt"), "w") as f:
+                f.write(self.instruction)
+            f.close()
+            describe_instructions(self.selected_OptionConversion.text())
+
+        with open(resource_path("ConversionFiles\\Assembly.txt"), "r") as f:
+            assembly_code = f.read()
+        f.close()
+        self.ConvertedInstructionText.setText(assembly_code)
+
+    def setupUi(self):
         font1 = QtGui.QFont()
         font1.setPointSize(14)
         font2 = QtGui.QFont()
@@ -157,14 +231,18 @@ class SConversion(QDialog):
         self.InstructionTypeTitle.setObjectName("InstructionTypeTittle")
         self.InstructionOptionsLayout.addWidget(self.InstructionTypeTitle)
 
+        self.TypeInstruction_Group = QButtonGroup()
+
         self.HexadecimalInstruction = QtWidgets.QRadioButton()
         self.HexadecimalInstruction.setFont(font3)
         self.HexadecimalInstruction.setObjectName("HexadecimalInstruction")
+        self.TypeInstruction_Group.addButton(self.HexadecimalInstruction)
         self.InstructionOptionsLayout.addWidget(self.HexadecimalInstruction)
 
         self.BinaryInstruction = QtWidgets.QRadioButton()
         self.BinaryInstruction.setFont(font3)
         self.BinaryInstruction.setObjectName("BinaryInstruction")
+        self.TypeInstruction_Group.addButton(self.BinaryInstruction)
         self.InstructionOptionsLayout.addWidget(self.BinaryInstruction)
         self.GlobalOptionsLayout.addLayout(self.InstructionOptionsLayout)
 
@@ -180,19 +258,24 @@ class SConversion(QDialog):
         self.ConversionOptionsTitle.setObjectName("ConversionOptionsTittle")
         self.ConversionOptionsLayout.addWidget(self.ConversionOptionsTitle)
 
+        self.ConversionOption_Group = QButtonGroup()
+
         self.CompactOption = QtWidgets.QRadioButton()
         self.CompactOption.setFont(font3)
         self.CompactOption.setObjectName("CompactOption")
+        self.ConversionOption_Group.addButton(self.CompactOption)
         self.ConversionOptionsLayout.addWidget(self.CompactOption)
 
         self.ClassiqueOption = QtWidgets.QRadioButton()
         self.ClassiqueOption.setFont(font3)
         self.ClassiqueOption.setObjectName("ClassiqueOption")
+        self.ConversionOption_Group.addButton(self.ClassiqueOption)
         self.ConversionOptionsLayout.addWidget(self.ClassiqueOption)
 
         self.IntegralOption = QtWidgets.QRadioButton()
         self.IntegralOption.setFont(font3)
         self.IntegralOption.setObjectName("IntegralOption")
+        self.ConversionOption_Group.addButton(self.IntegralOption)
         self.ConversionOptionsLayout.addWidget(self.IntegralOption)
         self.GlobalOptionsLayout.addLayout(self.ConversionOptionsLayout)
 
@@ -262,23 +345,16 @@ class SConversion(QDialog):
         self.ConvertedInstructionText.setMaximumSize(QtCore.QSize(16777215, 50))
         self.ConvertedInstructionText.setFont(font2)
         self.ConvertedInstructionText.setObjectName("ConvertedInstructionText")
+        self.ConvertedInstructionText.setReadOnly(True)
         self.GlobalLayout.addWidget(self.ConvertedInstructionText)
 
         ConvertedInstructionToBottomSpacer = QtWidgets.QSpacerItem(18, 6, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.GlobalLayout.addItem(ConvertedInstructionToBottomSpacer)
 
-        _translate = QtCore.QCoreApplication.translate
-        self.Title.setText(_translate("MainWindow", "Conversion d\'une seule instruction simple"))
-        self.InstructionTypeTitle.setText(_translate("MainWindow", "Type d\'instruction :"))
-        self.HexadecimalInstruction.setText(_translate("MainWindow", "Instruction Hexadécimale"))
-        self.BinaryInstruction.setText(_translate("MainWindow", "Instruction binaire"))
-        self.ConversionOptionsTitle.setText(_translate("MainWindow", "Options de conversion :"))
-        self.CompactOption.setText(_translate("MainWindow", "Par défaut"))
-        self.ClassiqueOption.setText(_translate("MainWindow", "Classique"))
-        self.IntegralOption.setText(_translate("MainWindow", "Intégral"))
-        self.InsertInstructionTittle.setText(_translate("MainWindow", "Insérer l\'instruction :"))
-        self.ConvertButton.setText(_translate("MainWindow", "Convertir"))
-        self.ResultTitle.setText(_translate("MainWindow", "Résultat :"))
+        self.TypeInstruction_Group.buttonClicked.connect(self.store_TypeInstruction)
+        self.ConversionOption_Group.buttonClicked.connect(self.store_OptionConversion)
+        self.ConvertButton.clicked.connect(self.translate)
 
+        self.NameInit()
         QtCore.QMetaObject.connectSlotsByName(self)
 
