@@ -357,4 +357,3 @@ class SConversion(QDialog):
 
         self.NameInit()
         QtCore.QMetaObject.connectSlotsByName(self)
-
