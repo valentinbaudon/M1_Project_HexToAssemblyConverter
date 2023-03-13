@@ -176,9 +176,7 @@ def write_described_instruction_16(descr_file, json_file, line, index, code, add
                 'meaning'] + ' : ' + GetDictField_16(json_file, line, index) + "\n")
         case "Integral":
             descr_file.write(
-                "0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line[:-1] + ' : ' +
-                json_file[str(line[:index])][
-                    'meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
+                "0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : " + line + ' : ' + json_file[str(line[:index])]['meaning'] + " : " + GetDictField_16(json_file, line, index) + "\n")
 
 
 # Fonction qui lit le JSON et retourne les arguments d'une instruction avec leurs valeurs
