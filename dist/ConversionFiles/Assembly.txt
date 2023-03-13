@@ -1,241 +1,445 @@
-0x08000000 : 11111010000001111111011100100010
-0x08000000 : ADD (register) : Rn14, #0, Rd1, #0, type:0, Rn14
-0x08000000 : ADD (register) : Rn8, #0, Rd2, #1, type:2, Rn8
-0x08000000 : B : #93, 
-0x08000000 : CBZ : Rn3, #22, 
-0x08000000 : MOV (register) : Rd6, Rm2
-0x08000180 : B : #83, 
-0x08000180 : CMN (register) : Rm1, Rn0
-0x08000180 : MOV (register) : Rd6, Rm4
-0x08000180 : ADD (register) : Rn14, #0, Rd1, #2, type:2, Rn14
-0x08000180 : 11111011000000101001010010100001
-0x08000180 : AND (register) : Rn8, #4, Rd0, #2, type:2, Rn8
-0x08000180 : SUB (immediate) : Rd0, #97
-0x08000180 : ADD (register) : Rm0, Rd0
-0x08000180 : CMP (register) : Rn5, Rm2
-0x08000180 : B : #2, 
-0x08000180 : ADD (immediate) : Rd4, #108
-0x08000180 : B : #142, 
-0x080001a0 : LSL (immediate) : Rd0, Rm0, #4
-0x080001a0 : BL : #511, #511
-0x080001a0 : ADD (register) : Rn1, #7, Rd14, #2, type:0, Rn1
-0x080001a0 : 0100010100001000
-0x080001a0 : ASR (register) : Rm0, Rd0
-0x080001a0 : 11111011000011100001000101000100
-0x080001a0 : AND (register) : Rn1, #7, Rd0, #0, type:0, Rn1
-0x080001a0 : 11111011000100001011001010110001
-0x080001a0 : 11111011111110010100010000001001
-0x080001a0 : SUB (register) : Rd4, Rn4, Rm2
-0x080001a0 : ADD (immediate) : Rn2, #0, Rd8, Rn2
-0x080001c0 : B : cond:10, #5, cond:10
-0x080001c0 : STRH (immediate) : Rt0, Rn1, #2
-0x080001c0 : RSB (immediate) : Rd0, Rn0
-0x080001c0 : SUB (immediate) : Rd2, #128
-0x080001c0 : EOR (immediate) : Rn8, #0, Rd1, Rn8
-0x080001c0 : BL : #511, #511
-0x080001c0 : ADD (register) : Rn1, #7, Rd10, #0, type:0, Rn1
-0x080001c0 : BL : #523, #523
-0x080001c0 : TST (register) : Rm0, Rn2
-0x080001e0 : ASR (register) : Rm1, Rd0
-0x080001e0 : 11111011000011100001000101000000
-0x080001e0 : AND (register) : Rn1, #7, Rd14, #0, type:0, Rn1
-0x080001e0 : 11111011000110000000110000011111
-0x080001e0 : 11111010100011001111101111111001
-0x080001e0 : 11111000001000001111101000000110
-0x080001e0 : 11110011101100011110101000011100
-0x080001e0 : LDR (literal) : #0, Rt1
-0x080001e0 : MVN (register) : Rm7, Rd1
-0x080001e0 : Exclusive OR Registers : Rm1, Rd7
-0x080001e0 : 11111010000001101111001100011100
-0x08000200 : LSL (register) : Rn7, Rd8, Rn7
-0x08000200 : AND (register) : Rn3, #0, Rd12, #0, type:2, Rn3
-0x08000200 : 11111010000001111111110001001100
-0x08000200 : LSL (immediate) : Rd3, Rm6, #30
-0x08000200 : Bitwise AND : Rm4, Rd2
-0x08000200 : B : #1990
-0x08000200 : 11110001001000001110101000000011
-0x08000200 : LSL (register) : Rm3, Rd4
-0x08000200 : ADD (register) : Rn14, #0, Rd4, #1, type:0, Rn14
-0x08000220 : STRH (immediate) : Rt0, Rn1, #0
-0x08000220 : MOV (register) : Rd4, Rm4
-0x08000220 : 0100010100000000
-0x08000220 : 11110010101110110011000100000010
-0x08000220 : B : #166, 
-0x08000220 : LSL (immediate) : Rd0, Rm0, #16
-0x08000220 : BL : #511, #511
-0x08000220 : ADD (register) : Rn4, #7, Rd14, #2, type:2, Rn4
-0x08000220 : 0100010100001000
-0x08000220 : ADD (register) : Rm1, Rd6
-0x08000220 : 11111011000000000001000101000100
-0x08000220 : AND (register) : Rn1, #7, Rd0, #0, type:0, Rn1
-0x08000240 : 11111011000100001011001010110001
-0x08000240 : 11111011111101110100011000001001
-0x08000240 : SUB (register) : Rd4, Rn4, Rm2
-0x08000240 : B : cond:11, #11, cond:11
-0x08000240 : B : #136, 
-0x08000240 : TST (register) : Rm0, Rn0
-0x08000240 : 11110001111111110011100000000010
-0x08000240 : ADD (register) : Rn1, #0, Rd1, #0, type:0, Rn1
-0x08000240 : TST (register) : Rm1, Rn0
-0x08000240 : B : #28, 
-0x08000260 : MUL : Rn3, Rd0, Rn3
-0x08000260 : AND (register) : Rn1, #4, Rd1, #0, type:0, Rn1
-0x08000260 : 11111011000100110001000101000000
-0x08000260 : 11111011111101111111001100000111
-0x08000260 : MOV (immediate) : Rd6, #32
-0x08000260 : LSR (immediate) : Rd1, Rm6, #18
-0x08000260 : 11111010100011001111111000000001
-0x08000260 : AND (register) : Rn12, #4, Rd7, #0, type:1, Rn12
-0x08000260 : ADD (register) : Rn12, #0, Rd1, #1, type:0, Rn12
-0x08000260 : B : cond:2, #18, cond:2
-0x08000280 : ADR : #2, Rd10, #2
-0x08000280 : 1101111010110010
-0x08000280 : 11111010100000101110011100000010
-0x08000280 : CBNZ : Rn7, #31, 
-0x08000280 : 11101001000000000100111011011101
-0x08000280 : CMP (immediate) : Rn5, #224
-0x08000280 : B : #197, 
-0x08000280 : MOV (immediate) : Rd0, #158
-0x08000280 : MOV (register) : Rd0, Rm0
-0x08000280 : ADD (register) : Rn3, #0, Rd3, #0, type:0, Rn3
-0x080002a0 : STRH (immediate) : Rt4, Rn0, #2
-0x080002a0 : SUB (register) : Rd1, Rn4, Rm1
-0x080002a0 : TST (register) : Rm0, Rn0
-0x080002a0 : 11110010111110010100001000000010
-0x080002a0 : B : #130, 
-0x080002a0 : CMP (immediate) : Rn6, #74
-0x080002a0 : B : #139, 
-0x080002a0 : 11111010100000111111011000000000
-0x080002a0 : 11101000111100001000011110110011
-0x080002a0 : MOV (register) : Rd1, Rm6
-0x080002a0 : MOV (register) : Rd5, Rm7
-0x080002a0 : 11101001000000000000000100110000
-0x080002a0 : STRH (immediate) : Rt0, Rn0, #0
-0x080002c0 : MOV (immediate) : Rd6, #197
-0x080002c0 : CMP (immediate) : Rn5, #0
-0x080002c0 : 11110000111011110100001000001001
-0x080002c0 : B : #0, 
-0x080002c0 : 11101000111100001000011110001011
-0x080002c0 : ORRS (register) : Rm6, Rd1
-0x080002c0 : MOV (register) : Rd5, Rm7
-0x080002c0 : MOV (immediate) : Rd3, #197
-0x080002c0 : 11101001000000001011000111010100
-0x080002c0 : Bitwise AND : Rm0, Rd0
-0x080002c0 : SUB (register) : Rd0, Rn0, Rm4
-0x080002c0 : MOV (immediate) : Rd6, #29
-0x080002e0 : AND (register) : Rn6, #4, Rd0, #3, type:2, Rn6
-0x080002e0 : ADD (register) : Rm0, Rd2
-0x080002e0 : SUB (immediate) : Rd0, #64
-0x080002e0 : B : cond:8, #7, cond:8
-0x080002e0 : STRH (immediate) : Rt7, Rn4, #6
-0x080002e0 : RSB (immediate) : Rd0, Rn0
-0x080002e0 : ADD (immediate) : Rd3, #128
-0x080002e0 : AND (immediate) : Rn10, #0, Rd4, Rn10
-0x080002e0 : BL : #511, #511
-0x080002e0 : ADD (register) : Rn4, #7, Rd7, #2, type:2, Rn4
-0x080002e0 : TST (register) : Rm1, Rn2
-0x080002e0 : ADD (register) : Rm0, Rd0
-0x08000300 : 11111011000001110011001101000100
-0x08000300 : AND (register) : Rn3, #7, Rd0, #0, type:0, Rn3
-0x08000300 : 11111011000100001011001010110011
-0x08000300 : 11111011111110000100010001011011
-0x08000300 : SUB (register) : Rd4, Rn4, Rm2
-0x08000300 : STRH (immediate) : Rt2, Rn0, #4
-0x08000300 : SUB (immediate) : Rd6, #99
-0x08000300 : RSB (immediate) : Rd0, Rn0
-0x08000300 : BL : #540, #540
-0x08000300 : STRH (immediate) : Rt1, Rn3, #6
-0x08000320 : 11110001111111110011000010000000
-0x08000320 : ADD (register) : Rn3, #0, Rd3, #0, type:0, Rn3
-0x08000320 : TST (register) : Rm1, Rn2
-0x08000320 : B : #28, 
-0x08000320 : 11111011000001111111000110011001
-0x08000320 : AND (register) : Rn3, #4, Rd3, #0, type:0, Rn3
-0x08000320 : 11111011000101101110001101000001
-0x08000320 : 11111010100011001111011100001000
-0x08000320 : 11111011111110001111011000011111
-0x08000320 : LDR (literal) : #33, Rt0
-0x08000340 : LSR (immediate) : Rd6, Rm7, #18
-0x08000340 : Exclusive OR Registers : Rm1, Rd7
-0x08000340 : AND (register) : Rn12, #6, Rd10, #0, type:0, Rn12
-0x08000340 : LSR (immediate) : Rd4, Rm2, #26
-0x08000340 : 11111010000000101111110001000001
-0x08000340 : LSL (register) : Rn1, Rd2, Rn1
-0x08000340 : 11110001001000000000000100100000
-0x08000340 : 11111010000000101111001111000010
-0x08000340 : B : #594, #594
-0x08000360 : B : #178, 
-0x08000360 : 11111010100000100100001010010100
-0x08000360 : MOV (register) : Rd1, Rm5
-0x08000360 : CMP (immediate) : Rn3, #77
-0x08000360 : B : #138, 
-0x08000360 : MOV (register) : Rd6, Rm1
-0x08000360 : MOV (register) : Rd0, Rm0
-0x08000360 : BX : Rm1
-0x08000360 : LDR (immediate) : #4, Rt5
-0x08000360 : BX : Rm5
-0x08000360 : 11101001111100000010001100000100
-0x08000360 : ADD (SP plus immediate) : #112
-0x08000360 : B : #221
-0x08000360 : 11101001000000101111100011011101
-0x08000380 : 11111000000001001100111000000000
-0x08000380 : AND (immediate) : Rn6, #0, Rd12, Rn6
-0x08000380 : 11101001000001001011100110101101
-0x08000380 : ADD (immediate) : Rn8, #3, Rd0, Rn8
-0x08000380 : ORN (immediate) : Rn4, #3, Rd1, Rn4
-0x08000380 : B : #255, #255
-0x08000380 : B : #255, #255
-0x08000380 : CMP (immediate) : Rn0, #28
-0x080003a0 : CBNZ : Rn0, #0, 
-0x080003a0 : CMP (immediate) : Rn1, #8
-0x080003a0 : LSR (immediate) : Rd3, Rm2, #1
-0x080003a0 : CBNZ : Rn2, #9, 
-0x080003a0 : MOV (immediate) : Rd0, #100
-0x080003a0 : CMP (immediate) : Rn7, #0
-0x080003a0 : LSL (immediate) : Rd0, Rm2, #0
-0x080003a0 : LSL (immediate) : Rd0, Rm0, #0
-0x080003a0 : POP : 
-0x080003a0 : LSL (immediate) : Rd0, Rm0, #0
-0x080003a0 : B : cond:12, #0, cond:12
-0x080003a0 : LDR (literal) : #3, Rt1
-0x080003a0 : LDR (literal) : #175, Rt0
-0x080003a0 : LDR (literal) : #27, Rt3
-0x080003a0 : CBZ : Rn3, #0, 
-0x080003a0 : LSR (immediate) : Rd0, Rm1, #0
-0x080003c0 : PUSH : 
-0x080003c0 : LSL (immediate) : Rd4, Rm4, #1
-0x080003c0 : CMP (immediate) : Rn7, #0
-0x080003c0 : MOV (immediate) : Rd0, #0
-0x080003c0 : LSL (immediate) : Rd0, Rm0, #0
-0x080003c0 : POP : 
-0x080003c0 : LSL (immediate) : Rd0, Rm0, #0
-0x080003c0 : MOV (immediate) : Rd3, #35
-0x080003c0 : STRB (immediate) : Rt0, Rn2, #0
-0x080003c0 : B : cond:12, #0, cond:12
-0x080003c0 : CBZ : Rn4, #0, 
-0x080003c0 : LDR (literal) : #175, Rt0
-0x080003c0 : CBNZ : Rn4, #0, 
-0x080003c0 : LDR (literal) : #19, Rt3
-0x080003e0 : LDR (literal) : #35, Rt4
-0x080003e0 : LDRB (immediate) : Rt3, Rn6, #0
-0x080003e0 : LSR (immediate) : Rd0, Rm2, #0
-0x080003e0 : PUSH : 
-0x080003e0 : LSR (immediate) : Rd5, Rm1, #3
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSL (immediate) : Rd5, Rm1, #3
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSL (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSR (immediate) : Rd5, Rm3, #0
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSR (immediate) : Rd7, Rm2, #0
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSR (immediate) : Rd1, Rm2, #0
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSR (immediate) : Rd3, Rm1, #0
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSR (immediate) : Rd5, Rm0, #0
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : MOV (immediate) : Rd0, #125
-0x080003e0 : LSR (immediate) : Rd0, Rm0, #0
-0x080003e0 : LSL (immediate) : Rd0, Rm0, #2
+0x08000000 : MOV (immediate) : Rd0, #1
+0x08000000 : Bitwise AND : Rm0, Rd0
+0x08000000 : LSR (immediate) : Rd0, Rm0, #0
+0x08000000 : LSL (immediate) : Rd5, Rm4, #5
+0x08000000 : LSR (immediate) : Rd0, Rm0, #0
+0x08000000 : LSL (immediate) : Rd5, Rm3, #8
+0x08000000 : LSR (immediate) : Rd0, Rm0, #0
+0x08000000 : LSL (immediate) : Rd5, Rm3, #8
+0x08000000 : LSR (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd5, Rm3, #8
+0x08000020 : LSR (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd5, Rm3, #8
+0x08000020 : LSR (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd5, Rm3, #8
+0x08000020 : LSL (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd0, Rm0, #0
+0x08000020 : LSR (immediate) : Rd0, Rm0, #0
+0x08000020 : LSL (immediate) : Rd5, Rm3, #8
+0x08000040 : LSR (immediate) : Rd0, Rm0, #0
+0x08000040 : LSL (immediate) : Rd5, Rm3, #8
+0x08000040 : LSL (immediate) : Rd0, Rm0, #0
+0x08000040 : LSL (immediate) : Rd0, Rm0, #0
+0x08000040 : LSR (immediate) : Rd0, Rm0, #0
+0x08000040 : LSL (immediate) : Rd5, Rm3, #8
+0x08000040 : LSR (immediate) : Rd0, Rm0, #0
+0x08000040 : LSL (immediate) : Rd5, Rm3, #8
+0x08000040 : LSR (immediate) : Rd0, Rm0, #0
+0x08000040 : LSL (immediate) : Rd5, Rm3, #8
+0x08000040 : LSR (immediate) : Rd0, Rm0, #0
+0x08000040 : LSL (immediate) : Rd5, Rm3, #8
+0x08000040 : LSR (immediate) : Rd0, Rm0, #0
+0x08000040 : LSL (immediate) : Rd5, Rm3, #8
+0x08000040 : LSR (immediate) : Rd0, Rm0, #0
+0x08000040 : LSL (immediate) : Rd5, Rm3, #8
+0x08000040 : LSR (immediate) : Rd0, Rm0, #0
+0x08000060 : LSL (immediate) : Rd5, Rm3, #8
+0x08000060 : LSR (immediate) : Rd0, Rm0, #0
+0x08000060 : LSL (immediate) : Rd5, Rm3, #8
+0x08000060 : LSR (immediate) : Rd0, Rm0, #0
+0x08000060 : LSL (immediate) : Rd5, Rm3, #8
+0x08000060 : LSR (immediate) : Rd0, Rm0, #0
+0x08000060 : LSL (immediate) : Rd5, Rm3, #8
+0x08000060 : LSR (immediate) : Rd0, Rm0, #0
+0x08000060 : LSL (immediate) : Rd5, Rm3, #8
+0x08000060 : LSR (immediate) : Rd0, Rm0, #0
+0x08000060 : LSL (immediate) : Rd5, Rm3, #8
+0x08000060 : LSR (immediate) : Rd0, Rm0, #0
+0x08000060 : LSL (immediate) : Rd5, Rm3, #8
+0x08000060 : LSR (immediate) : Rd0, Rm0, #0
+0x08000060 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x08000080 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x08000080 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x08000080 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x08000080 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x08000080 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x08000080 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x08000080 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x08000080 : LSL (immediate) : Rd5, Rm3, #8
+0x08000080 : LSR (immediate) : Rd0, Rm0, #0
+0x080000a0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000a0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000a0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000a0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000a0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000a0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000a0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000a0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000a0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000a0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000a0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000a0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000a0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000a0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000a0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000c0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000c0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000c0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000c0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000c0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000c0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000c0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000c0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000c0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000e0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000e0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000e0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000e0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000e0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000e0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000e0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000e0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000e0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000e0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000e0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000e0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000e0 : LSL (immediate) : Rd5, Rm3, #8
+0x080000e0 : LSR (immediate) : Rd0, Rm0, #0
+0x080000e0 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000100 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000100 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000100 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000100 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000100 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000100 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000100 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000100 : LSL (immediate) : Rd5, Rm3, #8
+0x08000100 : LSR (immediate) : Rd0, Rm0, #0
+0x08000120 : LSL (immediate) : Rd5, Rm3, #8
+0x08000120 : LSR (immediate) : Rd0, Rm0, #0
+0x08000120 : LSL (immediate) : Rd5, Rm3, #8
+0x08000120 : LSR (immediate) : Rd0, Rm0, #0
+0x08000120 : LSL (immediate) : Rd5, Rm3, #8
+0x08000120 : LSR (immediate) : Rd0, Rm0, #0
+0x08000120 : LSL (immediate) : Rd5, Rm3, #8
+0x08000120 : LSR (immediate) : Rd0, Rm0, #0
+0x08000120 : LSL (immediate) : Rd5, Rm3, #8
+0x08000120 : LDR (literal) : #5, Rt4
+0x08000120 : PUSH : 
+0x08000120 : CBNZ : Rn3, #6, 
+0x08000120 : LDRB (immediate) : Rt3, Rn4, #0
+0x08000120 : CBZ : Rn3, #2, 
+0x08000120 : LDR (literal) : #4, Rt3
+0x08000120 : 11110011101011110100100000000100 : UNDEFINED or UNPREDICTABLE
+0x08000140 : MOV (immediate) : Rd3, #1
+0x08000140 : STRH (immediate) : Rt0, Rn0, #0
+0x08000140 : POP : 
+0x08000140 : STRB (immediate) : Rt3, Rn4, #0
+0x08000140 : MOV (immediate) : Rd0, #0
+0x08000140 : LSL (immediate) : Rd4, Rm0, #0
+0x08000140 : LSL (immediate) : Rd0, Rm0, #0
+0x08000140 : LSL (immediate) : Rd0, Rm0, #0
+0x08000140 : LSR (immediate) : Rd0, Rm0, #0
+0x08000140 : LSL (immediate) : Rd0, Rm5, #9
+0x08000140 : LDR (literal) : #3, Rt3
+0x08000140 : PUSH : 
+0x08000140 : LDR (literal) : #3, Rt1
+0x08000140 : CBZ : Rn3, #3, 
+0x08000140 : 11110011101011110100100000000011 : UNDEFINED or UNPREDICTABLE
+0x08000160 : POP : 
+0x08000160 : STRH (immediate) : Rt0, Rn0, #0
+0x08000160 : LSL (immediate) : Rd0, Rm0, #0
+0x08000160 : LSL (immediate) : Rd0, Rm0, #0
+0x08000160 : MOV (immediate) : Rd0, #0
+0x08000160 : LSL (immediate) : Rd0, Rm1, #0
+0x08000160 : LSR (immediate) : Rd0, Rm0, #0
+0x08000160 : LSL (immediate) : Rd0, Rm5, #9
+0x08000160 : MOV (register) : Rd5, Rm0
+0x08000160 : LDR (literal) : #35, Rt0
+0x08000160 : STRH (immediate) : Rt0, Rn0, #0
+0x08000160 : 11110011101011110100100100100011 : UNDEFINED or UNPREDICTABLE
+0x08000160 : LDR (literal) : #34, Rt0
+0x08000180 : MOV (immediate) : Rd3, #0
+0x08000180 : LDR (literal) : #35, Rt2
+0x08000180 : LDR (register) : Rt4, Rn2, Rm3
+0x08000180 : B : #2
+0x08000180 : ADD (immediate) : Rd3, #4
+0x08000180 : STR (register) : Rt4, Rn0, Rm3
+0x08000180 : CMP (register) : Rm1, Rn4
+0x08000180 : ADD (register) : Rd4, Rn0, Rm3
+0x08000180 : LDR (literal) : #32, Rt2
+0x08000180 : B : #249, 
+0x08000180 : MOV (immediate) : Rd3, #0
+0x08000180 : LDR (literal) : #32, Rt4
+0x08000180 : STR (immediate) : Rt3, Rn2, #0
+0x08000180 : B : #1
+0x08000180 : CMP (register) : Rm4, Rn2
+0x08000180 : ADD (immediate) : Rd2, #4
+0x08000180 : BL : #0, #0, 
+0x08000180 : BL : #0, #0, 
+0x080001a0 : LDR (literal) : #28, Rt0
+0x08000180 : 11111000000111100000000100000001 : UNDEFINED or UNPREDICTABLE
+0x08000180 : MOV (immediate) : #4, Rd3, #4, 
+0x080001a0 : LDR (immediate) : Rt2, Rn0, #0
+0x080001a0 : LDR (literal) : #26, Rt0
+0x080001a0 : STR (immediate) : Rt1, Rn0, #0
+0x080001a0 : STR (immediate) : Rt0, Rn0, #6
+0x080001a0 : MOV (immediate) : #4, Rd3, #4, 
+0x080001a0 : LDR (immediate) : Rt2, Rn0, #0
+0x080001c0 : BX : Rm14
+0x080001c0 : STR (immediate) : Rt1, Rn0, #0
+0x080001a0 : MOV (immediate) : #4, Rd8, #4, 
+0x080001c0 : LDR (immediate) : Rt2, Rn0, #0
+0x080001c0 : LSL (immediate) : Rd0, Rm4, #4
+0x080001c0 : STR (immediate) : Rt1, Rn0, #0
+0x080001c0 : ORRS (register) : Rm2, Rd1
+0x080001c0 : LDR (literal) : #20, Rt0
+0x080001c0 : BX : Rm14
+0x080001c0 : LSL (immediate) : Rd0, Rm4, #4
+0x080001c0 : MVN (immediate) : #4, Rd0, #4, 
+0x080001c0 : LDR (immediate) : Rt2, Rn0, #0
+0x080001c0 : BX : Rm14
+0x080001c0 : STR (immediate) : Rt1, Rn0, #0
+0x080001c0 : B : #253, 
+0x080001e0 : SUB (immediate) : Rd0, #1
+0x080001c0 : 11110111111111110100011101110000 : UNDEFINED or UNPREDICTABLE
+0x080001c0 : BL : #1023, #1023, 
+0x080001e0 : LDR (literal) : #14, Rt0
+0x080001c0 : 11111111111010111111011111111111 : UNDEFINED or UNPREDICTABLE
+0x080001e0 : LDR (immediate) : Rt0, Rn0, #0
+0x080001e0 : BL : #1023, #1023, 
+0x080001e0 : LDR (literal) : #11, Rt0
+0x080001e0 : 11111111111011001111011111111111 : UNDEFINED or UNPREDICTABLE
+0x080001e0 : LDR (immediate) : Rt0, Rn0, #0
+0x08000200 : B : #2034
+0x080001e0 : 11111111111011110010000000000001 : UNDEFINED or UNPREDICTABLE
+0x08000200 : Bitwise AND : Rm0, Rd0
+0x08000200 : MOV (immediate) : Rd0, #0
+0x08000200 : LSL (immediate) : Rd0, Rm0, #0
+0x08000200 : MOV (immediate) : Rd0, #0
+0x08000200 : LSL (immediate) : Rd4, Rm0, #0
+0x08000200 : LSR (immediate) : Rd0, Rm0, #0
+0x08000200 : LSL (immediate) : Rd0, Rm1, #10
+0x08000200 : MOV (immediate) : Rd0, #0
+0x08000200 : LSL (immediate) : Rd4, Rm0, #0
+0x08000200 : MOV (immediate) : Rd0, #0
+0x08000200 : LSL (immediate) : Rd0, Rm4, #0
+0x08000200 : Bitwise AND : Rm0, Rd2
+0x08000200 : SUB (immediate) : Rd0, #28
+0x08000200 : Bitwise AND : Rm0, Rd2
+0x08000220 : LSL (immediate) : Rd0, Rm0, #0
+0x08000220 : Bitwise AND : Rm0, Rd2
+0x08000220 : LSL (immediate) : Rd4, Rm2, #0
+0x08000220 : MOV (immediate) : Rd0, #0
+0x08000220 : LSL (immediate) : Rd0, Rm0, #0
+0x08000220 : LSL (immediate) : Rd0, Rm0, #0
+0x08000220 : B : #2046
+0x08000220 : MOV (immediate) : Rd6, #0
+0x08000220 : PUSH : 
+0x08000220 : LDR (literal) : #13, Rt4
+0x08000220 : LDR (literal) : #12, Rt5
+0x08000220 : ASR (immediate) : Rd4, Rm4, #2
+0x08000220 : SUB (register) : Rd4, Rn4, Rm5
+0x08000220 : B : #9, 
+0x08000220 : CMP (register) : Rm4, Rn6
+0x08000220 : PLD (register) : tb0, shift:0, tb0, shift:0, 
+0x08000240 : LDR (literal) : #10, Rt5
+0x08000240 : MOV (immediate) : Rd6, #0
+0x08000240 : SUB (register) : Rd4, Rn4, Rm5
+0x08000240 : LDR (literal) : #10, Rt4
+0x08000240 : CMP (register) : Rm4, Rn6
+0x08000240 : ASR (immediate) : Rd4, Rm4, #2
+0x08000240 : POP : 
+0x08000240 : B : #5, 
+0x08000240 : SUB (immediate) : Rd3, #4
+0x08000240 : 11111000010101010011011000000001 : UNDEFINED or UNPREDICTABLE
+0x08000240 : BLX : Rm3
+0x08000240 : 11111000010101011110011111101110 : UNDEFINED or UNPREDICTABLE
+0x08000240 : BLX : Rm3
+0x08000260 : SUB (immediate) : Rd3, #4
+0x08000260 : B : #2034
+0x08000260 : ADD (immediate) : Rd6, #1
+0x08000260 : LSR (immediate) : Rd0, Rm0, #0
+0x08000260 : LSL (immediate) : Rd0, Rm0, #10
+0x08000260 : LSR (immediate) : Rd0, Rm0, #0
+0x08000260 : LSL (immediate) : Rd0, Rm0, #10
+0x08000260 : LSR (immediate) : Rd0, Rm0, #0
+0x08000260 : LSL (immediate) : Rd0, Rm0, #10
+0x08000260 : LSR (immediate) : Rd0, Rm0, #0
+0x08000260 : LSL (immediate) : Rd4, Rm0, #10
+0x08000260 : NOP : 
+0x08000260 : PUSH : 
+0x08000260 : POP : 
+0x08000260 : POP : 
+0x08000280 : BX : Rm14
+0x08000280 : MOV (register) : Rd6, Rm3
+0x08000280 : NOP : 
+0x08000280 : PUSH : 
+0x08000280 : POP : 
+0x08000280 : POP : 
+0x08000280 : BX : Rm14
+0x08000280 : MOV (register) : Rd6, Rm3
+0x08000280 : LSR (immediate) : Rd0, Rm0, #0
+0x08000280 : LSL (immediate) : Rd1, Rm1, #5
+0x08000280 : LSR (immediate) : Rd0, Rm0, #0
+0x08000280 : LSL (immediate) : Rd5, Rm4, #4
+0x08000280 : LSL (immediate) : Rd5, Rm0, #0
+0x08000280 : STRB(register) : Rt4, Rn7, Rm4
+0x08000280 : LSL (immediate) : Rd0, Rm0, #0
+0x08000280 : LSL (immediate) : Rd0, Rm0, #0
+0x08000280 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002a0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002c0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x080002e0 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : LSL (immediate) : Rd0, Rm0, #0
+0x08000300 : SUB (register) : Rn4, #4, Rd6, #0, type:2, Rn4, 
+0x08000300 : ORR (register) : Rn0, #0, Rd4, #0, type:0, Rn0, 
+0x08000300 : B : #1950
+0x08000300 : Bitwise AND : Rm0, Rd3
+0x08000300 : LSL (immediate) : Rd0, Rm4, #28
+0x08000300 : BL : #449, #449, 
+0x08000320 : LSL (register) : Rm1, Rd3
+0x08000300 : ORR (register) : Rn12, #7, Rd12, #0, type:0, Rn12, 
+0x08000300 : 11111010001001010000110000000011 : UNDEFINED or UNPREDICTABLE
+0x08000300 : 11101010010011111111101000000111 : UNDEFINED or UNPREDICTABLE
+0x08000320 : 11111011101110100100100100011100 : UNDEFINED or UNPREDICTABLE
+0x08000320 : 11111010001000001111100011111001 : UNDEFINED or UNPREDICTABLE
+0x08000320 : MUL : Rn9, Rd3, Rn9, 
+0x08000320 : LSL (register) : Rm1, Rd5
+0x08000320 : ADD (SP plus immediate) : #24, Rd2
+0x08000320 : MCR : opc1:4CRm 12, Rt15, coproc:10, opc2:0opc1:4
+0x08000320 : 11111010000000000100001100011101 : UNDEFINED or UNPREDICTABLE
+0x08000320 : MUL : Rn8, Rd3, Rn8, 
+0x08000340 : LSR (immediate) : Rd4, Rm5, #16
+0x08000320 : AND (immediate) : Rn14, #4, Rd4, Rn14, 
+0x08000340 : ORR (register) : Rn4, #7, Rd10, #0, type:0, Rn4, 
+0x08000340 : CMP (register) : Rm4, Rn0
+0x08000340 : B : #11, 
+0x08000340 : ADR : #0, Rd4, #0, 
+0x08000340 : ADD (register) : Rn12, #3, Rd10, #3, type:3, Rn12, 
+0x08000340 : B : cond:4, #8, cond:4, 
+0x08000340 : BL : #128, #128, 
+0x08000360 : CMP (register) : Rm4, Rn0
+0x08000340 : B : cond:6, #40, cond:6, 
+0x08000360 : ADD (register) : Rm4, Rd4
+0x08000360 : LSR (immediate) : Rd2, Rm0, #0
+0x08000360 : 11111011101101000001101000100100 : UNDEFINED or UNPREDICTABLE
+0x08000360 : 11111011000010011111000011111001 : UNDEFINED or UNPREDICTABLE
+0x08000360 : MLS : Rn0, Rd4, Rn0, 
+0x08000380 : UXTH : Rd5, Rm5
+0x08000360 : CDP : opc1:0CRm 14, CRd4, coproc:4, opc2:0opc1:0
+0x08000360 : ORR (register) : Rn5, #5, Rd9, #0, type:0, Rn5, 
+0x08000380 : CMP (register) : Rn4, Rm6
+0x08000380 : LSL (immediate) : Rd4, Rm0, #16
+0x08000360 : ADD (register) : Rn12, #3, Rd5, #3, type:3, Rn12, 
+0x08000380 : ADD (immediate) : Rn0, #4, Rd5, Rn0, 
+0x08000380 : B : #108, 
+0x08000380 : SUB (immediate) : Rd0, #2
+0x08000380 : B : #106, 
+0x08000380 : ORR (register) : Rn0, #4, Rd4, #1, type:2, Rn0, 
+0x08000380 : UMULL : Rn0, Rd4, RdLo:4Rd0, RdHi:0Rn0, 
+0x08000380 : SUB (register) : Rn4, #1, Rd5, #0, type:0, Rn4, 
+0x080003a0 : CMP (register) : Rm5, Rn4
+0x080003a0 : LSL (immediate) : Rd6, Rm1, #16
+0x080003a0 : MOV (register) : Rd6, Rm5
+0x080003a0 : MOV (register) : Rd0, Rm1
+0x080003a0 : B : #83, 
+0x080003a0 : B : #86, 
+0x080003a0 : B : #105, 
+0x080003a0 : CMP (immediate) : Rn6, #0
+0x080003a0 : LSL (immediate) : Rd0, Rm1, #8
+0x080003a0 : SUB (register) : Rn3, #0, Rd4, #0, type:0, Rn3, 
+0x080003a0 : SBC (register) : Rn4, #7, Rd3, #0, type:0, Rn4, 
+0x080003a0 : LSR (register) : Rn2, Rd14, Rn2, 
+0x080003a0 : 11111010000001000100000011001100 : UNDEFINED or UNPREDICTABLE
+0x080003c0 : ORRS (register) : Rm3, Rd7
+0x080003c0 : STRB (immediate) : Rt0, Rn0, #16
+0x080003a0 : STRD (immediate) : Rn6, Rt14, Rt7, Rt2 7, Rn6, 
+0x080003c0 : MOV (immediate) : Rd1, #0
+0x080003c0 : 11111100000000101111101000001100 : UNDEFINED or UNPREDICTABLE
+0x080003c0 : LSL (immediate) : Rd0, Rm4, #4
+0x080003c0 : BL : #450, #450, 
+0x080003c0 : 11111010001001010100011100011100 : UNDEFINED or UNPREDICTABLE
+0x080003c0 : 11101010010011111111000100000001 : UNDEFINED or UNPREDICTABLE
+0x080003c0 : 11111010001000000100001100001101 : UNDEFINED or UNPREDICTABLE
+0x080003e0 : LSL (register) : Rm2, Rd5
+0x080003c0 : BL : #503, #503, 
+0x080003e0 : ADD (immediate) : Rd3, #17
+0x080003e0 : MUL : Rn7, Rd14, Rn7, 
+0x080003e0 : 11111010000111111110101001000000 : UNDEFINED or UNPREDICTABLE
+0x080003e0 : LSR (immediate) : Rd0, Rm5, #16
+0x080003e0 : MLA : Rn1, Rd0, Rn1, 
+0x00000000 : CMP (register) : Rm0, Rn3
+0x080003e0 : BL : #782, #782, 
+0x080003e0 : 11111010000001001110101100011100 : UNDEFINED or UNPREDICTABLE
