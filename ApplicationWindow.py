@@ -109,7 +109,7 @@ class MainWindow(object):
         self.about = About(self.language)
         self.about.exec_()
 
-    # Fonction permettant d'ouvrir la fenêtre "Fonctionnement"
+    # Fonction permettant d'ouvrir la fenêtre "Conversion d'une instruction simple"
     def SConversionWindow(self):
         self.SConversion = SConversion(self.language)
         self.SConversion.setupUi()
@@ -161,8 +161,7 @@ class MainWindow(object):
     def download_hex_file(self):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
-        file_name, _ = QFileDialog.getOpenFileName(None, "Sélectionner un fichier .srec", "",
-                                                   "Fichiers .srec (*.srec);;Tous les fichiers ()", options=options)
+        file_name, _ = QFileDialog.getOpenFileName(None, "Sélectionner un fichier .srec", "", "Fichiers .srec (*.srec);;Tous les fichiers ()", options=options)
         if file_name:
             hex_name = os.path.basename(file_name).rpartition(".")[0]
             newHexName = hex_name + "_assembly.txt"
@@ -186,8 +185,7 @@ class MainWindow(object):
     def download_assembly_file(self):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
-        file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.txt", self.selected_hex_file,
-                                                   "Tous les fichiers ()", options=options)
+        file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.txt", self.selected_hex_file, "Tous les fichiers ()", options=options)
         if file_name:
             with open(resource_path("ConversionFiles\\Assembly.txt"), "r") as f:
                 assembly_code = f.read()
@@ -308,7 +306,7 @@ class MainWindow(object):
         icon = QIcon(resource_path("graphicResources\\TemporaryIcon.ico"))
         ConverterWindow.setWindowIcon(icon)
 
-        # Paramètres de polices utilisées
+        # Initialisation de polices utilisées
         font = QtGui.QFont()
         font.setPointSize(15)
         font2 = QtGui.QFont()
@@ -741,7 +739,7 @@ class MainWindow(object):
         elif self.language == "en_EN":
             self.actionEnglish.setChecked(True)
 
-        # Partie connection aux actions quand clic
+        # Partie connexion aux actions quand clic de l'utilisateur
         self.button_group.buttonClicked.connect(self.store_selection)
         self.convertButton.clicked.connect(self.translate)
         self.DownloadHexButton.clicked.connect(self.download_hex_file)
