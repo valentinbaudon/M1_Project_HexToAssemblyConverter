@@ -1,0 +1,747 @@
+{
+	"00000" : {
+				"instruction" : "LSL (immediate)",
+				"meaning" : "Logical Shift Left (immediate)",
+				"fields" : {
+					"Rd" : [2,0],
+					"Rm" : [5,3],
+					"imm5" : [10,6]
+				}
+	},
+
+	"00001" : {
+				"instruction" : "LSR (immediate)",
+				"meaning" : "Logical Shift Right (immediate)",
+				"fields" : {
+							"Rd" : [2,0],
+							"Rm" : [5,3],
+							"imm5" : [10,6]
+							}
+	},
+
+	"00010" : {
+				"instruction" : "ASR (immediate)",
+				"meaning" : "Arithmetic Shift Right (immediate)",
+				"fields" : {
+							"Rd" : [2,0],
+							"Rm" : [5,3],
+							"imm5" : [10,6]
+							}
+				},
+
+	"0001100" : {
+			    "instruction" : "ADD (register)",
+				"meaning" : "Add a register value",
+				"fields" : {
+							"Rd" : [2,0],
+							"Rn" : [5,3],
+							"Rm" : [8,6]
+							}
+				},
+
+	"0001101" : {
+		    	"instruction" : "SUB (register)",
+				"meaning" : "Subtract a register value",
+				"fields" : {
+							"Rd" : [2,0],
+							"Rn" : [5,3],
+							"Rm" : [8,6]
+							}
+				},
+
+	"0001110"  : {
+			    "instruction" : "ADD (immediate)",
+				"meaning" : "Add immediate value to a register value",
+				"fields" : {
+							"Rd" : [2,0],
+							"Rn" : [5,3],
+							"Rm" : [8,6]
+							}
+				},
+
+	"0001111"  : {
+			    "instruction" : "SUB (immediate)",
+				"meaning" : "SUB immediate value to a register value",
+				"fields" : {
+							"Rd" : [2,0],
+							"Rn" : [5,3],
+							"Rm" : [8,6]
+							}
+				},
+
+	"00100"  : {
+				"instruction" : "MOV (immediate)",
+				"meaning" : "Move immediate value to a register",
+				"fields" : {
+							"Rd" : [10,8],
+							"imm8" : [7,0]
+							}
+				},
+
+	"00101"  : {
+				"instruction" : "CMP (immediate)",
+				"meaning" : "Compare immediate value from a register value",
+				"fields" : {
+							"Rn" : [10,8],
+							"imm8" : [7,0]
+							}
+				},
+
+	"00110" : {
+			    "instruction" : "ADD (immediate)",
+				"meaning" : "Add immediate value to a register value",
+				"fields" : {
+							"Rdn" : [10,8],
+							"imm8" : [7,0]
+							}
+				},
+
+	"00111" : {
+			    "instruction" : "SUB (immediate)",
+				"meaning" : "Sub immediate value to a register value",
+				"fields" : {
+							"Rdn" : [10,8],
+							"imm8" : [7,0]
+							}
+				},
+
+	"0100000000" : {
+			    "instruction" : "Bitwise AND",
+				"meaning" : "Bitwise AND",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+	"0100000001" : {
+			    "instruction" : "Exclusive OR Registers",
+				"meaning" : "Exclusive OR ",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+
+	"0100000010" : {
+				"instruction" : "LSL (register)",
+				"meaning" : "Logical Shift Left (register) ",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+	"0100000011" : {
+				"instruction" : "LSR (register)",
+				"meaning" : "Logical Shift Right (register) ",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+	"0100000100" : {
+				"instruction" : "ASR (register)",
+				"meaning" : "Arithmetic Shift Right (register) ",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+	"0100000101" : {
+				"instruction" : "ADC (register)",
+				"meaning" : "Add with carry (register) ",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+	"0100000110" : {
+				"instruction" : "SBC (register)",
+				"meaning" : "Subtract with carry (register) ",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+
+	"0100000111" : {
+				"instruction" : "ROR (register)",
+				"meaning" : "Rotate Right (register) provides the value of the contents of a register rotated by a variable number of bits",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+	"0100001000" : {
+				"instruction" : "TST (register)",
+				"meaning" : "Set flags on bitwise AND ",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rn" : [2,0]
+							}
+				},
+
+	"0100001001" : {
+				"instruction" : "RSB (immediate)",
+				"meaning" : "Reverse Subtract (immediate) subtracts a register value from an immediate value",
+				"fields" : {
+							"Rd" : [2,0],
+							"Rn" : [5,3]
+							}
+				},
+
+	"0100001010" : {
+				"instruction" : "CMP (register)",
+				"meaning" : "Compare substracts a register value from a register value",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rn" : [2,0]
+							}
+				},
+
+	"0100001011" : {
+				"instruction" : "CMN (register)",
+				"meaning" : "Compare negative adds a register value from a register",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rn" : [2,0]
+							}
+				},
+
+	"0100001100" : {
+				"instruction" : "ORRS (register)",
+				"meaning" : "Logical OR bitwise (inclusive) OR between register values ",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+	"0100001101" : {
+				"instruction" : "MUL",
+				"meaning" : "multiply two register values ",
+				"fields" : {
+							"Rn" : [5,3],
+							"Rdm" : [2,0]
+							}
+				},
+
+	"0100001110" : {
+				"instruction" : "BIC (register)",
+				"meaning" : "Bit clear performs a bitwise AND of a register value and the complement of a register value",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+							}
+				},
+
+
+	"0100001111" : {
+				"instruction" : "MVN (register)",
+				"meaning" : "Bitwise NOT writes the bitwise inverse of a register value to the destination register",
+				"fields" : {
+							"Rm" : [5,3],
+							"Rd" : [2,0]
+							}
+	},
+
+	"01000100" : {
+				"instruction" : "ADD (register)",
+				"meaning" : "",
+				"fields" : {
+							"DN" : [7,7],
+							"Rm" : [5,3],
+							"Rdn" : [2,0]
+				}
+	},
+
+	"0100010101" : {
+				"instruction" : "CMP (register)",
+				"meaning" : "Compare substract register value from register value",
+				"fields" : {
+							"N" : [7,7],
+							"Rn" : [5,3],
+							"Rm" : [2,0]
+							}
+	},
+
+	"010001011" : {
+				"instruction" : "CMP (register)",
+				"meaning" : "Compare substract register value from register value",
+				"fields" : {
+							"N" : [7,7],
+							"Rn" : [5,3],
+							"Rm" : [2,0]
+							}
+	},
+
+	"0000000000" : {
+				"instruction" : "MOV (register)",
+				"meaning" : "Move copies a value from a register to the destination register",
+				"fields" : {
+							"Rd" : [2,0],
+							"Rm" : [5,3]
+							}
+	},
+
+	"01000110":
+				{
+				"instruction" : "MOV (register)",
+				"meaning" : "Move copies a value from a register to the destination register",
+				"fields" : {
+							"D" : [7,7],
+							"Rd" : [2,0],
+							"Rm" : [5,3]
+							}
+	},
+
+
+	"010001110": {
+				"instruction" : "BX",
+				"meaning" : "Branch and Exchange",
+				"fields" : {
+							"Rm" : [6,3]
+							}
+	},
+
+	"010001111": {
+				"instruction" : "BLX",
+				"meaning" : "Branch with Link and Exchange",
+				"fields" : {
+							"Rm" : [6,3]
+							}
+	},
+
+	"01001" : {
+				"instruction" : "LDR (literal)",
+				"meaning" : "loads a word from memory and writes it to a register",
+				"fields" : {
+							"imm8" : [7,0],
+							"Rt" : [10,8]
+							}
+	},
+
+	"0101000" : {
+				"instruction": "STR (register)",
+				"meaning": "Store Register calculates and address from a base register, stores a word",
+				"fields": {
+							"Rt": [2,0],
+							"Rn": [5,3],
+							"Rm": [8,6]
+				}
+	},
+
+	"0101001" : {
+				"instruction": "STRH (register)",
+				"meaning": "Store Register Halfword",
+				"fields": {
+							"Rt": [2,0],
+							"Rn": [5,3],
+							"Rm": [8,6]
+				}
+	},
+
+	"0101010" : {
+				"instruction": "STRB(register)",
+				"meaning": "Store Register Byte",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"Rm": [8,6]
+				}
+	},
+
+	"0101011" : {
+				"instruction": "LDRSB (register)",
+				"meaning": "Load Register Signed Byte (register)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"Rm": [8,6]
+				}
+	},
+
+	"0101100" : {
+				"instruction": "LDR (register)",
+				"meaning": "Load Register (register)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"Rm": [8,6]
+				}
+	},
+
+	"0101101" : {
+				"instruction": "LDRH (register)",
+				"meaning": "Load Register Halfword (register)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"Rm": [8,6]
+				}
+	},
+
+	"0101110" : {
+				"instruction": "LDRB (register)",
+				"meaning": "Load Register Byte (register)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"Rm": [8,6]
+				}
+	},
+
+	"0101111" : {
+				"instruction": "LDRSH (register)",
+				"meaning": "Load Register Signed Halfword (register)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"Rm": [8,6]
+				}
+	},
+
+	"01100" : {
+				"instruction": "STR (immediate)",
+				"meaning": "Store Register (immediate)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"imm5": [10,6]
+				}
+	},
+
+	"01101" : {
+				"instruction": "LDR (immediate)",
+				"meaning": "Load Register (immediate)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"imm5": [10,6]
+				}
+	},
+
+	"01110" : {
+				"instruction": "STRB (immediate)",
+				"meaning": "Store Register Byte (immediate)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"imm5": [10,6]
+				}
+	},
+
+	"01111" : {
+				"instruction": "LDRB (immediate)",
+				"meaning": "Load Register Byte (immediate)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"imm5": [10,6]
+				}
+	},
+
+	"10000" : {
+				"instruction": "STRH (immediate)",
+				"meaning": "Store Register Halfword (immediate)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"imm5": [10,6]
+				}
+	},
+
+	"10001" : {
+				"instruction": "LDRH (immediate)",
+				"meaning": "Load Register Halfword (immediate)",
+				"fields": {
+					"Rt": [2,0],
+					"Rn": [5,3],
+					"imm5": [10,6]
+				}
+	},
+
+	"10010" : {
+				"instruction": "STR (immediate)",
+				"meaning": "Store Register SP relative (immediate)",
+				"fields": {
+					"imm8": [7,0],
+					"Rt": [10,8]
+				}
+	},
+
+	"10011" : {
+				"instruction": "LDR (immediate)",
+				"meaning": "Load Register SP relative (immediate)",
+				"fields": {
+					"imm8": [7,0],
+					"Rt": [10,8]
+				}
+	},
+
+	"10100" : {
+				"instruction": "ADR",
+				"meaning": "Address to Register adds an immediate value to the PC value",
+				"fields": {
+					"imm8": [7,0],
+					"Rd": [10,8]
+				}
+	},
+
+	"10101" : {
+				"instruction": "ADD (SP plus immediate)",
+				"meaning": "ADD (SP plus immediate) adds an immediate value to the SP value",
+				"fields": {
+					"imm8": [7,0],
+					"Rd": [10,8]
+				}
+	},
+
+	"10110110011" : {
+				"instruction": "CPS",
+				"meaning": "Change Processor State",
+				"fields": {
+					"F": [0,0],
+					"I": [1,1],
+					"im": [4,4]
+				}
+	},
+
+	"101100000" : {
+				"instruction": "ADD (SP plus immediate)",
+				"meaning": "ADD (SP plus immediate) adds an immediate value to the SP value",
+				"fields": {
+					"imm7": [6,0]
+				}
+	},
+
+	"101100001" : {
+				"instruction": "SUB (SP minus immediate)",
+				"meaning": "Subtract (SP minus immediate) subtracts an immediate value from the SP value",
+				"fields": {
+					"imm7": [6,0]
+				}
+	},
+
+	"10110001" : {
+				"instruction": "CBZ",
+				"meaning": "Compare and Branch on Zero compares the value in a register with zero, and conditionally branches forward a constant value",
+				"fields": {
+					"Rn": [2,0],
+					"imm5": [7,3],
+					"i": [9,9],
+					"op": [11, 11]
+				}
+	},
+
+	"10110011" : {
+				"instruction": "CBZ",
+				"meaning": "Compare and Branch on Zero compares the value in a register with zero, and conditionally branches forward a constant value",
+				"fields": {
+					"Rn": [2,0],
+					"imm5": [7,3],
+					"i": [9,9],
+					"op": [11, 11]
+				}
+	},
+
+	"10111001" : {
+				"instruction": "CBNZ",
+				"meaning": "Compare and Branch on Non-Zero compares the value in a register with zero, and conditionally branches forward a constant value",
+				"fields": {
+					"Rn": [2,0],
+					"imm5": [7,3],
+					"i": [9,9],
+					"op": [11, 11]
+				}
+	},
+
+	"10111011" : {
+				"instruction": "CBNZ",
+				"meaning": "Compare and Branch on Non-Zero compares the value in a register with zero, and conditionally branches forward a constant value",
+				"fields": {
+					"Rn": [2,0],
+					"imm5": [7,3],
+					"i": [9,9],
+					"op": [11, 11]
+				}
+	},
+
+	"1011001000" : {
+				"instruction": "SXTH",
+				"meaning": "Signed Extend Halfword extracts a 16-bit value from a register, sign extends it to 32 bits, and writes the result to the destination register",
+				"fields": {
+					"Rd": [2,0],
+					"Rm": [5,3]
+				}
+	},
+
+	"1011001001" : {
+				"instruction": "SXTB",
+				"meaning": "Signed Extend Byte extracts a 8-bit value from a register, sign extends it to 32 bits, and writes the result to the destination register",
+				"fields": {
+					"Rd": [2,0],
+					"Rm": [5,3]
+				}
+	},
+
+	"1011001010" : {
+				"instruction": "UXTH",
+				"meaning": "Unsigned Extend Halfword extracts a 16-bit value from a register, zero extends it to 32 bits, and writes the result to the destination register",
+				"fields": {
+					"Rd": [2,0],
+					"Rm": [5,3]
+				}
+	},
+
+	"1011001011" : {
+				"instruction": "UXTB",
+				"meaning": "Unsigned Extend Byte extracts a 8-bit value from a register, zero extends it to 32 bits, and writes the result to the destination register",
+				"fields": {
+					"Rd": [2,0],
+					"Rm": [5,3]
+				}
+	},
+
+	"1011010" : {
+				"instruction": "PUSH",
+				"meaning": "Push Multiple Registers stores a subset, or possibly all, of the general-purpose registers R0-R12 and the LR to the stack",
+				"fields": {
+					"register_list": [7,0],
+					"M": [8,8]
+				}
+	},
+
+	"1011101000" : {
+				"instruction": "REV",
+				"meaning": "Byte-Reverse Word reverses the byte order in a 32-bit register",
+				"fields": {
+					"Rd": [2,0],
+					"Rm": [5,3]
+				}
+	},
+
+	"1011101001" : {
+				"instruction": "REV16",
+				"meaning": "Byte-Reverse Packed Halfword reverses the byte order in each 16-bit halfword of a 32-bit register",
+				"fields": {
+					"Rd": [2,0],
+					"Rm": [5,3]
+				}
+	},
+
+	"1011101011" : {
+				"instruction": "REVSH",
+				"meaning": "Byte-Reverse Signed Halfword reverses the byte order in the lower 16-bit halfword of a 32-bit register, and sign extends the result to 32 bits",
+				"fields": {
+					"Rd": [2,0],
+					"Rm": [5,3]
+				}
+	},
+
+	"1011110" : {
+				"instruction": "POP",
+				"meaning": "Pop Multiple Registers loads a subset, or possibly all, of the general-purpose registers R0-R12 and the PC or the LR from the stack",
+				"fields": {
+					"register_list": [7,0],
+					"P": [8,8]
+				}
+	},
+
+	"10111110" : {
+				"instruction": "BKPT",
+				"meaning": "Breakpoint causes a DebugMonitor exception or a debug halt to occur depending on the configuration of the debug support",
+				"fields": {
+					"imm8": [7,0]
+				}
+	},
+
+	"10111111" : {
+				"instruction": "IT",
+				"meaning": "If Then",
+				"fields": {
+					"mask": [3,0],
+					"firstcond": [7,4]
+				}
+	},
+
+	"1011111100000000" : {
+				"instruction": "NOP",
+				"meaning": "No Operation"
+	},
+
+	"1011111100010000" : {
+				"instruction": "YIELD",
+				"meaning": "YIELD allows software with a multithreading capability to indicate to the hardware that it is performing a task"
+	},
+
+	"1011111100100000" : {
+				"instruction": "WFE",
+				"meaning": "Wait For Event. If the Event Register is clear, it suspends execution in the lowest power state available consistent with a fast wakeup without the need for software restoration, until a reset, exception or other event occurs"
+	},
+
+	"1011111100110000" : {
+				"instruction": "WFI",
+				"meaning": "Waiting For Interrupt suspends execution, in the lowest power state available consistent with a fast wakeup without the need for software restoration, until a reset, asynchronous exception or other event occurs."
+	},
+
+	"1011111101000000" : {
+				"instruction": "SEV",
+				"meaning": "Send Event. It causes an event to be signaled to all CPUs within the multiprocessor system"
+	},
+
+	"11011110" : {
+				"instruction": "Permanently UNDEFINED",
+				"meaning": "Permanently UNDEFINED"
+	},
+
+	"11011111" : {
+				"instruction": "SVC",
+				"meaning": "Supervisor Call",
+				"fields": {
+					"imm8": [7,0]
+				}
+	},
+
+	"11000" : {
+				"instruction": "STM, STMIA, STMEA",
+				"meaning": "Store Multiple stores multiple registers to consecutive memory locations using an address from a base register",
+				"fields": {
+					"register_list": [7,0],
+					"Rn": [10,8]
+				}
+	},
+
+	"11001" : {
+				"instruction": "LDM, LDMIA, LDMFD",
+				"meaning": "Load Multiple loads multiple registers from consecutive memory locations using an address from a base register",
+				"fields": {
+					"register_list": [7,0],
+					"Rn": [10,8]
+				}
+	},
+
+	"1101" : {
+				"instruction": "B",
+				"meaning": "Branch",
+				"fields": {
+					"imm8": [7,0],
+					"cond": [11,8]
+				}
+	},
+
+	"11100" : {
+				"instruction": "B",
+				"meaning": "Branch",
+				"fields": {
+					"imm11": [10,0]
+				}
+	}
+}
