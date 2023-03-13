@@ -1,3 +1,7 @@
+# Projet M1
+# Valentin Baudon et Hugo Merle
+# ISEN Nantes
+
 from ApplicationWindow import *
 
 

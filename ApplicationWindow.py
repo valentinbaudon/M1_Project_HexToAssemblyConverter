@@ -1,3 +1,7 @@
+# Projet M1
+# Valentin Baudon et Hugo Merle
+# ISEN Nantes
+
 import csv
 import os
 import time
