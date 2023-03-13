@@ -189,7 +189,7 @@ class SConversion(QDialog):
         font5.setPointSize(18)
 
         # paramètres généraux de la fenêtre
-        self.setWindowTitle("Conversion d'une seule instruction simple")
+        self.setWindowTitle(self.JSON_lang["SC_Title"])
         self.resize(835, 544)
         self.setFixedSize(835, 544)
         icon = QIcon(resource_path("graphicResources\\TemporaryIcon.ico"))
