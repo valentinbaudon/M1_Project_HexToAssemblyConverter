@@ -1,5 +1,5 @@
 # Projet M1
-# Valentin Baudon et Hugo Merle
+# Valentin BAUDON et Hugo MERLE
 # ISEN Nantes
 
 import json
