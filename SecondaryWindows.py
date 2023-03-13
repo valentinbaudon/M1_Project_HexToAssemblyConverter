@@ -31,7 +31,7 @@ class Functionning(QDialog):
         self.setWindowTitle(self.JSON_lang["TitleFonctionnement"])
         self.resize(700, 520)
         self.setFixedSize(700, 520)
-        icon = QIcon(resource_path("graphicResources\\TemporaryIcon.ico"))
+        icon = QIcon(resource_path("graphicResources/ApplicationIcon.ico"))
         self.setWindowIcon(icon)
 
         # initialisation des attributs de la classe
@@ -63,7 +63,7 @@ class About(QDialog):
         self.setWindowTitle(self.JSON_lang["actionAbout"])
         self.resize(650, 520)
         self.setFixedSize(650, 520)
-        icon = QIcon(resource_path("graphicResources\\TemporaryIcon.ico"))
+        icon = QIcon(resource_path("graphicResources/ApplicationIcon.ico"))
         self.setWindowIcon(icon)
 
         # initialisation des attributs de la classe
@@ -192,7 +192,7 @@ class SConversion(QDialog):
         self.setWindowTitle(self.JSON_lang["SC_Title"])
         self.resize(835, 544)
         self.setFixedSize(835, 544)
-        icon = QIcon(resource_path("graphicResources\\TemporaryIcon.ico"))
+        icon = QIcon(resource_path("graphicResources/ApplicationIcon.ico"))
         self.setWindowIcon(icon)
 
         # Layout global

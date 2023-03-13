@@ -303,7 +303,7 @@ class MainWindow(object):
         ConverterWindow.setObjectName("HexaToAssemblyConverter")
         ConverterWindow.resize(1216, 842)
         ConverterWindow.setWindowState(QtCore.Qt.WindowMaximized)
-        icon = QIcon(resource_path("graphicResources\\TemporaryIcon.ico"))
+        icon = QIcon(resource_path("graphicResources/ApplicationIcon.ico"))
         ConverterWindow.setWindowIcon(icon)
 
         # Initialisation de polices utilisées

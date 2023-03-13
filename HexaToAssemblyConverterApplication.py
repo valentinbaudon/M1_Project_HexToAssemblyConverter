@@ -11,7 +11,7 @@ def resource_path(relative_path):
 
 
 # Permet de récupérer le logo pour la génération de l'exécutable
-Logo = resource_path("graphicResources/TemporaryIcon.ico")
+Logo = resource_path("graphicResources/ApplicationIcon.ico")
 
 # Initialisation des composantes fenêtres de l'application
 app = QtWidgets.QApplication(sys.argv)
