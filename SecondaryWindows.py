@@ -159,18 +159,17 @@ class SConversion(QDialog):
 
     def translate(self):
         self.instruction = self.RawInstructionText.toPlainText()
-        print(self.selected_typeInstruction.text()[:3])
         if self.selected_typeInstruction.text()[:3] == "Hex":
             with open(resource_path("ConversionFiles\\Hexa.txt"), "w") as f:
                 f.write(self.instruction)
             f.close()
-            writeBinaryInstructions(resource_path("ConversionFiles\\Hexa.txt"))
-            describe_instructions(self.selected_OptionConversion.text())
+            writeBinaryInstructions(resource_path("ConversionFiles\\Hexa.txt"), True)
+            describe_instructions(self.selected_OptionConversion.text(), True)
         else:
             with open(resource_path("ConversionFiles\\instructions_file.txt"), "w") as f:
                 f.write(self.instruction)
             f.close()
-            describe_instructions(self.selected_OptionConversion.text())
+            describe_instructions(self.selected_OptionConversion.text(), True)
 
         with open(resource_path("ConversionFiles\\Assembly.txt"), "r") as f:
             assembly_code = f.read()

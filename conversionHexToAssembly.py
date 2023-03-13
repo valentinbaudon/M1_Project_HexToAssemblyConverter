@@ -38,44 +38,68 @@ class ProgressThread(QtCore.QThread):
 
 
 # Fonction qui lit le fichier d'entrée et écrit chaque instruction en binaire
-def writeBinaryInstructions(filepath):
-    global TotalInstructions
-    global CurrentInstruction
-    CurrentInstruction = 0
-    TotalInstructions = 1
-    STMfile = open(filepath)
-    STMfileLines = STMfile.readlines()
-    data_STMfile = ""
-    addresses = []
-    for STMfileLine in STMfileLines:
-        data_STMfile += STMfileLine[12:-3]
-        addresses.append(STMfileLine[4:12])
-    data_binary = ""
-    # Boucle qui convertit l'hexadécimal au binaire
-    for c in data_STMfile:
-        data_binary += str(bin(int(c, 16))[2:].zfill(4))
-    data_big_endian = ""
-    # Boucle qui convertit les données de Little Endian en Big Endian
-    for i in range(0, len(data_binary) - 15, 8):
-        data_big_endian = data_big_endian + data_binary[i:i + 8]
-    i = 0
-    data_reformatted = ""
-    # Boucle qui reformatte les données par groupe de 32 bits
-    while i < len(data_big_endian) - 31:
-        tmp = data_big_endian[i:i + 32]
-        data_reformatted += tmp[24:] + tmp[16:24] + tmp[8:16] + tmp[:8]
-        i += 32
-    instructions_file = open(resource_path("ConversionFiles\\instructions_file.txt"), "w")
-    i = 0
-    # Boucle qui écrit le fichier de sortie avec chaque instruction
-    while i < len(data_reformatted) - 31:
-        tmp = data_reformatted[i:i + 32]
-        if tmp[0:3] == "111" and tmp[3:5] != "00":
-            instructions_file.write(addresses[math.floor(i / 256)] + tmp + '\n')
+def writeBinaryInstructions(filepath, simpleInstruction=False):
+    if simpleInstruction:
+        STMFile = open(filepath)
+        STMFileLine = STMFile.readline()
+        data_binary = ""
+        for c in STMFileLine:
+            data_binary += str(bin(int(c, 16))[2:].zfill(4))
+        data_big_endian = ""
+        for i in range(0, len(data_binary), 8):
+            data_big_endian = data_big_endian + data_binary[i:i + 8]
+        data_reformatted = ""
+        i = 0
+        if len(data_big_endian) < 32:
+            tmp = data_big_endian[i:i + 32]
+            data_reformatted += tmp[24:] + tmp[16:24] + tmp[8:16] + tmp[:8]
             i += 32
-        else:
-            instructions_file.write(addresses[min(round(i / 256), len(addresses) - 1)] + tmp[:16] + '\n')
-            i += 16
+        instructions_file = open(resource_path("ConversionFiles\\instructions_file.txt"), "w")
+        if len(data_reformatted) < 32:
+            instructions_file.write(data_reformatted)
+            instructions_file.close()
+    else:
+        global TotalInstructions
+        global CurrentInstruction
+        CurrentInstruction = 0
+        TotalInstructions = 1
+        STMfile = open(filepath)
+        STMfileLines = STMfile.readlines()
+        data_STMfile = ""
+        addresses = []
+        for STMfileLine in STMfileLines:
+            data_STMfile += STMfileLine[12:-3]
+            addresses.append(STMfileLine[4:12])
+        data_binary = ""
+        # Boucle qui convertit l'hexadécimal au binaire
+        for c in data_STMfile:
+            data_binary += str(bin(int(c, 16))[2:].zfill(4))
+        data_big_endian = ""
+        # Boucle qui convertit les données de Little Endian en Big Endian
+        for i in range(0, len(data_binary) - 15, 8):
+            data_big_endian = data_big_endian + data_binary[i:i + 8]
+        i = 0
+        data_reformatted = ""
+        # Boucle qui reformatte les données par groupe de 32 bits
+        while i < len(data_big_endian) - 31:
+            tmp = data_big_endian[i:i + 32]
+            data_reformatted += tmp[24:] + tmp[16:24] + tmp[8:16] + tmp[:8]
+            i += 32
+        instructions_file = open(resource_path("ConversionFiles\\instructions_file.txt"), "w")
+        i = 0
+        if len(data_reformatted) < 32:
+            instructions_file.write(addresses[0] + data_reformatted)
+            instructions_file.close()
+            return
+        # Boucle qui écrit le fichier de sortie avec chaque instruction
+        while i < len(data_reformatted) - 31:
+            tmp = data_reformatted[i:i + 32]
+            if tmp[0:3] == "111" and tmp[3:5] != "00":
+                instructions_file.write(addresses[math.floor(i / 256)] + tmp + '\n')
+                i += 32
+            else:
+                instructions_file.write(addresses[min(round(i / 256), len(addresses) - 1)] + tmp[:16] + '\n')
+                i += 16
 
 
 # Fonction qui détermine si une instruction est 16 bits ou 32 bits
@@ -327,7 +351,7 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
 
 # Fonction qui lit les bits et lance l'écriture des instructions.
 # Elle contient aussi l'arbre de décision
-def describe_instructions(code):
+def describe_instructions(code, simpleInstruction=False):
     global TotalInstructions
     global CurrentInstruction
     file = open(resource_path("ConversionFiles\\instructions_file.txt"), "r")
@@ -337,8 +361,12 @@ def describe_instructions(code):
     json_16 = json.load(open(resource_path("ConversionFiles\\Json_Decoding_ARM_16bit.json"), "r"))
     json_32 = json.load(open(resource_path("ConversionFiles\\Json_Decoding_ARM_32bit.json"), "r"))
     for binary_line in lines:
-        address = binary_line[:8]
-        line = binary_line[8:-1]
+        if simpleInstruction:
+            address = "00000000"
+            line = binary_line
+        else:
+            address = binary_line[:8]
+            line = binary_line[8:-1]
         CurrentInstruction += 1
         if is32bits(line):
             if line == "11111111111111111111111111111111":
