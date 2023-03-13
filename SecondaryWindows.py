@@ -219,7 +219,7 @@ class SConversion(QDialog):
         self.GlobalLayout.addLayout(self.TitleLayout)
 
         # spacer sous le titre
-        TitleToOptionsSpacer = QtWidgets.QSpacerItem(13, 6, QtWidgets.QSizePolicy.Minimum,QtWidgets.QSizePolicy.Expanding)
+        TitleToOptionsSpacer = QtWidgets.QSpacerItem(13, 6, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.GlobalLayout.addItem(TitleToOptionsSpacer)
 
         # layout global des options
