@@ -159,8 +159,14 @@ class SConversion(QDialog):
     def translate(self):
         self.instruction = self.RawInstructionText.toPlainText()
 
+        # Gestion d'erreur si pas de type d'instruction sélectionné
+        if self.selected_typeInstruction is None:
+            with open(resource_path("ConversionFiles\\Assembly.txt"), "w") as f:
+                f.write("ERROR : no instruction type selected")
+            f.close()
+
         # type d'instruction : hexadécimale
-        if self.selected_typeInstruction.text()[:3] == "Hex":
+        elif self.selected_typeInstruction.text()[:3] == "Hex":
             with open(resource_path("ConversionFiles\\Hexa.txt"), "w") as f:
                 f.write(self.instruction)
             f.close()
@@ -168,7 +174,7 @@ class SConversion(QDialog):
             describe_instructions(self.selected_OptionConversion.text(), True)
 
         # type d'instruction : binaire
-        else:
+        elif self.selected_typeInstruction.text()[:3] == "Bin":
             with open(resource_path("ConversionFiles\\instructions_file.txt"), "w") as f:
                 f.write(self.instruction)
             f.close()
@@ -280,6 +286,7 @@ class SConversion(QDialog):
         self.CompactOption = QtWidgets.QRadioButton()
         self.CompactOption.setFont(font3)
         self.CompactOption.setObjectName("CompactOption")
+        self.CompactOption.setChecked(True)
         self.ConversionOption_Group.addButton(self.CompactOption)
         self.ConversionOptionsLayout.addWidget(self.CompactOption)
 

@@ -20,9 +20,7 @@ class MainWindow(object):
         self.SConversion = None
         self.SConversion = None
         self.actionSimpleConversion = None
-        self.thread = None
         self.selected_hex_file_CSV = None
-        self.progressBar = None
         self.DownloadAssemblyInCSVButton = None
         self.nbInstructionsValue = None
         self.nbInstructions = None
@@ -139,10 +137,8 @@ class MainWindow(object):
 
     # Fonction permettant de faire la traduction du fichier hexa et de mettre le résultat dans le fichier "Assembly.txt"
     def translate(self):
-        self.progressBar.show()
         self.nbInstructionsValue.show()
         self.nbInstructions.show()
-        self.thread.start()
         start = time.time()
         writeBinaryInstructions(resource_path("ConversionFiles\\Hexa.txt"))
         describe_instructions(self.selected_button.text())
@@ -153,8 +149,7 @@ class MainWindow(object):
             nblignes = len(flines)
         f.close()
 
-        self.nbInstructionsValue.setText(
-            str(nblignes) + ". Execution: " + str("{:.3f}".format(end - start)) + "s")
+        self.nbInstructionsValue.setText(str(nblignes) + ". Execution: " + str("{:.3f}".format(end - start)) + "s")
 
         with open(resource_path("ConversionFiles\\Assembly.txt"), "r") as f:
             assembly_code = f.read()
@@ -181,9 +176,6 @@ class MainWindow(object):
                 f.write(hexa_code)
             f.close()
             self.HexaCode.setText(hexa_code)
-
-            self.thread = ProgressThread()
-            self.thread.progress_signal.connect(self.update_progress)
 
     # Fonction permettant de télécharger sur notre ordi le fichier converti en txt
     def download_assembly_file(self):
@@ -228,8 +220,7 @@ class MainWindow(object):
 
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
-        file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.csv",
-                                                   self.selected_hex_file_CSV, "Tous les fichiers ()", options=options)
+        file_name, _ = QFileDialog.getSaveFileName(None, "Enregistrer le fichier Assembly.csv", self.selected_hex_file_CSV, "Tous les fichiers ()", options=options)
         if file_name:
             with open(resource_path("ConversionFiles\\Assembly.csv"), "r") as f:
                 assembly_code = f.read()
@@ -252,7 +243,6 @@ class MainWindow(object):
         self.clearAllFiles()
         self.nbInstructions.hide()
         self.nbInstructionsValue.hide()
-        self.progressBar.hide()
 
     # Fonction permettant de changer la langue d'affichage en anglais
     def select_language_en(self):
@@ -264,7 +254,6 @@ class MainWindow(object):
         self.clearAllFiles()
         self.nbInstructions.hide()
         self.nbInstructionsValue.hide()
-        self.progressBar.hide()
 
     # Partie initialisation des textes et noms des éléments de la fenêtre
     def NameInit(self):
@@ -296,10 +285,6 @@ class MainWindow(object):
         self.actionFrancais.setText(_translate("Converter", self.JSON_lang["actionFrancais"]))
         self.actionEnglish.setText(_translate("Converter", self.JSON_lang["actionEnglish"]))
         self.actionSimpleConversion.setText(_translate("Converter", self.JSON_lang["actionSimpleConversion"]))
-
-    # Fonction qui met à jour la valeur de la barre de progression
-    def update_progress(self, val):
-        self.progressBar.setValue(val)
 
     # Fonction de définition des composants de notre fenêtre principale
     def setupUi(self, ConverterWindow):
@@ -426,8 +411,7 @@ class MainWindow(object):
         self.DownloadHexLayout.setObjectName("DownloadHexLayout")
 
         # Spacer entre haut de partie centrale et layout partie téléchargement fichier hexa
-        spacer_HighCentral_DownloadHexLayout = QtWidgets.QSpacerItem(17, 17, QtWidgets.QSizePolicy.Minimum,
-                                                                     QtWidgets.QSizePolicy.Fixed)
+        spacer_HighCentral_DownloadHexLayout = QtWidgets.QSpacerItem(17, 17, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.DownloadHexLayout.addItem(spacer_HighCentral_DownloadHexLayout)
 
         # Objet texte indication téléchargement hexa
@@ -442,8 +426,7 @@ class MainWindow(object):
         self.DownloadHexButtonLayout.setObjectName("DownloadHexButtonLayout")
 
         # Spacer entre gauche partie conversion et bouton conversion
-        spacer_LeftConversion_DownloadHexButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
-                                                                        QtWidgets.QSizePolicy.Minimum)
+        spacer_LeftConversion_DownloadHexButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.DownloadHexButtonLayout.addItem(spacer_LeftConversion_DownloadHexButton)
 
         # Bouton de téléchargement du fichier hexa
@@ -455,15 +438,13 @@ class MainWindow(object):
         self.DownloadHexButtonLayout.addWidget(self.DownloadHexButton)
 
         # Spacer entre droite partie conversion et bouton conversion
-        spacer_RightConversion_DownloadHexButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
-                                                                         QtWidgets.QSizePolicy.Minimum)
+        spacer_RightConversion_DownloadHexButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.DownloadHexButtonLayout.addItem(spacer_RightConversion_DownloadHexButton)
         self.DownloadHexLayout.addLayout(self.DownloadHexButtonLayout)
         self.OptionsConversionLayout.addLayout(self.DownloadHexLayout)
 
         # Spacer entre téléchargement hexa et options d'affichage
-        spacer_OptionAffichage_DownloadHexButton = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum,
-                                                                         QtWidgets.QSizePolicy.Expanding)
+        spacer_OptionAffichage_DownloadHexButton = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.OptionsConversionLayout.addItem(spacer_OptionAffichage_DownloadHexButton)
 
         # Titre de la partie sélection d'options d'affichage
@@ -478,8 +459,7 @@ class MainWindow(object):
         self.OptionsGlobalLayout.setObjectName("OptionsGlobalLayout")
 
         # Spacer à gauche des options d'affichage
-        spacerLeftOptionsConversion = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
-                                                            QtWidgets.QSizePolicy.Minimum)
+        spacerLeftOptionsConversion = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.OptionsGlobalLayout.addItem(spacerLeftOptionsConversion)
 
         # Layout contenant les boutons d'options d'affichage
@@ -512,14 +492,12 @@ class MainWindow(object):
         self.OptionsGlobalLayout.addLayout(self.OptionsLayout)
 
         # Spacer entre droite partie conversion et options d'affichage
-        spacer_RightConversion_OptionAffichage = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
-                                                                       QtWidgets.QSizePolicy.Minimum)
+        spacer_RightConversion_OptionAffichage = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.OptionsGlobalLayout.addItem(spacer_RightConversion_OptionAffichage)
         self.OptionsConversionLayout.addLayout(self.OptionsGlobalLayout)
 
         # Spacer entre gauche partie conversion et options d'affichage
-        spacer_LeftConversion_OptionAffichage = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum,
-                                                                      QtWidgets.QSizePolicy.Expanding)
+        spacer_LeftConversion_OptionAffichage = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.OptionsConversionLayout.addItem(spacer_LeftConversion_OptionAffichage)
 
         # Texte exemple options d'affichage
@@ -532,8 +510,7 @@ class MainWindow(object):
         self.OptionsConversionLayout.addWidget(self.Exemple_OptionConversion)
 
         # Spacer entre haut bouton conversion et options d'affichage
-        spacer_ConvertButton_OptionAffichage = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum,
-                                                                     QtWidgets.QSizePolicy.Expanding)
+        spacer_ConvertButton_OptionAffichage = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.OptionsConversionLayout.addItem(spacer_ConvertButton_OptionAffichage)
 
         # Layout autour du bouton de conversion
@@ -541,8 +518,7 @@ class MainWindow(object):
         self.ConvertButtonLayout.setObjectName("ConvertButtonLayout")
 
         # Spacer bas bouton conversion
-        spacer_lowConvertButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
-                                                        QtWidgets.QSizePolicy.Minimum)
+        spacer_lowConvertButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.ConvertButtonLayout.addItem(spacer_lowConvertButton)
 
         # Bouton de conversion
@@ -554,14 +530,12 @@ class MainWindow(object):
         self.ConvertButtonLayout.addWidget(self.convertButton)
 
         # Spacer droite bouton conversion
-        spacer_RightConvertButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
-                                                          QtWidgets.QSizePolicy.Minimum)
+        spacer_RightConvertButton = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.ConvertButtonLayout.addItem(spacer_RightConvertButton)
         self.OptionsConversionLayout.addLayout(self.ConvertButtonLayout)
 
         # Spacer gauche bouton conversion
-        spacer_LeftConvertButton = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum,
-                                                         QtWidgets.QSizePolicy.Expanding)
+        spacer_LeftConvertButton = QtWidgets.QSpacerItem(17, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.OptionsConversionLayout.addItem(spacer_LeftConvertButton)
         self.CentralLayout.addLayout(self.OptionsConversionLayout)
 
@@ -586,16 +560,8 @@ class MainWindow(object):
         self.InstructionsLayout.addWidget(self.nbInstructionsValue)
 
         # Spacer à droite du nombre d'instructions
-        spacerRightNbInstruction = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Expanding,
-                                                         QtWidgets.QSizePolicy.Minimum)
+        spacerRightNbInstruction = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.InstructionsLayout.addItem(spacerRightNbInstruction)
-
-        # Barre de progression de la conversion
-        self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar.setObjectName("progressBar")
-        self.progressBar.hide()
-        self.InstructionsLayout.addWidget(self.progressBar)
-
         self.OptionsConversionLayout.addItem(self.InstructionsLayout)
 
         # Ligne à droite de l'application
@@ -637,8 +603,7 @@ class MainWindow(object):
         self.DownloadAssemblyButtonLayout.setObjectName("DownloadAssemblyButtonLayout")
 
         # Spacer gauche bouton DownloadAssembly
-        spacer_leftDownloadAssemblyText = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
-                                                                QtWidgets.QSizePolicy.Minimum)
+        spacer_leftDownloadAssemblyText = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.DownloadAssemblyButtonLayout.addItem(spacer_leftDownloadAssemblyText)
 
         # Bouton de téléchargement de l'assembleur en fichier texte
@@ -649,8 +614,7 @@ class MainWindow(object):
         self.DownloadAssemblyButtonLayout.addWidget(self.DownloadAssemblyButton)
 
         # Spacer entre les 2 boutons DownloadAssembly
-        spacer_BetweenDownloadAssembly = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
-                                                               QtWidgets.QSizePolicy.Minimum)
+        spacer_BetweenDownloadAssembly = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.DownloadAssemblyButtonLayout.addItem(spacer_BetweenDownloadAssembly)
 
         # Bouton de téléchargement de l'assembleur en fichier CSV
@@ -660,8 +624,7 @@ class MainWindow(object):
         self.DownloadAssemblyButtonLayout.addWidget(self.DownloadAssemblyInCSVButton)
 
         # Spacer droite bontons DownloadAssembly
-        spacer_RightDownloadAssemblyCSV = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding,
-                                                                QtWidgets.QSizePolicy.Minimum)
+        spacer_RightDownloadAssemblyCSV = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.DownloadAssemblyButtonLayout.addItem(spacer_RightDownloadAssemblyCSV)
 
         self.FooterLayout.addLayout(self.DownloadAssemblyButtonLayout)

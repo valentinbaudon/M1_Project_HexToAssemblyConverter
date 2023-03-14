@@ -10,9 +10,6 @@ from time import sleep
 from PyQt5 import QtCore
 from PyQt5.QtCore import pyqtSignal
 
-CurrentInstruction = 0
-TotalInstructions = 1
-
 
 # Fonction pour récupérer le path des fichiers
 def resource_path(relative_path):
@@ -22,19 +19,6 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
-
-
-# Thread qui met à jour la valeur de la barre de progression
-class ProgressThread(QtCore.QThread):
-    progress_signal = pyqtSignal(int)
-
-    def __init__(self):
-        super().__init__()
-
-    def run(self):
-        while 1:
-            self.progress_signal.emit(int(CurrentInstruction / TotalInstructions * 100))
-            sleep(0.1)
 
 
 # Fonction qui lit le fichier d'entrée et écrit chaque instruction en binaire
@@ -59,10 +43,6 @@ def writeBinaryInstructions(filepath, simpleInstruction=False):
             instructions_file.write(data_reformatted)
             instructions_file.close()
     else:
-        global TotalInstructions
-        global CurrentInstruction
-        CurrentInstruction = 0
-        TotalInstructions = 1
         STMfile = open(filepath)
         STMfileLines = STMfile.readlines()
         data_STMfile = ""
@@ -350,12 +330,9 @@ def write_described_instruction_32(descr_file, json_file, line, instruction, cod
 # Fonction qui lit les bits et lance l'écriture des instructions.
 # Elle contient aussi l'arbre de décision
 def describe_instructions(code, simpleInstruction=False):
-    global TotalInstructions
-    global CurrentInstruction
     file = open(resource_path("ConversionFiles\\instructions_file.txt"), "r")
     assembly_description = open(resource_path("ConversionFiles\\Assembly.txt"), "w")
     lines = file.readlines()
-    TotalInstructions = len(lines)
     json_16 = json.load(open(resource_path("ConversionFiles\\Json_Decoding_ARM_16bit.json"), "r"))
     json_32 = json.load(open(resource_path("ConversionFiles\\Json_Decoding_ARM_32bit.json"), "r"))
     for binary_line in lines:
@@ -365,7 +342,6 @@ def describe_instructions(code, simpleInstruction=False):
         else:
             address = binary_line[:8]
             line = binary_line[8:-1]
-        CurrentInstruction += 1
         if is32bits(line):
             if line == "11111111111111111111111111111111":
                 assembly_description.write("0x" + str(hex(int(address, 16)))[2:].zfill(8) + " : UNDEFINED or UNPREDICTABLE\n")
