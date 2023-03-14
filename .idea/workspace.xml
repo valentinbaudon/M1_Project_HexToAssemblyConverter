@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70edfaf3-1b49-4bc6-ba62-d3a1c20edb22" name="Changes" comment="Application Fonctionnelle">
+      <change beforePath="$PROJECT_DIR$/ConversionFiles/Assembly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConversionFiles/Assembly.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConversionFiles/Hexa.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConversionFiles/Hexa.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConversionFiles/instructions_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConversionFiles/instructions_file.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/HexaToAssemblyConverterApplication.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/conversionHexToAssembly.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MUoQC3LpsfIDmXa5BNBcqJd5bB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/ASUS/AppData/Local/Programs/Python/Python311",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.HexaToAssemblyConverterApplication">
+    <configuration name="HexaToAssemblyConverterApplication" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HexToAssemblyConverter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\valba\AppData\Local\Programs\Python\Python311\python.exe" />
+      <option name="SDK_NAME" value="Python 3.11" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HexaToAssemblyConverterApplication.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HexToAssemblyConverter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.HexaToAssemblyConverterApplication" />
+      <item itemvalue="Python.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.HexaToAssemblyConverterApplication" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70edfaf3-1b49-4bc6-ba62-d3a1c20edb22" name="Changes" comment="" />
+      <created>1677831503207</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677831503207</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Ajout instruction 11111111111111111111111111111111">
+      <created>1678095075795</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678095075795</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update JSON 16 bits">
+      <created>1678177803655</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678177803655</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Reformattage arbre de décision">
+      <created>1678271239922</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678271239922</updated>
+    </task>
+    <task id="LOCAL-00004" summary=" Load/store multiple dans l'arbre de décision">
+      <created>1678272372362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678272372362</updated>
+    </task>
+    <task id="LOCAL-00005" summary=" arbre de décision">
+      <created>1678277938769</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678277938769</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Mult + LDR/STR 32 bits dans arbre de décision + JSON">
+      <created>1678281711784</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678281711784</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Coprocessor instructions 32 bits dans arbre de décision + JSON">
+      <created>1678284365341</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678284365341</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Dernières instructions 32 bits dans arbre de décision + JSON">
+      <created>1678287481768</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678287481768</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Dernières instructions 32 bits dans arbre de décision + JSON">
+      <created>1678287518763</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678287518763</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Typo UNDEFINED">
+      <created>1678289609351</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678289609351</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Last instructions coded">
+      <created>1678352619783</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678352619783</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Last instructions coded">
+      <created>1678358824792</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678358824792</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update FF">
+      <created>1678441339768</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678441339768</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Simple instruction hexa fonctionnelle">
+      <created>1678698846969</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1678698846969</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Simple instruction hexa et binaire fonctionnelle">
+      <created>1678699085586</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1678699085586</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Correction Typos">
+      <created>1678709535444</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678709535444</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Application Fonctionnelle">
+      <created>1678713200866</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678713200866</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Application Fonctionnelle">
+      <created>1678713204090</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678713204090</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Application Fonctionnelle">
+      <created>1678714648285</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1678714648285</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Application Fonctionnelle">
+      <created>1678714742754</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1678714742754</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Application Fonctionnelle">
+      <created>1678714793163</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1678714793163</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Application Fonctionnelle">
+      <created>1678715447998</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1678715447998</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Application Fonctionnelle">
+      <created>1678715684957</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1678715684957</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Application Fonctionnelle">
+      <created>1678801278861</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1678801278861</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Ajout instruction 11111111111111111111111111111111" />
+    <MESSAGE value="Update JSON 16 bits" />
+    <MESSAGE value="Reformattage arbre de décision" />
+    <MESSAGE value=" Load/store multiple dans l'arbre de décision" />
+    <MESSAGE value=" arbre de décision" />
+    <MESSAGE value="Mult + LDR/STR 32 bits dans arbre de décision + JSON" />
+    <MESSAGE value="Coprocessor instructions 32 bits dans arbre de décision + JSON" />
+    <MESSAGE value="Dernières instructions 32 bits dans arbre de décision + JSON" />
+    <MESSAGE value="Typo UNDEFINED" />
+    <MESSAGE value="Last instructions coded" />
+    <MESSAGE value="Update FF" />
+    <MESSAGE value="Simple instruction hexa fonctionnelle" />
+    <MESSAGE value="Simple instruction hexa et binaire fonctionnelle" />
+    <MESSAGE value="Correction Typos" />
+    <MESSAGE value="Application Fonctionnelle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Application Fonctionnelle" />
+  </component>
+</project>
