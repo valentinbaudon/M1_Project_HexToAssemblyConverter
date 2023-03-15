@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="70edfaf3-1b49-4bc6-ba62-d3a1c20edb22" name="Changes" comment="Application Fonctionnelle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConversionFiles/Assembly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConversionFiles/Assembly.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConversionFiles/Hexa.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConversionFiles/Hexa.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConversionFiles/instructions_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConversionFiles/instructions_file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversionHexToAssembly.py" beforeDir="false" afterPath="$PROJECT_DIR$/conversionHexToAssembly.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678802428598</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Application Fonctionnelle">
+      <created>1678869489968</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1678869489969</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

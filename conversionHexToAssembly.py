@@ -223,13 +223,13 @@ def GetDictField_32(json_file, line, instruction):
             case 'cond':
                 finalString += 'cond:' + str(newDict[list(keys)[j]]) + ', '
             case 'RdLo':
-                finalString += 'RdLo:' + str(newDict[list(keys)[j]])
+                finalString += 'RdLo:' + str(newDict[list(keys)[j]]) + ', '
             case 'RdHi':
-                finalString += 'RdHi:' + str(newDict[list(keys)[j]])
+                finalString += 'RdHi:' + str(newDict[list(keys)[j]]) + ', '
             case 'opc1':
-                finalString += 'opc1:' + str(newDict[list(keys)[j]])
+                finalString += 'opc1:' + str(newDict[list(keys)[j]]) + ', '
             case 'opc2':
-                finalString += 'opc2:' + str(newDict[list(keys)[j]])
+                finalString += 'opc2:' + str(newDict[list(keys)[j]]) + ', '
         match key[:6]:
             case 'option':
                 finalString += 'option:' + str(newDict[list(keys)[j]]) + ', '
