@@ -129,8 +129,8 @@ class SConversion(QDialog):
         self.JSON_lang = json.load(open(resource_path("OtherFiles\\text_" + langue + ".json")))
 
         # Initialisation de l'option de conversion sélectionnée par défaut
-        self.ConversionOption_Group = QtWidgets.QRadioButton()
-        self.ConversionOption_Group.setText("Compact")
+        self.selected_OptionConversion = QtWidgets.QRadioButton()
+        self.selected_OptionConversion.setText("Compact")
 
     # Partie initialisation des textes et noms des éléments de la fenêtre
     def NameInit(self):
